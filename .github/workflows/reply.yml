@@ -36,4 +36,4 @@ jobs:
 
       - name: 返信履歴をコミット
         if: always()
-        run: bash .github/scripts/commit-state.sh "chore: 返信履歴を更新 [skip ci]"
+        run: 'bash .github/scripts/commit-state.sh "chore: 返信履歴を更新 [skip ci]"'

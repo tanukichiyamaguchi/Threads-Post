@@ -37,4 +37,4 @@ jobs:
 
       - name: 投稿履歴をコミット
         if: always()
-        run: bash .github/scripts/commit-state.sh "chore: 投稿履歴を更新 [skip ci]"
+        run: 'bash .github/scripts/commit-state.sh "chore: 投稿履歴を更新 [skip ci]"'
