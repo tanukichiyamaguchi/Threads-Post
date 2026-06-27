@@ -17,7 +17,7 @@
   ],
   "postRules": {
     "maxLength": 500,
-    "targetLength": "日本語で120〜220文字程度",
+    "targetLength": "30〜120文字で投稿ごとにばらつかせる",
     "emoji": "2〜4個を自然に",
     "hashtagCount": "ちょうど1個（最も効果的なものを1つだけ）",
     "baseHashtags": [

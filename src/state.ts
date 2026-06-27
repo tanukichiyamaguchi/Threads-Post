@@ -21,6 +21,7 @@ function writeJson(file: string, data: unknown): void {
 
 const repliedFile = path.join(paths.state, "replied-comments.json");
 const historyFile = path.join(paths.state, "post-history.json");
+const scheduleFile = path.join(paths.state, "post-schedule.json");
 
 export interface PostHistoryItem {
   date: string;
@@ -46,4 +47,18 @@ export function loadPostHistory(): PostHistoryItem[] {
 
 export function savePostHistory(items: PostHistoryItem[]): void {
   writeJson(historyFile, items.slice(-50));
+}
+
+/** その日の投稿スロットの消化状況（二重投稿防止） */
+export interface ScheduleState {
+  date: string; // JSTの YYYY-MM-DD
+  fired: number[]; // 実行済みスロットのインデックス
+}
+
+export function loadScheduleState(): ScheduleState {
+  return readJson<ScheduleState>(scheduleFile, { date: "", fired: [] });
+}
+
+export function saveScheduleState(s: ScheduleState): void {
+  writeJson(scheduleFile, s);
 }

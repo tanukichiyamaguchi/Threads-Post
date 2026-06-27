@@ -101,7 +101,8 @@ const POST_SCHEMA = {
     },
     text: {
       type: "string",
-      description: "Threads投稿の本文。ハッシュタグは含めない。改行可。",
+      description:
+        "Threads投稿の本文。ハッシュタグは含めない。改行可。指定された目安文字数（30〜120字）に近づける。",
     },
     hashtags: {
       type: "array",
@@ -119,6 +120,7 @@ const POST_SCHEMA = {
 export async function generatePost(
   trendBrief: string,
   history: PostHistoryItem[],
+  targetChars: number,
 ): Promise<GeneratedPost> {
   const recent =
     history
@@ -132,6 +134,9 @@ export async function generatePost(
     ``,
     `# 直近の自分の投稿（内容や言い回しの繰り返しを避けること）`,
     recent,
+    ``,
+    `# 文字数の目安`,
+    `本文（ハッシュタグを除く）は約${targetChars}文字。30〜120字の範囲で、この目安に近づけてください。短い指定なら一言ぎゅっと、長い指定ならしっかり描写、とメリハリをつける。`,
     ``,
     `# 依頼`,
     `上記の季節・トレンドを自然に取り入れ、今この瞬間に最も集客・予約につながるThreads投稿を1つ作成してください。`,
@@ -217,7 +222,7 @@ function buildPostSystemPrompt(): string {
     ``,
     `## 投稿の条件`,
     `- リサーチ結果に当店の公式情報（メニュー・特徴など）が含まれる場合は、それを正確な事実として最優先で使う。事実が確認できない内容は断定しない。`,
-    `- 日本語。文字数の目安は${r.targetLength}（最大${r.maxLength}文字）。`,
+    `- 日本語。本文の長さはリクエストで指定された目安文字数（${r.targetLength}）に合わせ、毎回ばらつかせる。最大${r.maxLength}文字。`,
     `- 冒頭の1行で必ず読み手の興味・共感を引く（フックを作る）。`,
     `- 今の季節・トレンドを自然に絡め、「今行きたい／予約したい」と思わせる。`,
     `- 共感 → 価値（メニューの魅力やお悩み解決）→ 行動喚起(CTA) の流れを意識する。`,

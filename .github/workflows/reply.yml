@@ -2,8 +2,8 @@ name: Threads AI返信
 
 on:
   schedule:
-    # 30分ごとにコメントをチェックして返信
-    - cron: "*/30 * * * *"
+    # 約2時間ごとにコメントをチェックして返信
+    - cron: "0 */2 * * *"
   workflow_dispatch: {}
 
 permissions:

@@ -1,28 +1,75 @@
 import { env } from "./config";
 import { ThreadsClient } from "./threads";
 import { researchTrends, generatePost, composePostText } from "./anthropic";
-import { loadPostHistory, savePostHistory } from "./state";
+import {
+  loadPostHistory,
+  savePostHistory,
+  loadScheduleState,
+  saveScheduleState,
+} from "./state";
+import { computeDailySlots, currentJst, fmtMin, pickTargetChars } from "./schedule";
 import { log, error } from "./logger";
 
 async function main(): Promise<void> {
-  const today = new Intl.DateTimeFormat("ja-JP", {
+  const todayLabel = new Intl.DateTimeFormat("ja-JP", {
     dateStyle: "full",
     timeZone: "Asia/Tokyo",
   }).format(new Date());
+  log(`=== 自動投稿ルーチン開始 (${todayLabel}) ===`);
 
-  log(`=== 自動投稿ルーチン開始 (${today}) ===`);
+  const now = currentJst(new Date());
+  const force = ["1", "true", "yes"].includes(
+    (process.env.FORCE_POST || "").trim().toLowerCase(),
+  );
 
-  // 必須の環境変数を早めに検証
+  // forceでない場合は「その日の投稿予定スロット」が来たときだけ投稿する
+  let slotIndex = now.minuteOfDay; // force時のばらつき用シード
+  if (!force) {
+    const slots = computeDailySlots(now.seed);
+    let st = loadScheduleState();
+    if (st.date !== now.dateStr) st = { date: now.dateStr, fired: [] };
+
+    let dueIndex = -1;
+    for (let i = 0; i < slots.length; i++) {
+      if (slots[i] <= now.minuteOfDay && !st.fired.includes(i)) {
+        dueIndex = i;
+        break;
+      }
+    }
+    if (dueIndex === -1) {
+      const next = slots.find((s) => s > now.minuteOfDay);
+      log(
+        `現在 ${now.hhmm} JST は投稿予定時刻ではありません` +
+          `（本日 ${slots.length} 投稿予定 / 残り ${slots.length - st.fired.length} 件 / ` +
+          `次回 ${next !== undefined ? fmtMin(next) : "なし"}）。`,
+      );
+      return;
+    }
+
+    // 先にスロットを消化して保存（投稿失敗時もコミットされ二重投稿を防ぐ）
+    st.fired.push(dueIndex);
+    saveScheduleState(st);
+    slotIndex = dueIndex;
+    log(
+      `投稿スロット ${dueIndex + 1}/${slots.length}（予定 ${fmtMin(slots[dueIndex])} JST）を実行します。`,
+    );
+  } else {
+    log("FORCE_POST 指定: スケジュールを無視して今すぐ投稿します。");
+  }
+
+  const targetChars = pickTargetChars(now.seed, slotIndex);
+  log(`本文の目安文字数: ${targetChars}文字`);
+
   env.anthropicApiKey();
   const client = new ThreadsClient(env.threadsUserId(), env.threadsToken());
 
   log("公式情報の確認と季節・トレンドをリサーチ中...");
-  const brief = await researchTrends(today);
+  const brief = await researchTrends(todayLabel);
   log("リサーチ結果:\n" + brief);
 
   const history = loadPostHistory();
   log("投稿文を生成中...");
-  const post = await generatePost(brief, history);
+  const post = await generatePost(brief, history, targetChars);
   const finalText = composePostText(post);
   log(`生成された投稿 (${finalText.length}文字 / テーマ: ${post.topic}):\n${finalText}`);
 
