@@ -1,0 +1,36 @@
+name: Threads リサーチ＆素材更新
+
+on:
+  schedule:
+    # 毎月1日・15日の 06:00 JST（≒2週に1回）。Web検索でしっかりリサーチして素材を更新。
+    - cron: "0 21 1,15 * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: threads-research
+  cancel-in-progress: false
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: リサーチして投稿素材を更新
+        run: npm run research
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: 素材をコミット
+        if: always()
+        run: 'bash .github/scripts/commit-state.sh "chore: 投稿素材を更新 [skip ci]"'

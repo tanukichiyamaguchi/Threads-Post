@@ -1,12 +1,13 @@
 import { env } from "./config";
 import { ThreadsClient } from "./threads";
-import { researchTrends, generatePost, composePostText } from "./anthropic";
+import { generatePost, composePostText } from "./anthropic";
 import {
   loadPostHistory,
   savePostHistory,
   loadScheduleState,
   saveScheduleState,
 } from "./state";
+import { loadContentPlan, pickAngle, pickCoupon } from "./content";
 import { computeDailySlots, currentJst, fmtMin, pickTargetChars } from "./schedule";
 import { log, error } from "./logger";
 
@@ -63,13 +64,18 @@ async function main(): Promise<void> {
   env.anthropicApiKey();
   const client = new ThreadsClient(env.threadsUserId(), env.threadsToken());
 
-  log("公式情報の確認と季節・トレンドをリサーチ中...");
-  const brief = await researchTrends(todayLabel);
-  log("リサーチ結果:\n" + brief);
+  // 素材（2週に1回更新）から、このスロットのアングルと（必要なら）クーポンを選ぶ
+  const plan = loadContentPlan();
+  const angle = pickAngle(plan, now.seed, slotIndex);
+  const coupon = pickCoupon(plan, angle, now.seed, slotIndex);
+  log(
+    `テーマ: [${angle.category}] ${angle.angle}` +
+      (coupon ? ` / クーポン: ${coupon.name}（${coupon.price}）` : ""),
+  );
 
   const history = loadPostHistory();
   log("投稿文を生成中...");
-  const post = await generatePost(brief, history, targetChars);
+  const post = await generatePost(angle, coupon, history, targetChars);
   const finalText = composePostText(post);
   log(`生成された投稿 (${finalText.length}文字 / テーマ: ${post.topic}):\n${finalText}`);
 

@@ -5,6 +5,7 @@
   "description": "Threadsの自動投稿とAI返信をClaude API経由で行うシステム（季節・流行に応じた集客投稿を自動生成）",
   "type": "module",
   "scripts": {
+    "research": "tsx src/research.ts",
     "post": "tsx src/post.ts",
     "reply": "tsx src/reply.ts",
     "refresh-token": "tsx src/refresh-token.ts",

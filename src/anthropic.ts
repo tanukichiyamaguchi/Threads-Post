@@ -1,6 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { brand } from "./config";
 import type { PostHistoryItem } from "./state";
+import type { AngleItem, Coupon, ContentPlan } from "./content";
 
 const MODEL = "claude-sonnet-4-6";
 
@@ -22,52 +23,45 @@ function textOf(content: any[]): string {
 export interface GeneratedPost {
   topic: string;
   text: string;
-  hashtags: string[];
 }
 
-/**
- * Web検索で「今の季節・流行・話題」を調べ、集客投稿に使える切り口をまとめる。
- */
-export async function researchTrends(today: string): Promise<string> {
+// ==========================================
+// 2週に1回: 公式情報・クーポン・季節をリサーチ（Web検索あり・effort高）
+// ==========================================
+export async function researchNotes(today: string): Promise<string> {
   const system =
     "あなたは日本の美容業界に詳しい集客マーケティングのリサーチャーです。" +
-    "まず指定された店舗の公式情報を確認し、その上で集客SNS投稿に役立つ" +
-    "「今この時期ならではの切り口」を、信頼できる最新情報をもとにまとめます。";
+    "指定店舗の公式情報（メニュー・クーポン・価格）を確認し、今後2週間の集客投稿に役立つ事実と季節の切り口を整理します。";
 
   const user = [
     `本日: ${today}（日本・東京）。`,
-    `店舗: ${brand.name}（${brand.area}の${brand.businessType}）。`,
-    `公式ページ（最優先の事実ソース）: ${brand.sourceUrl}`,
+    `店舗: ${brand.name}（${brand.area}の${brand.businessType}）。公式: ${brand.sourceUrl}`,
+    `※当店はまつげパーマと眉毛WAXの専門店。まつげエクステ（まつエク）は扱わない。`,
     ``,
-    `# 手順1: 当店の正確な情報を確認`,
-    `公式ページ ${brand.sourceUrl} を web_fetch で取得し、取得できない（ブロック等）場合は`,
-    `「${brand.name} 蒲田 まつげパーマ 眉毛WAX」等で web_search して、`,
-    `当店の実際のメニュー・コンセプト・強み・特徴を把握してください。`,
-    `※当店はまつげパーマと眉毛WAXの専門店です。まつげエクステ（まつエク）は提供していません。`,
+    `# 手順1: 公式情報・クーポンの確認`,
+    `公式ページ ${brand.sourceUrl} を web_fetch で取得（不可なら「${brand.name} 蒲田 まつげパーマ クーポン」等で web_search）し、`,
+    `当店の「メニュー」「クーポンの内容と価格（上位5件まで）」「コンセプト・特徴」「アクセス・営業」を確認してください。`,
+    `※クーポンの内容・価格は確認できたものだけを正確に書き出す。確認できない場合は創作しない。`,
     ``,
-    `# 手順2: 今の季節・トレンドを調査`,
-    `web_search で次を確認してください。`,
-    `- 季節・天候・気温の話題（今の時期ならではの悩みや気分）`,
-    `- 直近〜今後2週間程度のイベント／行事／連休／記念日`,
-    `- まつげパーマ・眉毛・アイメイク関連の流行やトレンド`,
-    `- 蒲田・大田区エリアならではの話題があれば`,
+    `# 手順2: 今後2週間の季節・話題`,
+    `web_search で、今の季節・天候・直近のイベントなど、来店動機につながる切り口を5〜8個確認してください（深掘りは不要）。`,
     ``,
     `# 出力`,
-    `次の2部構成でまとめてください（投稿文そのものは書かない）。`,
-    `(A) 確認した当店の情報の要点（メニュー・特徴・強み・アクセス等。確認できた事実のみ）`,
-    `(B) 今の季節・トレンドの切り口を5〜8個（各1〜2行で「切り口＋なぜ今その人に刺さるか」）`,
+    `(A) 当店のメニュー・特徴・アクセス・営業（確認できた事実のみ）`,
+    `(B) クーポン（上位5件まで・名称/内容/価格/条件。確認できたもののみ。無ければ「確認できず」と明記）`,
+    `(C) 今後2週間の季節・話題の切り口（5〜8個、各1〜2行）`,
   ].join("\n");
 
   const stream = client().messages.stream({
     model: MODEL,
-    max_tokens: 6000,
+    max_tokens: 5000,
     thinking: { type: "adaptive" },
     output_config: { effort: "high" },
     tools: [
       {
         type: "web_search_20260209",
         name: "web_search",
-        max_uses: 6,
+        max_uses: 8,
         user_location: {
           type: "approximate",
           country: "JP",
@@ -88,8 +82,130 @@ export async function researchTrends(today: string): Promise<string> {
   } as any);
 
   const msg = await stream.finalMessage();
-  const text = textOf((msg as any).content);
-  return text || "（トレンド情報を取得できませんでした。一般的な季節感で作成します。）";
+  return (
+    textOf((msg as any).content) ||
+    "（リサーチ情報を取得できませんでした。一般的な季節感で作成します。）"
+  );
+}
+
+const CONTENT_PLAN_SCHEMA = {
+  type: "object",
+  properties: {
+    salonInfo: {
+      type: "object",
+      properties: {
+        concept: { type: "string", description: "店舗のコンセプト・特徴（短く）" },
+        menu: { type: "array", items: { type: "string" } },
+        accessHours: { type: "string", description: "アクセス・営業時間（分かれば）" },
+        coupons: {
+          type: "array",
+          items: {
+            type: "object",
+            properties: {
+              name: { type: "string" },
+              price: { type: "string" },
+              content: { type: "string" },
+              note: { type: "string", description: "条件など（任意）" },
+            },
+            required: ["name", "price", "content"],
+            additionalProperties: false,
+          },
+          description: "確認できたクーポンのみ。上位5件まで。無ければ空配列。",
+        },
+      },
+      required: ["concept", "menu", "coupons"],
+      additionalProperties: false,
+    },
+    anglePool: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          category: { type: "string", description: "menu / tips / trust / season など" },
+          angle: { type: "string", description: "投稿の切り口を1〜2文で具体的に" },
+          coupon: { type: "boolean", description: "クーポン紹介に向くなら true" },
+        },
+        required: ["category", "angle"],
+        additionalProperties: false,
+      },
+      description: "今後2週間ぶんの投稿アングル集。36個程度。",
+    },
+  },
+  required: ["salonInfo", "anglePool"],
+  additionalProperties: false,
+};
+
+export async function buildContentPlan(
+  notes: string,
+  history: PostHistoryItem[],
+): Promise<Pick<ContentPlan, "salonInfo" | "anglePool">> {
+  const recent =
+    history
+      .slice(-20)
+      .map((h) => `- ${h.text.replace(/\n/g, " ").slice(0, 50)}`)
+      .join("\n") || "（過去投稿はまだありません）";
+
+  const user = [
+    `# リサーチ結果`,
+    notes,
+    ``,
+    `# 最近の投稿（テーマ・言い回しの重複を避ける）`,
+    recent,
+    ``,
+    `# 依頼`,
+    `上記リサーチをもとに、今後2週間ぶんの投稿素材を作成してください。`,
+    `1) salonInfo: 確認できたメニュー・コンセプト・アクセス・クーポン（上位5件まで・確認できたもののみ。創作禁止）。`,
+    `2) anglePool: 投稿アングルを36個程度。category と angle（切り口を1〜2文で具体的に）。クーポン紹介に向くものは coupon:true。`,
+    `## 内容配分`,
+    brand.contentMix,
+    `## 目的`,
+    brand.goal,
+    `アングルはテーマ・切り口がそれぞれ異なるようにし、同じ訴求の単純な繰り返しを避けてください。`,
+  ].join("\n");
+
+  const res = await client().messages.create({
+    model: MODEL,
+    max_tokens: 8000,
+    thinking: { type: "adaptive" },
+    output_config: {
+      effort: "high",
+      format: { type: "json_schema", schema: CONTENT_PLAN_SCHEMA },
+    },
+    system: buildPlanSystemPrompt(),
+    messages: [{ role: "user", content: user }],
+  } as any);
+
+  const raw = textOf((res as any).content);
+  let data: any;
+  try {
+    data = JSON.parse(raw);
+  } catch {
+    throw new Error(`素材生成結果のJSON解析に失敗しました: ${raw.slice(0, 200)}`);
+  }
+  const salonInfo = {
+    concept: String(data?.salonInfo?.concept ?? ""),
+    menu: Array.isArray(data?.salonInfo?.menu) ? data.salonInfo.menu.map(String) : [],
+    accessHours: String(data?.salonInfo?.accessHours ?? ""),
+    coupons: Array.isArray(data?.salonInfo?.coupons)
+      ? data.salonInfo.coupons.slice(0, 5).map((c: any) => ({
+          name: String(c.name ?? ""),
+          price: String(c.price ?? ""),
+          content: String(c.content ?? ""),
+          note: c.note ? String(c.note) : undefined,
+        }))
+      : [],
+  };
+  const anglePool: AngleItem[] = Array.isArray(data?.anglePool)
+    ? data.anglePool
+        .map((x: any) => ({
+          category: String(x.category ?? "menu"),
+          angle: String(x.angle ?? ""),
+          coupon: x.coupon === true ? true : undefined,
+        }))
+        .filter((a: AngleItem) => a.angle.trim().length > 0)
+    : [];
+  if (anglePool.length === 0) throw new Error("アングルが空でした");
+  return { salonInfo, anglePool };
 }
 
 const POST_SCHEMA = {
@@ -97,57 +213,71 @@ const POST_SCHEMA = {
   properties: {
     topic: {
       type: "string",
-      description: "この投稿の季節／トレンドのテーマ（短い日本語）",
+      description: "この投稿のテーマ（短い日本語）",
     },
     text: {
       type: "string",
       description:
-        "Threads投稿の本文。ハッシュタグは含めない。改行可。指定された目安文字数（30〜120字）に近づける。",
-    },
-    hashtags: {
-      type: "array",
-      items: { type: "string" },
-      description: "#を付けないハッシュタグ語のみ。ちょうど1個だけ（最も効果的なものを1つ）。",
+        "Threads投稿の本文。ハッシュタグは付けない。改行可。指定された目安文字数（30〜120字）に近づける。",
     },
   },
-  required: ["topic", "text", "hashtags"],
+  required: ["topic", "text"],
   additionalProperties: false,
 };
 
 /**
- * トレンド情報と過去投稿をもとに、集客投稿を1つ生成する。
+ * 素材（アングル＋任意のクーポン）から本文だけを高速生成する。
+ * Web検索なし・思考オフ・effort低でAPI費用を抑える。
  */
 export async function generatePost(
-  trendBrief: string,
+  angle: AngleItem,
+  coupon: Coupon | null,
   history: PostHistoryItem[],
   targetChars: number,
 ): Promise<GeneratedPost> {
   const recent =
     history
-      .slice(-10)
-      .map((h) => `- (${h.date.slice(0, 10)}) ${h.text.replace(/\n/g, " ").slice(0, 80)}`)
+      .slice(-6)
+      .map((h) => `- ${h.text.replace(/\n/g, " ").slice(0, 50)}`)
       .join("\n") || "（過去投稿はまだありません）";
 
+  const couponBlock = coupon
+    ? [
+        `# 今回紹介するクーポン（内容・価格は下記をそのまま正確に使う。割引額や条件の創作・改変は禁止）`,
+        `名称: ${coupon.name}`,
+        `内容: ${coupon.content}`,
+        `価格: ${coupon.price}`,
+        coupon.note ? `条件: ${coupon.note}` : "",
+        `この投稿では上記クーポンの内容と価格に自然に触れ、来店動機を高めてください。`,
+        ``,
+      ]
+        .filter(Boolean)
+        .join("\n")
+    : "";
+
   const user = [
-    `# 当店情報と今の季節・トレンド（リサーチ結果）`,
-    trendBrief,
+    `# この投稿のテーマ`,
+    `カテゴリ: ${angle.category}`,
+    `切り口: ${angle.angle}`,
     ``,
-    `# 直近の自分の投稿（内容や言い回しの繰り返しを避けること）`,
+    couponBlock,
+    `# 直近の自分の投稿（言い回しの繰り返しを避ける）`,
     recent,
     ``,
     `# 文字数の目安`,
-    `本文（ハッシュタグを除く）は約${targetChars}文字。30〜120字の範囲で、この目安に近づけてください。短い指定なら一言ぎゅっと、長い指定ならしっかり描写、とメリハリをつける。`,
+    `本文は約${targetChars}文字。30〜120字の範囲で、この目安に近づける。`,
     ``,
     `# 依頼`,
-    `上記の季節・トレンドを自然に取り入れ、今この瞬間に最も集客・予約につながるThreads投稿を1つ作成してください。`,
-  ].join("\n");
+    `上記の切り口で、まつげパーマ・眉毛WAXの集客につながるThreads投稿を1つ、信頼感のある美容の視点で作成してください。`,
+  ]
+    .filter((l) => l !== "")
+    .join("\n");
 
   const res = await client().messages.create({
     model: MODEL,
-    max_tokens: 3000,
-    thinking: { type: "adaptive" },
+    max_tokens: 700,
     output_config: {
-      effort: "high",
+      effort: "low",
       format: { type: "json_schema", schema: POST_SCHEMA },
     },
     system: buildPostSystemPrompt(),
@@ -161,26 +291,16 @@ export async function generatePost(
   } catch {
     throw new Error(`投稿生成結果のJSON解析に失敗しました: ${raw.slice(0, 200)}`);
   }
-  return {
-    topic: String(data.topic ?? ""),
-    text: String(data.text ?? ""),
-    hashtags: Array.isArray(data.hashtags) ? data.hashtags.map(String) : [],
-  };
+  return { topic: String(data.topic ?? angle.category), text: String(data.text ?? "") };
 }
 
-/** 本文とハッシュタグを結合し、最終的な投稿テキストを作る */
+/** 本文を整える（ハッシュタグは付けない／最大長ガード） */
 export function composePostText(post: GeneratedPost): string {
-  const tags = (post.hashtags ?? [])
-    .slice(0, 1)
-    .map((h) => "#" + String(h).replace(/^#/, "").trim().replace(/\s+/g, ""))
-    .filter((s) => s.length > 1);
-  const text = post.text.trim();
-  const tagLine = tags.join(" ");
-  let full = tagLine ? `${text}\n\n${tagLine}` : text;
-  if (full.length > brand.postRules.maxLength) {
-    full = text.length > brand.postRules.maxLength ? text.slice(0, brand.postRules.maxLength - 1) + "…" : text;
+  let text = post.text.trim();
+  if (text.length > brand.postRules.maxLength) {
+    text = text.slice(0, brand.postRules.maxLength - 1) + "…";
   }
-  return full;
+  return text;
 }
 
 /** コメントへのAI返信を生成する */
@@ -206,34 +326,54 @@ export async function generateReply(commentText: string): Promise<string | null>
   return text || null;
 }
 
+// ==========================================
+// システムプロンプト
+// ==========================================
+function buildPlanSystemPrompt(): string {
+  return [
+    `あなたは「${brand.name}」（${brand.area}の${brand.businessType}）の${brand.persona}です。`,
+    `美容に詳しく信頼感のある発信者として、まつげパーマ・眉毛WAXの集客を最大化する投稿素材を設計します。`,
+    ``,
+    `## 目的`,
+    brand.goal,
+    `## 提供メニュー`,
+    brand.services.map((s) => `- ${s}`).join("\n"),
+    `## 方針`,
+    `- ${brand.contentMix}`,
+    `- 各アングルは「まつげパーマ・眉毛WAXに興味を持ち、予約したくなる」ことを狙う。`,
+    `- 正しい美容知識・お悩み解決・ケアのコツなどで信頼感を高める。`,
+    `- クーポンは確認できたもののみ。価格・内容を創作しない。`,
+    ``,
+    `## 禁止事項（厳守）`,
+    ...brand.prohibitions.map((p) => `- ${p}`),
+  ].join("\n");
+}
+
 function buildPostSystemPrompt(): string {
   const r = brand.postRules;
   return [
     `あなたは「${brand.name}」（${brand.area}の${brand.businessType}）の${brand.persona}です。`,
-    `Threads（テキスト中心のSNS）で、見込み客の興味を引き来店・予約につなげる集客投稿を作成します。`,
+    `美容に詳しく信頼感のある発信者として、まつげパーマ・眉毛WAXの集客につながるThreads投稿を作成します。`,
     ``,
+    `## 目的`,
+    brand.goal,
     `## ターゲット`,
     brand.audience,
     `## トーン`,
     brand.toneOfVoice,
     `## 提供メニュー`,
     brand.services.map((s) => `- ${s}`).join("\n"),
-    `（公式情報: ${brand.sourceUrl}）`,
     ``,
     `## 投稿の条件`,
-    `- リサーチ結果に当店の公式情報（メニュー・特徴など）が含まれる場合は、それを正確な事実として最優先で使う。事実が確認できない内容は断定しない。`,
-    `- 日本語。本文の長さはリクエストで指定された目安文字数（${r.targetLength}）に合わせ、毎回ばらつかせる。最大${r.maxLength}文字。`,
-    `- 冒頭の1行で必ず読み手の興味・共感を引く（フックを作る）。`,
-    `- 今の季節・トレンドを自然に絡め、「今行きたい／予約したい」と思わせる。`,
-    `- 共感 → 価値（メニューの魅力やお悩み解決）→ 行動喚起(CTA) の流れを意識する。`,
+    `- 日本語。本文の長さは指定された目安文字数（${r.targetLength}）に合わせ、毎回ばらつかせる。最大${r.maxLength}文字。`,
+    `- 冒頭で読み手の興味・共感を引く。`,
+    `- 共感 → 価値（メニューの魅力・お悩み解決・信頼感のある美容知識）→ 自然な行動喚起 の流れを意識。`,
     `- CTAは押し付けず自然に: ${brand.cta}`,
     `- 絵文字は${r.emoji}。`,
-    `- ハッシュタグは本文に含めず hashtags 配列に${r.hashtagCount}入れる（地域名＋メニュー名を含めると効果的。例: ${r.baseHashtags.join(
-      ", ",
-    )}）。`,
+    `- ハッシュタグは付けない（本文にも入れない）。`,
+    `- クーポンに触れる場合は、与えられた内容・価格・条件のみを使い、絶対に創作・改変しない。`,
     `- AIが書いたと分からない、人間味のある自然な文章にする。テンプレ感・宣伝臭は避ける。`,
     `- ${brand.compliance}`,
-    `- 直近の投稿と内容や言い回しが被らないようにする。`,
     ``,
     `## 禁止事項（厳守）`,
     ...brand.prohibitions.map((p) => `- ${p}`),

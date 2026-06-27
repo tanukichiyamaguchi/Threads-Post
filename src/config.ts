@@ -9,6 +9,10 @@ export const paths = {
   root,
   state: path.join(root, "state"),
   brand: path.join(root, "config", "brand.json"),
+  // 2週に1回のリサーチで生成される素材（アングル集＋リサーチ由来の店舗情報）
+  contentPlan: path.join(root, "state", "content-plan.json"),
+  // 手動メンテのクーポン（正確な価格・内容。あればリサーチ結果より優先）
+  coupons: path.join(root, "config", "coupons.json"),
 };
 
 export interface Brand {
@@ -21,13 +25,14 @@ export interface Brand {
   toneOfVoice: string;
   services: string[];
   cta: string;
+  goal: string;
+  contentMix: string;
   prohibitions: string[];
   postRules: {
     maxLength: number;
     targetLength: string;
     emoji: string;
-    hashtagCount: string;
-    baseHashtags: string[];
+    useHashtags: boolean;
   };
   replyRules: {
     maxLength: number;

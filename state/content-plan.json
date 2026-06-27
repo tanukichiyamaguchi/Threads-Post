@@ -1,0 +1,50 @@
+{
+  "updated": "初期素材（research未実行）",
+  "salonInfo": {
+    "concept": "蒲田西口の、まつげパーマと眉毛WAXの専門店。美容に詳しいスタッフが、なりたい目元・眉を丁寧に提案。",
+    "menu": [
+      "まつげパーマ（ラッシュリフト／パリジェンヌラッシュリフト）",
+      "眉毛WAX（ワックス脱毛）・眉スタイリング"
+    ],
+    "accessHours": "",
+    "coupons": []
+  },
+  "anglePool": [
+    { "category": "menu", "angle": "まつげパーマで『すっぴんでも目力が出る』理由を、ビフォーアフターが想像できるように伝える" },
+    { "category": "menu", "angle": "マスカラ・ビューラー卒業で朝のメイクが時短になる価値を具体的に伝える" },
+    { "category": "menu", "angle": "下向き・直毛まつげの悩みが、まつげパーマでどう変わるかを語る" },
+    { "category": "menu", "angle": "まつげパーマの持ちの目安（個人差あり）と、長持ちさせる毎日のコツ" },
+    { "category": "menu", "angle": "ラッシュリフトとパリジェンヌラッシュリフトの違いを分かりやすく、選び方の目安を示す" },
+    { "category": "menu", "angle": "一重・奥二重さんにこそまつげパーマが似合う理由を伝える" },
+    { "category": "menu", "angle": "まつげパーマ＋眉毛WAXのセットで顔印象が整う相乗効果を語る", "coupon": true },
+    { "category": "menu", "angle": "眉毛WAXで『自分では難しい眉の形』がプロの手でどう整うかを伝える" },
+    { "category": "menu", "angle": "眉を整えるだけで顔の印象・清潔感がどれだけ変わるかを語る" },
+    { "category": "menu", "angle": "自己流の眉処理（剃りすぎ・抜きすぎ）のリスクと、WAXの利点を伝える" },
+    { "category": "menu", "angle": "眉毛WAXの仕上がりの持ちと、生えそろうまでの通い方の目安" },
+    { "category": "menu", "angle": "眉メイクが苦手な人ほど眉毛WAXで『メイクが楽になる』話" },
+    { "category": "tips", "angle": "まつげ・眉のセルフケア（クレンジングや保湿）でやりがちなNGを優しく指摘" },
+    { "category": "tips", "angle": "まつげパーマ後の当日の過ごし方・触り方の注意を、信頼感を持って伝える" },
+    { "category": "tips", "angle": "梅雨〜夏の汗・湿気でメイクが崩れやすい時期の、目元対策のコツ" },
+    { "category": "tips", "angle": "まつげのコシ・健康のために日常でできる小さな習慣を紹介" },
+    { "category": "tips", "angle": "眉の黄金比・なりたい印象別の眉デザインの考え方を分かりやすく" },
+    { "category": "tips", "angle": "敏感肌・初めての人が施術前に知っておくと安心なポイント" },
+    { "category": "tips", "angle": "季節で変わる『なりたい目元』の提案（夏は涼やか・抜け感）" },
+    { "category": "season", "angle": "梅雨のジメジメでもキープできる、手間いらずの目元の作り方" },
+    { "category": "season", "angle": "これからの夏イベント（花火・海・旅行）前に整えておきたい目元と眉" },
+    { "category": "season", "angle": "汗をかいてもパンダ目になりにくい、まつげパーマの夏メリット" },
+    { "category": "season", "angle": "夏の薄メイク・ナチュラル志向に、まつげパーマがハマる理由" },
+    { "category": "season", "angle": "梅雨の湿気でうねる眉も、WAXで形が決まると一日ラクになる話" },
+    { "category": "season", "angle": "夏の予定が決まったら早めの予約がおすすめ、という自然な後押し" },
+    { "category": "trust", "angle": "『まつげパーマは目元に負担？』という疑問に、プロ目線で誠実に答える" },
+    { "category": "trust", "angle": "カウンセリングで『なりたい雰囲気』を一緒に決めていく価値を伝える" },
+    { "category": "trust", "angle": "通うほど分かる、自分に似合うまつげ・眉の見つけ方" },
+    { "category": "trust", "angle": "リピーターさんが続ける理由（手入れが楽・印象が良い）を等身大で語る" },
+    { "category": "trust", "angle": "施術中のリラックス時間そのものが、自分を整える時間という価値" },
+    { "category": "trust", "angle": "初回の人が抱きやすい不安をやわらげる、寄り添う一言" },
+    { "category": "menu", "angle": "初めての方が、まつげパーマを気軽に試せる魅力を伝える", "coupon": true },
+    { "category": "menu", "angle": "まつげパーマ＋眉毛WAXのセットのお得感・効率の良さを伝える", "coupon": true },
+    { "category": "menu", "angle": "平日や時間帯を活かして通いやすさを訴求する", "coupon": true },
+    { "category": "trust", "angle": "続けやすさ・リピートしやすさを後押しする内容", "coupon": true },
+    { "category": "tips", "angle": "まつげパーマと眉の形を合わせると、垢抜けて見える理由を解説" }
+  ]
+}
