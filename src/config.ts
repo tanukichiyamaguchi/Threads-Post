@@ -15,11 +15,13 @@ export interface Brand {
   name: string;
   businessType: string;
   area: string;
+  sourceUrl: string;
   audience: string;
   persona: string;
   toneOfVoice: string;
   services: string[];
   cta: string;
+  prohibitions: string[];
   postRules: {
     maxLength: number;
     targetLength: string;

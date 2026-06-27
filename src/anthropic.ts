@@ -2,7 +2,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { brand } from "./config";
 import type { PostHistoryItem } from "./state";
 
-const MODEL = "claude-opus-4-8";
+const MODEL = "claude-sonnet-4-6";
 
 let _client: Anthropic | null = null;
 function client(): Anthropic {
@@ -31,21 +31,31 @@ export interface GeneratedPost {
 export async function researchTrends(today: string): Promise<string> {
   const system =
     "あなたは日本の美容業界に詳しい集客マーケティングのリサーチャーです。" +
-    "指定された店舗の集客SNS投稿に役立つ「今この時期ならではの切り口」を、" +
-    "信頼できる最新情報をWeb検索で確認した上でまとめます。";
+    "まず指定された店舗の公式情報を確認し、その上で集客SNS投稿に役立つ" +
+    "「今この時期ならではの切り口」を、信頼できる最新情報をもとにまとめます。";
 
   const user = [
     `本日: ${today}（日本・東京）。`,
     `店舗: ${brand.name}（${brand.area}の${brand.businessType}）。`,
-    `ターゲット: ${brand.audience}`,
+    `公式ページ（最優先の事実ソース）: ${brand.sourceUrl}`,
     ``,
-    `Web検索を使って今の時期に関連する次の情報を確認し、集客投稿に使えるネタを箇条書きで5〜8個にまとめてください。`,
+    `# 手順1: 当店の正確な情報を確認`,
+    `公式ページ ${brand.sourceUrl} を web_fetch で取得し、取得できない（ブロック等）場合は`,
+    `「${brand.name} 蒲田 まつげパーマ 眉毛WAX」等で web_search して、`,
+    `当店の実際のメニュー・コンセプト・強み・特徴を把握してください。`,
+    `※当店はまつげパーマと眉毛WAXの専門店です。まつげエクステ（まつエク）は提供していません。`,
+    ``,
+    `# 手順2: 今の季節・トレンドを調査`,
+    `web_search で次を確認してください。`,
     `- 季節・天候・気温の話題（今の時期ならではの悩みや気分）`,
     `- 直近〜今後2週間程度のイベント／行事／連休／記念日`,
-    `- 美容・まつげ・アイメイク関連の流行やトレンド`,
+    `- まつげパーマ・眉毛・アイメイク関連の流行やトレンド`,
     `- 蒲田・大田区エリアならではの話題があれば`,
     ``,
-    `各項目は「切り口＋なぜ今その人に刺さるか」を1〜2行で。投稿文そのものは書かなくて構いません。`,
+    `# 出力`,
+    `次の2部構成でまとめてください（投稿文そのものは書かない）。`,
+    `(A) 確認した当店の情報の要点（メニュー・特徴・強み・アクセス等。確認できた事実のみ）`,
+    `(B) 今の季節・トレンドの切り口を5〜8個（各1〜2行で「切り口＋なぜ今その人に刺さるか」）`,
   ].join("\n");
 
   const stream = client().messages.stream({
@@ -65,6 +75,12 @@ export async function researchTrends(today: string): Promise<string> {
           city: "Tokyo",
           timezone: "Asia/Tokyo",
         },
+      },
+      {
+        type: "web_fetch_20260209",
+        name: "web_fetch",
+        max_uses: 3,
+        allowed_domains: ["beauty.hotpepper.jp"],
       },
     ],
     system,
@@ -90,7 +106,7 @@ const POST_SCHEMA = {
     hashtags: {
       type: "array",
       items: { type: "string" },
-      description: "#を付けないハッシュタグ語のみ。3〜5個。",
+      description: "#を付けないハッシュタグ語のみ。ちょうど1個だけ（最も効果的なものを1つ）。",
     },
   },
   required: ["topic", "text", "hashtags"],
@@ -111,7 +127,7 @@ export async function generatePost(
       .join("\n") || "（過去投稿はまだありません）";
 
   const user = [
-    `# 今の季節・トレンド情報`,
+    `# 当店情報と今の季節・トレンド（リサーチ結果）`,
     trendBrief,
     ``,
     `# 直近の自分の投稿（内容や言い回しの繰り返しを避けること）`,
@@ -150,7 +166,7 @@ export async function generatePost(
 /** 本文とハッシュタグを結合し、最終的な投稿テキストを作る */
 export function composePostText(post: GeneratedPost): string {
   const tags = (post.hashtags ?? [])
-    .slice(0, 5)
+    .slice(0, 1)
     .map((h) => "#" + String(h).replace(/^#/, "").trim().replace(/\s+/g, ""))
     .filter((s) => s.length > 1);
   const text = post.text.trim();
@@ -197,8 +213,10 @@ function buildPostSystemPrompt(): string {
     brand.toneOfVoice,
     `## 提供メニュー`,
     brand.services.map((s) => `- ${s}`).join("\n"),
+    `（公式情報: ${brand.sourceUrl}）`,
     ``,
     `## 投稿の条件`,
+    `- リサーチ結果に当店の公式情報（メニュー・特徴など）が含まれる場合は、それを正確な事実として最優先で使う。事実が確認できない内容は断定しない。`,
     `- 日本語。文字数の目安は${r.targetLength}（最大${r.maxLength}文字）。`,
     `- 冒頭の1行で必ず読み手の興味・共感を引く（フックを作る）。`,
     `- 今の季節・トレンドを自然に絡め、「今行きたい／予約したい」と思わせる。`,
@@ -211,6 +229,9 @@ function buildPostSystemPrompt(): string {
     `- AIが書いたと分からない、人間味のある自然な文章にする。テンプレ感・宣伝臭は避ける。`,
     `- ${brand.compliance}`,
     `- 直近の投稿と内容や言い回しが被らないようにする。`,
+    ``,
+    `## 禁止事項（厳守）`,
+    ...brand.prohibitions.map((p) => `- ${p}`),
   ].join("\n");
 }
 
@@ -227,5 +248,8 @@ function buildReplySystemPrompt(): string {
     `- ${r.maxLength}文字以内。`,
     `- 絶対にAIだと分からないようにする。定型文っぽさを避ける。`,
     `- 返信本文のみを出力する（説明や引用符は不要）。`,
+    ``,
+    `## 禁止事項（厳守）`,
+    ...brand.prohibitions.map((p) => `- ${p}`),
   ].join("\n");
 }

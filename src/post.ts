@@ -16,7 +16,7 @@ async function main(): Promise<void> {
   env.anthropicApiKey();
   const client = new ThreadsClient(env.threadsUserId(), env.threadsToken());
 
-  log("季節・トレンドをWeb検索でリサーチ中...");
+  log("公式情報の確認と季節・トレンドをリサーチ中...");
   const brief = await researchTrends(today);
   log("リサーチ結果:\n" + brief);
 
