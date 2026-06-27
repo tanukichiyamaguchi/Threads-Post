@@ -218,7 +218,7 @@ const POST_SCHEMA = {
     text: {
       type: "string",
       description:
-        "Threads投稿の本文。ハッシュタグは付けない。改行可。指定された目安文字数（30〜120字）に近づける。",
+        "Threads投稿の本文。ハッシュタグは付けない。スマホで読みやすいよう、1文ごと・意味のまとまりごとに改行し（\\n）、適度に空行も入れて余白を作る。指定された目安文字数（30〜120字）に近づける。",
     },
   },
   required: ["topic", "text"],
@@ -294,9 +294,16 @@ export async function generatePost(
   return { topic: String(data.topic ?? angle.category), text: String(data.text ?? "") };
 }
 
-/** 本文を整える（ハッシュタグは付けない／最大長ガード） */
+/** 改行が無い場合に、文の区切りで改行を入れて視認性を上げる（保険） */
+function ensureLineBreaks(text: string): string {
+  if (text.includes("\n")) return text; // モデルが改行済みならそのまま尊重
+  // 文末記号（。！？!?）の後で改行（直後が閉じ括弧/空白の場合は除く）
+  return text.replace(/([。！？!?])(?=[^\s」』）)】｝])/g, "$1\n");
+}
+
+/** 本文を整える（ハッシュタグは付けない／改行の確保／最大長ガード） */
 export function composePostText(post: GeneratedPost): string {
-  let text = post.text.trim();
+  let text = ensureLineBreaks(post.text.trim());
   if (text.length > brand.postRules.maxLength) {
     text = text.slice(0, brand.postRules.maxLength - 1) + "…";
   }
@@ -366,6 +373,7 @@ function buildPostSystemPrompt(): string {
     ``,
     `## 投稿の条件`,
     `- 日本語。本文の長さは指定された目安文字数（${r.targetLength}）に合わせ、毎回ばらつかせる。最大${r.maxLength}文字。`,
+    `- 視認性を最優先に、改行を適切に入れる。1文ごと、または意味のまとまりごとに改行し、適度に空行で余白を作る。1行は長くしすぎない（目安20〜30文字以内）。ただし不自然な分割はしない。`,
     `- 冒頭で読み手の興味・共感を引く。`,
     `- 共感 → 価値（メニューの魅力・お悩み解決・信頼感のある美容知識）→ 自然な行動喚起 の流れを意識。`,
     `- CTAは押し付けず自然に: ${brand.cta}`,
