@@ -1,0 +1,33 @@
+name: Threads トークン更新
+
+on:
+  schedule:
+    # 毎週月曜 00:00 UTC（長期トークンの失効を防ぐ）
+    - cron: "0 0 * * 1"
+  workflow_dispatch: {}
+
+concurrency:
+  group: threads-refresh-token
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: アクセストークンを更新
+        run: npm run refresh-token
+        env:
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          # GH_PAT を設定するとシークレット THREADS_ACCESS_TOKEN を自動更新します。
+          # 未設定の場合は更新のみ行い、自動反映はスキップします。
+          GH_PAT: ${{ secrets.GH_PAT }}

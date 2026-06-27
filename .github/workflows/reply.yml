@@ -1,0 +1,39 @@
+name: Threads AI返信
+
+on:
+  schedule:
+    # 30分ごとにコメントをチェックして返信
+    - cron: "*/30 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: threads-reply
+  cancel-in-progress: false
+
+jobs:
+  reply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: コメントへAI返信
+        run: npm run reply
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          THREADS_USERNAME: ${{ secrets.THREADS_USERNAME }}
+
+      - name: 返信履歴をコミット
+        if: always()
+        run: bash .github/scripts/commit-state.sh "chore: 返信履歴を更新 [skip ci]"

@@ -1,0 +1,40 @@
+name: Threads 自動投稿
+
+on:
+  schedule:
+    # UTC基準。10:00 / 18:00 JST に投稿（JST = UTC+9）
+    - cron: "0 1 * * *"
+    - cron: "0 9 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: threads-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: 投稿を生成して公開
+        run: npm run post
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          THREADS_USERNAME: ${{ secrets.THREADS_USERNAME }}
+
+      - name: 投稿履歴をコミット
+        if: always()
+        run: bash .github/scripts/commit-state.sh "chore: 投稿履歴を更新 [skip ci]"
