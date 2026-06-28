@@ -14,6 +14,7 @@ import {
   fmtMin,
   pickTargetChars,
   ctaOrdinal,
+  shouldMentionKamata,
 } from "./schedule";
 import { log, error } from "./logger";
 
@@ -83,9 +84,18 @@ async function main(): Promise<void> {
       (coupon ? ` / クーポン: ${coupon.name}（${coupon.price}）` : ""),
   );
 
+  const mentionKamata = shouldMentionKamata(now.seed, slotIndex);
+
   const history = loadPostHistory();
   log("投稿文を生成中...");
-  const post = await generatePost(angle, coupon, history, targetChars, includeCta);
+  const post = await generatePost(
+    angle,
+    coupon,
+    history,
+    targetChars,
+    includeCta,
+    mentionKamata,
+  );
   const finalText = composePostText(post);
   log(`生成された投稿 (${finalText.length}文字 / テーマ: ${post.topic}):\n${finalText}`);
 

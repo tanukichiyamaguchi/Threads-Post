@@ -107,10 +107,29 @@ export function fmtMin(m: number): string {
   return `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
 }
 
-/** 30〜120文字の範囲で、投稿ごとに目安文字数をばらつかせる（seedで日替わり・slotで投稿ごとに変化） */
+/** 30〜150文字の範囲で、投稿ごとに目安文字数をばらつかせる（seedで日替わり・slotで投稿ごとに変化） */
 export function pickTargetChars(seed: number, slotIndex: number): number {
   const rng = mulberry32((seed + (slotIndex + 1) * 7919) >>> 0);
-  return 30 + Math.floor(rng() * 91); // 30〜120
+  return 30 + Math.floor(rng() * 121); // 30〜150
+}
+
+/**
+ * その投稿で「蒲田／大田区」に言及するか。
+ * 1日のスロットのちょうど約6割を決定的に選ぶ（毎日メンバーは変動）。
+ */
+export function shouldMentionKamata(
+  seed: number,
+  slotIndex: number,
+  totalSlots: number = POSTS_PER_DAY,
+): boolean {
+  const idx = Array.from({ length: totalSlots }, (_, i) => i);
+  const rng = mulberry32((seed ^ 0x5f3a9c7b) >>> 0);
+  for (let i = totalSlots - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [idx[i], idx[j]] = [idx[j], idx[i]];
+  }
+  const count = Math.round(totalSlots * 0.6); // 約6割
+  return idx.slice(0, count).includes(slotIndex);
 }
 
 /**
