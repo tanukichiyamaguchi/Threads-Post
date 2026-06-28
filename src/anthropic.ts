@@ -234,6 +234,7 @@ export async function generatePost(
   coupon: Coupon | null,
   history: PostHistoryItem[],
   targetChars: number,
+  includeCta: boolean,
 ): Promise<GeneratedPost> {
   const recent =
     history
@@ -248,12 +249,16 @@ export async function generatePost(
         `内容: ${coupon.content}`,
         `価格: ${coupon.price}`,
         coupon.note ? `条件: ${coupon.note}` : "",
-        `この投稿では上記クーポンの内容と価格に自然に触れ、来店動機を高めてください。`,
+        `この投稿では上記クーポンの内容と価格に自然に触れてください。`,
         ``,
       ]
         .filter(Boolean)
         .join("\n")
     : "";
+
+  const ctaBlock = includeCta
+    ? `# 予約導線\nこの投稿の最後に、押し付けず自然に予約導線を入れる: ${brand.cta}`
+    : `# 予約導線\nこの投稿では予約の呼びかけ（「ご予約」「プロフィールのリンクから」等）は入れない。価値提供・共感に徹し、自然に締める。`;
 
   const user = [
     `# この投稿のテーマ`,
@@ -261,6 +266,8 @@ export async function generatePost(
     `切り口: ${angle.angle}`,
     ``,
     couponBlock,
+    ctaBlock,
+    ``,
     `# 直近の自分の投稿（言い回しの繰り返しを避ける）`,
     recent,
     ``,
@@ -375,8 +382,8 @@ function buildPostSystemPrompt(): string {
     `- 日本語。本文の長さは指定された目安文字数（${r.targetLength}）に合わせ、毎回ばらつかせる。最大${r.maxLength}文字。`,
     `- 視認性を最優先に、改行を適切に入れる。1文ごと、または意味のまとまりごとに改行し、適度に空行で余白を作る。1行は長くしすぎない（目安20〜30文字以内）。ただし不自然な分割はしない。`,
     `- 冒頭で読み手の興味・共感を引く。`,
-    `- 共感 → 価値（メニューの魅力・お悩み解決・信頼感のある美容知識）→ 自然な行動喚起 の流れを意識。`,
-    `- CTAは押し付けず自然に: ${brand.cta}`,
+    `- 共感 → 価値（メニューの魅力・お悩み解決・信頼感のある美容知識）→（予約導線の指示がある場合のみ）自然な行動喚起 の流れを意識。`,
+    `- 予約導線は別途指示に従う（毎回は入れない。指示がなければ予約の呼びかけはしない）。`,
     `- 絵文字は${r.emoji}。`,
     `- ハッシュタグは付けない（本文にも入れない）。`,
     `- クーポンに触れる場合は、与えられた内容・価格・条件のみを使い、絶対に創作・改変しない。`,

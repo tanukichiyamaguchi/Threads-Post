@@ -112,3 +112,11 @@ export function pickTargetChars(seed: number, slotIndex: number): number {
   const rng = mulberry32((seed + (slotIndex + 1) * 7919) >>> 0);
   return 30 + Math.floor(rng() * 91); // 30〜120
 }
+
+/**
+ * 予約導線（プロフィールから）を入れる「その日の通算何件目の投稿か」を返す。
+ * 1日1回だけCTAを入れるための番号。視認性の高い夜にあたる20〜25件目に置く。
+ */
+export function ctaOrdinal(seed: number): number {
+  return 20 + (seed % 6); // 20〜25件目
+}

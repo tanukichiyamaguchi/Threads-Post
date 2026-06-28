@@ -8,7 +8,13 @@ import {
   saveScheduleState,
 } from "./state";
 import { loadContentPlan, pickAngle, pickCoupon } from "./content";
-import { computeDailySlots, currentJst, fmtMin, pickTargetChars } from "./schedule";
+import {
+  computeDailySlots,
+  currentJst,
+  fmtMin,
+  pickTargetChars,
+  ctaOrdinal,
+} from "./schedule";
 import { log, error } from "./logger";
 
 async function main(): Promise<void> {
@@ -25,6 +31,7 @@ async function main(): Promise<void> {
 
   // forceでない場合は「その日の投稿予定スロット」が来たときだけ投稿する
   let slotIndex = now.minuteOfDay; // force時のばらつき用シード
+  let includeCta = force; // 予約導線を入れるか（手動投稿は確認のため入れる）
   if (!force) {
     const slots = computeDailySlots(now.seed);
     let st = loadScheduleState();
@@ -51,8 +58,11 @@ async function main(): Promise<void> {
     st.fired.push(dueIndex);
     saveScheduleState(st);
     slotIndex = dueIndex;
+    // 予約導線は1日1回だけ（通算 ctaOrdinal 件目の投稿）
+    includeCta = st.fired.length === ctaOrdinal(now.seed);
     log(
-      `投稿スロット ${dueIndex + 1}/${slots.length}（予定 ${fmtMin(slots[dueIndex])} JST）を実行します。`,
+      `投稿スロット ${dueIndex + 1}/${slots.length}（予定 ${fmtMin(slots[dueIndex])} JST / ` +
+        `本日${st.fired.length}件目${includeCta ? " ★予約CTAあり" : ""}）を実行します。`,
     );
   } else {
     log("FORCE_POST 指定: スケジュールを無視して今すぐ投稿します。");
@@ -75,7 +85,7 @@ async function main(): Promise<void> {
 
   const history = loadPostHistory();
   log("投稿文を生成中...");
-  const post = await generatePost(angle, coupon, history, targetChars);
+  const post = await generatePost(angle, coupon, history, targetChars, includeCta);
   const finalText = composePostText(post);
   log(`生成された投稿 (${finalText.length}文字 / テーマ: ${post.topic}):\n${finalText}`);
 
