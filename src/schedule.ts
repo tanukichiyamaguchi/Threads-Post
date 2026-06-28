@@ -107,10 +107,10 @@ export function fmtMin(m: number): string {
   return `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
 }
 
-/** 30〜150文字の範囲で、投稿ごとに目安文字数をばらつかせる（seedで日替わり・slotで投稿ごとに変化） */
+/** 投稿ごとに目安文字数をばらつかせる（上限120字に対し余裕を持たせ30〜110字を狙う） */
 export function pickTargetChars(seed: number, slotIndex: number): number {
   const rng = mulberry32((seed + (slotIndex + 1) * 7919) >>> 0);
-  return 30 + Math.floor(rng() * 121); // 30〜150
+  return 30 + Math.floor(rng() * 81); // 30〜110
 }
 
 /**

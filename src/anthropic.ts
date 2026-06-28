@@ -232,7 +232,7 @@ const POST_SCHEMA = {
     text: {
       type: "string",
       description:
-        "Threads投稿の本文。ハッシュタグは付けない。抜け感のあるトーンで句点（。）はできるだけ省く。冒頭1〜2行で手を止めさせ、末尾は必ず返信したくなる問いかけで締める。スマホで読みやすいよう意味のまとまりごとに改行し（\\n）、適度に空行も入れて余白を作る。最大150字、指定された目安文字数（30〜150字）に近づける。",
+        "Threads投稿の本文。ハッシュタグは付けない。「」『』や\"\"''などの括弧・引用符は使わない。抜け感のあるトーンで句点（。）はできるだけ省く。冒頭1〜2行で手を止めさせ、末尾は必ず返信したくなる問いかけで締める。スマホで読みやすいよう意味のまとまりごとに改行し（\\n）、適度に空行も入れて余白を作る。問いかけや予約導線も含めて必ず120字以内（30〜120字でばらつかせる）。",
     },
   },
   required: ["topic", "text"],
@@ -281,8 +281,8 @@ export async function generatePost(
     : "";
 
   const ctaBlock = includeCta
-    ? `# 予約導線\n本文中に予約導線を自然に1回だけ入れる（押し付けない）: ${brand.cta}\nただし最後の一文は予約の呼びかけではなく、返信したくなる問いかけにする。`
-    : `# 予約導線\nこの投稿では予約の呼びかけ（「ご予約」「プロフィールのリンクから」等）は入れない。価値提供・共感に徹する。`;
+    ? `# 予約導線\n本文中に予約導線を自然に短く1回だけ入れる（押し付けない）: ${brand.cta}\nただし最後の一文は予約の呼びかけではなく、返信したくなる問いかけにする。全体で120字を超えないよう簡潔に。`
+    : `# 予約導線\nこの投稿では予約の呼びかけ（ご予約・プロフィールのリンク等）は入れない。価値提供・共感に徹する。`;
 
   const kamataBlock = mentionKamata
     ? `# 蒲田の言及\n本文に「蒲田」（または大田区）を自然に1回入れる。`
@@ -302,7 +302,7 @@ export async function generatePost(
     recent,
     ``,
     `# 文字数の目安`,
-    `本文は約${targetChars}文字。30〜150字の範囲で、この目安に近づける（最大150字）。`,
+    `本文は約${targetChars}文字。問いかけ・予約導線も含めて必ず120字以内に収める（30〜120字でばらつかせ、120字を超えない）。`,
     ``,
     `# 依頼`,
     `上記の切り口で、まつげパーマ・眉毛WAXの集客につながるThreads投稿を1つ、信頼感のある美容の視点で作成してください。`,
@@ -335,17 +335,34 @@ export async function generatePost(
 /** 改行が無い場合に、文の区切りで改行を入れて視認性を上げる（保険） */
 function ensureLineBreaks(text: string): string {
   if (text.includes("\n")) return text; // モデルが改行済みならそのまま尊重
-  // 文末記号（。！？!?）の後で改行（直後が閉じ括弧/空白の場合は除く）
-  return text.replace(/([。！？!?])(?=[^\s」』）)】｝])/g, "$1\n");
+  // 文末記号（。！？!?）の後で改行（直後が空白の場合は除く）
+  return text.replace(/([。！？!?])(?=[^\s])/g, "$1\n");
 }
 
-/** 本文を整える（ハッシュタグは付けない／改行の確保／最大長ガード） */
+/** 上限超過時は、途中で切れないよう文末/改行の区切りで切り詰める（「…」は付けない） */
+function clampLength(text: string, max: number): string {
+  if (text.length <= max) return text;
+  const slice = text.slice(0, max);
+  const boundary = Math.max(
+    slice.lastIndexOf("\n"),
+    slice.lastIndexOf("？"),
+    slice.lastIndexOf("?"),
+    slice.lastIndexOf("。"),
+    slice.lastIndexOf("！"),
+    slice.lastIndexOf("!"),
+  );
+  return (boundary >= Math.floor(max * 0.5) ? slice.slice(0, boundary + 1) : slice).trim();
+}
+
+/** 括弧・引用符（「」『』“”‘’""''）を取り除く */
+function stripBrackets(text: string): string {
+  return text.replace(/[「」『』“”‘’"']/g, "");
+}
+
+/** 本文を整える（括弧・引用符の除去／ハッシュタグなし／改行の確保／途中で切れない上限ガード） */
 export function composePostText(post: GeneratedPost): string {
-  let text = ensureLineBreaks(post.text.trim());
-  if (text.length > brand.postRules.maxLength) {
-    text = text.slice(0, brand.postRules.maxLength - 1) + "…";
-  }
-  return text;
+  const text = ensureLineBreaks(stripBrackets(post.text.trim()));
+  return clampLength(text, brand.postRules.maxLength);
 }
 
 /** コメントへのAI返信を生成する */
@@ -415,7 +432,8 @@ function buildPostSystemPrompt(): string {
     brand.localContext,
     ``,
     `## 投稿の条件`,
-    `- 日本語。本文の長さは指定された目安文字数（${r.targetLength}）に合わせ、毎回ばらつかせる。最大${r.maxLength}文字。`,
+    `- 日本語。本文の長さは指定された目安文字数（${r.targetLength}）に合わせ、毎回ばらつかせる。問いかけ・予約導線を含めて最大${r.maxLength}文字を厳守（超えない・途中で切らない）。`,
+    `- 「」『』や""''などの括弧・引用符は使わない。`,
     `- 抜け感のあるトーン。句点（。）はあえて省き、宣伝感を出さない。`,
     `- 冒頭1〜2行で手を止めさせる。結論や共感を誘う問いから始め、続きを読みたいと思わせる。`,
     `- 末尾は必ず、返信したくなる問いかけで締める（会話が続く投稿ほど拡散されるため）。具体的で答えやすい問いにする。`,
