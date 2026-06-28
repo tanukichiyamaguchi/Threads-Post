@@ -95,6 +95,7 @@ async function main(): Promise<void> {
     targetChars,
     includeCta,
     mentionKamata,
+    plan.salonInfo,
   );
   const finalText = composePostText(post);
   log(`生成された投稿 (${finalText.length}文字 / テーマ: ${post.topic}):\n${finalText}`);

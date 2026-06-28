@@ -18,14 +18,16 @@ export interface AngleItem {
   coupon?: boolean; // クーポン紹介に向くアングルなら true
 }
 
+export interface SalonInfo {
+  concept?: string;
+  menu?: string[];
+  accessHours?: string;
+  coupons: Coupon[];
+}
+
 export interface ContentPlan {
   updated: string;
-  salonInfo: {
-    concept?: string;
-    menu?: string[];
-    accessHours?: string;
-    coupons: Coupon[];
-  };
+  salonInfo: SalonInfo;
   anglePool: AngleItem[];
 }
 
@@ -89,15 +91,14 @@ export function pickAngle(plan: ContentPlan, seed: number, slotIndex: number): A
 
 /** クーポンに触れるべき投稿なら、紹介するクーポンを1件返す（なければ null） */
 export function pickCoupon(
-  plan: ContentPlan,
-  angle: AngleItem,
+  _plan: ContentPlan,
+  _angle: AngleItem,
   seed: number,
   slotIndex: number,
 ): Coupon | null {
-  const coupons = plan.salonInfo?.coupons ?? [];
+  const coupons = _plan.salonInfo?.coupons ?? [];
   if (!coupons.length) return null;
-  // クーポン向きアングル、または約3投稿に1回クーポンに触れる
-  const want = angle.coupon === true || slotIndex % 3 === 0;
-  if (!want) return null;
+  // 宣伝感を抑えるため約4投稿に1回だけクーポンに触れる
+  if (slotIndex % 4 !== 0) return null;
   return coupons[(slotIndex + seed) % coupons.length];
 }

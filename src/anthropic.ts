@@ -1,7 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { brand } from "./config";
 import type { PostHistoryItem } from "./state";
-import type { AngleItem, Coupon, ContentPlan } from "./content";
+import type { AngleItem, Coupon, ContentPlan, SalonInfo } from "./content";
 
 const MODEL = "claude-sonnet-4-6";
 
@@ -250,6 +250,7 @@ export async function generatePost(
   targetChars: number,
   includeCta: boolean,
   mentionKamata: boolean,
+  salonInfo?: SalonInfo,
 ): Promise<GeneratedPost> {
   const recent =
     history
@@ -265,10 +266,18 @@ export async function generatePost(
         `価格: ${coupon.price}`,
         coupon.note ? `条件: ${coupon.note}` : "",
         `この投稿では上記クーポンの内容と価格に自然に触れてください。`,
+        `対象・条件（例：新規／初回限定／平日限定）も必ず明記し、誰でも対象であるかのように誤解させない。`,
         ``,
       ]
         .filter(Boolean)
         .join("\n")
+    : "";
+
+  const infoBits: string[] = [];
+  if (salonInfo?.concept) infoBits.push(`コンセプト: ${salonInfo.concept}`);
+  if (salonInfo?.accessHours) infoBits.push(`アクセス/営業: ${salonInfo.accessHours}`);
+  const infoBlock = infoBits.length
+    ? `# 店舗情報（必要なときだけ自然に1つ触れる程度。羅列しない）\n${infoBits.join("\n")}`
     : "";
 
   const ctaBlock = includeCta
@@ -285,6 +294,7 @@ export async function generatePost(
     `切り口: ${angle.angle}`,
     ``,
     couponBlock,
+    infoBlock,
     ctaBlock,
     kamataBlock,
     ``,
