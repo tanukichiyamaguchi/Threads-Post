@@ -172,10 +172,10 @@ export async function buildContentPlan(
     `アングルはテーマ・切り口がそれぞれ異なるようにし、同じ訴求の単純な繰り返しを避けてください。`,
   ].join("\n");
 
+  // 大きな構造化JSON出力のため、思考はオフにして出力トークンを確保する
   const res = await client().messages.create({
     model: MODEL,
-    max_tokens: 8000,
-    thinking: { type: "adaptive" },
+    max_tokens: 16000,
     output_config: {
       effort: "high",
       format: { type: "json_schema", schema: CONTENT_PLAN_SCHEMA },
@@ -185,6 +185,11 @@ export async function buildContentPlan(
   } as any);
 
   const raw = textOf((res as any).content);
+  if (!raw) {
+    throw new Error(
+      `素材生成が空でした（stop_reason=${(res as any).stop_reason}）。max_tokens不足の可能性。`,
+    );
+  }
   let data: any;
   try {
     data = JSON.parse(raw);
