@@ -21,6 +21,7 @@ export interface Brand {
   area: string;
   sourceUrl: string;
   audience: string;
+  localContext: string;
   persona: string;
   toneOfVoice: string;
   services: string[];
