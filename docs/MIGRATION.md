@@ -49,4 +49,4 @@ Threadsに正しく投稿・返信されることを確認します。
 | `generateDailyReservations`（定期予約の生成） | 不要（毎回の自動生成に統合） |
 | `updateInsightsRoutine`（インサイト取得） | 今回の移行対象外（必要なら別途追加可能） |
 | `refreshAccessToken`（トークン更新） | `refresh-token` Workflow（毎週自動） |
-| Geminiでの生成 | Claude（Opus 4.8）に変更 |
+| Geminiでの生成 | Claude（Sonnet 5）に変更 |

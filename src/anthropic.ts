@@ -3,7 +3,7 @@ import { brand } from "./config";
 import type { PostHistoryItem } from "./state";
 import type { AngleItem, Coupon, ContentPlan, SalonInfo } from "./content";
 
-const MODEL = "claude-sonnet-4-6";
+const MODEL = "claude-sonnet-5";
 
 let _client: Anthropic | null = null;
 function client(): Anthropic {
