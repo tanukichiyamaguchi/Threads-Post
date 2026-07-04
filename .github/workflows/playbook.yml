@@ -1,0 +1,34 @@
+name: Threads バズ・プレイブック作成（一度きり）
+
+on:
+  # 自動実行はしない。必要なときだけ手動で実行する（バズる投稿の型は頻繁に変わらないため）。
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: threads-playbook
+  cancel-in-progress: false
+
+jobs:
+  playbook:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: バズる投稿の型を詳しく調査してプレイブックを作成
+        run: npm run playbook
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: プレイブックをコミット
+        if: always()
+        run: 'bash .github/scripts/commit-state.sh "chore: バズ・プレイブックを更新 [skip ci]"'

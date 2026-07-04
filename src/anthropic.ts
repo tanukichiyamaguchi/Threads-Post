@@ -1,6 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { brand } from "./config";
-import type { PostHistoryItem, Learnings } from "./state";
+import type { PostHistoryItem, Learnings, ViralPlaybook } from "./state";
 import type { AngleItem, Coupon, ContentPlan, SalonInfo } from "./content";
 
 const MODEL = "claude-sonnet-5";
@@ -225,9 +225,9 @@ export async function buildContentPlan(
 }
 
 // ==========================================
-// 毎日: 過去のバズ投稿の「型」を調査（Web検索あり）
+// 一度だけ（詳細）: バズる投稿の「型」を調査してプレイブックを作る
 // ==========================================
-export async function researchViralPatterns(today: string): Promise<string> {
+export async function researchViralPlaybook(today: string): Promise<string> {
   const system =
     "あなたはSNS（特にThreads・X・Instagram）で拡散する投稿の型に精通したバイラルコンテンツの分析家です。" +
     "日本の20〜40代女性に刺さり実際にバズった（保存・返信・拡散された）投稿の共通パターンを、具体的に言語化します。";
@@ -238,22 +238,135 @@ export async function researchViralPatterns(today: string): Promise<string> {
     `発信者: 蒲田西口のまつげパーマ・眉毛WAX専門店の広報（美容に詳しい等身大の20代女性）。`,
     `目的: 『バズる × 蒲田 × 美容』の投稿で"認知"を広げること（来店誘導が目的ではない）。`,
     ``,
-    `# 依頼`,
-    `web_search で、最近〜ここ数年で実際に伸びた／バズった投稿の「型」を調べ、次を具体的にまとめてください。`,
-    `1) Threads・Xで女性に刺さってバズる投稿の構成・書き出し・締め方の型（共感・あるある・意外な豆知識・問いかけ・リスト形式など）。`,
+    `# 依頼（これは一度きりの詳細調査です。じっくり深く調べてください）`,
+    `web_search で、実際に伸びた／バズった投稿の「型」を深く調べ、次を具体的にまとめてください。`,
+    `1) Threads・Xで女性に刺さってバズる投稿の構成・書き出し・締め方の型（共感・あるある・意外な豆知識・問いかけ・リスト形式・逆張り・自己開示など）。`,
     `2) 美容（まつげ・眉・目元・垢抜け・自分磨き）ジャンルで保存・返信されやすいネタの型。`,
     `3) 地元・ローカル（蒲田／大田区のような街）ネタで共感を集める投稿の型。`,
     `4) 逆に伸びにくい・宣伝臭くて避けるべき型。`,
     `※特定のバズ投稿を丸写しするのではなく、応用できる「型・原則」を抽出する。`,
     ``,
     `# 出力`,
-    `箇条書きで、(1)バズる型・原則 (2)美容ジャンルで効くネタ (3)ローカルで効くネタ (4)避けるべき型 をそれぞれ具体的に。`,
+    `箇条書きで、(1)バズる型・原則 (2)美容ジャンルで効くネタ (3)ローカルで効くネタ (4)避けるべき型 をそれぞれ具体的に、多めに。`,
   ].join("\n");
 
   const stream = client().messages.stream({
     model: MODEL,
-    max_tokens: 4000,
+    max_tokens: 6000,
     thinking: { type: "adaptive" },
+    output_config: { effort: "high" },
+    tools: [
+      {
+        type: "web_search_20260209",
+        name: "web_search",
+        max_uses: 10,
+        user_location: {
+          type: "approximate",
+          country: "JP",
+          region: "Tokyo",
+          city: "Tokyo",
+          timezone: "Asia/Tokyo",
+        },
+      },
+    ],
+    system,
+    messages: [{ role: "user", content: user }],
+  } as any);
+
+  const msg = await stream.finalMessage();
+  return (
+    textOf((msg as any).content) ||
+    "（バイラル調査の情報を取得できませんでした。一般的な原則で作成します。）"
+  );
+}
+
+const VIRAL_PLAYBOOK_SCHEMA = {
+  type: "object",
+  properties: {
+    playbook: {
+      type: "array",
+      items: { type: "string" },
+      description: "バズる投稿の型・原則（書き出し・構成・締め方・避けるべき型を含む）。12〜18個、具体的で実行可能に。",
+    },
+    viralAngles: {
+      type: "array",
+      items: { type: "string" },
+      description: "蒲田×美容（20〜40代女性）で普遍的にバズを狙える切り口アイデア。10〜16個。",
+    },
+  },
+  required: ["playbook", "viralAngles"],
+  additionalProperties: false,
+};
+
+/** 詳細調査メモを、静的に使うプレイブック（型・切り口）へ構造化する。 */
+export async function buildViralPlaybook(
+  notes: string,
+): Promise<Pick<ViralPlaybook, "playbook" | "viralAngles">> {
+  const user = [
+    `# バズる投稿の詳細調査メモ`,
+    notes,
+    ``,
+    `# 依頼`,
+    `上記を、今後ずっと使えるバズる投稿のプレイブックへ整理してください（20〜40代女性向け・『バズる×蒲田×美容』・認知拡大が目的）。`,
+    `- playbook: バズる型・原則（書き出し／構成／締め方／避けるべき型を含む）。12〜18個、具体的で実行可能に。`,
+    `- viralAngles: 蒲田×美容で普遍的にバズを狙える切り口アイデアを10〜16個。`,
+    `※当店はまつげパーマ・眉毛WAX専門（まつエクは扱わない・言及しない）。売り込みではなく認知拡大が目的。`,
+  ].join("\n");
+
+  const res = await client().messages.create({
+    model: MODEL,
+    max_tokens: 8000,
+    output_config: {
+      effort: "high",
+      format: { type: "json_schema", schema: VIRAL_PLAYBOOK_SCHEMA },
+    },
+    system:
+      "あなたはSNSのバイラル分析家です。調査メモから、今後ずっと使える『バズる投稿の型・切り口』のプレイブックを作ります。",
+    messages: [{ role: "user", content: user }],
+  } as any);
+
+  const raw = textOf((res as any).content);
+  if (!raw) {
+    throw new Error(`プレイブック生成が空でした（stop_reason=${(res as any).stop_reason}）。`);
+  }
+  let data: any;
+  try {
+    data = JSON.parse(raw);
+  } catch {
+    throw new Error(`プレイブック生成結果のJSON解析に失敗しました: ${raw.slice(0, 200)}`);
+  }
+  const arr = (x: any): string[] =>
+    Array.isArray(x) ? x.map(String).filter((s) => s.trim().length > 0) : [];
+  return { playbook: arr(data.playbook), viralAngles: arr(data.viralAngles) };
+}
+
+// ==========================================
+// 毎日: その日のインプが狙える話題（全国／大田区／蒲田）を調査（Web検索あり）
+// ==========================================
+export async function researchTrendingTopics(today: string): Promise<string> {
+  const system =
+    "あなたは日本のトレンドと地域ニュースに敏感なSNS運用のリサーチャーです。" +
+    "その日に多くの人が反応しそうな（インプレッションが取れそうな）話題を素早く見つけ、要点を短くまとめます。";
+
+  const user = [
+    `本日: ${today}（日本・東京）。`,
+    `発信者: 蒲田西口のまつげパーマ・眉毛WAX専門店の広報（美容に詳しい等身大の20代女性）。`,
+    `対象読者: 蒲田・大田区に住む／働く20〜40代の女性。目的は認知拡大（来店誘導ではない）。`,
+    ``,
+    `# 依頼`,
+    `web_search で、今日〜ここ数日で「インプレッションが取れそう・話題になっている」ネタを集めてください。`,
+    `A) 全国的なトレンド・季節・話題（ニュース、行事、天気、SNSで話題の事柄、美容・ライフスタイル系の流行など）。`,
+    `B) 大田区・蒲田のローカルな話題・イベント・季節ネタ（お祭り、商店街、周辺の出来事、天気・混雑など）。`,
+    `※政治・災害・事故・訃報など、美容アカウントが便乗すると不謹慎・炎上しうる話題は除外する。`,
+    `※各話題は、20〜40代女性の共感・美容・蒲田の日常に自然に絡められるかも一言添える。`,
+    ``,
+    `# 出力`,
+    `箇条書きで6〜10件。各行「話題（全国 or 蒲田/大田区）→ 美容や共感・日常への自然な絡め方」。`,
+  ].join("\n");
+
+  const stream = client().messages.stream({
+    model: MODEL,
+    max_tokens: 3500,
     output_config: { effort: "medium" },
     tools: [
       {
@@ -276,18 +389,13 @@ export async function researchViralPatterns(today: string): Promise<string> {
   const msg = await stream.finalMessage();
   return (
     textOf((msg as any).content) ||
-    "（バイラル調査の情報を取得できませんでした。一般的な原則で作成します。）"
+    "（本日の話題を取得できませんでした。話題なしで作成します。）"
   );
 }
 
 const LEARNINGS_SCHEMA = {
   type: "object",
   properties: {
-    playbook: {
-      type: "array",
-      items: { type: "string" },
-      description: "バズる投稿の型・原則（外部調査＋自店の実績を統合）。8〜12個、具体的に。",
-    },
     doMore: {
       type: "array",
       items: { type: "string" },
@@ -298,27 +406,28 @@ const LEARNINGS_SCHEMA = {
       items: { type: "string" },
       description: "伸びなかった・宣伝臭い・避けるべき型。",
     },
-    viralAngles: {
+    todayTopics: {
       type: "array",
       items: { type: "string" },
-      description: "蒲田×美容で新しくバズを狙える具体的な切り口アイデア。8〜12個。",
+      description:
+        "その日のインプが狙える話題＋美容や共感・蒲田の日常への絡め方。6〜10個。不謹慎・炎上リスクのある話題は除外。",
     },
   },
-  required: ["playbook", "doMore", "avoid", "viralAngles"],
+  required: ["doMore", "avoid", "todayTopics"],
   additionalProperties: false,
 };
 
 export type ScoredPost = { text: string; score: number };
 
 /**
- * バイラル調査メモ＋自店の投稿実績（上位・下位）から、
- * 明日以降の投稿を改善するための学習知見を作る。
+ * 自店の投稿実績（上位・下位）と、その日の話題メモから、
+ * 当日の投稿を改善するための学習知見を作る。
  */
 export async function buildLearnings(
-  viralNotes: string,
+  trendNotes: string,
   top: ScoredPost[],
   weak: ScoredPost[],
-): Promise<Pick<Learnings, "playbook" | "doMore" | "avoid" | "viralAngles">> {
+): Promise<Pick<Learnings, "doMore" | "avoid" | "todayTopics">> {
   const fmt = (arr: ScoredPost[]) =>
     arr.length
       ? arr
@@ -327,34 +436,33 @@ export async function buildLearnings(
       : "（まだ十分なデータがありません）";
 
   const user = [
-    `# バイラル調査メモ（外部）`,
-    viralNotes,
-    ``,
     `# 自店で伸びた投稿（エンゲージメント上位）`,
     fmt(top),
     ``,
     `# 自店で伸びなかった投稿（エンゲージメント下位）`,
     fmt(weak),
     ``,
+    `# 本日のインプが狙える話題（Web調査メモ）`,
+    trendNotes,
+    ``,
     `# 依頼`,
-    `上記から、明日以降の『バズる × 蒲田 × 美容』投稿（20〜40代女性向け・認知拡大が目的）を改善するための知見を作成してください。`,
-    `- playbook: バズる型・原則（外部調査＋自店の実績を統合）。8〜12個、具体的で実行可能に。`,
-    `- doMore: 自店で伸びた投稿の共通点・もっとやるべきこと。実績が薄ければ調査からの一般則で補う。`,
+    `上記から、本日の『バズる × 蒲田 × 美容』投稿（20〜40代女性向け・認知拡大が目的）を改善するための知見を作成してください。`,
+    `- doMore: 自店で伸びた投稿の共通点・もっとやるべきこと（自店の実績分析を最優先。実績が薄ければ一般則で補う）。`,
     `- avoid: 伸びなかった／宣伝臭い・避けるべき型。`,
-    `- viralAngles: 蒲田×美容で新しくバズを狙える具体的な切り口アイデアを8〜12個。`,
+    `- todayTopics: 本日のインプが狙える話題を6〜10個。各項目に美容や共感・蒲田の日常への自然な絡め方を添える。不謹慎・炎上リスクのある話題は除外する。`,
     `※当店はまつげパーマ・眉毛WAX専門（まつエクは扱わない・言及しない）。売り込みではなく認知拡大が目的。`,
   ].join("\n");
 
   const res = await client().messages.create({
     model: MODEL,
-    max_tokens: 6000,
+    max_tokens: 5000,
     output_config: {
       effort: "high",
       format: { type: "json_schema", schema: LEARNINGS_SCHEMA },
     },
     system:
-      "あなたはSNSのバイラル分析家です。外部のバズの型と自店の実績データを統合し、" +
-      "明日から実行できる具体的な改善知見（バズる投稿の型・やるべきこと・避けること・切り口）を作ります。",
+      "あなたはSNS運用の分析家です。自店の実績データとその日の話題から、" +
+      "本日実行できる具体的な改善知見（やるべきこと・避けること・今日乗るべき話題）を作ります。",
     messages: [{ role: "user", content: user }],
   } as any);
 
@@ -371,10 +479,9 @@ export async function buildLearnings(
   const arr = (x: any): string[] =>
     Array.isArray(x) ? x.map(String).filter((s) => s.trim().length > 0) : [];
   return {
-    playbook: arr(data.playbook),
     doMore: arr(data.doMore),
     avoid: arr(data.avoid),
-    viralAngles: arr(data.viralAngles),
+    todayTopics: arr(data.todayTopics),
   };
 }
 
@@ -408,6 +515,7 @@ export async function generatePost(
   mentionKamata: boolean,
   salonInfo?: SalonInfo,
   learnings?: Learnings | null,
+  playbook?: ViralPlaybook | null,
 ): Promise<GeneratedPost> {
   const recent =
     history
@@ -415,7 +523,7 @@ export async function generatePost(
       .map((h) => `- ${h.text.replace(/\n/g, " ").slice(0, 50)}`)
       .join("\n") || "（過去投稿はまだありません）";
 
-  const learnBlock = buildLearningsBlock(learnings);
+  const learnBlock = buildLearningsBlock(playbook, learnings);
 
   const couponBlock = coupon
     ? [
@@ -575,25 +683,33 @@ function buildPlanSystemPrompt(): string {
   ].join("\n");
 }
 
-/** 学習知見（バズる型）をプロンプト用ブロックに整形する。無ければ空文字。 */
-function buildLearningsBlock(learnings?: Learnings | null): string {
-  if (!learnings) return "";
-  const sec = (title: string, items: string[], n: number, map = (s: string) => s) =>
-    items.length ? `## ${title}\n${items.slice(0, n).map((s) => `- ${map(s)}`).join("\n")}` : "";
+/**
+ * 静的なバズ・プレイブック＋毎日の学習知見を、プロンプト用ブロックに整形する。
+ * どちらも無ければ空文字。
+ */
+function buildLearningsBlock(
+  playbook?: ViralPlaybook | null,
+  learnings?: Learnings | null,
+): string {
+  const sec = (title: string, items: string[] | undefined, n: number, map = (s: string) => s) =>
+    items && items.length
+      ? `## ${title}\n${items.slice(0, n).map((s) => `- ${map(s)}`).join("\n")}`
+      : "";
   const blocks = [
-    sec("バズる型・原則", learnings.playbook, 8),
-    sec("今バズを狙える切り口（今日のテーマに活かせそうなら取り入れる）", learnings.viralAngles, 5),
-    sec("伸びた投稿の傾向（もっとやる）", learnings.doMore, 6),
-    sec("伸びなかった傾向（避ける）", learnings.avoid, 6),
+    sec("バズる型・原則（一度の詳細調査で作った普遍の型）", playbook?.playbook, 10),
+    sec("バズを狙える切り口（今日のテーマに活かせそうなら取り入れる）", playbook?.viralAngles, 6),
+    sec("今日のインプが狙える話題（自然に絡められそうなら1つ乗る）", learnings?.todayTopics, 6),
+    sec("伸びた投稿の傾向（もっとやる）", learnings?.doMore, 6),
+    sec("伸びなかった傾向（避ける）", learnings?.avoid, 6),
     sec(
       "実際に伸びた自店の投稿（言い回しは真似せず“型”だけ参考に）",
-      learnings.topExamples,
+      learnings?.topExamples,
       3,
       (s) => s.replace(/\n/g, " ").slice(0, 60),
     ),
   ].filter(Boolean);
   if (!blocks.length) return "";
-  return `# バズる投稿の学び（毎日の実績分析＋調査で更新。これを踏まえて改善する）\n${blocks.join("\n")}`;
+  return `# バズる投稿の学び（型は固定・話題と実績は毎日更新。これを踏まえて改善する）\n${blocks.join("\n")}`;
 }
 
 function buildPostSystemPrompt(): string {

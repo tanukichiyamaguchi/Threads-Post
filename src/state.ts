@@ -23,6 +23,7 @@ const repliedFile = path.join(paths.state, "replied-comments.json");
 const historyFile = path.join(paths.state, "post-history.json");
 const scheduleFile = path.join(paths.state, "post-schedule.json");
 const learningsFile = path.join(paths.state, "learnings.json");
+const playbookFile = path.join(paths.state, "viral-playbook.json");
 
 export interface PostHistoryItem {
   date: string;
@@ -44,16 +45,26 @@ export interface PostMetrics {
 }
 
 /**
- * 「バズる投稿」を毎日学習した知見。改善ルーチン（improve）が更新し、
+ * 「バズる投稿の型」を一度詳しく調査した静的な参照（プレイブック）。
+ * playbook ルーチンで作成し、頻繁には更新しない。各投稿の生成時に注入する。
+ */
+export interface ViralPlaybook {
+  updated: string;
+  playbook: string[]; // バズる投稿の型・原則（一度の詳細調査で作る）
+  viralAngles: string[]; // 蒲田×美容で使える普遍的なバズ切り口
+}
+
+/**
+ * 毎日更新する学習知見。改善ルーチン（improve）が
+ * 「自店の過去実績の分析」と「その日のインプが狙える話題（全国/大田区/蒲田）」から作る。
  * 各投稿の生成時にプロンプトへ注入して投稿を日々改善する。
  */
 export interface Learnings {
   updated: string;
-  playbook: string[]; // バズる投稿の型・原則（Web調査＋自店の実績から）
-  doMore: string[]; // 伸びた投稿の共通点・もっとやるべきこと
+  doMore: string[]; // 自店の実績で伸びた投稿の共通点・もっとやるべきこと
   avoid: string[]; // 伸びなかった投稿の共通点・避けるべきこと
-  viralAngles: string[]; // 新しくバズを狙える切り口のアイデア
   topExamples: string[]; // 自店の実際に伸びた投稿（お手本として提示）
+  todayTopics: string[]; // その日のインプが狙える話題（全国/大田区/蒲田）＋美容や共感への絡め方
 }
 
 /** 返信済みコメントID（重複返信を防ぐ） */
@@ -89,20 +100,36 @@ export function saveScheduleState(s: ScheduleState): void {
   writeJson(scheduleFile, s);
 }
 
-/** バズる投稿の学習知見（毎日 improve が更新） */
+/** 毎日の学習知見（自店実績の分析＋その日の話題）を読み込む */
 export function loadLearnings(): Learnings | null {
-  const l = readJson<Learnings | null>(learningsFile, null);
+  const l = readJson<any>(learningsFile, null);
   if (!l || typeof l !== "object") return null;
+  const arr = (x: any): string[] => (Array.isArray(x) ? x.map(String) : []);
   return {
     updated: String(l.updated ?? ""),
-    playbook: Array.isArray(l.playbook) ? l.playbook.map(String) : [],
-    doMore: Array.isArray(l.doMore) ? l.doMore.map(String) : [],
-    avoid: Array.isArray(l.avoid) ? l.avoid.map(String) : [],
-    viralAngles: Array.isArray(l.viralAngles) ? l.viralAngles.map(String) : [],
-    topExamples: Array.isArray(l.topExamples) ? l.topExamples.map(String) : [],
+    doMore: arr(l.doMore),
+    avoid: arr(l.avoid),
+    topExamples: arr(l.topExamples),
+    todayTopics: arr(l.todayTopics),
   };
 }
 
 export function saveLearnings(l: Learnings): void {
   writeJson(learningsFile, l);
+}
+
+/** バズる投稿の型（プレイブック・静的）を読み込む */
+export function loadViralPlaybook(): ViralPlaybook | null {
+  const p = readJson<any>(playbookFile, null);
+  if (!p || typeof p !== "object") return null;
+  const arr = (x: any): string[] => (Array.isArray(x) ? x.map(String) : []);
+  return {
+    updated: String(p.updated ?? ""),
+    playbook: arr(p.playbook),
+    viralAngles: arr(p.viralAngles),
+  };
+}
+
+export function saveViralPlaybook(p: ViralPlaybook): void {
+  writeJson(playbookFile, p);
 }

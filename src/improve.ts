@@ -1,6 +1,6 @@
 import { env } from "./config";
 import { ThreadsClient } from "./threads";
-import { researchViralPatterns, buildLearnings, type ScoredPost } from "./anthropic";
+import { researchTrendingTopics, buildLearnings, type ScoredPost } from "./anthropic";
 import {
   loadPostHistory,
   savePostHistory,
@@ -11,10 +11,11 @@ import { currentJst } from "./schedule";
 import { log, warn, error } from "./logger";
 
 // 毎日1回実行。
-// 1) 自店の最近の投稿のエンゲージメント実績（いいね・返信・リポスト・引用・閲覧）を取得
-// 2) Web検索で「バズる投稿の型」を調査
-// 3) 両者を統合して学習知見（state/learnings.json）を更新
-// 各投稿の生成時にこの知見を注入することで、投稿を日々改善する。
+// 1) 自店の最近の投稿のエンゲージメント実績（いいね・返信・リポスト・引用・閲覧）を取得して分析
+// 2) Web検索で「その日のインプが狙える話題（全国／大田区／蒲田）」を調査
+// 3) 学習知見（state/learnings.json）を更新
+// バズる投稿の「型」は静的なプレイブック（state/viral-playbook.json）を使うため、ここでは調査しない。
+// 各投稿の生成時に、この学習知見＋プレイブックを注入することで投稿を日々改善する。
 
 const MAX_POSTS_TO_ANALYZE = 40;
 
@@ -90,17 +91,17 @@ async function main(): Promise<void> {
     );
   }
 
-  // 2) 外部のバズ投稿の型を調査（Web検索あり）
-  log("バズる投稿の型をWeb検索で調査中...");
-  const viralNotes = await researchViralPatterns(todayLabel);
+  // 2) その日のインプが狙える話題（全国／大田区／蒲田）をWeb検索で調査
+  log("本日のインプが狙える話題（全国／大田区／蒲田）をWeb検索で調査中...");
+  const trendNotes = await researchTrendingTopics(todayLabel);
   log(
-    "調査メモ:\n" + viralNotes.slice(0, 600) + (viralNotes.length > 600 ? " …（略）" : ""),
+    "話題メモ:\n" + trendNotes.slice(0, 600) + (trendNotes.length > 600 ? " …（略）" : ""),
   );
 
-  // 3) 学習知見を生成して保存
+  // 3) 実績分析＋本日の話題から学習知見を生成して保存
   log("学習知見を生成中...");
-  const { playbook, doMore, avoid, viralAngles } = await buildLearnings(
-    viralNotes,
+  const { doMore, avoid, todayTopics } = await buildLearnings(
+    trendNotes,
     top.map((t) => ({ text: t.text, score: t.score })),
     weak.map((w) => ({ text: w.text, score: w.score })),
   );
@@ -112,15 +113,14 @@ async function main(): Promise<void> {
 
   saveLearnings({
     updated: now.dateStr,
-    playbook,
     doMore,
     avoid,
-    viralAngles,
     topExamples,
+    todayTopics,
   });
   log(
-    `学びを保存しました（型 ${playbook.length} / 切り口 ${viralAngles.length} / ` +
-      `やる ${doMore.length} / 避ける ${avoid.length} / お手本 ${topExamples.length}）。`,
+    `学びを保存しました（やる ${doMore.length} / 避ける ${avoid.length} / ` +
+      `お手本 ${topExamples.length} / 本日の話題 ${todayTopics.length}）。`,
   );
 
   log("=== 投稿改善ルーチン完了 ===");

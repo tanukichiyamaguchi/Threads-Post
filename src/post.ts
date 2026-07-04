@@ -7,6 +7,7 @@ import {
   loadScheduleState,
   saveScheduleState,
   loadLearnings,
+  loadViralPlaybook,
 } from "./state";
 import { loadContentPlan, pickAngle, pickCoupon } from "./content";
 import {
@@ -91,7 +92,8 @@ async function main(): Promise<void> {
 
   const mentionKamata = shouldMentionKamata(now.seed, slotIndex);
 
-  // バズる投稿の学習知見（毎日 improve が更新）を注入して日々改善する
+  // バズる投稿の型（静的なプレイブック）＋毎日の学習知見（実績分析＋本日の話題）を注入
+  const playbook = loadViralPlaybook();
   const learnings = loadLearnings();
 
   const history = loadPostHistory();
@@ -105,6 +107,7 @@ async function main(): Promise<void> {
     mentionKamata,
     plan.salonInfo,
     learnings,
+    playbook,
   );
   const finalText = composePostText(post);
   log(`生成された投稿 (${finalText.length}文字 / テーマ: ${post.topic}):\n${finalText}`);

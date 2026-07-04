@@ -1,9 +1,10 @@
-name: Threads 投稿改善（バズ学習）
+name: Threads 投稿改善（実績分析＋本日の話題）
 
 on:
   schedule:
-    # 毎日 05:00 JST（= 20:00 UTC）。前日までの投稿実績を集計し、
-    # バズる投稿の型をWeb検索で調査して学習知見（state/learnings.json）を更新。
+    # 毎日 05:00 JST（= 20:00 UTC）。自店の投稿実績を分析し、
+    # その日のインプが狙える話題（全国／大田区／蒲田）をWeb検索で調べて
+    # 学習知見（state/learnings.json）を更新。バズる投稿の型は playbook（静的）を使う。
     - cron: "0 20 * * *"
   workflow_dispatch: {}
 
@@ -27,7 +28,7 @@ jobs:
 
       - run: npm ci
 
-      - name: 投稿実績を分析しバズ学習を更新
+      - name: 投稿実績を分析し本日の話題を調査して学習知見を更新
         run: npm run improve
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "research": "tsx src/research.ts",
+    "playbook": "tsx src/playbook.ts",
     "improve": "tsx src/improve.ts",
     "post": "tsx src/post.ts",
     "reply": "tsx src/reply.ts",
