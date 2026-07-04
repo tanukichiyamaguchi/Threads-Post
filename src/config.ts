@@ -26,6 +26,7 @@ export interface Brand {
   toneOfVoice: string;
   services: string[];
   cta: string;
+  postMode?: "awareness" | "conversion";
   goal: string;
   contentMix: string;
   prohibitions: string[];

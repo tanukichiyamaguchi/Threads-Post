@@ -2,10 +2,11 @@
   "name": "threads-claude-poster",
   "private": true,
   "version": "1.0.0",
-  "description": "Threadsの自動投稿とAI返信をClaude API経由で行うシステム（季節・流行に応じた集客投稿を自動生成）",
+  "description": "Threadsの自動投稿とAI返信をClaude API経由で行うシステム（バズる×蒲田×美容の投稿を自動生成し、実績から毎日改善）",
   "type": "module",
   "scripts": {
     "research": "tsx src/research.ts",
+    "improve": "tsx src/improve.ts",
     "post": "tsx src/post.ts",
     "reply": "tsx src/reply.ts",
     "refresh-token": "tsx src/refresh-token.ts",

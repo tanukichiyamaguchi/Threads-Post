@@ -44,9 +44,9 @@ Threadsに正しく投稿・返信されることを確認します。
 
 | 旧GASの機能 | 新システムでの対応 |
 | --- | --- |
-| `mainPostRoutine`（スプレッドシートの予約投稿） | `npm run post` — Claudeが季節・流行を踏まえ毎回自動生成して投稿 |
+| `mainPostRoutine`（スプレッドシートの予約投稿） | `npm run post` — Claudeが『バズる×蒲田×美容』の投稿を毎回自動生成して投稿 |
 | `autoReplyRoutine`（Geminiでコメント返信） | `npm run reply` — Claudeでコメント返信 |
 | `generateDailyReservations`（定期予約の生成） | 不要（毎回の自動生成に統合） |
-| `updateInsightsRoutine`（インサイト取得） | 今回の移行対象外（必要なら別途追加可能） |
+| `updateInsightsRoutine`（インサイト取得） | `npm run improve` — 実績（いいね・返信・拡散・閲覧）を取得し、投稿を毎日自動改善 |
 | `refreshAccessToken`（トークン更新） | `refresh-token` Workflow（毎週自動） |
 | Geminiでの生成 | Claude（Sonnet 5）に変更 |

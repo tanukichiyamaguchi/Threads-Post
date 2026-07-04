@@ -3,7 +3,7 @@
 // - 朝・昼・夜に分散しつつ、視聴率の高い時間帯（昼・夜のピーク）に多く配分
 // - 具体的な時刻は日付シードで決まるため、毎日少しずつ変動する
 
-const POSTS_PER_DAY = 30;
+const POSTS_PER_DAY = 40;
 
 // [JSTの時, 相対ウェイト]。ウェイトが大きい時間帯ほど投稿数が増える。
 // 夜20〜22時台・昼12時台を最重視（エンゲージメントが高い傾向）。
@@ -107,10 +107,10 @@ export function fmtMin(m: number): string {
   return `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
 }
 
-/** 投稿ごとに目安文字数をばらつかせる（20〜80字程度） */
+/** 投稿ごとに目安文字数をばらつかせる（20〜120字程度） */
 export function pickTargetChars(seed: number, slotIndex: number): number {
   const rng = mulberry32((seed + (slotIndex + 1) * 7919) >>> 0);
-  return 20 + Math.floor(rng() * 61); // 20〜80
+  return 20 + Math.floor(rng() * 101); // 20〜120
 }
 
 /**

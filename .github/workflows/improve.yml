@@ -1,0 +1,39 @@
+name: Threads 投稿改善（バズ学習）
+
+on:
+  schedule:
+    # 毎日 05:00 JST（= 20:00 UTC）。前日までの投稿実績を集計し、
+    # バズる投稿の型をWeb検索で調査して学習知見（state/learnings.json）を更新。
+    - cron: "0 20 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: threads-improve
+  cancel-in-progress: false
+
+jobs:
+  improve:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: 投稿実績を分析しバズ学習を更新
+        run: npm run improve
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+
+      - name: 学習知見をコミット
+        if: always()
+        run: 'bash .github/scripts/commit-state.sh "chore: バズ学習を更新 [skip ci]"'

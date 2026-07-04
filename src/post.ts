@@ -1,4 +1,4 @@
-import { env } from "./config";
+import { env, brand } from "./config";
 import { ThreadsClient } from "./threads";
 import { generatePost, composePostText } from "./anthropic";
 import {
@@ -6,6 +6,7 @@ import {
   savePostHistory,
   loadScheduleState,
   saveScheduleState,
+  loadLearnings,
 } from "./state";
 import { loadContentPlan, pickAngle, pickCoupon } from "./content";
 import {
@@ -30,9 +31,12 @@ async function main(): Promise<void> {
     (process.env.FORCE_POST || "").trim().toLowerCase(),
   );
 
+  // 認知モード（awareness）では店舗誘導・予約CTA・クーポンを出さず、バズ×蒲田×美容に徹する
+  const awareness = (brand.postMode ?? "conversion") === "awareness";
+
   // forceでない場合は「その日の投稿予定スロット」が来たときだけ投稿する
   let slotIndex = now.minuteOfDay; // force時のばらつき用シード
-  let includeCta = force; // 予約導線を入れるか（手動投稿は確認のため入れる）
+  let includeCta = force && !awareness; // 予約導線を入れるか（認知モードでは常に入れない）
   if (!force) {
     const slots = computeDailySlots(now.seed);
     let st = loadScheduleState();
@@ -59,8 +63,8 @@ async function main(): Promise<void> {
     st.fired.push(dueIndex);
     saveScheduleState(st);
     slotIndex = dueIndex;
-    // 予約導線は1日1回だけ（通算 ctaOrdinal 件目の投稿）
-    includeCta = st.fired.length === ctaOrdinal(now.seed);
+    // 予約導線は1日1回だけ（通算 ctaOrdinal 件目の投稿）。認知モードでは入れない。
+    includeCta = !awareness && st.fired.length === ctaOrdinal(now.seed);
     log(
       `投稿スロット ${dueIndex + 1}/${slots.length}（予定 ${fmtMin(slots[dueIndex])} JST / ` +
         `本日${st.fired.length}件目${includeCta ? " ★予約CTAあり" : ""}）を実行します。`,
@@ -75,16 +79,20 @@ async function main(): Promise<void> {
   env.anthropicApiKey();
   const client = new ThreadsClient(env.threadsUserId(), env.threadsToken());
 
-  // 素材（2週に1回更新）から、このスロットのアングルと（必要なら）クーポンを選ぶ
+  // 素材（2週に1回更新）から、このスロットのアングルと（認知モードでなければ）クーポンを選ぶ
   const plan = loadContentPlan();
   const angle = pickAngle(plan, now.seed, slotIndex);
-  const coupon = pickCoupon(plan, angle, now.seed, slotIndex);
+  const coupon = awareness ? null : pickCoupon(plan, angle, now.seed, slotIndex);
   log(
     `テーマ: [${angle.category}] ${angle.angle}` +
-      (coupon ? ` / クーポン: ${coupon.name}（${coupon.price}）` : ""),
+      (coupon ? ` / クーポン: ${coupon.name}（${coupon.price}）` : "") +
+      (awareness ? " / モード: 認知（バズ×蒲田×美容）" : ""),
   );
 
   const mentionKamata = shouldMentionKamata(now.seed, slotIndex);
+
+  // バズる投稿の学習知見（毎日 improve が更新）を注入して日々改善する
+  const learnings = loadLearnings();
 
   const history = loadPostHistory();
   log("投稿文を生成中...");
@@ -96,6 +104,7 @@ async function main(): Promise<void> {
     includeCta,
     mentionKamata,
     plan.salonInfo,
+    learnings,
   );
   const finalText = composePostText(post);
   log(`生成された投稿 (${finalText.length}文字 / テーマ: ${post.topic}):\n${finalText}`);

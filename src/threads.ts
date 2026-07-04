@@ -122,6 +122,44 @@ export class ThreadsClient {
     return Array.isArray(json.data) ? json.data : [];
   }
 
+  /**
+   * 投稿のエンゲージメント実績を取得する。
+   * いいね・返信・リポスト・引用は media フィールドから、閲覧数(views)は insights から。
+   */
+  async getMetrics(postId: string): Promise<{
+    likes: number;
+    replies: number;
+    reposts: number;
+    quotes: number;
+    views: number;
+  }> {
+    const id = cleanId(postId);
+    const fieldsUrl =
+      `${BASE}/${id}` +
+      `?fields=like_count,reply_count,repost_count,quote_count&access_token=${encodeURIComponent(this.token)}`;
+    const f = await this.request(fieldsUrl);
+
+    let views = 0;
+    try {
+      const insUrl =
+        `${BASE}/${id}/insights?metric=views&access_token=${encodeURIComponent(this.token)}`;
+      const ins = await this.request(insUrl);
+      const arr = Array.isArray(ins.data) ? ins.data : [];
+      const v = arr.find((x: any) => x.name === "views");
+      views = Number(v?.values?.[0]?.value ?? v?.total_value?.value ?? 0);
+    } catch {
+      /* insights が取得できない場合は views=0 のまま続行 */
+    }
+
+    return {
+      likes: Number(f.like_count ?? 0),
+      replies: Number(f.reply_count ?? 0),
+      reposts: Number(f.repost_count ?? 0),
+      quotes: Number(f.quote_count ?? 0),
+      views: Number.isFinite(views) ? views : 0,
+    };
+  }
+
   /** 投稿に紐づく会話（他ユーザーからの返信を含む）を取得 */
   async getConversation(postId: string): Promise<ThreadsComment[]> {
     const url =
