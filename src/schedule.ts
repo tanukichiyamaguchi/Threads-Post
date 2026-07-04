@@ -5,6 +5,10 @@
 
 const POSTS_PER_DAY = 40;
 
+// スロット間の最低間隔（分）。当初の予定時刻の間引きだけでなく、
+// 起動が遅れて複数件をまとめて投稿する際の「実際の投稿間隔」にも使う（連投防止）。
+export const MIN_SLOT_GAP_MINUTES = 8;
+
 // [JSTの時, 相対ウェイト]。ウェイトが大きい時間帯ほど投稿数が増える。
 // 夜20〜22時台・昼12時台を最重視（エンゲージメントが高い傾向）。
 const WEIGHTED_HOURS: Array<[number, number]> = [
@@ -62,10 +66,10 @@ export function computeDailySlots(seed: number): number[] {
   });
   slots.sort((a, b) => a - b);
 
-  // 近接しすぎを避けるため最低8分の間隔を確保
+  // 近接しすぎを避けるため最低 MIN_SLOT_GAP_MINUTES 分の間隔を確保
   for (let i = 1; i < slots.length; i++) {
-    if (slots[i] - slots[i - 1] < 8) {
-      slots[i] = Math.min(23 * 60 + 59, slots[i - 1] + 8);
+    if (slots[i] - slots[i - 1] < MIN_SLOT_GAP_MINUTES) {
+      slots[i] = Math.min(23 * 60 + 59, slots[i - 1] + MIN_SLOT_GAP_MINUTES);
     }
   }
   return slots;
@@ -107,10 +111,10 @@ export function fmtMin(m: number): string {
   return `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
 }
 
-/** 投稿ごとに目安文字数をばらつかせる（20〜120字程度） */
+/** 投稿ごとに目安文字数をばらつかせる（20〜70字程度・短く簡潔に） */
 export function pickTargetChars(seed: number, slotIndex: number): number {
   const rng = mulberry32((seed + (slotIndex + 1) * 7919) >>> 0);
-  return 20 + Math.floor(rng() * 101); // 20〜120
+  return 20 + Math.floor(rng() * 51); // 20〜70
 }
 
 /**

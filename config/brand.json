@@ -20,8 +20,8 @@
     "DM・ダイレクトメッセージには言及しない。問い合わせ導線はプロフィールのリンクのみ。"
   ],
   "postRules": {
-    "maxLength": 120,
-    "targetLength": "20〜120文字程度で投稿ごとに大きくばらつかせる",
+    "maxLength": 70,
+    "targetLength": "20〜70文字程度で投稿ごとにばらつかせる（短く簡潔に）",
     "emoji": "1〜2個",
     "useHashtags": false
   },

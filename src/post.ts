@@ -17,13 +17,16 @@ import {
   pickTargetChars,
   ctaOrdinal,
   shouldMentionKamata,
+  MIN_SLOT_GAP_MINUTES,
 } from "./schedule";
 import { log, error } from "./logger";
 
 // GitHubのスケジュール実行は間引かれ、1日に数回しか起動しないことがある。
 // そのため「起動時に、予定時刻を過ぎた未投稿スロットをまとめて投稿」して1日の目標件数を確保する。
+// ただし同じ瞬間に連投すると不自然なので、投稿の間は最低 MIN_SLOT_GAP_MINUTES 分あける。
 // 1回の起動で投稿しすぎないよう上限を設ける（残りは次回起動で消化）。
-const MAX_POSTS_PER_RUN = 15;
+const MAX_POSTS_PER_RUN = 8;
+const CATCHUP_GAP_MS = MIN_SLOT_GAP_MINUTES * 60_000;
 
 function sleep(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms));
@@ -144,7 +147,10 @@ async function main(): Promise<void> {
       // 1件失敗しても残りは続行（該当スロットは消化済みなので再投稿されない）
       error(`スロット ${slotIndex + 1} の投稿に失敗: ${e?.message || e}`);
     }
-    if (slotIndex !== batch[batch.length - 1]) await sleep(3000);
+    if (slotIndex !== batch[batch.length - 1]) {
+      log(`次の投稿まで ${MIN_SLOT_GAP_MINUTES}分 待機します（連投を避けるため）。`);
+      await sleep(CATCHUP_GAP_MS);
+    }
   }
 
   log(`=== 自動投稿ルーチン完了（${done}/${batch.length} 件投稿）===`);
