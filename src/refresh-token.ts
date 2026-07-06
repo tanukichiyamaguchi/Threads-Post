@@ -1,7 +1,15 @@
+import { createRequire } from "node:module";
 import { env } from "./config";
 import { ThreadsClient } from "./threads";
 import { log, warn, error } from "./logger";
-import sodium from "libsodium-wrappers";
+import type * as SodiumType from "libsodium-wrappers";
+
+// libsodium-wrappers のESMビルドは、相対import（./libsodium.mjs）が
+// 同パッケージ内に存在せず、Node標準のESM解決では ERR_MODULE_NOT_FOUND になる
+// （バンドラー環境でしか動かない既知の問題）。CJSビルドは自己完結しているため、
+// createRequire で明示的にCJS解決させて読み込む。
+const require = createRequire(import.meta.url);
+const sodium = require("libsodium-wrappers") as typeof SodiumType;
 
 /** GitHub Actions のリポジトリシークレットを更新する（libsodiumで暗号化） */
 async function updateRepoSecret(
