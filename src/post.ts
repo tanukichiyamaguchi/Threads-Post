@@ -8,18 +8,27 @@ import {
   saveScheduleState,
   loadLearnings,
   loadViralPlaybook,
+  loadBanditModel,
+  type PostFeatures,
 } from "./state";
 import { loadContentPlan, pickAngle, pickCoupon } from "./content";
 import {
   computeDailySlots,
   currentJst,
   fmtMin,
-  pickTargetChars,
   ctaOrdinal,
-  shouldMentionKamata,
+  slotSeed,
   MIN_SLOT_GAP_MINUTES,
 } from "./schedule";
-import { log, error } from "./logger";
+import {
+  chooseArms,
+  emptyModel,
+  ensureArms,
+  measureEndingArm,
+  measureLengthArm,
+  type ChosenArms,
+} from "./bandit";
+import { log, warn, error } from "./logger";
 
 // GitHubのスケジュール実行は間引かれ、1日に数回しか起動しないことがある。
 // そのため「起動時に、予定時刻を過ぎた未投稿スロットをまとめて投稿」して1日の目標件数を確保する。
@@ -28,8 +37,37 @@ import { log, error } from "./logger";
 const MAX_POSTS_PER_RUN = 8;
 const CATCHUP_GAP_MS = MIN_SLOT_GAP_MINUTES * 60_000;
 
+// 多様性ガード: 直近の投稿と似すぎた本文は1回だけ作り直す
+// （Threadsは反復的・非オリジナルなコンテンツの配信を降格するため）
+const SIMILARITY_THRESHOLD = 0.55;
+const SIMILARITY_LOOKBACK = 30;
+
 function sleep(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms));
+}
+
+/** 文字バイグラムのJaccard類似度（0〜1）。表記ゆれに頑健な軽量チェック */
+function bigramSimilarity(a: string, b: string): number {
+  const grams = (s: string): Set<string> => {
+    const t = s.replace(/\s+/g, "");
+    const set = new Set<string>();
+    for (let i = 0; i < t.length - 1; i++) set.add(t.slice(i, i + 2));
+    return set;
+  };
+  const ga = grams(a);
+  const gb = grams(b);
+  if (ga.size === 0 || gb.size === 0) return 0;
+  let inter = 0;
+  for (const g of ga) if (gb.has(g)) inter++;
+  return inter / (ga.size + gb.size - inter);
+}
+
+function maxSimilarity(text: string, history: { text: string }[]): number {
+  let max = 0;
+  for (const h of history.slice(-SIMILARITY_LOOKBACK)) {
+    max = Math.max(max, bigramSimilarity(text, h.text));
+  }
+  return max;
 }
 
 async function main(): Promise<void> {
@@ -52,45 +90,78 @@ async function main(): Promise<void> {
 
   // 共通素材を一度だけ読み込む
   const plan = loadContentPlan(); // 投稿アングル集＋店舗情報（2週に1回更新）
-  const playbook = loadViralPlaybook(); // バズる投稿の型（静的）
+  const playbook = loadViralPlaybook(); // バズる投稿の型（静的＋週次の環境トレンド）
   const learnings = loadLearnings(); // 毎日の学習知見（実績分析＋本日の話題）
+  const model = loadBanditModel() ?? emptyModel(now.dateStr); // 学習モデル（毎日improveが更新）
+  ensureArms(model);
   const history = loadPostHistory();
 
-  /** 指定スロットの投稿を1件生成して公開し、履歴に保存する */
+  /** 指定スロットの投稿を1件生成して公開し、特徴量つきで履歴に保存する */
   async function postForSlot(slotIndex: number, includeCta: boolean): Promise<void> {
-    const targetChars = pickTargetChars(now.seed, slotIndex);
+    // 学習モデルから「この投稿の型」をサンプリング（日付×スロットで決定的）
+    const arms: ChosenArms = chooseArms(model, slotSeed(now.seed, slotIndex));
     const angle = pickAngle(plan, now.seed, slotIndex);
     const coupon = awareness ? null : pickCoupon(plan, angle, now.seed, slotIndex);
-    const mentionKamata = shouldMentionKamata(now.seed, slotIndex);
     log(
-      `テーマ: [${angle.category}] ${angle.angle}` +
-        (coupon ? ` / クーポン: ${coupon.name}（${coupon.price}）` : "") +
-        (awareness ? " / 認知モード" : "") +
-        ` / 目安${targetChars}字`,
+      `テーマ: [${angle.category}] ${angle.angle.slice(0, 60)}` +
+        (coupon ? ` / クーポン: ${coupon.name}` : "") +
+        ` / 型: ${arms.hook}×${arms.length}×${arms.ending}` +
+        `${arms.kamata ? "×蒲田" : ""}${arms.newsRiding ? "×話題" : ""}` +
+        `${arms.explore ? " (探索)" : ""}`,
     );
 
-    const post = await generatePost(
+    let post = await generatePost(
       angle,
       coupon,
       history,
-      targetChars,
+      arms,
       includeCta,
-      mentionKamata,
       plan.salonInfo,
       learnings,
       playbook,
     );
-    const finalText = composePostText(post);
+    let finalText = composePostText(post);
+
+    // 多様性ガード: 直近の投稿と似すぎていたら一度だけ作り直す
+    const sim = maxSimilarity(finalText, history);
+    if (sim >= SIMILARITY_THRESHOLD) {
+      warn(`直近の投稿と類似（${sim.toFixed(2)}）。構成を変えて作り直します。`);
+      post = await generatePost(
+        angle,
+        coupon,
+        history,
+        arms,
+        includeCta,
+        plan.salonInfo,
+        learnings,
+        playbook,
+        "直前の生成が過去の投稿と似すぎていました。切り口の角度・構成・言い回しを大きく変えて、全く別の投稿として書いてください。",
+      );
+      finalText = composePostText(post);
+    }
     log(`生成 (${finalText.length}文字 / ${post.topic}):\n${finalText}`);
 
     const id = await client.createPost({ text: finalText });
     log(`投稿成功! ID: ${id}`);
+
+    // 学習用の特徴量。length/ending/kamata は実文から実測して記録（指示とのズレを補正）
+    const features: PostFeatures = {
+      hook: arms.hook,
+      length: measureLengthArm(finalText),
+      ending: measureEndingArm(finalText, arms.ending),
+      kamata: /蒲田|大田区/.test(finalText),
+      newsRiding: arms.newsRiding,
+      slotHour: Math.floor(now.minuteOfDay / 60),
+      weekend: now.weekend,
+      explore: arms.explore || undefined,
+    };
 
     history.push({
       date: new Date().toISOString(),
       topic: post.topic,
       text: finalText,
       postId: id,
+      features,
     });
     savePostHistory(history);
   }
@@ -104,7 +175,7 @@ async function main(): Promise<void> {
   }
 
   // --- スケジュール: 予定時刻を過ぎた未投稿スロットをまとめて投稿 ---
-  const slots = computeDailySlots(now.seed);
+  const slots = computeDailySlots(now);
   let st = loadScheduleState();
   if (st.date !== now.dateStr) st = { date: now.dateStr, fired: [] };
 

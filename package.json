@@ -8,6 +8,7 @@
     "research": "tsx src/research.ts",
     "playbook": "tsx src/playbook.ts",
     "improve": "tsx src/improve.ts",
+    "metrics": "tsx src/metrics.ts",
     "post": "tsx src/post.ts",
     "reply": "tsx src/reply.ts",
     "refresh-token": "tsx src/refresh-token.ts",

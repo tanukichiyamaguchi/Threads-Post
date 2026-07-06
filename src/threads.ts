@@ -15,6 +15,16 @@ export interface OwnPost {
   timestamp?: string;
 }
 
+/** 投稿単位のインサイト実測値（lifetime累積） */
+export interface MediaMetrics {
+  views: number;
+  likes: number;
+  replies: number;
+  reposts: number;
+  quotes: number;
+  shares: number;
+}
+
 function sleep(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms));
 }
@@ -50,8 +60,15 @@ export class ThreadsClient {
         json = { raw: body };
       }
 
-      // レート制限・サーバーエラーは指数バックオフで再試行
-      if ((res.status === 429 || res.status >= 500) && attempt < 4) {
+      // Graph APIは恒久エラー（存在しないフィールド・権限不足など）もHTTP 500で返すことがある。
+      // これらはリトライしても直らないため即座に投げる（リトライ嵐の防止）。
+      // code 100=パラメータ/フィールド不正, 190=トークン無効, 10/200番台=権限不足, 3=API機能未許可
+      const permanentCodes = [3, 10, 100, 190, 200, 210, 294];
+      const isPermanent =
+        json?.error && permanentCodes.includes(Number(json.error.code));
+
+      // レート制限・（恒久でない）サーバーエラーは指数バックオフで再試行
+      if ((res.status === 429 || res.status >= 500) && !isPermanent && attempt < 4) {
         const wait = (attempt + 1) * 5000;
         warn(`Threads API ${res.status}。${wait / 1000}s 待機して再試行 (${attempt + 1}/4)`);
         await sleep(wait);
@@ -123,40 +140,71 @@ export class ThreadsClient {
   }
 
   /**
-   * 投稿のエンゲージメント実績を取得する。
-   * いいね・返信・リポスト・引用は media フィールドから、閲覧数(views)は insights から。
+   * 投稿のエンゲージメント実績を取得する（Threads Media Insights API・1コール）。
+   * Threadsではいいね・返信等も media フィールドではなく insights からしか取れない。
+   * 全指標 lifetime 累積値。要トークンスコープ: threads_manage_insights。
    */
-  async getMetrics(postId: string): Promise<{
-    likes: number;
-    replies: number;
-    reposts: number;
-    quotes: number;
-    views: number;
-  }> {
+  async getMetrics(postId: string): Promise<MediaMetrics> {
     const id = cleanId(postId);
-    const fieldsUrl =
-      `${BASE}/${id}` +
-      `?fields=like_count,reply_count,repost_count,quote_count&access_token=${encodeURIComponent(this.token)}`;
-    const f = await this.request(fieldsUrl);
-
-    let views = 0;
-    try {
-      const insUrl =
-        `${BASE}/${id}/insights?metric=views&access_token=${encodeURIComponent(this.token)}`;
-      const ins = await this.request(insUrl);
-      const arr = Array.isArray(ins.data) ? ins.data : [];
-      const v = arr.find((x: any) => x.name === "views");
-      views = Number(v?.values?.[0]?.value ?? v?.total_value?.value ?? 0);
-    } catch {
-      /* insights が取得できない場合は views=0 のまま続行 */
-    }
-
+    const url =
+      `${BASE}/${id}/insights` +
+      `?metric=views,likes,replies,reposts,quotes,shares&access_token=${encodeURIComponent(this.token)}`;
+    const json = await this.request(url);
+    const arr = Array.isArray(json.data) ? json.data : [];
+    const val = (name: string): number => {
+      const m = arr.find((x: any) => x.name === name);
+      const v = Number(m?.values?.[0]?.value ?? m?.total_value?.value ?? 0);
+      return Number.isFinite(v) ? v : 0;
+    };
     return {
-      likes: Number(f.like_count ?? 0),
-      replies: Number(f.reply_count ?? 0),
-      reposts: Number(f.repost_count ?? 0),
-      quotes: Number(f.quote_count ?? 0),
-      views: Number.isFinite(views) ? views : 0,
+      views: val("views"),
+      likes: val("likes"),
+      replies: val("replies"),
+      reposts: val("reposts"),
+      quotes: val("quotes"),
+      shares: val("shares"),
+    };
+  }
+
+  /**
+   * アカウント全体のインサイトを取得する（User Insights API）。
+   * views は日次時系列（since/until 指定・Unix秒）、followers_count は現在値のみ。
+   */
+  async getUserInsights(
+    sinceUnix: number,
+    untilUnix: number,
+  ): Promise<{ dailyViews: Array<{ date: string; views: number }>; followers: number }> {
+    const url =
+      `${BASE}/${this.userId}/threads_insights` +
+      `?metric=views,followers_count&since=${sinceUnix}&until=${untilUnix}` +
+      `&access_token=${encodeURIComponent(this.token)}`;
+    const json = await this.request(url);
+    const arr = Array.isArray(json.data) ? json.data : [];
+    const viewsMetric = arr.find((x: any) => x.name === "views");
+    const dailyViews = Array.isArray(viewsMetric?.values)
+      ? viewsMetric.values.map((v: any) => ({
+          date: String(v.end_time ?? "").slice(0, 10),
+          views: Number(v.value ?? 0) || 0,
+        }))
+      : [];
+    const followersMetric = arr.find((x: any) => x.name === "followers_count");
+    const followers =
+      Number(
+        followersMetric?.total_value?.value ?? followersMetric?.values?.[0]?.value ?? 0,
+      ) || 0;
+    return { dailyViews, followers };
+  }
+
+  /** 投稿クォータの残量を確認する（250投稿/24h・1000返信/24h）。ボリューム実験の安全弁。 */
+  async getPublishingLimit(): Promise<{ used: number; total: number }> {
+    const url =
+      `${BASE}/${this.userId}/threads_publishing_limit` +
+      `?fields=quota_usage,config&access_token=${encodeURIComponent(this.token)}`;
+    const json = await this.request(url);
+    const d = Array.isArray(json.data) ? json.data[0] : json.data;
+    return {
+      used: Number(d?.quota_usage ?? 0) || 0,
+      total: Number(d?.config?.quota_total ?? 250) || 250,
     };
   }
 

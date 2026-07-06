@@ -2,6 +2,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { brand } from "./config";
 import type { PostHistoryItem, Learnings, ViralPlaybook } from "./state";
 import type { AngleItem, Coupon, ContentPlan, SalonInfo } from "./content";
+import { LENGTH_RANGES, type ChosenArms } from "./bandit";
 
 const MODEL = "claude-sonnet-5";
 
@@ -359,6 +360,8 @@ export async function researchTrendingTopics(today: string): Promise<string> {
     `B) 大田区・蒲田のローカルな話題・イベント・季節ネタ（お祭り、商店街、周辺の出来事、天気・混雑など）。`,
     `※政治・災害・事故・訃報など、美容アカウントが便乗すると不謹慎・炎上しうる話題は除外する。`,
     `※各話題は、20〜40代女性の共感・美容・蒲田の日常に自然に絡められるかも一言添える。`,
+    `※重要: Web検索で実際に確認できた話題だけを出すこと。検索できなかった・確認できなかった場合は、`,
+    `推測や一般知識で話題を作らず「話題を確認できませんでした」とだけ出力する（事実誤認の投稿を防ぐため）。`,
     ``,
     `# 出力`,
     `箇条書きで6〜10件。各行「話題（全国 or 蒲田/大田区）→ 美容や共感・日常への自然な絡め方」。`,
@@ -372,7 +375,7 @@ export async function researchTrendingTopics(today: string): Promise<string> {
       {
         type: "web_search_20260209",
         name: "web_search",
-        max_uses: 6,
+        max_uses: 8,
         user_location: {
           type: "approximate",
           country: "JP",
@@ -450,6 +453,7 @@ export async function buildLearnings(
     `- doMore: 自店で伸びた投稿の共通点・もっとやるべきこと（自店の実績分析を最優先。実績が薄ければ一般則で補う）。`,
     `- avoid: 伸びなかった／宣伝臭い・避けるべき型。`,
     `- todayTopics: 本日のインプが狙える話題を6〜10個。各項目に美容や共感・蒲田の日常への自然な絡め方を添える。不謹慎・炎上リスクのある話題は除外する。`,
+    `  ※話題メモが「確認できませんでした」等で実際の話題を含まない場合、todayTopics は空配列にする（推測で話題を作らない）。`,
     `※当店はまつげパーマ・眉毛WAX専門（まつエクは扱わない・言及しない）。売り込みではなく認知拡大が目的。`,
   ].join("\n");
 
@@ -485,6 +489,132 @@ export async function buildLearnings(
   };
 }
 
+// ==========================================
+// 週1回: 環境センシング（今Threadsで伸びている型）＋メタ分析
+// ==========================================
+export async function researchEnvironmentTrends(today: string): Promise<string> {
+  const system =
+    "あなたは日本のSNS（特にThreads）の動向に詳しいコンテンツ戦略の分析家です。" +
+    "いま実際に伸びている投稿の傾向・型の変化を調べ、実行可能な示唆に落とします。";
+
+  const user = [
+    `本日: ${today}（日本）。`,
+    `発信者: 蒲田西口のまつげパーマ・眉毛WAX専門店（20〜40代女性向け・テキスト投稿のみ・目的はインプレッション最大化）。`,
+    ``,
+    `# 依頼`,
+    `web_search で、ここ数週間の日本のThreadsで「実際に伸びている投稿の傾向」を調べてください。`,
+    `1) 美容・ライフスタイル系で今伸びている投稿の型・ネタの変化`,
+    `2) Threadsのアルゴリズム・機能の最近の変化（配信・おすすめ・タグなど）`,
+    `3) 地域・ローカル系アカウントで反応が取れている型`,
+    `※確認できたものだけを書き、推測は「不確実」と明記する。`,
+    ``,
+    `# 出力`,
+    `箇条書きで8〜12件。各行に「観察された傾向 → 当アカウントへの応用」の形で。`,
+  ].join("\n");
+
+  const stream = client().messages.stream({
+    model: MODEL,
+    max_tokens: 3500,
+    output_config: { effort: "medium" },
+    tools: [
+      {
+        type: "web_search_20260209",
+        name: "web_search",
+        max_uses: 8,
+        user_location: {
+          type: "approximate",
+          country: "JP",
+          region: "Tokyo",
+          city: "Tokyo",
+          timezone: "Asia/Tokyo",
+        },
+      },
+    ],
+    system,
+    messages: [{ role: "user", content: user }],
+  } as any);
+
+  const msg = await stream.finalMessage();
+  return textOf((msg as any).content) || "（環境トレンドを取得できませんでした）";
+}
+
+const WEEKLY_META_SCHEMA = {
+  type: "object",
+  properties: {
+    environmentTrends: {
+      type: "array",
+      items: { type: "string" },
+      description: "今の環境（Threadsの傾向）を踏まえて投稿生成時に意識すべきこと。5〜8個。",
+    },
+    analysis: {
+      type: "string",
+      description:
+        "今週の実績の分析（何が効いた/効かなかった・次週やるべきこと）をMarkdownで400字程度。",
+    },
+  },
+  required: ["environmentTrends", "analysis"],
+  additionalProperties: false,
+};
+
+/** 週次メタ分析: アーム統計＋実文＋環境調査から、環境トレンドと人間可読の分析を作る */
+export async function buildWeeklyMeta(
+  modelSummary: string,
+  top: ScoredPost[],
+  weak: ScoredPost[],
+  envNotes: string,
+): Promise<{ environmentTrends: string[]; analysis: string }> {
+  const fmt = (arr: ScoredPost[]) =>
+    arr.length
+      ? arr
+          .map((p, i) => `${i + 1}. [24h views相対 ${p.score.toFixed(2)}] ${p.text.replace(/\n/g, " ").slice(0, 100)}`)
+          .join("\n")
+      : "（データなし）";
+
+  const user = [
+    `# 学習モデルのアーム統計（型ごとの実測平均報酬）`,
+    modelSummary,
+    ``,
+    `# 今週伸びた投稿`,
+    fmt(top),
+    ``,
+    `# 今週伸びなかった投稿`,
+    fmt(weak),
+    ``,
+    `# 環境調査メモ（今Threadsで伸びている型）`,
+    envNotes,
+    ``,
+    `# 依頼`,
+    `上記から次を作成:`,
+    `- environmentTrends: 環境の変化を踏まえて投稿生成時に意識すべきこと5〜8個（具体的・実行可能に）。`,
+    `- analysis: 今週の分析（何が効いた/効かなかった・数字の根拠・次週の重点）をMarkdownで。`,
+  ].join("\n");
+
+  const res = await client().messages.create({
+    model: MODEL,
+    max_tokens: 4000,
+    output_config: {
+      effort: "high",
+      format: { type: "json_schema", schema: WEEKLY_META_SCHEMA },
+    },
+    system:
+      "あなたはSNS運用のデータ分析家です。実測のアーム統計と実文、環境調査を統合し、" +
+      "インプレッション最大化のための実行可能な知見を作ります。",
+    messages: [{ role: "user", content: user }],
+  } as any);
+
+  const raw = textOf((res as any).content);
+  if (!raw) throw new Error(`週次メタ分析が空でした（stop_reason=${(res as any).stop_reason}）`);
+  let data: any;
+  try {
+    data = JSON.parse(raw);
+  } catch {
+    throw new Error(`週次メタ分析のJSON解析に失敗しました: ${raw.slice(0, 200)}`);
+  }
+  const arr = (x: any): string[] =>
+    Array.isArray(x) ? x.map(String).filter((s: string) => s.trim().length > 0) : [];
+  return { environmentTrends: arr(data.environmentTrends), analysis: String(data.analysis ?? "") };
+}
+
 const POST_SCHEMA = {
   type: "object",
   properties: {
@@ -495,27 +625,47 @@ const POST_SCHEMA = {
     text: {
       type: "string",
       description:
-        `Threads投稿の本文。ハッシュタグは付けない。「」『』や""''などの括弧・引用符は使わない。抜け感のあるトーンで句点（。）はできるだけ省く。冒頭1〜2行で手を止めさせ、末尾は必ず返信したくなる問いかけで締める。スマホで読みやすいよう意味のまとまりごとに改行し（\\n）、適度に空行も入れて余白を作る。短く簡潔に、全体で${brand.postRules.targetLength}、${brand.postRules.maxLength}字を超えない（途中で切らない）。`,
+        `Threads投稿の本文。ハッシュタグは付けない。「」『』や""''などの括弧・引用符は使わない。抜け感のあるトーンで句点（。）はできるだけ省く。冒頭1〜2行でスクロールする指を止めさせる。スマホで読みやすいよう意味のまとまりごとに改行し（\\n）、適度に空行も入れて余白を作る。長さと締め方は指示された型に従う。最大${brand.postRules.maxLength}字を超えない（途中で切らない）。`,
     },
   },
   required: ["topic", "text"],
   additionalProperties: false,
 };
 
+// アーム（学習で選ばれた型）→ プロンプトの具体的な指示文
+const HOOK_GUIDE: Record<string, string> = {
+  問題提起: "悩みの名指しから入る（例: 〇〇に悩んでいる人へ／もしかして〇〇していませんか）",
+  数字: "具体的な数字から入る（例: 3つだけ／5選／◯日で変わった話）",
+  逆説: "意外な事実・逆張りから入る（例: 実は〇〇は逆効果／〇〇しなくていい）",
+  共感: "気持ちの代弁から入る（読んだ人が わかる… と言いたくなる書き出し）",
+  あるある: "対象を絞ったあるあるから入る（例: 蒲田で働く20代女性あるある／まつげパーマ愛用者あるある）",
+  リスト: "リスト・ランキング形式で構成する（TOP3・チェックリストなど、最後まで読ませる構造）",
+  意見募集: "みんなに意見を聞く形で始める（例: 〇〇な人いる？／みんなはどうしてる？）",
+  自己開示: "自分の失敗談・本音・体験談から入る（等身大の一人称で）",
+};
+
+const ENDING_GUIDE: Record<string, string> = {
+  二択質問: "末尾はAかBかの二択で答えやすい問いで締める（例: あなたはどっち派？）",
+  共感確認: "末尾は共感を確認する軽い問いで締める（例: これ私だけ？／わかる人いる？）",
+  開いた質問: "末尾は相手の話を聞く開いた問いで締める（例: みんなのおすすめ教えて）",
+  言い切り: "問いかけはせず、余韻のある言い切りで締める（無理に質問しない）",
+};
+
 /**
- * 素材（アングル＋任意のクーポン）から本文だけを高速生成する。
+ * 素材（アングル＋任意のクーポン）と学習済みの型（アーム）から本文を生成する。
  * Web検索なし・思考オフ・effort低でAPI費用を抑える。
+ * extraDirective は多様性ガードの再生成時に追加の指示を渡す。
  */
 export async function generatePost(
   angle: AngleItem,
   coupon: Coupon | null,
   history: PostHistoryItem[],
-  targetChars: number,
+  arms: ChosenArms,
   includeCta: boolean,
-  mentionKamata: boolean,
   salonInfo?: SalonInfo,
   learnings?: Learnings | null,
   playbook?: ViralPlaybook | null,
+  extraDirective?: string,
 ): Promise<GeneratedPost> {
   const recent =
     history
@@ -524,6 +674,18 @@ export async function generatePost(
       .join("\n") || "（過去投稿はまだありません）";
 
   const learnBlock = buildLearningsBlock(playbook, learnings);
+
+  const lengthRange = LENGTH_RANGES[arms.length] ?? LENGTH_RANGES.S;
+  const hasTopics = (learnings?.todayTopics?.length ?? 0) > 0;
+  const armBlock = [
+    `# この投稿の型（実測データから学習した指定。必ず従う）`,
+    `- 書き出し（フック）: ${arms.hook} — ${HOOK_GUIDE[arms.hook] ?? arms.hook}`,
+    `- 長さ: ${lengthRange.label}（${lengthRange.min}〜${lengthRange.max}文字に収める）`,
+    `- 締め方: ${arms.ending} — ${ENDING_GUIDE[arms.ending] ?? arms.ending}`,
+    arms.newsRiding && hasTopics
+      ? `- 話題: 下記「今日のインプが狙える話題」から1つ選び、本文に自然に絡める（無理な便乗はしない）`
+      : `- 話題: 時事ネタには乗らず、切り口そのもので勝負する`,
+  ].join("\n");
 
   const couponBlock = coupon
     ? [
@@ -551,14 +713,16 @@ export async function generatePost(
     ? `# 予約導線\n本文中に予約導線を自然に短く1回だけ入れる（押し付けない）: ${brand.cta}\nただし最後の一文は予約の呼びかけではなく、返信したくなる問いかけにする。`
     : `# 予約・宣伝について\nこの投稿では予約・来店の呼びかけ（ご予約・プロフィールのリンク等）は入れない。売り込まない。目的は『バズる×蒲田×美容』での認知拡大。共感・気づき・あるあるに徹する。`;
 
-  const kamataBlock = mentionKamata
+  const kamataBlock = arms.kamata
     ? `# 蒲田の言及\n本文に「蒲田」（または大田区）を自然に1回入れる。地元の女性が『わかる』と感じるローカル感を出す。`
-    : `# 蒲田の言及\n蒲田への言及は任意（無理に入れない）。`;
+    : `# 蒲田の言及\nこの投稿では蒲田・大田区には言及しない（全国の読者に刺さる内容にする）。`;
 
   const user = [
     `# この投稿のテーマ`,
     `カテゴリ: ${angle.category}`,
     `切り口: ${angle.angle}`,
+    ``,
+    armBlock,
     ``,
     couponBlock,
     infoBlock,
@@ -569,20 +733,19 @@ export async function generatePost(
     `# 直近の自分の投稿（言い回しの繰り返しを避ける）`,
     recent,
     ``,
-    `# 文字数の目安`,
-    `本文は約${targetChars}文字。短く簡潔に、全体で最大${brand.postRules.maxLength}字を超えない（途中で切らない）。`,
-    ``,
+    extraDirective ? `# 追加指示\n${extraDirective}` : "",
     `# 依頼`,
-    `上記の切り口で、20〜40代女性が思わず反応（いいね・保存・返信）したくなるThreads投稿を1つ作成してください。`,
-    `『バズる × 蒲田 × 美容』が最優先。まつげパーマ・眉毛WAX専門店ならではの美容の視点は自然に効かせるが、売り込みや宣伝臭は出さない。`,
-    `冒頭1〜2行で手を止めさせ（結論や共感を誘う問いから始める）、末尾は必ず返信したくなる問いかけで締めること。`,
+    `上記の切り口と型で、20〜40代女性が思わず反応（いいね・保存・返信・リポスト）したくなるThreads投稿を1つ作成してください。`,
+    `最優先はインプレッション（views）。手が止まる書き出し × 最後まで読ませる構成 × 反応したくなる中身。`,
+    `まつげパーマ・眉毛WAX専門店ならではの美容の視点は自然に効かせるが、売り込みや宣伝臭は出さない。`,
+    `いいね・コメント・フォロー・シェアの明示的なお願い（エンゲージメントベイト）は絶対にしない（Threadsの配信で降格されるため）。`,
   ]
     .filter((l) => l !== "")
     .join("\n");
 
   const res = await client().messages.create({
     model: MODEL,
-    max_tokens: 700,
+    max_tokens: 1500, // XL（〜500字）の本文＋JSONの余裕
     output_config: {
       effort: "low",
       format: { type: "json_schema", schema: POST_SCHEMA },
@@ -698,6 +861,7 @@ function buildLearningsBlock(
       : "";
   const blocks = [
     sec("バズる型・原則（一度の詳細調査で作った普遍の型）", playbook?.playbook, 10),
+    sec("今の環境で伸びている型（週次の環境調査で更新）", playbook?.environmentTrends, 6),
     sec("バズを狙える切り口（今日のテーマに活かせそうなら取り入れる）", playbook?.viralAngles, 6),
     sec("今日のインプが狙える話題（自然に絡められそうなら1つ乗る）", learnings?.todayTopics, 6),
     sec("伸びた投稿の傾向（もっとやる）", learnings?.doMore, 6),
@@ -717,8 +881,9 @@ function buildPostSystemPrompt(): string {
   const r = brand.postRules;
   return [
     `あなたは「${brand.name}」（${brand.area}の${brand.businessType}）の${brand.persona}です。`,
-    `Threadsで『バズる × 蒲田 × 美容』の投稿を作り、20〜40代女性に広く認知される（覚えてもらう）ことを狙います。`,
+    `Threadsで『バズる × 蒲田 × 美容』の投稿を作り、インプレッション（views）を最大化して20〜40代女性に広く認知されることを狙います。`,
     `売り込みではなく、思わず反応したくなる共感・気づき・あるあるで拡散を狙う発信者です。`,
+    `投稿の「型」（書き出し・長さ・締め方・蒲田言及・話題乗り）は実測データから学習したものが毎回指定されます。必ずその型に従ってください。`,
     ``,
     `## 目的`,
     brand.goal,
@@ -732,15 +897,17 @@ function buildPostSystemPrompt(): string {
     brand.localContext,
     ``,
     `## 投稿の条件`,
-    `- 日本語。本文の長さは指定された目安文字数（${r.targetLength}）に合わせ、毎回大きくばらつかせる。全体で最大${r.maxLength}文字を厳守（超えない・途中で切らない）。`,
+    `- 日本語。長さ・書き出し・締め方は指定された型に従う。全体で最大${r.maxLength}文字を厳守（超えない・途中で切らない）。`,
     `- 「」『』や""''などの括弧・引用符は使わない。`,
     `- 抜け感のあるトーン。句点（。）はあえて省き、宣伝感を出さない。`,
-    `- 冒頭1〜2行で手を止めさせる。結論・共感・意外性のある問いから始め、続きを読みたいと思わせる。`,
-    `- 末尾は必ず、返信したくなる問いかけで締める（会話が続く投稿ほど拡散されるため）。具体的で答えやすい問いにする。`,
+    `- 冒頭1〜2行でスクロールする指を止めさせる。続きを読みたいと思わせる。`,
+    `- 長め（200字超）の投稿は 導入→展開→オチ の流れで最後まで飽きずに読ませる。`,
     `- 視認性を最優先に、意味のまとまりごとに改行し、適度に空行で余白を作る。1行は長くしすぎない（目安20〜30文字以内）。ただし不自然な分割はしない。`,
-    `- まず『バズる（共感・保存・返信されやすい）』を最優先。美容の知識やお悩み解決は、押し付けず自然な気づきとして織り込む。`,
+    `- 最優先はインプレッション（表示回数）。共感・保存・返信・リポストされやすい中身にする。美容の知識やお悩み解決は、押し付けず自然な気づきとして織り込む。`,
+    `- いいね・コメント・フォロー・シェアの明示的なお願い（エンゲージメントベイト）は絶対にしない。Threadsの配信アルゴリズムで降格される。自然な問いかけはOK。`,
+    `- 他人の投稿の丸写し・使い回しに見える内容は書かない（非オリジナルコンテンツは配信降格される）。毎回オリジナルの視点・言い回しにする。`,
     `- 売り込み・宣伝・予約や来店の呼びかけは基本的にしない（目的は認知）。別途「予約導線」の指示がある場合のみ、それに従う。`,
-    `- 切り口が蒲田ローカル(local)のとき、または自然に合うときは、蒲田の地元感・あるある・生活感を織り込み、蒲田の女性に『自分ごと』『わかる』と感じてもらう。ただし無理に毎回は入れない。事実に反することは書かない。`,
+    `- 蒲田言及の指示がある回は、蒲田の地元感・あるある・生活感を織り込み『自分ごと』と感じてもらう。事実に反することは書かない。`,
     `- 絵文字は${r.emoji}。`,
     `- ハッシュタグは付けない（本文にも入れない）。`,
     `- クーポンに触れる場合は、与えられた内容・価格・条件のみを使い、絶対に創作・改変しない。`,

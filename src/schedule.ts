@@ -1,9 +1,12 @@
 // 1日の投稿スケジュールを生成する。
-// - 1日 POSTS_PER_DAY 件
-// - 朝・昼・夜に分散しつつ、視聴率の高い時間帯（昼・夜のピーク）に多く配分
+// - 1日の件数はボリューム実験モデル（state/volume-model.json・週次で学習）から決まる（既定 40）
+// - 朝・昼・夜に分散しつつ、視聴率の高い時間帯に多く配分
+//   （時間帯の重みは実測から学習した state/hour-weights.json を優先、無ければ静的な既定値）
 // - 具体的な時刻は日付シードで決まるため、毎日少しずつ変動する
 
-const POSTS_PER_DAY = 40;
+import { loadHourWeights, loadVolumeModel } from "./state";
+
+export const DEFAULT_POSTS_PER_DAY = 40;
 
 // スロット間の最低間隔（分）。当初の予定時刻の間引きだけでなく、
 // 起動が遅れて複数件をまとめて投稿する際の「実際の投稿間隔」にも使う（連投防止）。
@@ -11,7 +14,8 @@ export const MIN_SLOT_GAP_MINUTES = 8;
 
 // [JSTの時, 相対ウェイト]。ウェイトが大きい時間帯ほど投稿数が増える。
 // 夜20〜22時台・昼12時台を最重視（エンゲージメントが高い傾向）。
-const WEIGHTED_HOURS: Array<[number, number]> = [
+// ※学習済みの重み（hour-weights.json）があればそちらが優先される。
+export const WEIGHTED_HOURS: Array<[number, number]> = [
   [7, 2],
   [8, 3],
   [9, 2],
@@ -31,7 +35,7 @@ const WEIGHTED_HOURS: Array<[number, number]> = [
 ];
 
 /** 決定的な擬似乱数（mulberry32）。同じseedなら毎回同じ並びを返す。 */
-function mulberry32(seed: number): () => number {
+export function mulberry32(seed: number): () => number {
   let a = seed >>> 0;
   return function () {
     a = (a + 0x6d2b79f5) | 0;
@@ -41,23 +45,40 @@ function mulberry32(seed: number): () => number {
   };
 }
 
-/** その日の投稿時刻（minute of day, JST）を昇順で返す。要素数は POSTS_PER_DAY。 */
-export function computeDailySlots(seed: number): number[] {
-  const rng = mulberry32(seed);
-  const total = WEIGHTED_HOURS.reduce((s, [, w]) => s + w, 0);
+/** その日の設定投稿数（ボリューム実験モデルから。無ければ既定値） */
+export function currentPostsPerDay(_now?: JstNow): number {
+  const v = loadVolumeModel();
+  const n = v?.postsPerDay;
+  return Number.isFinite(n) && n! >= 10 && n! <= 200 ? n! : DEFAULT_POSTS_PER_DAY;
+}
 
-  // ウェイトに比例して各時間帯へ件数を配分（最大剰余法で合計を POSTS_PER_DAY に）
-  const raw = WEIGHTED_HOURS.map(([, w]) => (w / total) * POSTS_PER_DAY);
+/** その日に使う時間帯重み（学習済みがあれば優先・平日/週末別） */
+export function hourWeightsFor(weekend: boolean): Array<[number, number]> {
+  const learned = loadHourWeights();
+  const table = weekend ? learned?.weekend : learned?.weekday;
+  if (table && table.length >= 8) return table;
+  return WEIGHTED_HOURS;
+}
+
+/** その日の投稿時刻（minute of day, JST）を昇順で返す。 */
+export function computeDailySlots(now: JstNow): number[] {
+  const postsPerDay = currentPostsPerDay(now);
+  const hours = hourWeightsFor(now.weekend);
+  const rng = mulberry32(now.seed);
+  const total = hours.reduce((s, [, w]) => s + w, 0);
+
+  // ウェイトに比例して各時間帯へ件数を配分（最大剰余法で合計を postsPerDay に）
+  const raw = hours.map(([, w]) => (w / total) * postsPerDay);
   const counts = raw.map((x) => Math.floor(x));
-  let remainder = POSTS_PER_DAY - counts.reduce((s, c) => s + c, 0);
+  let remainder = postsPerDay - counts.reduce((s, c) => s + c, 0);
   const byFraction = raw
     .map((x, i) => [x - Math.floor(x), i] as [number, number])
     .sort((a, b) => b[0] - a[0]);
-  for (let k = 0; k < remainder; k++) counts[byFraction[k][1]]++;
+  for (let k = 0; k < remainder; k++) counts[byFraction[k % byFraction.length][1]]++;
 
   // 各時間帯の中で件数ぶんを散らして配置（毎日シードでずれる）
   const slots: number[] = [];
-  WEIGHTED_HOURS.forEach(([hour], i) => {
+  hours.forEach(([hour], i) => {
     const c = counts[i];
     for (let k = 0; k < c; k++) {
       const minute = Math.floor((k + rng()) * (60 / c));
@@ -80,6 +101,8 @@ export interface JstNow {
   minuteOfDay: number;
   seed: number;
   hhmm: string;
+  weekday: number; // 0=日 〜 6=土
+  weekend: boolean; // 土日か
 }
 
 /** 現在時刻をJSTで分解する */
@@ -98,11 +121,15 @@ export function currentJst(d: Date): JstNow {
   );
   const hour = Number(p.hour) % 24;
   const minute = Number(p.minute);
+  const dateStr = `${p.year}-${p.month}-${p.day}`;
+  const weekday = new Date(`${dateStr}T00:00:00Z`).getUTCDay();
   return {
-    dateStr: `${p.year}-${p.month}-${p.day}`,
+    dateStr,
     minuteOfDay: hour * 60 + minute,
     seed: Number(`${p.year}${p.month}${p.day}`),
     hhmm: `${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}`,
+    weekday,
+    weekend: weekday === 0 || weekday === 6,
   };
 }
 
@@ -111,34 +138,17 @@ export function fmtMin(m: number): string {
   return `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
 }
 
-/** 投稿ごとに目安文字数をばらつかせる（20〜70字程度・短く簡潔に） */
-export function pickTargetChars(seed: number, slotIndex: number): number {
-  const rng = mulberry32((seed + (slotIndex + 1) * 7919) >>> 0);
-  return 20 + Math.floor(rng() * 51); // 20〜70
-}
+// 文字数・蒲田言及・締め方などの「型」の選択は src/bandit.ts の学習モデルが担う
+// （以前の pickTargetChars / shouldMentionKamata はバンディットのアームに置き換え）。
 
-/**
- * その投稿で「蒲田／大田区」に言及するか。
- * 1日のスロットのちょうど約6割を決定的に選ぶ（毎日メンバーは変動）。
- */
-export function shouldMentionKamata(
-  seed: number,
-  slotIndex: number,
-  totalSlots: number = POSTS_PER_DAY,
-): boolean {
-  const idx = Array.from({ length: totalSlots }, (_, i) => i);
-  const rng = mulberry32((seed ^ 0x5f3a9c7b) >>> 0);
-  for (let i = totalSlots - 1; i > 0; i--) {
-    const j = Math.floor(rng() * (i + 1));
-    [idx[i], idx[j]] = [idx[j], idx[i]];
-  }
-  const count = Math.round(totalSlots * 0.6); // 約6割
-  return idx.slice(0, count).includes(slotIndex);
+/** 投稿ごとのアーム選択用シード（日付×スロットで決定的） */
+export function slotSeed(seed: number, slotIndex: number): number {
+  return (seed + (slotIndex + 1) * 7919) >>> 0;
 }
 
 /**
  * 予約導線（プロフィールから）を入れる「その日の通算何件目の投稿か」を返す。
- * 1日1回だけCTAを入れるための番号。視認性の高い夜にあたる20〜25件目に置く。
+ * 1日1回だけCTAを入れるための番号（conversionモードのみ使用）。
  */
 export function ctaOrdinal(seed: number): number {
   return 20 + (seed % 6); // 20〜25件目

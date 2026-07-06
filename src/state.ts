@@ -24,24 +24,34 @@ const historyFile = path.join(paths.state, "post-history.json");
 const scheduleFile = path.join(paths.state, "post-schedule.json");
 const learningsFile = path.join(paths.state, "learnings.json");
 const playbookFile = path.join(paths.state, "viral-playbook.json");
+const metricsFile = path.join(paths.state, "metrics.json");
+const accountStatsFile = path.join(paths.state, "account-stats.json");
+const modelFile = path.join(paths.state, "model.json");
+const hourWeightsFile = path.join(paths.state, "hour-weights.json");
+const volumeModelFile = path.join(paths.state, "volume-model.json");
+const reportFile = path.join(paths.state, "report.md");
+
+/**
+ * 投稿生成時に選んだ「型」（バンディットのアーム）。
+ * 学習の入力になる。length/ending は生成後の実文から実測して上書きする。
+ */
+export interface PostFeatures {
+  hook: string; // 問題提起/数字/逆説/共感/あるある/リスト/意見募集/自己開示
+  length: string; // S(〜80)/M(81〜200)/L(201〜350)/XL(351〜500)
+  ending: string; // 二択質問/共感確認/開いた質問/言い切り
+  kamata: boolean; // 蒲田・大田区への言及
+  newsRiding: boolean; // 今日の話題に乗ったか
+  slotHour: number; // 投稿時刻（JSTの時）
+  weekend: boolean; // 土日か
+  explore?: boolean; // 強制探索スロットだったか
+}
 
 export interface PostHistoryItem {
   date: string;
   topic: string;
   text: string;
   postId?: string;
-  metrics?: PostMetrics; // 改善ルーチンが後から追記する実績値
-}
-
-/** 投稿のエンゲージメント実績（Threads Insights から取得） */
-export interface PostMetrics {
-  likes: number;
-  replies: number;
-  reposts: number;
-  quotes: number;
-  views: number;
-  score: number; // 総合エンゲージメントスコア
-  fetchedAt: string;
+  features?: PostFeatures; // 学習用の型タグ（生成時に記録）
 }
 
 /**
@@ -52,6 +62,7 @@ export interface ViralPlaybook {
   updated: string;
   playbook: string[]; // バズる投稿の型・原則（一度の詳細調査で作る）
   viralAngles: string[]; // 蒲田×美容で使える普遍的なバズ切り口
+  environmentTrends?: string[]; // 今の環境で伸びている型（週次の環境センシングで更新）
 }
 
 /**
@@ -77,13 +88,14 @@ export function saveRepliedIds(ids: Set<string>): void {
   writeJson(repliedFile, [...ids].slice(-3000));
 }
 
-/** 過去投稿の履歴（繰り返しを避けるためにClaudeへ渡す） */
+/** 過去投稿の履歴（繰り返し回避のプロンプト参照＋学習の特徴量ソース） */
 export function loadPostHistory(): PostHistoryItem[] {
   return readJson<PostHistoryItem[]>(historyFile, []);
 }
 
 export function savePostHistory(items: PostHistoryItem[]): void {
-  writeJson(historyFile, items.slice(-50));
+  // 学習は投稿後72時間のスナップショットと突き合わせるため、約10日分（40件/日）を保持する
+  writeJson(historyFile, items.slice(-400));
 }
 
 /** その日の投稿スロットの消化状況（二重投稿防止） */
@@ -127,9 +139,139 @@ export function loadViralPlaybook(): ViralPlaybook | null {
     updated: String(p.updated ?? ""),
     playbook: arr(p.playbook),
     viralAngles: arr(p.viralAngles),
+    environmentTrends: arr(p.environmentTrends),
   };
 }
 
 export function saveViralPlaybook(p: ViralPlaybook): void {
   writeJson(playbookFile, p);
+}
+
+// ==========================================
+// 学習システムの状態（計測スナップショット・モデル・スケジュール重み）
+// ==========================================
+
+/** 投稿単位のインサイト値（threads.ts の MediaMetrics と同形。循環importを避けるため再定義） */
+export interface MetricsValues {
+  views: number;
+  likes: number;
+  replies: number;
+  reposts: number;
+  quotes: number;
+  shares: number;
+}
+
+/**
+ * 固定齢スナップショット。lifetime累積値を投稿齢24h/72h付近で記録し、
+ * 投稿同士を比較可能にする（報酬の土台）。
+ * post-history.json とファイルを分けることで、投稿ジョブとのgitコミット競合を避ける。
+ */
+export interface MetricsEntry {
+  postedAt: string; // 投稿日時（ISO）
+  s24?: MetricsValues & { fetchedAt: string }; // 投稿齢22〜30hで取得
+  s72?: MetricsValues & { fetchedAt: string }; // 投稿齢66〜78hで取得
+}
+
+export type MetricsStore = Record<string, MetricsEntry>; // key: postId
+
+export function loadMetricsStore(): MetricsStore {
+  return readJson<MetricsStore>(metricsFile, {});
+}
+
+export function saveMetricsStore(store: MetricsStore): void {
+  // 21日より古いエントリは削除（学習済み・肥大化防止）
+  const cutoff = Date.now() - 21 * 24 * 3600 * 1000;
+  const pruned: MetricsStore = {};
+  for (const [id, e] of Object.entries(store)) {
+    const t = Date.parse(e.postedAt);
+    if (!Number.isFinite(t) || t >= cutoff) pruned[id] = e;
+  }
+  writeJson(metricsFile, pruned);
+}
+
+/** アカウント全体の日次統計（フォロワー推移はAPIに履歴が無いため自前で記録） */
+export interface AccountStatsEntry {
+  date: string; // YYYY-MM-DD (JST)
+  accountViews?: number; // User Insights の日次views
+  followers?: number; // その日時点のフォロワー数
+  postsPerDay?: number; // その日の設定投稿数（ボリューム実験の記録）
+}
+
+export function loadAccountStats(): AccountStatsEntry[] {
+  return readJson<AccountStatsEntry[]>(accountStatsFile, []);
+}
+
+export function saveAccountStats(stats: AccountStatsEntry[]): void {
+  // 直近180日分を保持
+  writeJson(accountStatsFile, stats.slice(-180));
+}
+
+/** バンディットモデル（次元→アーム→ガウス統計）。構造の意味は src/bandit.ts を参照 */
+export interface ArmStats {
+  n: number; // 実効サンプル数（指数減衰する）
+  mean: number; // 報酬平均
+  m2: number; // 分散計算用の二乗偏差和（Welford）
+}
+
+export interface BanditModel {
+  updated: string;
+  decayAppliedOn: string; // 最後に減衰を適用した日（YYYY-MM-DD）
+  dimensions: Record<string, Record<string, ArmStats>>; // dimensions.hook.問題提起 = {n, mean, m2}
+  ingested: string[]; // 学習取り込み済みのpostId（二重学習防止・直近1000件）
+}
+
+export function loadBanditModel(): BanditModel | null {
+  const m = readJson<any>(modelFile, null);
+  if (!m || typeof m !== "object" || !m.dimensions) return null;
+  return {
+    updated: String(m.updated ?? ""),
+    decayAppliedOn: String(m.decayAppliedOn ?? ""),
+    dimensions: m.dimensions,
+    ingested: Array.isArray(m.ingested) ? m.ingested.map(String) : [],
+  };
+}
+
+export function saveBanditModel(m: BanditModel): void {
+  writeJson(modelFile, { ...m, ingested: m.ingested.slice(-1000) });
+}
+
+/** 学習済みの時間帯重み（平日/週末別）。無ければ schedule.ts の静的重みを使う */
+export interface HourWeights {
+  updated: string;
+  weekday: Array<[number, number]>; // [JSTの時, 重み]
+  weekend: Array<[number, number]>;
+}
+
+export function loadHourWeights(): HourWeights | null {
+  const h = readJson<any>(hourWeightsFile, null);
+  if (!h || !Array.isArray(h.weekday) || !Array.isArray(h.weekend)) return null;
+  return h as HourWeights;
+}
+
+export function saveHourWeights(h: HourWeights): void {
+  writeJson(hourWeightsFile, h);
+}
+
+/** 投稿ボリュームの週次実験モデル */
+export interface VolumeModel {
+  weekStart: string; // 現在の週の開始日（YYYY-MM-DD・月曜）
+  postsPerDay: number; // 今週の投稿数
+  arms: Record<string, ArmStats>; // "30"/"40"/"50" → 週平均アカウントviewsの統計
+  history: Array<{ week: string; postsPerDay: number; avgDailyViews: number }>;
+}
+
+export function loadVolumeModel(): VolumeModel | null {
+  const v = readJson<any>(volumeModelFile, null);
+  if (!v || typeof v !== "object" || !v.postsPerDay) return null;
+  return v as VolumeModel;
+}
+
+export function saveVolumeModel(v: VolumeModel): void {
+  writeJson(volumeModelFile, { ...v, history: (v.history ?? []).slice(-52) });
+}
+
+/** 週次の人間可読レポート */
+export function saveReport(markdown: string): void {
+  ensureDir();
+  fs.writeFileSync(reportFile, markdown);
 }

@@ -1,0 +1,38 @@
+name: Threads メトリクス収集
+
+on:
+  schedule:
+    # 2時間ごと。投稿齢24h/72hの固定齢スナップショットと、アカウント日次統計を収集する。
+    # 齢ウィンドウ（22〜30h / 66〜78h）が広いので、起動が多少間引かれても取りこぼさない。
+    - cron: "30 */2 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: threads-metrics
+  cancel-in-progress: false
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: 投稿実績スナップショットとアカウント統計を収集
+        run: npm run metrics
+        env:
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+
+      - name: 計測結果をコミット
+        if: always()
+        run: 'bash .github/scripts/commit-state.sh "chore: メトリクスを更新 [skip ci]"'

@@ -2,8 +2,9 @@ name: Threads AI返信
 
 on:
   schedule:
-    # 約2時間ごとにコメントをチェックして返信
-    - cron: "0 */2 * * *"
+    # 1時間ごとにコメントをチェックして返信。
+    # Threads公式によると返信はビュー数の約半分を占めるため、素早い返信で会話を伸ばす。
+    - cron: "0 * * * *"
   workflow_dispatch: {}
 
 permissions:
