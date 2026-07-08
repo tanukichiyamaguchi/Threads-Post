@@ -1380,5 +1380,35 @@
       "slotHour": 22,
       "weekend": false
     }
+  },
+  {
+    "date": "2026-07-08T22:58:36.655Z",
+    "topic": "サンロード通勤ついで美容",
+    "text": "蒲田でサンロード通って通勤してる人あるある\n\n屋根あるからつい歩幅遅くなって、気づいたら美容院の看板二度見してる\n\nみんなは通勤路にどんなお店挟んでる？",
+    "postId": "18174968884375355",
+    "features": {
+      "hook": "あるある",
+      "length": "S",
+      "ending": "開いた質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 7,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-08T23:06:49.804Z",
+    "topic": "眉ブラッシング習慣",
+    "text": "眉伸ばし中の人あるある\n毛流れ迷子になりがち\n\n蒲田西口出る前の1分、朝にブラシで上→斜め整えるだけで印象変わる\n\n朝ブラシ派？寝る前ブラシ派？",
+    "postId": "18085206461171680",
+    "features": {
+      "hook": "あるある",
+      "length": "S",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 7,
+      "weekend": false
+    }
   }
 ]
