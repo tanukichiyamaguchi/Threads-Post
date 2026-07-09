@@ -1893,5 +1893,35 @@
       "slotHour": 22,
       "weekend": false
     }
+  },
+  {
+    "date": "2026-07-09T23:05:50.665Z",
+    "topic": "Open記念まつげパーマ体験のあるある共感",
+    "text": "蒲田西口勢あるある\n新しくできたサロン気になるけど初回まで結局様子見しがち\nそういう人ほどOpen記念価格の間に軽く試しがち\nこれ私だけ？",
+    "postId": "18112916470820068",
+    "features": {
+      "hook": "あるある",
+      "length": "S",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 8,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-09T23:14:05.030Z",
+    "topic": "初回カウンセリングで似合わせ提案あるある",
+    "text": "美容室で毎回シャンプー剤の説明されるまで聞いてないのに\n\n眉やまつげは骨格まで見て提案されると急に真剣に聞きたくなる説\n\nみんなは何見てもらう時が1番真剣に聞く？",
+    "postId": "17922737703385753",
+    "features": {
+      "hook": "あるある",
+      "length": "M",
+      "ending": "開いた質問",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 8,
+      "weekend": false
+    }
   }
 ]
