@@ -20,6 +20,7 @@ function writeJson(file: string, data: unknown): void {
 }
 
 const repliedFile = path.join(paths.state, "replied-comments.json");
+const repliedUsersFile = path.join(paths.state, "replied-users.json");
 const historyFile = path.join(paths.state, "post-history.json");
 const scheduleFile = path.join(paths.state, "post-schedule.json");
 const learningsFile = path.join(paths.state, "learnings.json");
@@ -86,6 +87,19 @@ export function loadRepliedIds(): Set<string> {
 export function saveRepliedIds(ids: Set<string>): void {
   // 直近3000件だけ保持して肥大化を防ぐ
   writeJson(repliedFile, [...ids].slice(-3000));
+}
+
+/**
+ * 返信済みの「投稿×ユーザー」キー（`${postId}:${username}`）。
+ * 同じ投稿の会話では一人につき1回までしか返信しないために使う。
+ */
+export function loadRepliedUsers(): Set<string> {
+  return new Set(readJson<string[]>(repliedUsersFile, []));
+}
+
+export function saveRepliedUsers(keys: Set<string>): void {
+  // 直近5000件だけ保持して肥大化を防ぐ
+  writeJson(repliedUsersFile, [...keys].slice(-5000));
 }
 
 /** 過去投稿の履歴（繰り返し回避のプロンプト参照＋学習の特徴量ソース） */

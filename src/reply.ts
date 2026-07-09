@@ -1,7 +1,7 @@
 import { env } from "./config";
 import { ThreadsClient } from "./threads";
 import { generateReply } from "./anthropic";
-import { loadRepliedIds, saveRepliedIds } from "./state";
+import { loadRepliedIds, saveRepliedIds, loadRepliedUsers, saveRepliedUsers } from "./state";
 import { log, warn, error } from "./logger";
 
 const MAX_REPLIES_PER_RUN = 25;
@@ -22,6 +22,7 @@ async function main(): Promise<void> {
   }
 
   const replied = loadRepliedIds();
+  const repliedUsers = loadRepliedUsers(); // 「投稿×ユーザー」単位の返信済み（往復ラリー防止）
   const posts = await client.listOwnPosts(POSTS_TO_SCAN);
   log(`チェック対象の投稿: ${posts.length}件`);
 
@@ -57,12 +58,26 @@ async function main(): Promise<void> {
         continue;
       }
 
+      // 同じ投稿の会話では一人につき1回まで（往復ラリーを止める）。
+      // ユーザー名が取れないコメントはコメントID単位の重複防止のみ。
+      const userKey = user ? `${p.id}:${user}` : "";
+      if (userKey && repliedUsers.has(userKey)) {
+        log(`@${user} には この投稿で返信済みのためスキップ`);
+        replied.add(id);
+        continue;
+      }
+
       log(`新着コメント @${user}: 「${text}」`);
       try {
         const reply = await generateReply(text);
         if (reply) {
           const replyId = await client.createPost({ text: reply, replyToId: id });
           log(`✓ 返信成功: 「${reply}」 (返信ID: ${replyId})`);
+          // 実際に返信できたときだけ「この投稿でこの人へは返信済み」と記録する
+          if (userKey) {
+            repliedUsers.add(userKey);
+            saveRepliedUsers(repliedUsers);
+          }
         } else {
           warn("返信の生成に失敗しました");
         }
