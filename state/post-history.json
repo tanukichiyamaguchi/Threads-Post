@@ -1410,5 +1410,50 @@
       "slotHour": 7,
       "weekend": false
     }
+  },
+  {
+    "date": "2026-07-09T00:13:08.869Z",
+    "topic": "七夕×新しい自分",
+    "text": "七夕に短冊書く代わりに蒲田西口でまつげと眉整えて生まれ変わりたい勢、私だけ？\n\n今年何を願う？",
+    "postId": "18072742946370533",
+    "features": {
+      "hook": "あるある",
+      "length": "S",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 9,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-09T00:21:19.476Z",
+    "topic": "少人数体制の丁寧接客",
+    "text": "サロンでスタッフ多すぎて誰が誰だか分からなくなるあるある\n\n蒲田西口のうちは2人だけだから毎回ちゃんと顔覚えてもらえる\n\n少人数のサロンと多いサロン、どっちが安心する派？",
+    "postId": "18097534022215935",
+    "features": {
+      "hook": "あるある",
+      "length": "M",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 9,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-09T00:29:30.480Z",
+    "topic": "眉毛WAXは実は男性利用も多い",
+    "text": "蒲田西口の身だしなみ意識高い男性あるある\n実は眉毛WAXでこっそり整えてる説\n\n清潔感って眉で決まるの、男女関係ないよね\n\n整える派？伸ばしっぱなし派？",
+    "postId": "18190172725376565",
+    "features": {
+      "hook": "あるある",
+      "length": "S",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 9,
+      "weekend": false
+    }
   }
 ]
