@@ -1667,5 +1667,110 @@
       "slotHour": 16,
       "weekend": false
     }
+  },
+  {
+    "date": "2026-07-09T10:44:57.467Z",
+    "topic": "施術後NG行動あるある",
+    "text": "蒲田西口勢あるある\n施術後にオイルクレンジングとうつぶせ寝、意外とやりがちで地味に後悔するやつ\nみんなは施術後どのくらい気をつけてる？",
+    "postId": "18102825488153941",
+    "features": {
+      "hook": "あるある",
+      "length": "S",
+      "ending": "開いた質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 19,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-09T10:53:11.675Z",
+    "topic": "蒲田の共働き子育て世帯あるある×眉毛WAXの隙間時間ケア",
+    "text": "蒲田西口勢あるある\n育児と仕事の間の30分、眉だけでも整えると謎に自分取り戻せる🌿",
+    "postId": "18149122210504678",
+    "features": {
+      "hook": "あるある",
+      "length": "S",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 19,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-09T11:01:25.553Z",
+    "topic": "パリジェンヌと通常ラッシュリフトの違い",
+    "text": "蒲田西口勢あるあるまつげパーマ選ぶ時カール強めか持ちの良さかで地味に迷う\nパリジェンヌは根元からしっかり上向きで持続長め、通常はナチュラルな仕上がりって知ってた？\nカール重視のパリジェンヌ派？自然な仕上がりの通常派？",
+    "postId": "18107945713995978",
+    "features": {
+      "hook": "あるある",
+      "length": "M",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 19,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-09T11:09:38.686Z",
+    "topic": "梅雨明け後のにわか雨とメイク崩れ",
+    "text": "蒲田西口勢あるある\n梅雨明けても油断すると急な雷雨で\nマスカラより先に眉が崩れて地味に焦るやつ\n\nまつげパーマと眉WAXしてる子は\n雨の日も涙目にならず涼しい顔してる🌧️",
+    "postId": "18094942823201440",
+    "features": {
+      "hook": "あるある",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 19,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-09T11:17:50.707Z",
+    "topic": "蒲田温泉郷帰りでも眉まつげ崩れない安心感",
+    "text": "蒲田西口勢あるある\n黒湯でさっぱりした後すっぴんでも眉と目元だけは崩れてないから安心して帰れるやつ\nすっぴん派？完全メイク派？",
+    "postId": "18102760565165062",
+    "features": {
+      "hook": "あるある",
+      "length": "S",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 19,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-09T11:26:04.564Z",
+    "topic": "目尻・涙袋を活かすまつげパーマ選び",
+    "text": "蒲田西口勢あるある 目尻タレ目気味かキャットライン強めか カール選ぶとき地味に迷う 涙袋活かすなら根元しっかりが正解説 あなたは柔らかめ派？\nくっきり派？",
+    "postId": "17972257401119537",
+    "features": {
+      "hook": "あるある",
+      "length": "S",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 19,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-09T11:34:16.100Z",
+    "topic": "蒲田行進曲と新しい自分",
+    "text": "実は発車メロディが背中押してくれる説\n\n蒲田行進曲聞くたび\nなんか今日変わろって思う\n\n眉整えるか目元変えるか派、どっち？",
+    "postId": "17964567948123317",
+    "features": {
+      "hook": "逆説",
+      "length": "S",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 19,
+      "weekend": false
+    }
   }
 ]
