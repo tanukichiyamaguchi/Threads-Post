@@ -1455,5 +1455,125 @@
       "slotHour": 9,
       "weekend": false
     }
+  },
+  {
+    "date": "2026-07-09T04:14:10.905Z",
+    "topic": "Open記念まつげパーマ初回特別価格で気軽に体験",
+    "text": "蒲田西口で新しいサロン見るとつい覗きたくなる人あるある\n\nまつげパーマとパリジェンヌ、やるならどっち派？",
+    "postId": "18568040938071857",
+    "features": {
+      "hook": "あるある",
+      "length": "S",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-09T04:22:22.611Z",
+    "topic": "蒲田から品川横浜へ一本アクセス×平日夜の自分磨き",
+    "text": "蒲田で働く人あるある\n品川も横浜も一本で出れるのに平日夜は結局蒲田で眉整えて帰りがち\n\n寄り道するなら西口派？東口派？",
+    "postId": "18541666567077718",
+    "features": {
+      "hook": "あるある",
+      "length": "S",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-09T04:30:38.213Z",
+    "topic": "西口はついでに美容も完結しがち",
+    "text": "蒲田民あるある\n東口で商店街寄り道するか西口で買い物と美容ついでに済ませるか毎回悩む\n\nみんなは東口派？西口派？",
+    "postId": "18118653124848175",
+    "features": {
+      "hook": "あるある",
+      "length": "S",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-09T04:38:51.826Z",
+    "topic": "まつげパーマ後の時短メイク",
+    "text": "まつげパーマ愛用者あるある\n蒲田西口で施術した日から下地塗る手間が地味に減る\n\n色付きマスカラだけでもうカール保ってくれるから朝が早く終わる\n\n下地派？色付きだけ派？",
+    "postId": "18106996477998670",
+    "features": {
+      "hook": "あるある",
+      "length": "M",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-09T04:47:05.858Z",
+    "topic": "プール前の目元崩れ対策",
+    "text": "蒲田西口勢あるある\n\nプール解禁前になると急に目元の水濡れ対策気にし始める\n\nまつげパーマにしといたら涙も水しぶきも気にせず遊べるやつ\n\nみんなプール前って何かケアする派？",
+    "postId": "18124458760661351",
+    "features": {
+      "hook": "あるある",
+      "length": "M",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-09T04:55:19.245Z",
+    "topic": "量産型眉との対比",
+    "text": "蒲田西口勢あるある\n\nみんな同じ眉より\n自分の骨格に合う眉の方が結局垢抜けるって気づく瞬間ある\n\n量産型眉派？自分軸眉派？",
+    "postId": "17935571457275529",
+    "features": {
+      "hook": "あるある",
+      "length": "S",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-09T05:03:32.282Z",
+    "topic": "WAX脱毛が肌に優しい理由",
+    "text": "蒲田西口勢あるある\n\n眉の自己処理カミソリか毛抜き問題、地味に永遠に悩む\n\nWAXって実は毛穴詰まりも埋没毛も起きにくいって知ってた\n\nみんなは今どっち派？",
+    "postId": "18108698878798355",
+    "features": {
+      "hook": "あるある",
+      "length": "S",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-09T05:11:44.670Z",
+    "topic": "餃子デート前は眉WAXで匂い対策",
+    "text": "餃子デート前ちょっと不安になるやつわかる\n\n蒲田は羽根つき餃子発祥だから匂い気にせず食べたいよね\n\n眉のケアは前日カミソリ派？当日WAXで済ませとく派？",
+    "postId": "17895869646534623",
+    "features": {
+      "hook": "共感",
+      "length": "S",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 13,
+      "weekend": false
+    }
   }
 ]
