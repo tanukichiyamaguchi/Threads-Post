@@ -2091,5 +2091,96 @@
       "slotHour": 13,
       "weekend": false
     }
+  },
+  {
+    "date": "2026-07-10T07:55:54.967Z",
+    "topic": "蒲田温泉郷×すっぴん眉まつげ",
+    "text": "蒲田黒湯銭湯あるある\n\nすっぴんで湯上がりの顔\n鏡で見て一瞬固まる\nでも眉とまつげだけは\n仕上がってると安心感ある\n\n大田区民、湯上がりは\nメイクごまかす派？\n土台で乗り切る派？",
+    "postId": "17924050185381278",
+    "features": {
+      "hook": "リスト",
+      "length": "M",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 16,
+      "weekend": false,
+      "explore": true
+    }
+  },
+  {
+    "date": "2026-07-10T08:04:08.447Z",
+    "topic": "眉毛WAXは男性客も多い説",
+    "text": "蒲田西口で身だしなみ整えたい男性あるある\n実は眉毛WAXでこっそり整えてる人 地味に多くない？\nわかる人いる？",
+    "postId": "17954092920188632",
+    "features": {
+      "hook": "あるある",
+      "length": "S",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 16,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-10T08:12:21.168Z",
+    "topic": "蒲田西口の駅ビル完結ショッピングあるある",
+    "text": "蒲田西口勢あるある\n東口の商店街も気になるけど\n結局西口の駅ビルで買い物も美容も\nついでに全部済ませがち\nみんな平日どこで用事まとめてる？",
+    "postId": "18085723706346577",
+    "features": {
+      "hook": "あるある",
+      "length": "S",
+      "ending": "開いた質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 16,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-10T08:20:34.229Z",
+    "topic": "梅雨明け前の目元仕込み",
+    "text": "蒲田西口勢あるある\n\n梅雨明け前になると\n汗と湿気でメイク崩れ気にして\nまつげと眉だけ先に仕込んでおく人\n地味に多くない？\n\nみんな梅雨明け前って何仕込んでる？",
+    "postId": "18148151188457579",
+    "features": {
+      "hook": "あるある",
+      "length": "S",
+      "ending": "開いた質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 16,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-10T08:28:47.110Z",
+    "topic": "七夕とまつげパーマ・眉WAXで新しい自分に",
+    "text": "七夕って願い事書く日じゃなくて\n実は一歩踏み出す日説\n\n蒲田で短冊書くとしたら\nなりたい自分より\nまつげと眉盛る自分でもいい気がしてきた\n\nみんなは短冊になに書く派？",
+    "postId": "17886334341426867",
+    "features": {
+      "hook": "逆説",
+      "length": "M",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 16,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-10T08:37:05.855Z",
+    "topic": "蒲田で子育て・仕事の隙間に眉毛WAXだけ通う気軽さ",
+    "text": "蒲田の共働き子育て勢あるある\n\n隙間時間15分あったら\n眉毛WAXだけ済ませに行きがち\n\nこれ意外とやってる人多くない？",
+    "postId": "18097061507597539",
+    "features": {
+      "hook": "あるある",
+      "length": "S",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 16,
+      "weekend": false
+    }
   }
 ]
