@@ -2412,5 +2412,35 @@
       "weekend": false,
       "explore": true
     }
+  },
+  {
+    "date": "2026-07-10T22:55:33.770Z",
+    "topic": "プール前の目元崩れ問題",
+    "text": "蒲田からプール行く勢あるある\n\nマスカラ崩れ気にして\n結局サングラスで隠しがち\n\nみんなは水濡れ対策どうしてる？",
+    "postId": "18106743266022261",
+    "features": {
+      "hook": "あるある",
+      "length": "S",
+      "ending": "開いた質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 7,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-07-10T23:03:46.225Z",
+    "topic": "男性の眉毛WAX",
+    "text": "彼の眉WAXについてったら思ったより男性客多くてびっくりした\n\n身だしなみ意識してる男の人こんな増えてるんだ\n\nみんなの周り眉整えてる男友達いる？",
+    "postId": "18071692049703441",
+    "features": {
+      "hook": "自己開示",
+      "length": "S",
+      "ending": "開いた質問",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 7,
+      "weekend": true
+    }
   }
 ]
