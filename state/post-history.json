@@ -1923,5 +1923,50 @@
       "slotHour": 8,
       "weekend": false
     }
+  },
+  {
+    "date": "2026-07-10T00:16:16.882Z",
+    "topic": "レジャープールに向けた崩れない目元",
+    "text": "蒲田西口勢あるある\nプールの予定入れた瞬間\nまつげと眉が崩れる未来が先に見える\nみんな水濡れ対策って何してる？",
+    "postId": "17872880430653076",
+    "features": {
+      "hook": "あるある",
+      "length": "S",
+      "ending": "開いた質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 9,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-10T00:24:29.927Z",
+    "topic": "眉ブラッシング習慣",
+    "text": "眉伸ばし中、毛流れがまとまらなくて謎の方向いってるやつわかる…\n\n蒲田西口の朝バタバタ勢は歯ブラシで上から下に流すだけの人多め\nみんな伸ばし期どうしてる？",
+    "postId": "18215151664335050",
+    "features": {
+      "hook": "共感",
+      "length": "S",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 9,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-10T00:32:44.175Z",
+    "topic": "ノーファンデ美肌と眉毛WAXの相性",
+    "text": "ファンデ塗らない日ほど眉の存在感バグる説\n\n蒲田西口勢の薄づき派、眉だけは死守してる人多くない？\n\nみんな肌盛らない日どこでバランス取ってる？",
+    "postId": "18134620510517798",
+    "features": {
+      "hook": "あるある",
+      "length": "S",
+      "ending": "開いた質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 9,
+      "weekend": false
+    }
   }
 ]
