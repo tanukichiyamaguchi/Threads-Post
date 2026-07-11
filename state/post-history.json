@@ -2733,5 +2733,68 @@
       "weekend": true,
       "explore": true
     }
+  },
+  {
+    "date": "2026-07-11T10:09:22.429Z",
+    "topic": "ヒト幹細胞成分配合まつげパーマの人気の理由",
+    "text": "まつげパーマ愛用者あるある\n\nカールの持ちだけ気にしてたけど\n実はダメージケアまで狙えるって知ってから見る目変わりがち\n\nヒト幹細胞成分入りの薬剤って\nカールつけながら地肌と毛髪環境を整えるアプローチらしくて\n蒲田でも扱うサロン増えてきた気がする\n\nカール重視派？ケア重視派？どっちで選んでる？",
+    "postId": "17974272255118618",
+    "features": {
+      "hook": "あるある",
+      "length": "L",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 19,
+      "weekend": true,
+      "explore": true
+    }
+  },
+  {
+    "date": "2026-07-11T10:17:37.844Z",
+    "topic": "平日限定セットで垢抜け提案",
+    "text": "実は眉とまつげ別々に整えるより 同じタイミングでやる方が仕上がり早い気がする  蒲田で平日にまとめて済ませる派？\n別日に分ける派？",
+    "postId": "18128047741642680",
+    "features": {
+      "hook": "逆説",
+      "length": "M",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 19,
+      "weekend": true,
+      "explore": true
+    }
+  },
+  {
+    "date": "2026-07-11T10:25:49.507Z",
+    "topic": "仕事帰り蒲田で眉整えあるある",
+    "text": "品川も横浜も一本で出れるのに 平日夜は結局蒲田で眉整えて帰りがち  みんなは仕事帰りどこで寄り道派？",
+    "postId": "18109909840925946",
+    "features": {
+      "hook": "共感",
+      "length": "S",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 19,
+      "weekend": true,
+      "explore": true
+    }
+  },
+  {
+    "date": "2026-07-11T10:34:04.971Z",
+    "topic": "花火大会でも崩れない眉まつげ",
+    "text": "花火大会の汗と人混みで眉が消えた経験ある\n蒲田から出かける前にちゃんと整えておけばよかったやつ",
+    "postId": "17964708018131427",
+    "features": {
+      "hook": "自己開示",
+      "length": "S",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 19,
+      "weekend": true
+    }
   }
 ]
