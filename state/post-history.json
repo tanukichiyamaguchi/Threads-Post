@@ -3015,5 +3015,21 @@
       "slotHour": 22,
       "weekend": true
     }
+  },
+  {
+    "date": "2026-07-11T14:41:53.233Z",
+    "topic": "七夕×新しい自分",
+    "text": "七夕あるある\n短冊に垢抜けるって書きがちだけど\n結局まつげと眉は現状維持で終わる\n\nこれ私だけ？",
+    "postId": "18626065021041503",
+    "features": {
+      "hook": "あるある",
+      "length": "S",
+      "ending": "共感確認",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 23,
+      "weekend": true,
+      "explore": true
+    }
   }
 ]
