@@ -2488,5 +2488,35 @@
       "slotHour": 8,
       "weekend": true
     }
+  },
+  {
+    "date": "2026-07-11T01:43:04.559Z",
+    "topic": "パリジェンヌラッシュリフトで根元立ち上げ",
+    "text": "実はまつげ盛らなくていい派\n\n根元から立ち上がるだけで目元の印象変わるの、蒲田で働く人はもう気づいてる気がする\n\nみんなは盛る派？立ち上げる派？",
+    "postId": "17977375758111562",
+    "features": {
+      "hook": "逆説",
+      "length": "S",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 10,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-07-11T01:51:18.544Z",
+    "topic": "梅雨明け後のにわか雨とメイク崩れ",
+    "text": "急な雷雨でマスカラより先に眉が崩れてる人いる  蒲田駅から西口まで走った時点で終わってる  みんなは雨の日どこで崩れやすい？",
+    "postId": "18206860333351985",
+    "features": {
+      "hook": "共感",
+      "length": "S",
+      "ending": "開いた質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 10,
+      "weekend": true
+    }
   }
 ]
