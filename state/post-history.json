@@ -3047,5 +3047,51 @@
       "weekend": true,
       "explore": true
     }
+  },
+  {
+    "date": "2026-07-11T23:36:08.854Z",
+    "topic": "ノーファンデ美肌と眉毛WAXの相性",
+    "text": "ファンデ卒業したくてすっぴん風メイクにしたら眉だけ浮いた\n\n蒲田でWAXしてから肌馴染みよくなった気がする\n\nみんな薄づきの時眉ってどうしてる?",
+    "postId": "18016279058909444",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "開いた質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 8,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-07-11T23:44:20.733Z",
+    "topic": "蒲田温泉郷帰りのすっぴん眉",
+    "text": "実は黒湯上がりすっぴんが1番怖いのって眉だったりする\n\n蒲田は温泉銭湯多いから余計に実感する\n\nみんな湯上がりの眉毛どうしてる？",
+    "postId": "18089596871105143",
+    "features": {
+      "hook": "逆説",
+      "length": "M",
+      "ending": "開いた質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 8,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-07-11T23:52:30.989Z",
+    "topic": "夏の紫外線と眉ティント事情",
+    "text": "日焼け止め塗り直すたび眉ティント色落ちしてる説\n\nこれ毎年悩む人いる？",
+    "postId": "18335586103270546",
+    "features": {
+      "hook": "共感",
+      "length": "S",
+      "ending": "共感確認",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 8,
+      "weekend": true,
+      "explore": true
+    }
   }
 ]
