@@ -745,7 +745,7 @@ export async function generatePost(
 
   const res = await client().messages.create({
     model: MODEL,
-    max_tokens: 1500, // XL（〜500字）の本文＋JSONの余裕
+    max_tokens: 1500, // L（〜220字）の本文＋thinking無しでもJSON構造化に十分な余裕
     output_config: {
       effort: "low",
       format: { type: "json_schema", schema: POST_SCHEMA },

@@ -38,7 +38,7 @@ const reportFile = path.join(paths.state, "report.md");
  */
 export interface PostFeatures {
   hook: string; // 問題提起/数字/逆説/共感/あるある/リスト/意見募集/自己開示
-  length: string; // S(〜80)/M(81〜200)/L(201〜350)/XL(351〜500)
+  length: string; // S(20〜60)/M(61〜140)/L(141〜220)。詳細は bandit.ts の LENGTH_RANGES
   ending: string; // 二択質問/共感確認/開いた質問/言い切り
   kamata: boolean; // 蒲田・大田区への言及
   newsRiding: boolean; // 今日の話題に乗ったか

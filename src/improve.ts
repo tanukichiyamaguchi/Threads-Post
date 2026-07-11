@@ -15,6 +15,7 @@ import {
   saveLearnings,
   loadViralPlaybook,
   saveViralPlaybook,
+  loadHourWeights,
   saveHourWeights,
   loadVolumeModel,
   saveVolumeModel,
@@ -38,23 +39,26 @@ import { log, warn, error } from "./logger";
 // 1) 24時間齢スナップショット（state/metrics.json・metricsジョブが収集）を報酬に変換し、
 //    バンディットモデル（state/model.json）を更新 → 投稿の「型」が実測で日々賢くなる
 // 2) その日のインプが狙える話題（全国/大田区/蒲田）をWeb検索 → 学習知見を更新
-// 3) 月曜のみ: 環境センシング＋週次メタ分析＋時間帯重みの再計算＋投稿数の週次実験を更新し、
-//    人間可読レポート（state/report.md）を生成
+// 3) 週次処理（時間帯重みの再計算＋投稿数の実験＋環境センシング＋レポート生成）は
+//    「前回の実行から WEEKLY_INTERVAL_DAYS 日以上経過したら」実行する（カレンダーの
+//    曜日には依存しない）。state/hour-weights.json が無い、または古ければ即座に走る
+//    ため、デプロイ直後の初回 improve 実行から投稿数の実験もブートストラップされる。
 
 const VOLUME_ARMS = [30, 40, 50];
-
-/** その日付が属する週の月曜日（YYYY-MM-DD） */
-function mondayOf(dateStr: string): string {
-  const d = new Date(`${dateStr}T00:00:00Z`);
-  const shift = (d.getUTCDay() + 6) % 7; // 月曜=0
-  d.setUTCDate(d.getUTCDate() - shift);
-  return d.toISOString().slice(0, 10);
-}
+const WEEKLY_INTERVAL_DAYS = 7;
 
 function daysAgoStr(dateStr: string, days: number): string {
   const d = new Date(`${dateStr}T00:00:00Z`);
   d.setUTCDate(d.getUTCDate() - days);
   return d.toISOString().slice(0, 10);
+}
+
+/** 2つのYYYY-MM-DDの間の日数（後者-前者）。不正な日付は Infinity（=即実行扱い）。 */
+function daysBetween(fromStr: string, toStr: string): number {
+  const from = Date.parse(`${fromStr}T00:00:00Z`);
+  const to = Date.parse(`${toStr}T00:00:00Z`);
+  if (!Number.isFinite(from) || !Number.isFinite(to)) return Infinity;
+  return Math.round((to - from) / 86400000);
 }
 
 function median(xs: number[]): number {
@@ -172,15 +176,22 @@ async function main(): Promise<void> {
     `学びを保存（やる ${doMore.length} / 避ける ${avoid.length} / お手本 ${topExamples.length} / 話題 ${todayTopics.length}）。`,
   );
 
-  // ---------- 3) 週次処理（月曜のみ） ----------
-  if (now.weekday === 1) {
+  // ---------- 3) 週次処理（前回実行からの経過日数で判定。曜日には依存しない） ----------
+  const hourWeights = loadHourWeights();
+  const weeklyDue = !hourWeights || daysBetween(hourWeights.updated, now.dateStr) >= WEEKLY_INTERVAL_DAYS;
+  if (weeklyDue) {
     await weeklyRoutine(now.dateStr, model, top, weak);
+  } else {
+    log(
+      `週次処理は前回実行から${daysBetween(hourWeights.updated, now.dateStr)}日のためスキップ` +
+        `（${WEEKLY_INTERVAL_DAYS}日ごとに実行）。`,
+    );
   }
 
   log("=== 投稿改善ルーチン完了 ===");
 }
 
-/** 月曜のみ: 環境センシング・時間帯重み・投稿数実験・週次レポート */
+/** 前回実行からWEEKLY_INTERVAL_DAYS日以上経過したら実行: 環境センシング・時間帯重み・投稿数実験・レポート */
 async function weeklyRoutine(
   todayStr: string,
   model: BanditModel,
@@ -205,7 +216,9 @@ async function weeklyRoutine(
   });
   log("時間帯重みを更新しました（実測補正・平日/週末別）。");
 
-  // 3b) 投稿数の週次実験（報酬 = アカウント日次views平均の対前週比・対数）
+  // 3b) 投稿数の実験（報酬 = アカウント日次views平均の対前ブロック比・対数）。
+  // ISO週（月曜始まり）ではなく、前回ブロック開始日からの経過日数で回す。
+  // これによりデプロイ日が何曜日でも即座にブロックが始まり、曜日整列を待たない。
   const stats = loadAccountStats();
   const avgViews = (from: string, to: string): number => {
     const xs = stats
@@ -213,12 +226,9 @@ async function weeklyRoutine(
       .map((s) => s.accountViews!) as number[];
     return xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : 0;
   };
-  const thisMonday = mondayOf(todayStr);
-  const lastMonday = daysAgoStr(thisMonday, 7);
-  const prevMonday = daysAgoStr(thisMonday, 14);
 
   let volume: VolumeModel = loadVolumeModel() ?? {
-    weekStart: thisMonday,
+    weekStart: todayStr, // ブロック開始日（フィールド名は互換のため維持）
     postsPerDay: DEFAULT_POSTS_PER_DAY,
     arms: Object.fromEntries(
       VOLUME_ARMS.map((v) => [
@@ -229,29 +239,32 @@ async function weeklyRoutine(
     history: [],
   };
 
-  const lastWeekAvg = avgViews(lastMonday, thisMonday);
-  const prevWeekAvg = avgViews(prevMonday, lastMonday);
+  const blockElapsed = daysBetween(volume.weekStart, todayStr);
+  const blockStart = volume.weekStart;
+  const prevBlockStart = daysAgoStr(blockStart, WEEKLY_INTERVAL_DAYS);
+  const lastWeekAvg = avgViews(blockStart, todayStr);
+  const prevWeekAvg = avgViews(prevBlockStart, blockStart);
   let volumeNote = "";
-  if (volume.weekStart !== thisMonday) {
-    // 先週の結果を精算してアームを更新
+  if (blockElapsed >= WEEKLY_INTERVAL_DAYS) {
+    // 直近ブロックの結果を精算してアームを更新
     if (lastWeekAvg > 0 && prevWeekAvg > 0) {
       const reward = Math.log1p(lastWeekAvg) - Math.log1p(prevWeekAvg);
       const arm = volume.arms[String(volume.postsPerDay)];
       if (arm) updateArm(arm, reward);
       volume.history.push({
-        week: volume.weekStart,
+        week: blockStart,
         postsPerDay: volume.postsPerDay,
         avgDailyViews: Math.round(lastWeekAvg),
       });
       log(
-        `先週(${volume.weekStart})の精算: ${volume.postsPerDay}件/日 → 日次views平均 ${Math.round(lastWeekAvg)}（報酬 ${reward.toFixed(3)}）`,
+        `直近ブロック(${blockStart}〜)の精算: ${volume.postsPerDay}件/日 → 日次views平均 ${Math.round(lastWeekAvg)}（報酬 ${reward.toFixed(3)}）`,
       );
     } else {
-      log("先週のアカウントviewsデータが不足しているため、ボリューム精算をスキップしました。");
+      log("直近ブロックのアカウントviewsデータが不足しているため、ボリューム精算をスキップしました（データ蓄積を継続）。");
     }
 
-    // スパム降格の安全弁: 投稿を増やした週に「1投稿あたりの伸び」が半分未満に落ちたら最小に戻す
-    const perPostDrop = detectPerPostDrop(lastMonday, thisMonday, prevMonday);
+    // スパム降格の安全弁: 投稿を増やしたブロックで「1投稿あたりの伸び」が半分未満に落ちたら最小に戻す
+    const perPostDrop = detectPerPostDrop(blockStart, todayStr, prevBlockStart);
     if (perPostDrop) {
       volume.postsPerDay = Math.min(...VOLUME_ARMS);
       volumeNote = "⚠ 投稿あたりviewsの急落を検知したため、今週は最小ボリュームに戻します。";
@@ -280,9 +293,12 @@ async function weeklyRoutine(
       }
       volume.postsPerDay = best;
     }
-    volume.weekStart = thisMonday;
+    volume.weekStart = todayStr; // 新しいブロックの開始日
     saveVolumeModel(volume);
     log(`今週の投稿数: ${volume.postsPerDay}件/日`);
+  } else {
+    saveVolumeModel(volume); // 初回作成時（まだブロック未経過）も保存しておく
+    log(`投稿数ブロックは開始から${blockElapsed}日（${WEEKLY_INTERVAL_DAYS}日で精算・現在${volume.postsPerDay}件/日）。`);
   }
 
   // 3c) 環境センシング（今Threadsで伸びている型）＋ 週次メタ分析
@@ -333,7 +349,7 @@ async function weeklyRoutine(
     volume.history.length
       ? volume.history
           .slice(-8)
-          .map((h) => `- ${h.week}週: ${h.postsPerDay}件/日 → 日次views平均 ${h.avgDailyViews}`)
+          .map((h) => `- ${h.week}〜: ${h.postsPerDay}件/日 → 日次views平均 ${h.avgDailyViews}`)
           .join("\n")
       : "（まだ履歴がありません）",
   ].join("\n");
@@ -342,7 +358,7 @@ async function weeklyRoutine(
 }
 
 /** 投稿を増やした直後に「1投稿あたりのviews」が急落していないか（スパム的降格の検知） */
-function detectPerPostDrop(lastMonday: string, thisMonday: string, prevMonday: string): boolean {
+function detectPerPostDrop(blockStart: string, blockEnd: string, prevBlockStart: string): boolean {
   const history = loadPostHistory();
   const store = loadMetricsStore();
   const viewsIn = (from: string, to: string): number[] =>
@@ -350,8 +366,8 @@ function detectPerPostDrop(lastMonday: string, thisMonday: string, prevMonday: s
       .filter((h) => h.postId && h.date.slice(0, 10) >= from && h.date.slice(0, 10) < to)
       .map((h) => store[h.postId!]?.s24?.views)
       .filter((v): v is number => typeof v === "number");
-  const lastWeek = viewsIn(lastMonday, thisMonday);
-  const prevWeek = viewsIn(prevMonday, lastMonday);
+  const lastWeek = viewsIn(blockStart, blockEnd);
+  const prevWeek = viewsIn(prevBlockStart, blockStart);
   if (lastWeek.length < 10 || prevWeek.length < 10) return false;
   const mLast = median(lastWeek);
   const mPrev = median(prevWeek);

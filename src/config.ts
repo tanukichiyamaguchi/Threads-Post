@@ -31,7 +31,7 @@ export interface Brand {
   contentMix: string;
   prohibitions: string[];
   postRules: {
-    maxLength: number; // Threadsの上限は500文字。長さの選択は学習（bandit）が行う
+    maxLength: number; // 生成の安全上限（クランプ）。長さの選択自体は学習（bandit・最大220字）が行う
     emoji: string;
     useHashtags: boolean;
   };

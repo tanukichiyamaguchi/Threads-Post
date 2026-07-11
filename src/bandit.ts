@@ -7,8 +7,13 @@
 //   「同じ日に投稿した中で相対的に伸びたか」だけを学習する。
 // - 毎日の学習時に指数減衰（DECAY_PER_DAY）を適用し、古いデータの影響を薄める。
 //   Threadsのアルゴリズム変更や季節変化に事後分布が自動追従する（半減期 約23日）。
-// - 生成時は各次元をThompsonサンプリングで選択。EXPLORE_RATE の確率で一様ランダム
-//   （強制探索）にして、収束後も環境変化を検知できる余地を残す。
+// - 生成時は「次元ごとに独立して」探索するか最良アームを使うかを決める（重要）。
+//   以前は1回のコイン投げで全次元を一括して探索/活用しており、活用時は常に
+//   「その時点の最良の組み合わせ」しか生成されず、パターンが同じになって
+//   個々の次元の効果を切り分けにくかった。次元ごとに独立させることで、
+//   活用中でも他の次元は探索され続け、組み合わせの多様性と分析可能性が上がる。
+// - 探索率はデータ量に応じて適応的に下げる（立ち上げ期は広く探索し、
+//   十分なサンプルが集まったら基本値に収束させる）。
 
 import { mulberry32 } from "./schedule";
 import type { ArmStats, BanditModel, PostFeatures } from "./state";
@@ -16,23 +21,36 @@ import type { ArmStats, BanditModel, PostFeatures } from "./state";
 /** 学習する次元とアーム。プロンプトのディレクティブ文はこのラベルから組み立てる */
 export const DIMENSIONS: Record<string, string[]> = {
   hook: ["問題提起", "数字", "逆説", "共感", "あるある", "リスト", "意見募集", "自己開示"],
-  length: ["S", "M", "L", "XL"],
+  length: ["S", "M", "L"],
   ending: ["二択質問", "共感確認", "開いた質問", "言い切り"],
   kamata: ["あり", "なし"],
   newsRiding: ["乗る", "乗らない"],
 };
 
-/** 長さアームの文字数レンジ（プロンプト指示・実測判定の両方で使う） */
+/**
+ * 長さアームの文字数レンジ（プロンプト指示・実測判定の両方で使う）。
+ * 実測データ（2026-07時点・n=98）で S(短文) が M・L を大きく上回り、
+ * L（旧201〜350字）は明確にマイナス、XL（351〜500字）はほぼ選ばれず学習不能だった。
+ * この結果を反映し、上限を大きく引き下げ（最大500字→220字）、短文寄りに絞った。
+ */
 export const LENGTH_RANGES: Record<string, { min: number; max: number; label: string }> = {
-  S: { min: 20, max: 80, label: "20〜80文字の短文" },
-  M: { min: 81, max: 200, label: "81〜200文字の中文" },
-  L: { min: 201, max: 350, label: "201〜350文字のやや長文" },
-  XL: { min: 351, max: 500, label: "351〜500文字の長文" },
+  S: { min: 20, max: 60, label: "20〜60文字の短文" },
+  M: { min: 61, max: 140, label: "61〜140文字の中文" },
+  L: { min: 141, max: 220, label: "141〜220文字のやや長文" },
 };
 
-export const EXPLORE_RATE = 0.15; // 強制探索の割合
+export const EXPLORE_RATE = 0.15; // 基本の探索率（データが十分溜まった後の値）
+const EXPLORE_RATE_COLD_START = 0.35; // 立ち上げ期（サンプルが少ない間）の探索率
+const EXPLORE_RATE_RAMP_SAMPLES = 300; // このサンプル数までで基本値へ線形に収束させる
 const DECAY_PER_DAY = 0.97; // 実効サンプル数の日次減衰（半減期 ≈ 23日）
 const MIN_VARIANCE = 0.25; // 事後分散の下限（過信防止）
+
+/** 学習済みサンプル数に応じた探索率。データが少ないほど広く探索する。 */
+export function exploreRateFor(sampleCount: number): number {
+  if (sampleCount >= EXPLORE_RATE_RAMP_SAMPLES) return EXPLORE_RATE;
+  const t = Math.max(0, sampleCount) / EXPLORE_RATE_RAMP_SAMPLES;
+  return EXPLORE_RATE_COLD_START - (EXPLORE_RATE_COLD_START - EXPLORE_RATE) * t;
+}
 
 /**
  * プレイブックの知見を弱い楽観的事前分布としてシードした初期モデル。
@@ -134,15 +152,23 @@ export interface ChosenArms {
 
 /**
  * この投稿が使う型をThompsonサンプリングで選ぶ。
+ * 次元（フック・長さ・締め方・蒲田言及・話題乗り）は「それぞれ独立に」探索するか
+ * 最良アームを使うかを決める。1つのコインで全次元を揃えると、活用時に常に同じ
+ * 「今の一番良い組み合わせ」だけが生成され続けてしまうため、次元ごとに切り分ける。
+ * 探索率は学習済みサンプル数に応じて適応的（データが少ないほど広く探索）。
  * seedは日付+スロットから作る（同一スロットの再実行では同じ選択になり再現可能）。
  */
 export function chooseArms(model: BanditModel, seed: number): ChosenArms {
   const rng = mulberry32(seed >>> 0);
-  const explore = rng() < EXPLORE_RATE;
+  const rate = exploreRateFor(model.ingested.length);
+  let anyExplore = false;
 
   const pick = (dim: string): string => {
     const arms = DIMENSIONS[dim];
-    if (explore) return arms[Math.floor(rng() * arms.length)];
+    if (rng() < rate) {
+      anyExplore = true;
+      return arms[Math.floor(rng() * arms.length)];
+    }
     let best = arms[0];
     let bestSample = -Infinity;
     for (const arm of arms) {
@@ -164,17 +190,16 @@ export function chooseArms(model: BanditModel, seed: number): ChosenArms {
     ending: pick("ending"),
     kamata: pick("kamata") === "あり",
     newsRiding: pick("newsRiding") === "乗る",
-    explore,
+    explore: anyExplore, // 1つでも次元が探索されたか（ログ表示用）
   };
 }
 
-/** 実文から長さアームを実測判定する */
+/** 実文から長さアームを実測判定する（枠を超えても最上位アームに丸め、学習データを捨てない） */
 export function measureLengthArm(text: string): string {
   const len = text.length;
   if (len <= LENGTH_RANGES.S.max) return "S";
   if (len <= LENGTH_RANGES.M.max) return "M";
-  if (len <= LENGTH_RANGES.L.max) return "L";
-  return "XL";
+  return "L";
 }
 
 /** 実文から締め方アームを実測判定する（判定不能なら指示値を使う） */
