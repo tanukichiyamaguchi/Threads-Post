@@ -2796,5 +2796,68 @@
       "slotHour": 19,
       "weekend": true
     }
+  },
+  {
+    "date": "2026-07-11T11:18:12.040Z",
+    "topic": "施術後NG行動",
+    "text": "実はまつげパーマ後うつぶせ寝で寝るのが一番もったいない\n蒲田帰りにゴロッとしちゃう人多いけど\nみんなは施術後どこで気をつけてる？",
+    "postId": "18060075797727538",
+    "features": {
+      "hook": "逆説",
+      "length": "M",
+      "ending": "開いた質問",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 20,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-07-11T11:26:25.112Z",
+    "topic": "完全予約制の落ち着いた空間",
+    "text": "施術中に他のお客さんと目合うの地味に気まずいってわかる人いる\n\n静かな空間で一人でぼーっとできる時間って意外と貴重だったりする\n\nそういうの落ち着く派？賑やかな方が好き派？",
+    "postId": "18542974285074236",
+    "features": {
+      "hook": "共感",
+      "length": "M",
+      "ending": "二択質問",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 20,
+      "weekend": true,
+      "explore": true
+    }
+  },
+  {
+    "date": "2026-07-11T11:34:37.666Z",
+    "topic": "初回カウンセリングで似合わせ提案",
+    "text": "自分に似合う眉かまつげか結局わからないまま決めてる人いない\n\n蒲田で相談だけしてから決めるタイプと自分でパッと決めるタイプ どっち派",
+    "postId": "18111729610821954",
+    "features": {
+      "hook": "問題提起",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 20,
+      "weekend": true,
+      "explore": true
+    }
+  },
+  {
+    "date": "2026-07-11T11:42:52.193Z",
+    "topic": "黒湯銭湯帰りの眉まつげ問題",
+    "text": "黒湯銭湯上がりでゆるゆるの顔になった時 眉とまつげだけは決まってると謎の安心感ある\n\n蒲田って温泉と美容がセットで語れる街だと思う\n\nみんなは銭湯派？サウナ派？",
+    "postId": "17979530388046780",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 20,
+      "weekend": true,
+      "explore": true
+    }
   }
 ]
