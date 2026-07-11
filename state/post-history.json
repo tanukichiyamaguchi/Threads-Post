@@ -2859,5 +2859,52 @@
       "weekend": true,
       "explore": true
     }
+  },
+  {
+    "date": "2026-07-11T12:08:33.492Z",
+    "topic": "餃子デート前の眉整えあるある",
+    "text": "餃子デート前にやること3つ\n1 匂い対策のガム\n2 前髪セット\n3 実は眉も整えとくと写真映え地味に違う\n\nこれやってる人いる？",
+    "postId": "18086284454149770",
+    "features": {
+      "hook": "リスト",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 21,
+      "weekend": true,
+      "explore": true
+    }
+  },
+  {
+    "date": "2026-07-11T12:16:44.899Z",
+    "topic": "サンロード商店街を通って美容ついで寄り道",
+    "text": "わかる人いる  蒲田駅からサンロード通って帰るとき ついで美容したくなる誘惑ある  みんなは寄り道派？\n直帰派？",
+    "postId": "18137591539496934",
+    "features": {
+      "hook": "共感",
+      "length": "S",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 21,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-07-11T12:25:00.559Z",
+    "topic": "口コミ4.74の理由",
+    "text": "口コミサイトの評価見て自分でもびっくりしたことある\n\n蒲田で働くお客さんの口コミ見返すと\n仕上がりより先に\n説明が丁寧で安心したとか\n施術中の会話が心地よかったとか\n仕上がり以外の部分書かれてること多くて\n\n4.74って数字だけ見ると仕上がり重視かと思われがちだけど\n実は安心感の積み重ねだったんだなって最近気づいた\n\nみんなは口コミ書くとき仕上がりと接客どっちを先に書きたくなる派",
+    "postId": "18084228881554261",
+    "features": {
+      "hook": "あるある",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 21,
+      "weekend": true,
+      "explore": true
+    }
   }
 ]
