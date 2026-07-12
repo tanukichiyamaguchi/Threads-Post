@@ -38,6 +38,10 @@ import { log, warn, error } from "./logger";
 const MAX_POSTS_PER_RUN = 8;
 const CATCHUP_GAP_MS = MIN_SLOT_GAP_MINUTES * 60_000;
 
+// エリア言及の実測判定に使う地名（蒲田＋3km圏内の周辺エリア＋大田区全体）
+const AREA_MENTION_PATTERN =
+  /蒲田|大田区|大森|池上|糀谷|萩中|六郷|矢口|下丸子|千鳥町|田園調布|久が原|雪谷|石川台|羽田|馬込|洗足池|平和島/;
+
 // 多様性ガード: 直近の投稿と似すぎた本文・書き出しは作り直す
 // （Threadsは反復的・非オリジナルなコンテンツの配信を降格するため。
 //   一行目が最重要なので、本文全体とは別に一行目単体でも重複を検査する）
@@ -140,7 +144,7 @@ async function main(): Promise<void> {
       `テーマ: [${angle.category}] ${angle.angle.slice(0, 60)}` +
         (coupon ? ` / クーポン: ${coupon.name}` : "") +
         ` / 型: ${arms.hook}×${arms.length}×${arms.ending}` +
-        `${arms.kamata ? "×蒲田" : ""}${arms.newsRiding ? "×話題" : ""}`,
+        `${arms.kamata ? "×エリア" : ""}${arms.newsRiding ? "×話題" : ""}`,
     );
 
     // 生成 → 多様性ガード（一行目の重複・本文の類似）で不合格なら理由を渡して作り直し
@@ -182,7 +186,7 @@ async function main(): Promise<void> {
       hook: arms.hook,
       length: measureLengthArm(finalText),
       ending: measureEndingArm(finalText, arms.ending),
-      kamata: /蒲田|大田区/.test(finalText),
+      kamata: AREA_MENTION_PATTERN.test(finalText),
       newsRiding: arms.newsRiding,
       slotHour: Math.floor(now.minuteOfDay / 60),
       weekend: now.weekend,

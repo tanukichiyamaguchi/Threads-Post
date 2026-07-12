@@ -138,7 +138,7 @@ export function fmtMin(m: number): string {
   return `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
 }
 
-// 文字数・蒲田言及・締め方などの「型」の選択は src/bandit.ts の学習モデルが担う
+// 文字数・エリア言及（蒲田＋周辺3km圏＋大田区）・締め方などの「型」の選択は src/bandit.ts の学習モデルが担う
 // （以前の pickTargetChars / shouldMentionKamata はバンディットのアームに置き換え）。
 
 /** 投稿ごとのアーム選択用シード（日付×スロットで決定的） */
