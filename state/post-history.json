@@ -3093,5 +3093,53 @@
       "weekend": true,
       "explore": true
     }
+  },
+  {
+    "date": "2026-07-12T01:10:51.833Z",
+    "topic": "指名予約できる安心感",
+    "text": "実は毎回違う人にやってもらうのって損してるかもって最近思う\n\n担当変わるとカールの角度とか眉の左右差の感覚まで微妙にズレて そのたび仕上がりの説明し直すの地味に疲れる\n\n指名できると好みの角度とか骨格のクセまで分かってくれてて 毎回ゼロから説明しなくていいから結果的にリピートしやすい\n\nこれって美容院とかネイルでも同じかも\n\nみんなは毎回同じ人にお願いする派？それとも空いてる人でいい派？",
+    "postId": "18098606606241442",
+    "features": {
+      "hook": "逆説",
+      "length": "L",
+      "ending": "二択質問",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 10,
+      "weekend": true,
+      "explore": true
+    }
+  },
+  {
+    "date": "2026-07-12T01:19:04.533Z",
+    "topic": "プール前の目元崩れ対策あるある",
+    "text": "蒲田西口勢あるある\nプールの予定入れた瞬間\nまつげと眉が消える未来が見える\n\nみんな水濡れ対策どうしてる？",
+    "postId": "18107017876827751",
+    "features": {
+      "hook": "自己開示",
+      "length": "S",
+      "ending": "開いた質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 10,
+      "weekend": true,
+      "explore": true
+    }
+  },
+  {
+    "date": "2026-07-12T01:27:16.882Z",
+    "topic": "眉毛WAX×まつげパーマの平日限定セットで垢抜け",
+    "text": "蒲田西口勢あるある\n平日休みの日って\n眉と目元まとめて整えたい欲が急に来る\nみんな平日休みの日どこから手つける派？",
+    "postId": "18141739141493086",
+    "features": {
+      "hook": "リスト",
+      "length": "S",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 10,
+      "weekend": true,
+      "explore": true
+    }
   }
 ]
