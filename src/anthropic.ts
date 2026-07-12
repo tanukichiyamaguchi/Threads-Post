@@ -634,7 +634,7 @@ const POST_SCHEMA = {
     text: {
       type: "string",
       description:
-        `Threads投稿の本文。firstLineDraftsの中で最も強い1案を一行目にそのまま使う。ハッシュタグは付けない。「」『』や""''などの括弧・引用符は使わない。抜け感のあるトーンで句点（。）はできるだけ省く。スマホで読みやすいよう意味のまとまりごとに改行し（\\n）、適度に空行も入れて余白を作る。長さと締め方は指示された型に従う。最大${brand.postRules.maxLength}字を超えない（途中で切らない）。`,
+        `Threads投稿の本文。firstLineDraftsの中で最も強い1案を一行目にそのまま使う。ハッシュタグは付けない。「」『』や""''などの括弧・引用符は使わない。抜け感のあるトーンで句点（。）はできるだけ省く。スマホで読みやすいよう意味のまとまりごとに改行し（\\n）、適度に空行も入れて余白を作る。長さと締め方は指示された型に従う。最大${brand.postRules.maxLength}字を超えない（途中で切らない）。HTMLタグ（<br>、</br>、<p> など）や記号的な箇条書き記号（A/B、①②、a) b) など）は一切使わない。改行は実際の改行文字だけで表現し、選択肢は自然な日本語の言い回しと改行で区切る。`,
     },
   },
   required: ["firstLineDrafts", "topic", "text"],
@@ -654,9 +654,11 @@ const HOOK_GUIDE: Record<string, string> = {
 };
 
 const ENDING_GUIDE: Record<string, string> = {
-  二択質問: "末尾はAかBかの二択で答えやすい問いで締める。ただし「どっち派？」の使い回しは禁止（聞き方を毎回変える）",
-  共感確認: "末尾は共感を確認する軽い問いで締める（例: これ私だけ？／わかる人いる？の系統。言い回しは毎回変える）",
-  開いた質問: "末尾は相手の話を聞く開いた問いで締める（例: みんなのおすすめ教えて）",
+  二択質問:
+    "末尾は2つの選択肢から答えやすい問いで締める。選択肢はA/Bやアルファベット・番号のラベルを付けず、それぞれ自然な日本語の一文として書き、改行で区切って見やすくする（例:\n傘を持ち歩く派\nそれとも降ってから走る派\nあなたはどっち？）。最後は必ず？で終える。「どっち派？」という聞き方の使い回しは禁止（聞き方を毎回変える）",
+  共感確認:
+    "末尾は共感を確認する軽い問いで締める（例: これ私だけ？／わかる人いる？の系統。言い回しは毎回変える）。最後は必ず？で終える",
+  開いた質問: "末尾は相手の話を聞く開いた問いで締める（例: みんなのおすすめ教えて）。最後は必ず？で終える",
   言い切り: "最後の文に疑問符（？）を使わない。余韻・共感・オチのある言い切りで終える（例: 〜がち／〜なんだよね／また行こ）。問いかけへの言い換えもしない",
 };
 
@@ -827,9 +829,25 @@ function stripBrackets(text: string): string {
   return text.replace(/[「」『』“”‘’"']/g, "");
 }
 
-/** 本文を整える（括弧・引用符の除去／ハッシュタグなし／改行の確保／途中で切れない上限ガード） */
+/**
+ * HTML/Markup由来のゴミを除去する（保険）。
+ * モデルが稀に <br>/</br> のようなタグやHTMLエンティティを紛れ込ませることがあり、
+ * AI生成であることが露呈する重大な事故になるため、後段で機械的に必ず取り除く。
+ */
+function stripHtmlArtifacts(text: string): string {
+  return text
+    .replace(/<\/?\s*(br|p|div|span|b|i|strong|em|ul|ol|li)\s*\/?>/gi, "\n")
+    .replace(/&nbsp;/gi, " ")
+    .replace(/&amp;/gi, "&")
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">")
+    .replace(/[ \t]*\n[ \t]*\n[ \t]*\n+/g, "\n\n") // タグ除去で生じた3連以上の空行を圧縮
+    .trim();
+}
+
+/** 本文を整える（HTML断片・括弧・引用符の除去／ハッシュタグなし／改行の確保／途中で切れない上限ガード） */
 export function composePostText(post: GeneratedPost): string {
-  const text = ensureLineBreaks(stripBrackets(post.text.trim()));
+  const text = ensureLineBreaks(stripBrackets(stripHtmlArtifacts(post.text.trim())));
   return clampLength(text, brand.postRules.maxLength);
 }
 
@@ -851,7 +869,7 @@ export async function generateReply(commentText: string): Promise<string | null>
     ],
   } as any);
 
-  const text = textOf((res as any).content)
+  const text = stripHtmlArtifacts(textOf((res as any).content))
     .replace(/\s*\n\s*/g, " ")
     .trim();
   return text || null;
@@ -943,6 +961,8 @@ function buildPostSystemPrompt(): string {
     `## 投稿の条件`,
     `- 日本語。長さ・書き出し・締め方は指定された型に従う。全体で最大${r.maxLength}文字を厳守（超えない・途中で切らない）。`,
     `- 「」『』や""''などの括弧・引用符は使わない。`,
+    `- HTMLタグ（<br>、</br>、<p> など）やHTMLエンティティ、A/B・①②・a) b) のような記号的な箇条書きラベルは絶対に使わない。改行は実際の改行文字だけで表す。使うとAI生成が露呈する重大な事故になる。`,
+    `- 選択肢や候補を並べる投稿は、それぞれを改行で区切り自然な日本語の一文にする（ラベルを振らない）。1行に詰め込まず、一瞬で構造が分かる見た目にする。`,
     `- 抜け感のあるトーン。句点（。）はあえて省き、宣伝感を出さない。`,
     `- 一行目に全力を注ぐ（具体・意外性・自分ごと化。ラベル的な見出しで逃げない）。直近の投稿と似た書き出しは禁止。`,
     `- 締め方の言い回しも毎回変える。特に「どっち派？」「わかる人いる？」のような定番の聞き方を連発しない。`,
