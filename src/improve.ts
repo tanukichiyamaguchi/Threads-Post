@@ -143,12 +143,12 @@ async function main(): Promise<void> {
 
   // 直近7日の実測トップ/ワースト（学習知見・週次分析に使う）
   const week = daysAgoStr(now.dateStr, 7);
-  const recentScored: ScoredPost[] = [];
+  const recentScored: Array<ScoredPost & { hook?: string }> = [];
   for (const h of history) {
     if (!h.postId || h.date.slice(0, 10) < week) continue;
     const snap = store[h.postId]?.s24;
     if (!snap) continue;
-    recentScored.push({ text: h.text, score: snap.views });
+    recentScored.push({ text: h.text, score: snap.views, hook: h.features?.hook });
   }
   recentScored.sort((a, b) => b.score - a.score);
   const top = recentScored.slice(0, 6);
@@ -170,7 +170,21 @@ async function main(): Promise<void> {
     top.map((t) => ({ text: t.text, score: Math.round(t.score) })),
     weak.map((w) => ({ text: w.text, score: Math.round(w.score) })),
   );
-  const topExamples = top.filter((t) => t.score > 0).slice(0, 5).map((t) => t.text);
+  // お手本は「互いに違う型」から選ぶ（同じフック・同じ書き出しのお手本を並べると
+  // 生成がその1パターンに収束するモード崩壊を起こすため）
+  const topExamples: string[] = [];
+  const usedHooks = new Set<string>();
+  const usedOpeners: string[] = [];
+  for (const t of recentScored) {
+    if (t.score <= 0 || topExamples.length >= 4) break;
+    const hook = t.hook ?? "unknown";
+    if (usedHooks.has(hook)) continue;
+    const opener = t.text.split("\n")[0].slice(0, 10);
+    if (usedOpeners.some((o) => o === opener)) continue;
+    usedHooks.add(hook);
+    usedOpeners.push(opener);
+    topExamples.push(t.text);
+  }
   saveLearnings({ updated: now.dateStr, doMore, avoid, topExamples, todayTopics });
   log(
     `学びを保存（やる ${doMore.length} / 避ける ${avoid.length} / お手本 ${topExamples.length} / 話題 ${todayTopics.length}）。`,

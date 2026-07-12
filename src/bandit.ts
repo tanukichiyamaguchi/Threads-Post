@@ -151,6 +151,129 @@ export interface ChosenArms {
 }
 
 /**
+ * 1日の中でのアーム出現率の下限(floor)と上限(cap)。
+ * Thompsonサンプリングだけだと「今いちばん良い型」に集中しすぎて
+ * 全投稿が同じ見た目（例: 全部が質問で締まる）になり、ユーザー体験が悪く
+ * 因果の切り分けもできなくなる。日次クォータで構造的に多様性を保証する。
+ * - ending: 質問系3種は各30%まで。言い切りは最低25%（「全部質問で終わる」の根絶）
+ * - hook: どの書き出し型も1日の25%まで（あるある一色を防ぐ）
+ */
+const QUOTAS: Record<string, Record<string, { floor: number; cap: number }>> = {
+  hook: Object.fromEntries(
+    ["問題提起", "数字", "逆説", "共感", "あるある", "リスト", "意見募集", "自己開示"].map(
+      (a) => [a, { floor: 0.05, cap: 0.25 }],
+    ),
+  ),
+  length: {
+    S: { floor: 0.2, cap: 0.6 },
+    M: { floor: 0.15, cap: 0.5 },
+    L: { floor: 0.1, cap: 0.4 },
+  },
+  ending: {
+    二択質問: { floor: 0.08, cap: 0.3 },
+    共感確認: { floor: 0.08, cap: 0.3 },
+    開いた質問: { floor: 0.08, cap: 0.3 },
+    言い切り: { floor: 0.25, cap: 0.5 },
+  },
+  kamata: {
+    あり: { floor: 0.3, cap: 0.7 },
+    なし: { floor: 0.3, cap: 0.7 },
+  },
+  newsRiding: {
+    乗る: { floor: 0.15, cap: 0.6 },
+    乗らない: { floor: 0.4, cap: 0.85 },
+  },
+};
+
+/** 次元名から決定的なシード差分を作る（次元ごとに乱数列を分ける） */
+function dimSeed(seed: number, dim: string): number {
+  let h = seed >>> 0;
+  for (let i = 0; i < dim.length; i++) {
+    h = (Math.imul(h, 31) + dim.charCodeAt(i)) >>> 0;
+  }
+  return h;
+}
+
+/** 1次元ぶんの日次割り当てを作る: floor保証 → 残りをcap制約付きThompsonで配分 → シャッフル */
+function planDimension(
+  model: BanditModel,
+  dim: string,
+  seed: number,
+  total: number,
+): string[] {
+  const arms = DIMENSIONS[dim];
+  const quotas = QUOTAS[dim] ?? {};
+  const rng = mulberry32(dimSeed(seed, dim));
+
+  // 1) 下限（floor）ぶんを先に確保
+  const counts: Record<string, number> = {};
+  for (const arm of arms) {
+    counts[arm] = Math.floor(total * (quotas[arm]?.floor ?? 0));
+  }
+  let assigned = arms.reduce((s, a) => s + counts[a], 0);
+
+  // 2) 残りスロットを、上限（cap）未満のアームからThompsonサンプリングで配分
+  const capOf = (arm: string): number =>
+    Math.max(1, Math.ceil(total * (quotas[arm]?.cap ?? 1)));
+  while (assigned < total) {
+    let best: string | null = null;
+    let bestSample = -Infinity;
+    for (const arm of arms) {
+      if (counts[arm] >= capOf(arm)) continue;
+      const s = model.dimensions[dim]?.[arm] ?? { n: 1, mean: 0, m2: 0.5 };
+      const sampleVar = s.n > 1 ? s.m2 / (s.n - 1) : MIN_VARIANCE;
+      const sigma = Math.sqrt(Math.max(MIN_VARIANCE, sampleVar) / Math.max(1, s.n));
+      const sample = s.mean + sigma * gaussian(rng);
+      if (sample > bestSample) {
+        bestSample = sample;
+        best = arm;
+      }
+    }
+    // 全アームがcapに達した場合の保険（クォータ設定ミス時のみ到達）
+    if (best === null) best = arms[Math.floor(rng() * arms.length)];
+    counts[best]++;
+    assigned++;
+  }
+
+  // 3) スロットへの並び順を日替わりでシャッフル（組み合わせが偏らないように）
+  const plan: string[] = [];
+  for (const arm of arms) for (let i = 0; i < counts[arm]; i++) plan.push(arm);
+  for (let i = plan.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [plan[i], plan[j]] = [plan[j], plan[i]];
+  }
+  return plan;
+}
+
+/**
+ * その日の全スロットぶんの「型」の割り当て表を作る（決定的）。
+ * 学習が示す良い型に配分を寄せつつ、クォータ（QUOTAS）で
+ * 「1日の中で必ず多様な型が混ざる」ことを構造的に保証する。
+ * 同じ (モデル状態, seed, total) からは常に同じ表が出るため、
+ * 起動をまたいでもスロットごとの型はぶれない。
+ */
+export function planDailyArms(
+  model: BanditModel,
+  seed: number,
+  total: number,
+): ChosenArms[] {
+  const n = Math.max(1, total);
+  const hookPlan = planDimension(model, "hook", seed, n);
+  const lengthPlan = planDimension(model, "length", seed, n);
+  const endingPlan = planDimension(model, "ending", seed, n);
+  const kamataPlan = planDimension(model, "kamata", seed, n);
+  const newsPlan = planDimension(model, "newsRiding", seed, n);
+  return Array.from({ length: n }, (_, i) => ({
+    hook: hookPlan[i],
+    length: lengthPlan[i],
+    ending: endingPlan[i],
+    kamata: kamataPlan[i] === "あり",
+    newsRiding: newsPlan[i] === "乗る",
+    explore: false, // クォータのfloorが探索を恒常的に担保するため個別フラグは持たない
+  }));
+}
+
+/**
  * この投稿が使う型をThompsonサンプリングで選ぶ。
  * 次元（フック・長さ・締め方・蒲田言及・話題乗り）は「それぞれ独立に」探索するか
  * 最良アームを使うかを決める。1つのコインで全次元を揃えると、活用時に常に同じ

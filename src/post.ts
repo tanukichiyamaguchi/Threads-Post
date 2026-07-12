@@ -22,6 +22,7 @@ import {
 } from "./schedule";
 import {
   chooseArms,
+  planDailyArms,
   emptyModel,
   ensureArms,
   measureEndingArm,
@@ -37,10 +38,14 @@ import { log, warn, error } from "./logger";
 const MAX_POSTS_PER_RUN = 8;
 const CATCHUP_GAP_MS = MIN_SLOT_GAP_MINUTES * 60_000;
 
-// 多様性ガード: 直近の投稿と似すぎた本文は1回だけ作り直す
-// （Threadsは反復的・非オリジナルなコンテンツの配信を降格するため）
-const SIMILARITY_THRESHOLD = 0.55;
+// 多様性ガード: 直近の投稿と似すぎた本文・書き出しは作り直す
+// （Threadsは反復的・非オリジナルなコンテンツの配信を降格するため。
+//   一行目が最重要なので、本文全体とは別に一行目単体でも重複を検査する）
+const SIMILARITY_THRESHOLD = 0.55; // 本文全体のバイグラム類似度の上限
+const FIRST_LINE_SIMILARITY_THRESHOLD = 0.5; // 一行目同士のバイグラム類似度の上限
+const FIRST_LINE_PREFIX_LEN = 6; // 一行目の先頭N文字が一致したら重複とみなす
 const SIMILARITY_LOOKBACK = 30;
+const MAX_REGENERATIONS = 2;
 
 function sleep(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms));
@@ -62,12 +67,37 @@ function bigramSimilarity(a: string, b: string): number {
   return inter / (ga.size + gb.size - inter);
 }
 
-function maxSimilarity(text: string, history: { text: string }[]): number {
-  let max = 0;
-  for (const h of history.slice(-SIMILARITY_LOOKBACK)) {
-    max = Math.max(max, bigramSimilarity(text, h.text));
+function firstLineOf(text: string): string {
+  return text.split("\n")[0].trim();
+}
+
+function normalizeLine(s: string): string {
+  return s.replace(/[\s、。！？!?・…]/g, "");
+}
+
+/** 本文・一行目の重複を検査し、問題があれば理由を返す（無ければ null） */
+function diversityIssue(text: string, history: { text: string }[]): string | null {
+  const recent = history.slice(-SIMILARITY_LOOKBACK);
+  const firstLine = firstLineOf(text);
+  const normFirst = normalizeLine(firstLine);
+
+  for (const h of recent) {
+    const hFirst = firstLineOf(h.text);
+    // 一行目: 先頭が同じ、または一行目同士が似ている → 使い回しとみなす
+    if (
+      normFirst.length >= FIRST_LINE_PREFIX_LEN &&
+      normalizeLine(hFirst).startsWith(normFirst.slice(0, FIRST_LINE_PREFIX_LEN))
+    ) {
+      return `一行目の出だしが過去投稿「${hFirst.slice(0, 20)}…」と同じ`;
+    }
+    if (bigramSimilarity(firstLine, hFirst) >= FIRST_LINE_SIMILARITY_THRESHOLD) {
+      return `一行目が過去投稿「${hFirst.slice(0, 20)}…」と類似`;
+    }
   }
-  return max;
+  let maxSim = 0;
+  for (const h of recent) maxSim = Math.max(maxSim, bigramSimilarity(text, h.text));
+  if (maxSim >= SIMILARITY_THRESHOLD) return `本文全体が直近の投稿と類似（${maxSim.toFixed(2)}）`;
+  return null;
 }
 
 async function main(): Promise<void> {
@@ -97,19 +127,23 @@ async function main(): Promise<void> {
   const history = loadPostHistory();
 
   /** 指定スロットの投稿を1件生成して公開し、特徴量つきで履歴に保存する */
-  async function postForSlot(slotIndex: number, includeCta: boolean): Promise<void> {
-    // 学習モデルから「この投稿の型」をサンプリング（日付×スロットで決定的）
-    const arms: ChosenArms = chooseArms(model, slotSeed(now.seed, slotIndex));
+  async function postForSlot(
+    slotIndex: number,
+    includeCta: boolean,
+    plannedArms?: ChosenArms,
+  ): Promise<void> {
+    // その日の割り当て表（クォータ制約つき）から型を取得。force時はThompson単発
+    const arms: ChosenArms = plannedArms ?? chooseArms(model, slotSeed(now.seed, slotIndex));
     const angle = pickAngle(plan, now.seed, slotIndex);
     const coupon = awareness ? null : pickCoupon(plan, angle, now.seed, slotIndex);
     log(
       `テーマ: [${angle.category}] ${angle.angle.slice(0, 60)}` +
         (coupon ? ` / クーポン: ${coupon.name}` : "") +
         ` / 型: ${arms.hook}×${arms.length}×${arms.ending}` +
-        `${arms.kamata ? "×蒲田" : ""}${arms.newsRiding ? "×話題" : ""}` +
-        `${arms.explore ? " (探索)" : ""}`,
+        `${arms.kamata ? "×蒲田" : ""}${arms.newsRiding ? "×話題" : ""}`,
     );
 
+    // 生成 → 多様性ガード（一行目の重複・本文の類似）で不合格なら理由を渡して作り直し
     let post = await generatePost(
       angle,
       coupon,
@@ -121,11 +155,10 @@ async function main(): Promise<void> {
       playbook,
     );
     let finalText = composePostText(post);
-
-    // 多様性ガード: 直近の投稿と似すぎていたら一度だけ作り直す
-    const sim = maxSimilarity(finalText, history);
-    if (sim >= SIMILARITY_THRESHOLD) {
-      warn(`直近の投稿と類似（${sim.toFixed(2)}）。構成を変えて作り直します。`);
+    for (let attempt = 0; attempt < MAX_REGENERATIONS; attempt++) {
+      const issue = diversityIssue(finalText, history);
+      if (!issue) break;
+      warn(`多様性ガード: ${issue}。作り直します（${attempt + 1}/${MAX_REGENERATIONS}）。`);
       post = await generatePost(
         angle,
         coupon,
@@ -135,7 +168,7 @@ async function main(): Promise<void> {
         plan.salonInfo,
         learnings,
         playbook,
-        "直前の生成が過去の投稿と似すぎていました。切り口の角度・構成・言い回しを大きく変えて、全く別の投稿として書いてください。",
+        `直前の生成は不合格（理由: ${issue}）。特に一行目を全く別の言い回し・別の角度から書き直し、構成も変えて、過去のどの投稿とも似ていない投稿にすること。`,
       );
       finalText = composePostText(post);
     }
@@ -200,6 +233,10 @@ async function main(): Promise<void> {
       `（1回の上限 ${MAX_POSTS_PER_RUN} 件 / 残りは次回起動で消化）。`,
   );
 
+  // その日の全スロットぶんの型の割り当て表（クォータ制約つき・決定的）。
+  // 1日の中で書き出し・締め方などが必ず混ざることを構造的に保証する。
+  const dayPlan = planDailyArms(model, now.seed, slots.length);
+
   let done = 0;
   for (const slotIndex of batch) {
     // 先にスロットを消化して保存（投稿失敗時もコミットされ二重投稿を防ぐ）
@@ -212,7 +249,7 @@ async function main(): Promise<void> {
         `本日${st.fired.length}件目${includeCta ? " ★予約CTAあり" : ""}）`,
     );
     try {
-      await postForSlot(slotIndex, includeCta);
+      await postForSlot(slotIndex, includeCta, dayPlan[slotIndex]);
       done++;
     } catch (e: any) {
       // 1件失敗しても残りは続行（該当スロットは消化済みなので再投稿されない）
