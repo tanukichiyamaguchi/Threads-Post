@@ -29,14 +29,14 @@ export const DIMENSIONS: Record<string, string[]> = {
 
 /**
  * 長さアームの文字数レンジ（プロンプト指示・実測判定の両方で使う）。
- * 実測データ（2026-07時点・n=98）で S(短文) が M・L を大きく上回り、
- * L（旧201〜350字）は明確にマイナス、XL（351〜500字）はほぼ選ばれず学習不能だった。
- * この結果を反映し、上限を大きく引き下げ（最大500字→220字）、短文寄りに絞った。
+ * 実測データで短文がM・Lを大きく上回ったこと、および運用者の指定
+ * 「投稿の9割は38文字以内」を反映。S(〜38字)を基本形とし、
+ * M/Lは残り約1割の実験枠としてのみ残す（QUOTAS.lengthで9割を強制保証）。
  */
 export const LENGTH_RANGES: Record<string, { min: number; max: number; label: string }> = {
-  S: { min: 20, max: 60, label: "20〜60文字の短文" },
-  M: { min: 61, max: 140, label: "61〜140文字の中文" },
-  L: { min: 141, max: 220, label: "141〜220文字のやや長文" },
+  S: { min: 12, max: 38, label: "38文字以内の一撃短文（一文〜二文で完結）" },
+  M: { min: 39, max: 80, label: "39〜80文字の短文" },
+  L: { min: 81, max: 160, label: "81〜160文字の中文" },
 };
 
 export const EXPLORE_RATE = 0.15; // 基本の探索率（データが十分溜まった後の値）
@@ -164,10 +164,12 @@ const QUOTAS: Record<string, Record<string, { floor: number; cap: number }>> = {
       (a) => [a, { floor: 0.05, cap: 0.25 }],
     ),
   ),
+  // 運用者指定: 投稿の9割は38文字以内（= Sのfloor 0.9で強制保証・cap 0.93で
+  // M/L合計に最低7%程度の実験枠を残し、長さの学習シグナル自体は生かし続ける）。
   length: {
-    S: { floor: 0.2, cap: 0.6 },
-    M: { floor: 0.15, cap: 0.5 },
-    L: { floor: 0.1, cap: 0.4 },
+    S: { floor: 0.9, cap: 0.93 },
+    M: { floor: 0.03, cap: 0.08 },
+    L: { floor: 0, cap: 0.05 },
   },
   ending: {
     二択質問: { floor: 0.08, cap: 0.3 },
