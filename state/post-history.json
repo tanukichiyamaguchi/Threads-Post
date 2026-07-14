@@ -4731,5 +4731,50 @@
       "slotHour": 7,
       "weekend": false
     }
+  },
+  {
+    "date": "2026-07-14T23:38:42.532Z",
+    "topic": "施術前後の朝メイク時間の変化",
+    "text": "朝のマスカラ時間がゼロになった時の余裕感やばい\n\n矢口渡から蒲田まで座れる電車選ぶ余裕まで生まれた気がする\n\n時間って眉とまつげから作れるんだなと実感した朝だった",
+    "postId": "18478862971099986",
+    "features": {
+      "hook": "共感",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 8,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-14T23:46:57.040Z",
+    "topic": "梅雨明け前の目元仕込み",
+    "text": "梅雨明け前の1回で 夏中崩れ知らずになる説\n\n大森から蒲田通勤で汗かく前に仕込む派増えてる気がする\n\nこれ私だけ?",
+    "postId": "17892159120577596",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 8,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-14T23:55:14.024Z",
+    "topic": "まつげパーマ後は下地不要で色付きだけの時短メイク",
+    "text": "下地塗ってた頃の私に教えたい 色付きだけでいいよって\n\nカール自前でついてるから 密着させるだけの下地って役割薄いんだよね\n\n色付きだけの朝 何に時間使ってる？",
+    "postId": "18099813167225934",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "開いた質問",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 8,
+      "weekend": false
+    }
   }
 ]
