@@ -4491,5 +4491,95 @@
       "slotHour": 19,
       "weekend": false
     }
+  },
+  {
+    "date": "2026-07-14T11:49:30.164Z",
+    "topic": "Open記念の初回限定パリジェンヌ特別価格",
+    "text": "新しいお店って まず一回だけ試したくなるよね\n\nOpen記念で今だけ特別価格だし ちょうどいいきっかけかも",
+    "postId": "17939377875069657",
+    "features": {
+      "hook": "共感",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-14T11:57:45.528Z",
+    "topic": "七夕をきっかけに新しい自分に生まれ変わる提案",
+    "text": "七夕くらいしか願い事考えないの わかる？\n\n毎年織姫様に何お願いしよ とか言いながら\n結局 眉とまつげ変えたいだけだったりする\n\nこれ私だけ？",
+    "postId": "18050291882562473",
+    "features": {
+      "hook": "共感",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-14T12:05:59.416Z",
+    "topic": "パリジェンヌラッシュリフトと通常のラッシュリフトの違い",
+    "text": "実はパリジェンヌの方 カールゆるく見えるの知ってる？\n\n根元から立つ分 持ちは長めなんだけど カールの強さは控えめ\n\n逆に普通のラッシュリフトは カールしっかりめで持続は短め\n\n蒲田西口でこの違い最初知らなかった人 私だけ？",
+    "postId": "18091188467071880",
+    "features": {
+      "hook": "逆説",
+      "length": "L",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-14T12:14:14.623Z",
+    "topic": "仕事帰りの平日夜という時間の使い方の逆説",
+    "text": "実は仕事終わりの平日夜こそ 一番効率いい説\n\n休日にわざわざ予定入れるより 帰りにパッと済ませる方が動線ラクじゃない？\n\nみんな平日夜って何に使ってる？",
+    "postId": "18071853230382796",
+    "features": {
+      "hook": "逆説",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-14T12:22:30.041Z",
+    "topic": "蒲田東口の商店街と西口の駅ビル完結ショッピングの違い",
+    "text": "東口ぶらぶらして満足するか\n西口で美容も買い物も一気に終わらせるか\n\n蒲田西口勢は駅ビルのついでに眉WAXまで終わらせがち\n\n東口で商店街をぶらぶら派\nそれとも西口で用事を一気に済ませる派\nどっちが自分に近い？",
+    "postId": "18274955944289797",
+    "features": {
+      "hook": "共感",
+      "length": "L",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-14T12:30:44.148Z",
+    "topic": "お盆帰省前に垢抜け目元を仕込む",
+    "text": "久しぶりに会う親戚の前で 眉だけは死守したい\n\n蒲田も大森も帰省ラッシュ始まる前に 目元だけ整えとくと気持ちの余裕違う\n\nみんな帰省前って何仕込む派？",
+    "postId": "18066010124480751",
+    "features": {
+      "hook": "共感",
+      "length": "M",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 20,
+      "weekend": false
+    }
   }
 ]
