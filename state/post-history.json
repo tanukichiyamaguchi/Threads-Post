@@ -4326,5 +4326,50 @@
       "slotHour": 13,
       "weekend": false
     }
+  },
+  {
+    "date": "2026-07-14T06:23:59.829Z",
+    "topic": "餃子デート前は匂いより眉を整える説",
+    "text": "実は餃子デート前 気にすべきはニンニク臭より眉の形らしい\n\n蒲田で餃子食べてから会う派\n先に眉だけ整えて安心して食べる派\n\nあなたはどっち？",
+    "postId": "18143793895536652",
+    "features": {
+      "hook": "逆説",
+      "length": "M",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-14T06:32:13.220Z",
+    "topic": "指名できる安心感",
+    "text": "前の店 担当変わるたび眉の形迷子になってた\n\n蒲田でも大森でも同じ人に見てもらえると説明いらなくて楽\n\nこれ地味に安心って思う人いる?",
+    "postId": "17948857371230265",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-14T06:40:26.679Z",
+    "topic": "口コミ4.74の理由",
+    "text": "口コミで一番多いの\n眉の形褒められた報告\n\n仕上がりより\nその後の反応まで書いてくれる人多くて\nそれが評価につながってる気がする\n\n施術結果だけ気にする派\n周りの反応まで気にする派\nどっちで選んでる？",
+    "postId": "18018706310697331",
+    "features": {
+      "hook": "自己開示",
+      "length": "L",
+      "ending": "二択質問",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 15,
+      "weekend": false
+    }
   }
 ]
