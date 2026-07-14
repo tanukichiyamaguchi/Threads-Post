@@ -4581,5 +4581,65 @@
       "slotHour": 20,
       "weekend": false
     }
+  },
+  {
+    "date": "2026-07-14T12:55:52.564Z",
+    "topic": "施術後NG行動リスト",
+    "text": "2つだけ 施術後にやると台無しになる行動あるの\n\nオイルクレンジングでゴシゴシ\nうつぶせ寝で圧かける\n\n蒲田も大森も暑くて疲れて速攻寝落ちしがちだけど そこだけ気をつけてほしい\n\nみんな他にやりがちなNG行動ある？",
+    "postId": "17985260181010382",
+    "features": {
+      "hook": "数字",
+      "length": "L",
+      "ending": "開いた質問",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 21,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-14T13:04:09.629Z",
+    "topic": "レジャープール開幕に向けた崩れない目元づくり",
+    "text": "7月中旬から プール開き始まる大田区民\n\n浮き輪より先に気になるの まつげと眉なんだよな\n\n大森のプールも西口の駅ビルも 気分は夏に切り替わってるのに 目元だけ梅雨仕様のままって人いる?",
+    "postId": "18106833215047221",
+    "features": {
+      "hook": "数字",
+      "length": "L",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 21,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-14T13:12:26.012Z",
+    "topic": "黒湯銭湯帰りのすっぴん眉安心感",
+    "text": "黒湯上がりすっぴんで鏡見るの ちょっと勇気いる\n\n湯気で全部溶けても\n眉と目元の形だけ崩れないの地味に助かってる\n\nすっぴん力って結局そこなんだよね",
+    "postId": "18158221705482759",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 21,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-14T13:20:40.016Z",
+    "topic": "伸びかけ眉のブラッシング習慣",
+    "text": "伸びかけ眉ほったらかしで矢口渡ってた自分\n\n毛流れ乱れてるの家出る前に気づけって話なんだけど\n\nコームで下から上に10秒撫でるだけで直るの最近知った",
+    "postId": "18608335435022649",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 21,
+      "weekend": false
+    }
   }
 ]
