@@ -5301,5 +5301,35 @@
       "slotHour": 22,
       "weekend": false
     }
+  },
+  {
+    "date": "2026-07-15T22:53:21.931Z",
+    "topic": "帰省前の目元仕込み",
+    "text": "毎年お盆前になると眉とまつげだけ慌てて仕込む\n\n蒲田で働いてるとつい後回しにしがちだけど\n久しぶりに会う親戚の第一声が変わった?だから\n\nこれ私だけ？😌,}}✓",
+    "postId": "17909251578440584",
+    "features": {
+      "hook": "自己開示",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 7,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-15T23:01:34.764Z",
+    "topic": "サンロード商店街の通勤動線と美容院ついで寄りの共感",
+    "text": "サンロードのアーケード抜けるとき絶対サロンの看板チラ見しちゃう\n\n今日はいいやってスルーして1ヶ月後後悔するやつ\n\n通り道にあるだけで謎の安心感あるよね\n\nこれ私だけ？",
+    "postId": "18609354085056908",
+    "features": {
+      "hook": "自己開示",
+      "length": "L",
+      "ending": "共感確認",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 7,
+      "weekend": false
+    }
   }
 ]
