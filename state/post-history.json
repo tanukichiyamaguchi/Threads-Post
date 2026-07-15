@@ -4986,5 +4986,50 @@
       "slotHour": 15,
       "weekend": false
     }
+  },
+  {
+    "date": "2026-07-15T08:39:36.042Z",
+    "topic": "眉毛の毛周期から逆算するベストな来店タイミング",
+    "text": "眉毛にも毛周期があるって知らずに整えすぎてた\n\n生え変わりのサイクル的に3〜4週間が目安らしくて\n\n洗足池の帰りに眉整えた友達もその話にびっくりしてた\n\n頻度じゃなくてサイクルで考えると眉が迷子にならない気がする",
+    "postId": "18083904536644550",
+    "features": {
+      "hook": "問題提起",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 17,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-15T08:47:58.218Z",
+    "topic": "平日夜は蒲田で眉ケアして帰る交通結節点あるある",
+    "text": "品川も横浜も一本で行けるのに\n平日夜は蒲田で眉整えて終わる\n\n遠出できる立地なのに\nわざわざ遠くまで行かない選択してる気がする",
+    "postId": "18166113052445468",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 17,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-15T08:56:13.169Z",
+    "topic": "ノーファンデ美肌トレンドと眉毛WAXの相性",
+    "text": "すっぴん風メイクにしてから眉だけは削れなかった\n\n大森でも蒲田でも肌つや勝負な子増えた気がする\n\nみんな肌以外で頑張ってるところある?",
+    "postId": "18121783675696481",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "開いた質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 17,
+      "weekend": false
+    }
   }
 ]
