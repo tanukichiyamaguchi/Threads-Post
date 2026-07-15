@@ -4776,5 +4776,50 @@
       "slotHour": 8,
       "weekend": false
     }
+  },
+  {
+    "date": "2026-07-15T00:58:21.259Z",
+    "topic": "夏の紫外線対策と眉ティントの付き合い方",
+    "text": "日焼け止め塗り直すたび\n眉ティント落ちてる気がする\n\n大森から蒲田まで歩くだけで日焼け止め汗で流れて\n眉だけ色薄くなってる日ある\n\nこれ気にしてるの私だけ？",
+    "postId": "17899778520531149",
+    "features": {
+      "hook": "共感",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 9,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-15T01:06:33.576Z",
+    "topic": "ヒト幹細胞成分配合まつげパーマの人気理由",
+    "text": "ケアしながらカールって\n欲張りなお願い叶う時代なんだよね\n\n幹細胞由来成分が地毛のダメージ気にする派に刺さってる理由らしい",
+    "postId": "18088576850182380",
+    "features": {
+      "hook": "共感",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 9,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-15T01:14:47.475Z",
+    "topic": "量産型メイクとの対比で自分だけの眉デザインを楽しむ魅力",
+    "text": "同じテンプレ眉ばかりの中で\n自分の眉で勝負したい人いる？\n\n量産型と真逆でいくの\nちょっと気持ちいいよね？",
+    "postId": "18132101899719952",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 9,
+      "weekend": false
+    }
   }
 ]
