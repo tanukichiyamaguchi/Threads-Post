@@ -5031,5 +5031,65 @@
       "slotHour": 17,
       "weekend": false
     }
+  },
+  {
+    "date": "2026-07-15T10:27:35.457Z",
+    "topic": "梅雨明け後のにわか雨・雷雨とメイク崩れ対策",
+    "text": "雷雨予報見た瞬間\n眉ティントの残量確認する癖ついた\n\n傘忘れて走る派\nそれとも眉だけ守って諦める派\n\nどっちが自分に近い？",
+    "postId": "18480091981100087",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "二択質問",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 19,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-15T10:35:49.757Z",
+    "topic": "指名予約と信頼感",
+    "text": "前は毎回違う人にお願いしてて微妙に説明し直すのが地味に手間だった\n\n矢口で働いてた頃からずっとそれで\n指名するようになって一気に楽になったんだよね\n\n骨格とか毛流れの好み覚えててもらえるの地味に大きい",
+    "postId": "18059097224733646",
+    "features": {
+      "hook": "自己開示",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 19,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-15T10:44:08.477Z",
+    "topic": "涙袋メイクとまつげ・眉の関係",
+    "text": "涙袋メイク流行ってるけど\n蒲田で見るのは眉先が整ってる子ばかり\n\n涙袋盛っても\nまつげ下がってたり眉がぼやけてると\n目元の主役決まらないんだよね\n\n大森でも池上でも\n結局垢抜けてる子は目元の土台から整えてる気がする",
+    "postId": "17961070791150212",
+    "features": {
+      "hook": "リスト",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 19,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-15T10:52:21.558Z",
+    "topic": "黒湯銭湯帰りのすっぴん眉",
+    "text": "3つの黒湯めぐっても眉だけは崩れないの地味に助かる\n\n大森あたりまで足伸ばして温泉巡りしても\nすっぴんの眉だけは形残ってるの謎に嬉しい",
+    "postId": "18090154880105191",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 19,
+      "weekend": false
+    }
   }
 ]
