@@ -184,6 +184,7 @@ export interface MetricsEntry {
   postedAt: string; // 投稿日時（ISO）
   s24?: MetricsValues & { fetchedAt: string }; // 投稿齢22〜30hで取得
   s72?: MetricsValues & { fetchedAt: string }; // 投稿齢66〜78hで取得
+  dead?: { reason: string; at: string }; // 取得不可（削除済み・非対応など）→以後スキップ
 }
 
 export type MetricsStore = Record<string, MetricsEntry>; // key: postId

@@ -29,6 +29,33 @@ function sleep(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms));
 }
 
+/**
+ * トークン/スコープ自体が原因の「本物の認証エラー」か判定する。
+ * これに該当するときだけ「トークンを再発行してください」と案内すべき。
+ * ※ code 100 のエラー文言には「missing permissions」という汎用フレーズが必ず含まれるが、
+ *   これはオブジェクト単位の一般エラーであって認証エラーではない（誤検知しないこと）。
+ */
+export function isAuthError(message: string): boolean {
+  return (
+    /OAuthException|threads_manage_insights/i.test(message) ||
+    // 190=無効/期限切れトークン, 102=セッション無効, 10=アプリ権限不足, 2xx=権限拒否
+    /\(code (?:190|102|10|200|2\d\d|294)[,)]/.test(message)
+  );
+}
+
+/**
+ * 対象オブジェクト単位の恒久エラー（投稿が削除済み・存在しない・インサイト非対応など）か判定する。
+ * これに該当する投稿は二度と取得できないため、以後スキップしてよい（ジョブ全体は失敗させない）。
+ */
+export function isDeadObjectError(message: string): boolean {
+  return (
+    /\(code 100[,)]/.test(message) &&
+    /does not exist|Unsupported get request|does not support this operation|missing permissions/i.test(
+      message,
+    )
+  );
+}
+
 function cleanId(id: string): string {
   return String(id)
     .replace(/^'+|'+$/g, "")
@@ -75,9 +102,9 @@ export class ThreadsClient {
         return this.request(url, init, attempt + 1);
       }
       if (json && json.error) {
-        throw new Error(
-          `Threads APIエラー: ${json.error.message} (code ${json.error.code ?? res.status})`,
-        );
+        const code = json.error.code ?? res.status;
+        const type = json.error.type ? `, ${json.error.type}` : "";
+        throw new Error(`Threads APIエラー: ${json.error.message} (code ${code}${type})`);
       }
       if (!res.ok) {
         throw new Error(`Threads HTTPエラー: ${res.status} ${body.slice(0, 200)}`);
