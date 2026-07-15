@@ -5091,5 +5091,95 @@
       "slotHour": 19,
       "weekend": false
     }
+  },
+  {
+    "date": "2026-07-15T11:58:30.873Z",
+    "topic": "餃子デート前の眉毛WAX",
+    "text": "蒲田で餃子食べる予定ある日は眉だけ先に整えとく\n\n匂いは気にしないけど眉が崩れてるのだけは無理",
+    "postId": "18094868009013366",
+    "features": {
+      "hook": "共感",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-15T12:06:44.250Z",
+    "topic": "少人数体制だからこその丁寧な接客",
+    "text": "毎回違うスタッフに当たって説明し直すの疲れる\n悩んでる人へ\n\n2人だけだと結局どっちが担当でも同じこと分かってくれてる\n\nこれ地味に大事じゃない?",
+    "postId": "18100456436241377",
+    "features": {
+      "hook": "問題提起",
+      "length": "M",
+      "ending": "二択質問",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-15T12:14:58.746Z",
+    "topic": "パリジェンヌラッシュリフトで根元から立ち上がる目力の仕組み",
+    "text": "すっぴんでも目力ある人いる？\n\n大森あたりまで散歩する朝とか\n根元から立ち上がってると\nそれだけで顔変わる気がする\n\nみんなの目力キープ方法教えて？",
+    "postId": "18121739935772423",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "開いた質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-15T12:23:12.745Z",
+    "topic": "お盆帰省前の目元仕込み",
+    "text": "帰省したら絶対聞かれる 変わった？って言葉が地味に怖い\n\n久しぶりだからこそ 目元の印象だけはちゃんとしておきたい\n\nそういう仕込み方してる人いる？",
+    "postId": "18606364411003466",
+    "features": {
+      "hook": "共感",
+      "length": "M",
+      "ending": "開いた質問",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-15T12:31:29.627Z",
+    "topic": "レジャープール開幕と崩れない目元",
+    "text": "7月からのプール解禁\n\nまつげどうしてる人いる?\n\n大森あたりのプールもぞくぞく始まって\n\n水しぶきの中でも\nまつげが下向いてないか気になる\n\nこれ気にしてるの私だけ?",
+    "postId": "18095776577196501",
+    "features": {
+      "hook": "意見募集",
+      "length": "L",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-15T12:39:44.737Z",
+    "topic": "Open記念の初回限定まつげパーマ特別価格",
+    "text": "実はまつげパーマ 初回が一番お得なの知らずに損してる人多い\n\nいきなり高いコースより まず試せる価格で自分に合うか見る方が失敗しない\n\nじっくり考えて決める派\nそれとも気になったらすぐ試す派\nあなたはどっち？",
+    "postId": "18117066695504306",
+    "features": {
+      "hook": "逆説",
+      "length": "L",
+      "ending": "二択質問",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 20,
+      "weekend": false
+    }
   }
 ]
