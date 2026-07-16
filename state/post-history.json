@@ -5541,5 +5541,35 @@
       "slotHour": 13,
       "weekend": false
     }
+  },
+  {
+    "date": "2026-07-16T06:39:52.588Z",
+    "topic": "少人数体制だからこその丁寧な接客",
+    "text": "2人だけだからこそ聞ける本音がある気がする\n\n蒲田西口で少人数のサロンって\n одна人にかける時間長くて贅沢じゃない?\n\nこれ私だけ?",
+    "postId": "18126776857734846",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-16T06:48:13.294Z",
+    "topic": "Open記念の初回限定まつげパーマ特別価格",
+    "text": "正直Open前は蒲田西口にサロン出すの怖かった\n\n大森や池上にもサロンあるのにここ選んでくれる人いるのかなって\n\nだから初回だけ特別価格にして\nまずは気軽に試してほしい気持ちが強い\n\n新しい店で施術受けるとき何が決め手になる?",
+    "postId": "18109226023794612",
+    "features": {
+      "hook": "自己開示",
+      "length": "L",
+      "ending": "開いた質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 15,
+      "weekend": false
+    }
   }
 ]
