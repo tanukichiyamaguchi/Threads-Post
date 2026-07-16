@@ -155,7 +155,9 @@ export interface ChosenArms {
  * Thompsonサンプリングだけだと「今いちばん良い型」に集中しすぎて
  * 全投稿が同じ見た目（例: 全部が質問で締まる）になり、ユーザー体験が悪く
  * 因果の切り分けもできなくなる。日次クォータで構造的に多様性を保証する。
- * - ending: 質問系3種は各30%まで。言い切りは最低25%（「全部質問で終わる」の根絶）
+ * - ending: 運用者指定「質問が多すぎる」→ 言い切り（断定）を最低65%に固定し、
+ *   質問系3種は合計でも最大35%（各cap: 共感確認は「これ私だけ？」が最も定型化
+ *   しやすいため最も低く抑える）。投稿の過半数は疑問符で終わらないことを構造保証。
  * - hook: どの書き出し型も1日の25%まで（あるある一色を防ぐ）
  */
 const QUOTAS: Record<string, Record<string, { floor: number; cap: number }>> = {
@@ -172,10 +174,10 @@ const QUOTAS: Record<string, Record<string, { floor: number; cap: number }>> = {
     L: { floor: 0, cap: 0.05 },
   },
   ending: {
-    二択質問: { floor: 0.08, cap: 0.3 },
-    共感確認: { floor: 0.08, cap: 0.3 },
-    開いた質問: { floor: 0.08, cap: 0.3 },
-    言い切り: { floor: 0.25, cap: 0.5 },
+    二択質問: { floor: 0.04, cap: 0.15 },
+    共感確認: { floor: 0.03, cap: 0.12 },
+    開いた質問: { floor: 0.05, cap: 0.18 },
+    言い切り: { floor: 0.65, cap: 0.82 },
   },
   kamata: {
     あり: { floor: 0.3, cap: 0.7 },
