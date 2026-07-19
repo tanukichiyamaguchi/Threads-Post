@@ -7840,6 +7840,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-07-17T03:44:43.329Z"
+    },
+    "s72": {
+      "views": 78,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-07-19T04:01:39.866Z"
     }
   },
   "18071567810398202": {
@@ -8032,6 +8041,169 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-07-18T03:39:28.933Z"
+    }
+  },
+  "18126776857734846": {
+    "postedAt": "2026-07-16T06:39:52.588Z",
+    "dead": {
+      "reason": "Threads APIエラー: Unsupported get request. Object with ID '18126776857734846' does not exist, cannot be loaded due to missing permissions, or does not support thi",
+      "at": "2026-07-19T04:01:39.866Z"
+    }
+  },
+  "18109226023794612": {
+    "postedAt": "2026-07-16T06:48:13.294Z",
+    "s72": {
+      "views": 88,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-07-19T04:01:39.866Z"
+    }
+  },
+  "18019058204850750": {
+    "postedAt": "2026-07-16T09:00:33.130Z",
+    "s72": {
+      "views": 34,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-07-19T04:01:39.866Z"
+    }
+  },
+  "18131808766613150": {
+    "postedAt": "2026-07-16T09:08:47.642Z",
+    "s72": {
+      "views": 60,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-07-19T04:01:39.866Z"
+    }
+  },
+  "18122956552743449": {
+    "postedAt": "2026-07-16T09:17:03.202Z",
+    "s72": {
+      "views": 119,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-07-19T04:01:39.866Z"
+    }
+  },
+  "18076752605322178": {
+    "postedAt": "2026-07-16T09:25:16.959Z",
+    "s72": {
+      "views": 35,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-07-19T04:01:39.866Z"
+    }
+  },
+  "18197171125327655": {
+    "postedAt": "2026-07-18T04:08:34.569Z",
+    "s24": {
+      "views": 88,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-07-19T04:01:39.866Z"
+    }
+  },
+  "18159737815483564": {
+    "postedAt": "2026-07-18T04:16:48.277Z",
+    "s24": {
+      "views": 133,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-07-19T04:01:39.866Z"
+    }
+  },
+  "18128118340636960": {
+    "postedAt": "2026-07-18T04:25:07.922Z",
+    "s24": {
+      "views": 70,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-07-19T04:01:39.866Z"
+    }
+  },
+  "18110536909757168": {
+    "postedAt": "2026-07-18T04:33:23.056Z",
+    "s24": {
+      "views": 18,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-07-19T04:01:39.866Z"
+    }
+  },
+  "17909010153259693": {
+    "postedAt": "2026-07-18T04:41:39.022Z",
+    "s24": {
+      "views": 32,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-07-19T04:01:39.866Z"
+    }
+  },
+  "18236164273313190": {
+    "postedAt": "2026-07-18T04:49:53.935Z",
+    "s24": {
+      "views": 238,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-07-19T04:01:39.866Z"
+    }
+  },
+  "18091597748451714": {
+    "postedAt": "2026-07-18T04:58:11.545Z",
+    "s24": {
+      "views": 185,
+      "likes": 1,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-07-19T04:01:39.866Z"
+    }
+  },
+  "17893880472562063": {
+    "postedAt": "2026-07-18T05:06:26.144Z",
+    "s24": {
+      "views": 114,
+      "likes": 1,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-07-19T04:01:39.866Z"
     }
   }
 }
