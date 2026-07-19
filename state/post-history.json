@@ -1,51 +1,5 @@
 [
   {
-    "date": "2026-07-08T13:34:56.528Z",
-    "topic": "施術後NG行動リスト",
-    "text": "2つだけ守ればいいやつ\n\nオイルクレンジングとうつぶせ寝\nこれだけで持ちが結構変わる\n\nやっちゃってた人いる?",
-    "postId": "18095118845579454",
-    "features": {
-      "hook": "数字",
-      "length": "S",
-      "ending": "共感確認",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 22,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-08T13:43:11.389Z",
-    "topic": "韓国風束感まつげトレンド",
-    "text": "束感まつげ気になって色々調べてたら、パーマだけでも結構それっぽく見えるって知って驚いた\n\n根元は立たせて中間だけ緩くカール残すと、あの束っぽい抜け感出るらしい\n蒲田で流行り始めてる気がするけどこれ気のせいかな\n\nがっつり束感派とナチュラル束感派、どっち派？",
-    "postId": "18089710715528618",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "二択質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 22,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-08T13:51:23.170Z",
-    "topic": "眉毛の毛周期と来店タイミング",
-    "text": "眉毛は整えなくていいって説、実は逆\n\n毛周期あるから伸び切る前がベストタイミング\n蒲田西口、次いつ来るか逆算してる人ほど眉キレイ🌱",
-    "postId": "17997230360967063",
-    "features": {
-      "hook": "逆説",
-      "length": "S",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 22,
-      "weekend": false,
-      "explore": true
-    }
-  },
-  {
     "date": "2026-07-08T13:59:34.969Z",
     "topic": "隙間時間の眉毛WAX",
     "text": "眉毛だけサロン行くの贅沢って思ってた、実は逆\n\n蒲田って西口出てすぐ美容系あるから、お迎え前とか本当に隙間時間で終わる\n\n全部やる日、パーツだけの日、あなたはどっち派？",
@@ -6033,6 +5987,51 @@
       "kamata": true,
       "newsRiding": true,
       "slotHour": 7,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-19T23:41:22.264Z",
+    "topic": "夏の紫外線対策と眉メイクの関係",
+    "text": "眉だけ日焼けして地毛と色差できてるの鏡で見て焦った\n\n日焼け止め塗るの顔ばっかりで眉毛スルーしがち\n\n色が抜けるより先に地毛が焼けて浮くほうが地味に厄介",
+    "postId": "18199569910366792",
+    "features": {
+      "hook": "あるある",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 8,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-19T23:49:36.092Z",
+    "topic": "WAX脱毛が肌に優しい理由",
+    "text": "毛抜きで眉整えたあと赤いポツポツできた人いる\n\nそれ毛穴が炎症してるサインで放置すると埋没毛にもなりがち\n\nWAXは毛根ごと根元から取るから毛穴への負担が全然違うんだよね",
+    "postId": "18093211937624902",
+    "features": {
+      "hook": "意見募集",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 8,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-19T23:57:49.245Z",
+    "topic": "七夕にちなんだ新しい自分への切り口",
+    "text": "七夕に願い事するより先に眉毛整えた方が変わる説ある\n\n一年に一度願うより毎朝の顔の方が現実じゃない？\nみんなは今年どんな自分になりたい？",
+    "postId": "17957549946177582",
+    "features": {
+      "hook": "逆説",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 8,
       "weekend": false
     }
   }
