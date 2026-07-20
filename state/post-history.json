@@ -1,50 +1,5 @@
 [
   {
-    "date": "2026-07-08T13:59:34.969Z",
-    "topic": "隙間時間の眉毛WAX",
-    "text": "眉毛だけサロン行くの贅沢って思ってた、実は逆\n\n蒲田って西口出てすぐ美容系あるから、お迎え前とか本当に隙間時間で終わる\n\n全部やる日、パーツだけの日、あなたはどっち派？",
-    "postId": "18097282037190956",
-    "features": {
-      "hook": "逆説",
-      "length": "M",
-      "ending": "二択質問",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 22,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-08T22:58:36.655Z",
-    "topic": "サンロード通勤ついで美容",
-    "text": "蒲田でサンロード通って通勤してる人あるある\n\n屋根あるからつい歩幅遅くなって、気づいたら美容院の看板二度見してる\n\nみんなは通勤路にどんなお店挟んでる？",
-    "postId": "18174968884375355",
-    "features": {
-      "hook": "あるある",
-      "length": "S",
-      "ending": "開いた質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 7,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-08T23:06:49.804Z",
-    "topic": "眉ブラッシング習慣",
-    "text": "眉伸ばし中の人あるある\n毛流れ迷子になりがち\n\n蒲田西口出る前の1分、朝にブラシで上→斜め整えるだけで印象変わる\n\n朝ブラシ派？寝る前ブラシ派？",
-    "postId": "18085206461171680",
-    "features": {
-      "hook": "あるある",
-      "length": "S",
-      "ending": "二択質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 7,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-09T00:13:08.869Z",
     "topic": "七夕×新しい自分",
     "text": "七夕に短冊書く代わりに蒲田西口でまつげと眉整えて生まれ変わりたい勢、私だけ？\n\n今年何を願う？",
@@ -6032,6 +5987,51 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 8,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-20T01:13:37.806Z",
+    "topic": "プール前の目元崩れ対策",
+    "text": "去年プール上がりに眉毛消えてて写真全部消した\n\n今年はまつげパーマだけ先に済ませておいたから安心して潜れる",
+    "postId": "18168167707459015",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 10,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-20T01:21:49.728Z",
+    "topic": "眉毛の毛周期と次回来店タイミング",
+    "text": "3〜4ヶ月周期で眉が生え変わるって最近知った\n\n整えたベスト状態を維持したいなら次はその頃が狙い目なんだよね",
+    "postId": "17892131973585270",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 10,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-20T01:30:03.849Z",
+    "topic": "お盆帰省前の垢抜け目元仕込み",
+    "text": "改札出た瞬間親戚に眉薄いね言われた経験ある\n\n蒲田駅で待ち合わせて実家帰るまでの数十分が地味に勝負な気がしてる\n\nみんな帰省前って何仕込む派？",
+    "postId": "17979204630020710",
+    "features": {
+      "hook": "あるある",
+      "length": "M",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 10,
       "weekend": false
     }
   }
