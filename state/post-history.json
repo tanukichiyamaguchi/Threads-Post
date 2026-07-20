@@ -1,125 +1,5 @@
 [
   {
-    "date": "2026-07-09T00:13:08.869Z",
-    "topic": "七夕×新しい自分",
-    "text": "七夕に短冊書く代わりに蒲田西口でまつげと眉整えて生まれ変わりたい勢、私だけ？\n\n今年何を願う？",
-    "postId": "18072742946370533",
-    "features": {
-      "hook": "あるある",
-      "length": "S",
-      "ending": "共感確認",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 9,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-09T00:21:19.476Z",
-    "topic": "少人数体制の丁寧接客",
-    "text": "サロンでスタッフ多すぎて誰が誰だか分からなくなるあるある\n\n蒲田西口のうちは2人だけだから毎回ちゃんと顔覚えてもらえる\n\n少人数のサロンと多いサロン、どっちが安心する派？",
-    "postId": "18097534022215935",
-    "features": {
-      "hook": "あるある",
-      "length": "M",
-      "ending": "二択質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 9,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-09T00:29:30.480Z",
-    "topic": "眉毛WAXは実は男性利用も多い",
-    "text": "蒲田西口の身だしなみ意識高い男性あるある\n実は眉毛WAXでこっそり整えてる説\n\n清潔感って眉で決まるの、男女関係ないよね\n\n整える派？伸ばしっぱなし派？",
-    "postId": "18190172725376565",
-    "features": {
-      "hook": "あるある",
-      "length": "S",
-      "ending": "二択質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 9,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-09T04:14:10.905Z",
-    "topic": "Open記念まつげパーマ初回特別価格で気軽に体験",
-    "text": "蒲田西口で新しいサロン見るとつい覗きたくなる人あるある\n\nまつげパーマとパリジェンヌ、やるならどっち派？",
-    "postId": "18568040938071857",
-    "features": {
-      "hook": "あるある",
-      "length": "S",
-      "ending": "二択質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-09T04:22:22.611Z",
-    "topic": "蒲田から品川横浜へ一本アクセス×平日夜の自分磨き",
-    "text": "蒲田で働く人あるある\n品川も横浜も一本で出れるのに平日夜は結局蒲田で眉整えて帰りがち\n\n寄り道するなら西口派？東口派？",
-    "postId": "18541666567077718",
-    "features": {
-      "hook": "あるある",
-      "length": "S",
-      "ending": "二択質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-09T04:30:38.213Z",
-    "topic": "西口はついでに美容も完結しがち",
-    "text": "蒲田民あるある\n東口で商店街寄り道するか西口で買い物と美容ついでに済ませるか毎回悩む\n\nみんなは東口派？西口派？",
-    "postId": "18118653124848175",
-    "features": {
-      "hook": "あるある",
-      "length": "S",
-      "ending": "二択質問",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-09T04:38:51.826Z",
-    "topic": "まつげパーマ後の時短メイク",
-    "text": "まつげパーマ愛用者あるある\n蒲田西口で施術した日から下地塗る手間が地味に減る\n\n色付きマスカラだけでもうカール保ってくれるから朝が早く終わる\n\n下地派？色付きだけ派？",
-    "postId": "18106996477998670",
-    "features": {
-      "hook": "あるある",
-      "length": "M",
-      "ending": "二択質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-09T04:47:05.858Z",
-    "topic": "プール前の目元崩れ対策",
-    "text": "蒲田西口勢あるある\n\nプール解禁前になると急に目元の水濡れ対策気にし始める\n\nまつげパーマにしといたら涙も水しぶきも気にせず遊べるやつ\n\nみんなプール前って何かケアする派？",
-    "postId": "18124458760661351",
-    "features": {
-      "hook": "あるある",
-      "length": "M",
-      "ending": "二択質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-09T04:55:19.245Z",
     "topic": "量産型眉との対比",
     "text": "蒲田西口勢あるある\n\nみんな同じ眉より\n自分の骨格に合う眉の方が結局垢抜けるって気づく瞬間ある\n\n量産型眉派？自分軸眉派？",
@@ -6032,6 +5912,126 @@
       "kamata": true,
       "newsRiding": true,
       "slotHour": 10,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-20T04:53:20.634Z",
+    "topic": "梅雨明け後のにわか雨とまつげパーマの安心感",
+    "text": "にわか雨の予報見た瞬間先にまつげのこと心配するようになった\n\nサンロード商店街のアーケードまで走れば濡れずに済むけど\nまつげはもう溶けてる\n\nラッシュリフトしてからは傘忘れても目元だけは平気って思えるようになった",
+    "postId": "18114639313907521",
+    "features": {
+      "hook": "自己開示",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-20T05:01:38.316Z",
+    "topic": "指名予約とリピートの安心感",
+    "text": "西蒲田くらいの規模感だから同じ人に見てもらえる安心感がある",
+    "postId": "18083327687206364",
+    "features": {
+      "hook": "共感",
+      "length": "S",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-20T05:09:52.868Z",
+    "topic": "男性にも人気の眉毛WAX・HBLメニュー",
+    "text": "男性のお客さん多くて最初驚いた眉WAX\n大森や糀谷からくる人もいるんだけど身だしなみ意識してる男性増えてる気がする\nみんなの周りはどう?",
+    "postId": "17986101678011755",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "開いた質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-20T05:18:09.185Z",
+    "topic": "Open記念まつげパーマ初回限定価格の体験訴求",
+    "text": "open記念って文字見た瞬間指が止まった\n\n西蒲田にまつげパーマと眉WAXの店できたの気になってた人多いはず\n\n初回だけの価格であるうちに一回試しておくのが正解な気がする",
+    "postId": "18130042873712206",
+    "features": {
+      "hook": "あるある",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-20T05:26:29.859Z",
+    "topic": "涙袋メイクと眉・まつげの関係",
+    "text": "涙袋パンパンでも眉とまつげスカスカだと台無しって気づいた人増えてる\n\n西蒲田でもこの話でざわついてる人多い",
+    "postId": "18098283605222553",
+    "features": {
+      "hook": "共感",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-20T05:34:48.681Z",
+    "topic": "少人数体制だからこその丁寧な接客",
+    "text": "2人体制だから覚えてもらえる速さが違う\n\n前回の毛流れも眉の癖も次に会うまで覚えてる\n\n人数増やさない理由がそこにある気がしてる",
+    "postId": "17977209609067430",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-20T05:43:01.465Z",
+    "topic": "量産型メイクと眉デザインの個性",
+    "text": "量産型眉に飽きた人へ\n眉こそ最後の個性\n\n大森でも池上でも同じ平行眉ばっかり見ると\n眉だけは自分の顔に合わせていいんだよなって思う",
+    "postId": "17896460034552818",
+    "features": {
+      "hook": "問題提起",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-20T05:51:14.658Z",
+    "topic": "韓国風束感まつげトレンド",
+    "text": "束感まつげ 韓国風の主流が根元3mmだけ立たせる感じになってきた\n\n西蒲田でもこの微調整の相談増えてる\n\nパーマの角度でこの束感風は作れるから道具増やさなくていいの地味に楽なんだよね",
+    "postId": "17994436409808718",
+    "features": {
+      "hook": "数字",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 13,
       "weekend": false
     }
   }
