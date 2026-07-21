@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-11T00:02:16.891Z",
-    "topic": "七夕×新しい自分",
-    "text": "七夕って毎年何かリセットしたくなる わかる人いる\n\n蒲田西口のビルで短冊見て、今年もまつげと眉だけは整えて夏迎えようって思っちゃった🌟\n\nこれ私だけ？",
-    "postId": "18107956733515804",
-    "features": {
-      "hook": "共感",
-      "length": "S",
-      "ending": "共感確認",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 8,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-07-11T00:10:28.186Z",
     "topic": "共働き世帯の隙間美容あるある",
     "text": "共働き子育て中あるある\n\nフルメイクする時間はないけど\n眉毛WAXだけならお迎え前の隙間で終わらせられる気がしてる",
@@ -6019,6 +6004,21 @@
       "kamata": false,
       "newsRiding": true,
       "slotHour": 21,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-21T23:43:49.193Z",
+    "topic": "梅雨明け後のにわか雨とメイク崩れ対策",
+    "text": "夕方の空が急に暗くなると、まつげより先に眉のこと考えちゃう\n\n蒲田も大森も夕立ひどいから、パーマとWAXにしてから崩れる心配減った気がする",
+    "postId": "18127472128733548",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 8,
       "weekend": false
     }
   }
