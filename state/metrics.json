@@ -10307,6 +10307,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-07-21T03:52:38.634Z"
+    },
+    "s72": {
+      "views": 47,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-07-22T23:27:42.253Z"
     }
   },
   "18083327687206364": {
@@ -10319,6 +10328,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-07-21T03:52:38.634Z"
+    },
+    "s72": {
+      "views": 559,
+      "likes": 4,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-07-22T23:27:42.253Z"
     }
   },
   "17986101678011755": {
@@ -10331,6 +10349,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-07-21T03:52:38.634Z"
+    },
+    "s72": {
+      "views": 79,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-07-22T23:27:42.253Z"
     }
   },
   "18130042873712206": {
@@ -10343,6 +10370,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-07-21T03:52:38.634Z"
+    },
+    "s72": {
+      "views": 105,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-07-22T23:27:42.253Z"
     }
   },
   "18098283605222553": {
@@ -10355,6 +10391,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-07-21T03:52:38.634Z"
+    },
+    "s72": {
+      "views": 126,
+      "likes": 1,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-07-22T23:27:42.253Z"
     }
   },
   "17977209609067430": {
@@ -11123,6 +11168,18 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-07-22T14:30:20.639Z"
+    }
+  },
+  "18127472128733548": {
+    "postedAt": "2026-07-21T23:43:49.193Z",
+    "s24": {
+      "views": 56,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-07-22T23:27:42.253Z"
     }
   }
 }
