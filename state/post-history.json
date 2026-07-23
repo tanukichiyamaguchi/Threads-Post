@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-11T07:17:14.400Z",
-    "topic": "WAX脱毛が肌に優しい理由",
-    "text": "眉自己処理あるある\n\n蒲田で仕事帰りに眉整えるとき\nカミソリか毛抜きで済ませて\n毛穴も埋没毛も気にしがち\n\n家派？サロンでWAX派？",
-    "postId": "18016470965901142",
-    "features": {
-      "hook": "あるある",
-      "length": "S",
-      "ending": "二択質問",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 16,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-07-11T08:53:57.489Z",
     "topic": "眉ブラッシング習慣",
     "text": "眉が伸びてくる時期って毛流れ迷子になるのわかる\n\n蒲田で仕事終わりに鏡見て気づくやつ\n\n寝る前に眉ブラシで上向きに整えるだけで意外と落ち着く\n\nみんなは眉、朝派？夜派？",
@@ -6015,6 +6000,21 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 19,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-23T12:16:19.765Z",
+    "topic": "Open記念の初回限定まつげパーマ特別価格で気軽に体験を促す",
+    "text": "初回だけ値段のこと気にせず試せるの地味に嬉しい\n\nOpen記念でパリジェンヌも特別価格やってるから、まず1回試してみてほしい🌿",
+    "postId": "18016152845712637",
+    "features": {
+      "hook": "あるある",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 21,
       "weekend": false
     }
   }
