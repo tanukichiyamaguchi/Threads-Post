@@ -1,21 +1,5 @@
 [
   {
-    "date": "2026-07-11T10:25:49.507Z",
-    "topic": "仕事帰り蒲田で眉整えあるある",
-    "text": "品川も横浜も一本で出れるのに 平日夜は結局蒲田で眉整えて帰りがち  みんなは仕事帰りどこで寄り道派？",
-    "postId": "18109909840925946",
-    "features": {
-      "hook": "共感",
-      "length": "S",
-      "ending": "二択質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 19,
-      "weekend": true,
-      "explore": true
-    }
-  },
-  {
     "date": "2026-07-11T10:34:04.971Z",
     "topic": "花火大会でも崩れない眉まつげ",
     "text": "花火大会の汗と人混みで眉が消えた経験ある\n蒲田から出かける前にちゃんと整えておけばよかったやつ",
@@ -6012,6 +5996,21 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-24T09:33:47.932Z",
+    "topic": "少人数体制だからこその丁寧な接客",
+    "text": "西蒲田で予約2枠しか回さないのには理由がある\n\n1人にちゃんと時間かけたら自然とそうなる",
+    "postId": "18418046506149469",
+    "features": {
+      "hook": "問題提起",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 18,
       "weekend": false
     }
   }
