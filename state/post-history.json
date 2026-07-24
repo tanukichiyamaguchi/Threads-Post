@@ -1,21 +1,5 @@
 [
   {
-    "date": "2026-07-11T11:42:52.193Z",
-    "topic": "黒湯銭湯帰りの眉まつげ問題",
-    "text": "黒湯銭湯上がりでゆるゆるの顔になった時 眉とまつげだけは決まってると謎の安心感ある\n\n蒲田って温泉と美容がセットで語れる街だと思う\n\nみんなは銭湯派？サウナ派？",
-    "postId": "17979530388046780",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "二択質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 20,
-      "weekend": true,
-      "explore": true
-    }
-  },
-  {
     "date": "2026-07-11T12:08:33.492Z",
     "topic": "餃子デート前の眉整えあるある",
     "text": "餃子デート前にやること3つ\n1 匂い対策のガム\n2 前髪セット\n3 実は眉も整えとくと写真映え地味に違う\n\nこれやってる人いる？",
@@ -6009,6 +5993,21 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 21,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-24T14:28:32.878Z",
+    "topic": "施術後NG行動リスト",
+    "text": "施術後NGなの3つだけ\n\nオイルクレンジング\nうつぶせ寝\n熱いシャワー\n\n24時間だけ守れば持ちが変わる\n他に気をつけてること何かある?",
+    "postId": "18125793712679915",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "開いた質問",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 23,
       "weekend": false
     }
   }
