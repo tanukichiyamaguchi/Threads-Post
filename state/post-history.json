@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-07-11T10:34:04.971Z",
-    "topic": "花火大会でも崩れない眉まつげ",
-    "text": "花火大会の汗と人混みで眉が消えた経験ある\n蒲田から出かける前にちゃんと整えておけばよかったやつ",
-    "postId": "17964708018131427",
-    "features": {
-      "hook": "自己開示",
-      "length": "S",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 19,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-07-11T11:18:12.040Z",
-    "topic": "施術後NG行動",
-    "text": "実はまつげパーマ後うつぶせ寝で寝るのが一番もったいない\n蒲田帰りにゴロッとしちゃう人多いけど\nみんなは施術後どこで気をつけてる？",
-    "postId": "18060075797727538",
-    "features": {
-      "hook": "逆説",
-      "length": "M",
-      "ending": "開いた質問",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 20,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-07-11T11:26:25.112Z",
     "topic": "完全予約制の落ち着いた空間",
     "text": "施術中に他のお客さんと目合うの地味に気まずいってわかる人いる\n\n静かな空間で一人でぼーっとできる時間って意外と貴重だったりする\n\nそういうの落ち着く派？賑やかな方が好き派？",
@@ -6011,6 +5981,36 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 18,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-24T11:20:26.691Z",
+    "topic": "七夕にちなんだまつげパーマ眉WAXの提案",
+    "text": "7月7日は眉だけでも生まれ変われる日にしてる\n\n西蒲田の空も今日はちょっと願い事っぽく見える\n\n新しい自分は服より先に目元から始まる派",
+    "postId": "18110366365995670",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-24T11:28:42.001Z",
+    "topic": "まつげパーマで朝のメイク時間が変わる話",
+    "text": "朝のマスカラ工程、まつげパーマしてる人はもう存在してない\n\nビューラーで挟んで温めて塗って固めての5分が、水でサッと整えるだけになる\n\n西蒲田から蒲田駅まで歩く時間より短い",
+    "postId": "18190242664352889",
+    "features": {
+      "hook": "逆説",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 20,
       "weekend": false
     }
   }
