@@ -1,53 +1,5 @@
 [
   {
-    "date": "2026-07-11T14:06:36.250Z",
-    "topic": "お盆帰省前の目元仕込みあるある",
-    "text": "帰省前あるある\n蒲田で眉だけ整えてから地元帰りがち\n久しぶりの親戚に会う準備 服より先派？眉より先派？",
-    "postId": "18607852195051334",
-    "features": {
-      "hook": "あるある",
-      "length": "S",
-      "ending": "二択質問",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 22,
-      "weekend": true,
-      "explore": true
-    }
-  },
-  {
-    "date": "2026-07-11T14:14:48.734Z",
-    "topic": "目尻・涙袋活かすまつげパーマの選び方",
-    "text": "わかる人いる 涙袋あるのに目尻だけ跳ねさせて損してる顔\n\n蒲田でも似合わせ見てるとカーブの向き一つで印象変わる\n\nみんなは目尻強め派 涙袋活かす派どっち",
-    "postId": "17926069431365533",
-    "features": {
-      "hook": "共感",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 22,
-      "weekend": true,
-      "explore": true
-    }
-  },
-  {
-    "date": "2026-07-11T14:23:03.403Z",
-    "topic": "プール前の目元崩れ対策",
-    "text": "プール行く前アイプチだけ気合い入れてたら悲惨だったの忘れられない\n夏はまつげまで水気で崩れがち\nみんなは日焼け止めとまつげどっち先に対策する派",
-    "postId": "18459962809112759",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 22,
-      "weekend": true,
-      "explore": true
-    }
-  },
-  {
     "date": "2026-07-11T14:31:15.994Z",
     "topic": "眉毛WAXは男性客も多い",
     "text": "3人に1人は男性というのが蒲田の眉毛WAX事情\n身だしなみ整える人増えてるの実感する\n男性のみんなは眉ってどこまで気にしてる？",
@@ -6005,6 +5957,51 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 18,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-07-25T13:24:13.155Z",
+    "topic": "忙しい朝のビフォーアフター時短",
+    "text": "ビューラー探す10秒すら惜しい朝、あるよね\n\nまつげパーマしてると、その工程ごと消える\n\n大森行きの電車、1本早いのに乗れるようになった",
+    "postId": "18143000629534270",
+    "features": {
+      "hook": "共感",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 22,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-07-25T13:32:25.518Z",
+    "topic": "男性の眉毛WAX需要",
+    "text": "蒲田で働く男性、意外と眉整えてるの知ってた?\n\n大森あたりの営業さんとか、眉毛WAXで清潔感つくってる人結構いる\n\nこれ女性だけの話だと思ってない?",
+    "postId": "18109495270792473",
+    "features": {
+      "hook": "問題提起",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 22,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-07-25T13:40:38.476Z",
+    "topic": "施術後のNG行動リスト",
+    "text": "3つだけ守れば持ちが変わる、施術後NG行動\n\nオイルクレンジング\nうつぶせ寝\n濡れたまま放置\n\n池上あたりから帰ってすぐお風呂入る人ほどやりがち",
+    "postId": "18061253480737944",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 22,
       "weekend": true
     }
   }
