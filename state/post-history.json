@@ -1,21 +1,5 @@
 [
   {
-    "date": "2026-07-11T14:41:53.233Z",
-    "topic": "七夕×新しい自分",
-    "text": "七夕あるある\n短冊に垢抜けるって書きがちだけど\n結局まつげと眉は現状維持で終わる\n\nこれ私だけ？",
-    "postId": "18626065021041503",
-    "features": {
-      "hook": "あるある",
-      "length": "S",
-      "ending": "共感確認",
-      "kamata": false,
-      "newsRiding": true,
-      "slotHour": 23,
-      "weekend": true,
-      "explore": true
-    }
-  },
-  {
     "date": "2026-07-11T22:40:45.281Z",
     "topic": "パリジェンヌラッシュリフトと通常のラッシュリフトの違い",
     "text": "知らずに選んでない?\n\n1 カールの強さ 通常は自然め パリジェンヌはしっかり上向き\n\n2 持続期間 通常は3〜4週間 パリジェンヌは5〜6週間くらい長持ち\n\nどっちのカール派？",
@@ -6002,6 +5986,21 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 13,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-07-26T12:11:49.689Z",
+    "topic": "蒲田行進曲と新しい自分への一歩",
+    "text": "1日1回、JRのあの発車メロディで背中押されてる人いない?\n\n蒲田行進曲、聞くたび今日は眉整えようとか小さい決意する\n\nみんなは何で自分にスイッチ入れてる?",
+    "postId": "18117293312314102",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "開いた質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 21,
       "weekend": true
     }
   }
