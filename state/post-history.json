@@ -1,37 +1,5 @@
 [
   {
-    "date": "2026-07-12T01:19:04.533Z",
-    "topic": "プール前の目元崩れ対策あるある",
-    "text": "蒲田西口勢あるある\nプールの予定入れた瞬間\nまつげと眉が消える未来が見える\n\nみんな水濡れ対策どうしてる？",
-    "postId": "18107017876827751",
-    "features": {
-      "hook": "自己開示",
-      "length": "S",
-      "ending": "開いた質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 10,
-      "weekend": true,
-      "explore": true
-    }
-  },
-  {
-    "date": "2026-07-12T01:27:16.882Z",
-    "topic": "眉毛WAX×まつげパーマの平日限定セットで垢抜け",
-    "text": "蒲田西口勢あるある\n平日休みの日って\n眉と目元まとめて整えたい欲が急に来る\nみんな平日休みの日どこから手つける派？",
-    "postId": "18141739141493086",
-    "features": {
-      "hook": "リスト",
-      "length": "S",
-      "ending": "二択質問",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 10,
-      "weekend": true,
-      "explore": true
-    }
-  },
-  {
     "date": "2026-07-12T04:37:43.162Z",
     "topic": "口コミの中身と4.74の理由",
     "text": "口コミに担当の名前まで書いてくれる人地味に多い\n\n星の数字だけじゃなくて\n初めてなのに緊張しなかった\nとか\n眉の左右差ちゃんと相談できた\nとか\n中身が具体的なのがうちの口コミの特徴\n\n蒲田は紹介文化が根強いから\n適当な接客は一瞬で伝わる\n\n4.74って数字より\nその一件一件の内容の方が\nよっぽど信頼になってる気がする",
@@ -5998,6 +5966,36 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 14,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-28T12:25:52.463Z",
+    "topic": "七夕にちなんだ新しい自分への提案",
+    "text": "七夕の短冊、毎年似た願い事書いてる自分に気づいた\n\n今年は眉とまつげ、変えてみようかな\n大田区の空にも今夜は星見えるといいな",
+    "postId": "18041348732642977",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 21,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-07-28T12:34:05.982Z",
+    "topic": "指名予約とリピートの安心感",
+    "text": "1人の担当に2年通うと、癖まで直される\n\n蒲田でも大森でも、毎回違う人だと最初から説明し直しがち\n\n担当固定できるだけで通うハードル下がるんだよね",
+    "postId": "18075049874361207",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 21,
       "weekend": false
     }
   }
