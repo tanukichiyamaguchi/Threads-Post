@@ -1,11 +1,11 @@
 {
-  "weekStart": "2026-07-26",
-  "postsPerDay": 3,
+  "weekStart": "2026-08-02",
+  "postsPerDay": 9,
   "arms": {
     "3": {
-      "n": 1,
-      "mean": 0,
-      "m2": 0.5
+      "n": 2,
+      "mean": -0.7050788701232986,
+      "m2": 1.4942724261886948
     },
     "9": {
       "n": 3,
@@ -28,6 +28,11 @@
       "week": "2026-07-19",
       "postsPerDay": 9,
       "avgDailyViews": 2145
+    },
+    {
+      "week": "2026-07-26",
+      "postsPerDay": 3,
+      "avgDailyViews": 533
     }
   ]
 }
