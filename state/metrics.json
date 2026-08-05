@@ -1,46 +1,4 @@
 {
-  "17909251578440584": {
-    "postedAt": "2026-07-15T22:53:21.931Z",
-    "s24": {
-      "views": 16,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-07-16T21:29:31.277Z"
-    },
-    "s72": {
-      "views": 16,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-07-18T17:26:45.972Z"
-    }
-  },
-  "18609354085056908": {
-    "postedAt": "2026-07-15T23:01:34.764Z",
-    "s24": {
-      "views": 26,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-07-16T21:29:31.277Z"
-    },
-    "s72": {
-      "views": 26,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-07-18T17:26:45.972Z"
-    }
-  },
   "18120990766690403": {
     "postedAt": "2026-07-15T23:47:04.008Z",
     "s24": {
@@ -5626,6 +5584,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-08-04T03:44:28.253Z"
+    },
+    "s72": {
+      "views": 89,
+      "likes": 1,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-08-05T23:26:05.929Z"
     }
   },
   "18376233772228911": {
@@ -5638,6 +5605,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-08-04T03:44:28.253Z"
+    },
+    "s72": {
+      "views": 141,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-08-05T23:26:05.929Z"
     }
   },
   "18199704433370946": {
@@ -5806,6 +5782,18 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-08-05T14:41:37.354Z"
+    }
+  },
+  "18177925714423358": {
+    "postedAt": "2026-08-04T23:59:23.004Z",
+    "s24": {
+      "views": 121,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-08-05T23:26:05.929Z"
     }
   }
 }
