@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-14T01:18:34.976Z",
-    "topic": "まつげパーマ後のマスカラ時短術",
-    "text": "まつげパーマ後 やめてよかったもの3つ\n\n1位 下地\nカール保ってるから不要\n\n2位 ビューラー\n出番ゼロ\n\n3位 重ね塗り\n色付きだけで十分\n\nこの3つ手放したらメイク時間ごっそり減った\n同じ経験ある人いる?",
-    "postId": "17900207376498901",
-    "features": {
-      "hook": "リスト",
-      "length": "L",
-      "ending": "共感確認",
-      "kamata": false,
-      "newsRiding": true,
-      "slotHour": 10,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-14T01:26:49.954Z",
     "topic": "男性客も多い眉毛WAX需要",
     "text": "彼氏の眉WAXしてって言われて驚いた 蒲田西口勢\n\n身だしなみ意識高い男性 大森とか羽田で働く人にも増えてる気がする\n\nこれ知ってた人いる？",
@@ -5996,6 +5981,21 @@
       "kamata": false,
       "newsRiding": true,
       "slotHour": 18,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-08-08T10:36:01.229Z",
+    "topic": "眉頭の位置と今っぽさ",
+    "text": "眉頭、小鼻の真上より気持ち目頭側でいい説\n蒲田西口歩いてても最近その子多いなって思う",
+    "postId": "17912608356441830",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 19,
       "weekend": true
     }
   }
