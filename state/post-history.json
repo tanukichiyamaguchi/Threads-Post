@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-14T04:27:15.673Z",
-    "topic": "少人数体制だからこその丁寧さ",
-    "text": "スタッフ2人だけの店\n一人に30分以上かけてもらえる\n\n効率重視で数こなす店\nそれとも少人数で一人ずつ丁寧な店\nどっちが安心する？",
-    "postId": "18096126269616743",
-    "features": {
-      "hook": "あるある",
-      "length": "M",
-      "ending": "二択質問",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-14T04:35:29.893Z",
     "topic": "ヒト幹細胞成分配合のまつげパーマの仕組み",
     "text": "カールしながら補修されてる成分入ってるって知ったとき ちょっと感動した\n\n仕組み気にして選ぶ派\nカール出ればそれで満足派\nどっちのタイプ？",
@@ -5996,6 +5981,21 @@
       "kamata": false,
       "newsRiding": true,
       "slotHour": 23,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-08-08T22:21:16.654Z",
+    "topic": "眉毛WAXの誤解",
+    "text": "毛全部無くなるって誤解、眉毛WAXで一番多い勘違いなんだよね\n\n実際は形からはみ出た部分だけ取る感じで、蒲田西口歩いてる子の眉もだいたい元の形活かしてるだけ",
+    "postId": "18091693979400230",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 7,
       "weekend": true
     }
   }
