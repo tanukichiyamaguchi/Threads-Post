@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-14T10:54:01.936Z",
-    "topic": "量産型メイクとの対比で自分だけの眉デザインを楽しむ魅力",
-    "text": "0個 量産型眉のテンプレに自分の顔が当てはまった回数\n\n平行も曲線もアプリで見たまま試すとなんか違うってなる\n\n骨格によって正解の角度違うんだよね\n\nみんな眉どうやって自分の形見つけた？",
-    "postId": "18107750816469867",
-    "features": {
-      "hook": "数字",
-      "length": "L",
-      "ending": "開いた質問",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 19,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-14T11:49:30.164Z",
     "topic": "Open記念の初回限定パリジェンヌ特別価格",
     "text": "新しいお店って まず一回だけ試したくなるよね\n\nOpen記念で今だけ特別価格だし ちょうどいいきっかけかも",
@@ -5996,6 +5981,21 @@
       "kamata": true,
       "newsRiding": true,
       "slotHour": 19,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-10T11:33:51.075Z",
+    "topic": "羽田空港が近い大田区民の性",
+    "text": "旅行決まった瞬間、行き先より先に京急で羽田何分か調べてる\n\n糀谷や六郷の子とか特にこれ、これ地元民だけ？",
+    "postId": "18180327310412358",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 20,
       "weekend": false
     }
   }
