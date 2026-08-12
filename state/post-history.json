@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-14T22:52:36.267Z",
-    "topic": "平日限定セット割で目元と眉を一気に垢抜けさせる提案",
-    "text": "平日限定10%offって 響き強すぎない\n\n眉とまつげ同時にやる派\nそれとも別日でゆっくり派\n蒲田で働いてる人はどっち?",
-    "postId": "18183937225402103",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "二択質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 7,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-14T23:00:49.645Z",
     "topic": "眉毛WAXは実は男性利用も多い",
     "text": "彼氏の眉WAXしたら\n彼の会社の同僚まで来た話\n\n男の人の身だしなみ需要 想像以上にあるらしい\n\nみんなの周り 眉気にしてる男性いる？？？",
@@ -5996,6 +5981,21 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 14,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-12T09:37:45.891Z",
+    "topic": "マスクなし季節の眉の存在感不足",
+    "text": "マスク外した瞬間、口元より先に眉の主張のなさに焦った\n\n蒲田も大森も外す人増えてきたのに、眉だけ2年前で止まってる説\n\nこれ私だけ?",
+    "postId": "18072495203414275",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 18,
       "weekend": false
     }
   }
