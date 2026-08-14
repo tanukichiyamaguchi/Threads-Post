@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-15T08:56:13.169Z",
-    "topic": "ノーファンデ美肌トレンドと眉毛WAXの相性",
-    "text": "すっぴん風メイクにしてから眉だけは削れなかった\n\n大森でも蒲田でも肌つや勝負な子増えた気がする\n\nみんな肌以外で頑張ってるところある?",
-    "postId": "18121783675696481",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "開いた質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 17,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-15T10:27:35.457Z",
     "topic": "梅雨明け後のにわか雨・雷雨とメイク崩れ対策",
     "text": "雷雨予報見た瞬間\n眉ティントの残量確認する癖ついた\n\n傘忘れて走る派\nそれとも眉だけ守って諦める派\n\nどっちが自分に近い？",
@@ -5996,6 +5981,21 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-14T12:03:24.080Z",
+    "topic": "大森駅前カフェ激増で浦島太郎になる",
+    "text": "池上通り、3年前の記憶で歩くと知らない店ばかりで浦島太郎になる\n\n気づいたらおしゃれなカフェばかりで完全に浮いてた",
+    "postId": "18012594017932146",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 21,
       "weekend": false
     }
   }
