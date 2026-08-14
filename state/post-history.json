@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-15T08:47:58.218Z",
-    "topic": "平日夜は蒲田で眉ケアして帰る交通結節点あるある",
-    "text": "品川も横浜も一本で行けるのに\n平日夜は蒲田で眉整えて終わる\n\n遠出できる立地なのに\nわざわざ遠くまで行かない選択してる気がする",
-    "postId": "18166113052445468",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 17,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-15T08:56:13.169Z",
     "topic": "ノーファンデ美肌トレンドと眉毛WAXの相性",
     "text": "すっぴん風メイクにしてから眉だけは削れなかった\n\n大森でも蒲田でも肌つや勝負な子増えた気がする\n\nみんな肌以外で頑張ってるところある?",
@@ -5996,6 +5981,21 @@
       "kamata": true,
       "newsRiding": true,
       "slotHour": 18,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-14T11:23:26.509Z",
+    "topic": "田園調布の放射状の道あるある",
+    "text": "田園調布に迷わず着けたら地元民認定していい?\n\nみんな何を目印にしてる?",
+    "postId": "18073579874388182",
+    "features": {
+      "hook": "問題提起",
+      "length": "S",
+      "ending": "開いた質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 20,
       "weekend": false
     }
   }
