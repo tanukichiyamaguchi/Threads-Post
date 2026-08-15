@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-15T10:52:21.558Z",
-    "topic": "黒湯銭湯帰りのすっぴん眉",
-    "text": "3つの黒湯めぐっても眉だけは崩れないの地味に助かる\n\n大森あたりまで足伸ばして温泉巡りしても\nすっぴんの眉だけは形残ってるの謎に嬉しい",
-    "postId": "18090154880105191",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 19,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-15T11:58:30.873Z",
     "topic": "餃子デート前の眉毛WAX",
     "text": "蒲田で餃子食べる予定ある日は眉だけ先に整えとく\n\n匂いは気にしないけど眉が崩れてるのだけは無理",
@@ -5996,6 +5981,21 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 7,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-08-15T01:44:22.761Z",
+    "topic": "眉やまつげだけ同じ人に頼みたくなる心理",
+    "text": "美容院はホットペッパーで即決なのに、眉だけ変えられない人へ\n\n形の癖まで覚えてくれてる安心感、手放せないんだよね",
+    "postId": "18131603566652534",
+    "features": {
+      "hook": "問題提起",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 10,
       "weekend": true
     }
   }
