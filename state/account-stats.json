@@ -253,12 +253,17 @@
     "date": "2026-08-15",
     "followers": 1034,
     "postsPerDay": 9,
-    "accountViews": 7736
+    "accountViews": 8095
   },
   {
     "date": "2026-08-16",
     "followers": 1036,
     "postsPerDay": 9,
-    "accountViews": 0
+    "accountViews": 6446
+  },
+  {
+    "date": "2026-08-17",
+    "followers": 1034,
+    "postsPerDay": 9
   }
 ]
