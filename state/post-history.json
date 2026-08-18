@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-16T04:57:37.758Z",
-    "topic": "梅雨明け前の目元仕込み",
-    "text": "湿気で前髪もまつげも死ぬこの時期がくる前に仕込んどきたい\n\n大森や池上あたりでも湿気MAXの季節だし\n汗かいてもよれない眉とまつげ 今から整えとくのってどう思う?",
-    "postId": "18110226707317036",
-    "features": {
-      "hook": "共感",
-      "length": "L",
-      "ending": "開いた質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-16T05:05:52.545Z",
     "topic": "蒲田行進曲になぞらえた新しい一歩の後押し",
     "text": "蒲田行進曲が鳴るたびちょっとだけ前向きになる\n\n大森や池上帰りでも西口のホームに着くとあの曲で気持ち切り替わる感じ\n\n新しい自分に踏み出すきっかけって案外こんな音だったりするよね\n\nこれ蒲田民なら共感してくれる？",
@@ -5994,6 +5979,21 @@
       "length": "M",
       "ending": "言い切り",
       "kamata": true,
+      "newsRiding": false,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-18T04:48:10.400Z",
+    "topic": "すっぴん自信は眉で決まる説",
+    "text": "すっぴんの自信、肌より眉で決まってる説\n地味に核心ついてると思う",
+    "postId": "18130753702727646",
+    "features": {
+      "hook": "問題提起",
+      "length": "S",
+      "ending": "言い切り",
+      "kamata": false,
       "newsRiding": false,
       "slotHour": 13,
       "weekend": false
