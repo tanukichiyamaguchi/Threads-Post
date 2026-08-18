@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-16T04:41:01.047Z",
-    "topic": "黒湯銭湯帰りのすっぴんでも整う眉と目元",
-    "text": "黒湯上がりすっぴんでも眉と目元だけは崩れてない自信ある\n\n蒲田の温泉郷は最高だけど\nすっぴん直行が地味に怖かった\n\n今はそこだけ気にしなくていい",
-    "postId": "18043913960803244",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-16T04:49:15.614Z",
     "topic": "共働き子育て世帯でも眉毛WAXだけなら隙間時間で通える気軽さ",
     "text": "子供のお迎え前の30分 眉WAXだけなら余裕で間に合う\n\n矢口や下丸子や池上あたりから蒲田って意外と近いから 隙間時間の眉だけ通いが地味に定着してる気がする",
@@ -5996,6 +5981,21 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 22,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-18T00:02:04.049Z",
+    "topic": "京急蒲田から羽田まで乗り換えなしの安心感",
+    "text": "0回、京急蒲田から羽田までの乗り換え回数\n\n出張前夜だけ神様扱いする",
+    "postId": "17971790165929563",
+    "features": {
+      "hook": "数字",
+      "length": "S",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 9,
       "weekend": false
     }
   }
