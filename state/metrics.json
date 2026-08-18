@@ -2823,6 +2823,10 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-08-16T08:51:51.371Z"
+    },
+    "dead": {
+      "reason": "Threads APIエラー: Unsupported get request. Object with ID '18609933067038572' does not exist, cannot be loaded due to missing permissions, or does not support thi",
+      "at": "2026-08-18T03:13:05.755Z"
     }
   },
   "17869844001587703": {
@@ -2991,6 +2995,30 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-08-17T22:45:54.123Z"
+    }
+  },
+  "18111556709005066": {
+    "postedAt": "2026-08-17T04:22:37.928Z",
+    "s24": {
+      "views": 342,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-08-18T03:13:05.755Z"
+    }
+  },
+  "18129968185645176": {
+    "postedAt": "2026-08-17T05:03:41.296Z",
+    "s24": {
+      "views": 560,
+      "likes": 1,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-08-18T03:13:05.755Z"
     }
   }
 }
