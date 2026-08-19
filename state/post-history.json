@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-16T11:23:00.897Z",
-    "topic": "男性の眉毛WAX利用率",
-    "text": "3人に1人は男性という眉WAXのお客様比率\n\n蒲田西口で働く営業の人とか多くて身だしなみ需要ってやっぱあるんだなと実感してる",
-    "postId": "18123128083687181",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 20,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-16T11:31:14.918Z",
     "topic": "朝のメイク時間短縮ビフォーアフター",
     "text": "朝のマスカラ時間 実はゼロにできる\n\nビューラーとマスカラで5分\nそれとも\nすっぴんまつげでノーマスカラ\n\n朝はどっちがいい?",
@@ -5995,6 +5980,21 @@
       "ending": "言い切り",
       "kamata": true,
       "newsRiding": false,
+      "slotHour": 19,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-19T10:37:29.518Z",
+    "topic": "鏡で自分を見る習慣が一番の美容情報という気づき",
+    "text": "月1で鏡ガチ見してる人、SNSの流行より自分の顔の変化に詳しいまである\n\n久が原の美容院帰りに気づいたけど、トレンド追うより先週の自分と比べるほうがよっぽど参考になるんだよね",
+    "postId": "18362339251245564",
+    "features": {
+      "hook": "自己開示",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
       "slotHour": 19,
       "weekend": false
     }
