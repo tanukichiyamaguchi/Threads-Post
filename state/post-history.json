@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-16T13:36:11.822Z",
-    "topic": "涙袋メイクと眉まつげのバランス",
-    "text": "涙袋盛る日ほど眉毛は太くしない方がバランス良いんだよね\n\nまつげも上げすぎず眉も描きすぎず涙袋だけ主役にするのが今っぽい",
-    "postId": "18109108178082460",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 21,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-16T14:48:22.486Z",
     "topic": "お盆帰省前の垢抜け目元仕込み",
     "text": "久しぶりに会う親戚の前で目元だけ死んでる人いる?\n\n服も髪もセットしたのにまつげが下向いてるだけで眠そうに見える\n\nこれ私だけ?",
@@ -5996,6 +5981,21 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-20T13:04:46.724Z",
+    "topic": "六郷矢口の多摩川夕方散歩",
+    "text": "夕方の矢口渡、あの光目当てで散歩してる人いる?\n六郷から下丸子まで続く土手道が一番きれいなのは17時台なんだよね",
+    "postId": "18058606316524380",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 22,
       "weekend": false
     }
   }
