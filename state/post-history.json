@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-17T01:21:02.100Z",
-    "topic": "男性の眉毛WAX需要",
-    "text": "男性のお客様が眉WAXに来る率\n蒲田西口だと地味に高いんだよね\n\n身だしなみとして普通になってる",
-    "postId": "18601981297006499",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 10,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-17T01:29:15.789Z",
     "topic": "隙間時間で眉毛WAXだけ通う気軽さ",
     "text": "隙間時間10分 眉だけ整えるって選択肢ある?\n\nフルメイクする時間なくても眉だけ整うと顔つき変わるんだよね\n\nみんなの隙間時間の使い方ってどんな感じ?",
@@ -5997,6 +5982,21 @@
       "newsRiding": false,
       "slotHour": 23,
       "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-21T22:44:44.324Z",
+    "topic": "まつげパーマ後に触りたくなる衝動",
+    "text": "パーマ直後のまつげ、指で触りたくなる衝動と戦ってる人いる\n触るとカールが崩れるの分かってるのに手が伸びちゃうんだよね",
+    "postId": "18440175610126101",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 7,
+      "weekend": true
     }
   }
 ]
