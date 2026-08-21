@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-17T01:12:46.150Z",
-    "topic": "夏の紫外線対策と眉メイクの付き合い方",
-    "text": "日焼け止め塗った日ほど眉ティントが浮くの解せない\n\n池上通り歩くだけで汗と混ざって落ちてくやつ\n\n順番変えたら普通にマシになった\n\n夏の眉は塗る順番が9割なんだよね",
-    "postId": "18120352216834909",
-    "features": {
-      "hook": "自己開示",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 10,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-17T01:21:02.100Z",
     "topic": "男性の眉毛WAX需要",
     "text": "男性のお客様が眉WAXに来る率\n蒲田西口だと地味に高いんだよね\n\n身だしなみとして普通になってる",
@@ -5996,6 +5981,21 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 22,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-21T14:21:02.914Z",
+    "topic": "汗でまつげの下がりが眉より先に崩れる",
+    "text": "3時間、汗ばむ日にまつげが下がるまでの体感タイム\n\n眉はメイクで持つのに、まつげは自前の力に頼るしかないんだよね\n\n地味にショックだけど毎年思い出す🥲",
+    "postId": "18440852671125978",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 23,
       "weekend": false
     }
   }
