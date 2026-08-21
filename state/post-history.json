@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-17T01:29:15.789Z",
-    "topic": "隙間時間で眉毛WAXだけ通う気軽さ",
-    "text": "隙間時間10分 眉だけ整えるって選択肢ある?\n\nフルメイクする時間なくても眉だけ整うと顔つき変わるんだよね\n\nみんなの隙間時間の使い方ってどんな感じ?",
-    "postId": "18604784734044137",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "開いた質問",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 10,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-17T04:25:33.411Z",
     "topic": "施術後のNG行動リスト",
     "text": "施術当日だけこの3つ守るだけでキープ力変わる\n\nオイルクレンジングでゴシゴシ\nうつぶせ寝で圧かける\n直後に長風呂で温める\n\nどれも地味にやりがちなんだよね",
@@ -5996,6 +5981,21 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 7,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-08-21T23:51:58.910Z",
+    "topic": "秋の乾燥で眉の産毛がパサつく季節あるある",
+    "text": "10月の洗足池、風が眉尻だけ狙って乾かしにくる\n\n蒲田も久が原も同じ、この時期だけ眉尻が寝がち",
+    "postId": "18464133241117460",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 8,
       "weekend": true
     }
   }
