@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-18T04:08:34.569Z",
-    "topic": "お盆帰省前の垢抜け目元仕込み",
-    "text": "帰省まで残り10日 眉だけでも本気出そうかな\n\n久しぶりの人ほど顔より眉見てくる気がする\n\nこれ私だけ？",
-    "postId": "18197171125327655",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "共感確認",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-07-18T04:16:48.277Z",
     "topic": "七夕にちなんで新しい自分に生まれ変わるきっかけの提案",
     "text": "七夕の願い事 毎年眉と目元のことしか書いてない\n\n星に願うより先に自分で整えた方が早いって最近気づいた",
@@ -5996,6 +5981,21 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 7,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-08-22T23:19:48.291Z",
+    "topic": "まつげパーマ後の洗顔で持ちが縮む話",
+    "text": "24時間、まつげパーマ直後の洗顔ゴシゴシが持ちを削る時間\nこすらず優しく流すだけでカール変わるんだよね",
+    "postId": "18014848760941444",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 8,
       "weekend": true
     }
   }
