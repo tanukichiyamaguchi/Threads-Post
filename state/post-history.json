@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-07-18T08:19:45.954Z",
-    "topic": "黄金比眉毛WAX×まつげパーマの平日限定10%offセット",
-    "text": "垢抜け条件は3つしかない\n\n黄金比の眉\n根元から立つまつげ\n平日限定10%off\n\n大森から流れてくる人も増えてきた気がする🌿",
-    "postId": "17894191755560515",
-    "features": {
-      "hook": "リスト",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 17,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-07-18T08:27:59.664Z",
-    "topic": "梅雨明け後のにわか雨と眉WAX・まつげパーマでのメイク崩れ対策",
-    "text": "折り畳み傘持ってるのに眉から崩れた日ある\n\n大森あたりでゲリラ雷雨に降られて 眉尻だけ消えて帰った\n\nこの時期の崩れ方どうしてる?😮‍💨",
-    "postId": "17910348828441698",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 17,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-07-18T08:36:13.663Z",
     "topic": "WAX脱毛が肌に優しい理由",
     "text": "毛穴の数はカミソリ1回で減らない\nでも埋没毛は増える\n\n大森あたりの薬局でカミソリ買うより\n毛根からとるWAXの方が結果的に肌荒れしないんだよね",
@@ -5996,6 +5966,36 @@
       "kamata": true,
       "newsRiding": true,
       "slotHour": 9,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-24T03:28:45.686Z",
+    "topic": "すっぴん自信は眉で決まる説",
+    "text": "すっぴん自信、口紅じゃなく眉尻の1本で決まってた\n\n蒲田西口の朝、すっぴんで自転車漕いでる人ほど眉きれいなの気づいてから見る目変わったんだよね",
+    "postId": "18092884352435987",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 12,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-24T03:36:59.762Z",
+    "topic": "まつげパーマとパリジェンヌの違い",
+    "text": "蒲田西口でも聞かれがちな、パリジェンヌとまつげパーマの違い説明できる人いる\n結局キープ力の差だけなんだよね\n毎回言い方変えて説明しがち",
+    "postId": "17952269502227776",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 12,
       "weekend": false
     }
   }
