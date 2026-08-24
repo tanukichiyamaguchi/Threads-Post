@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-07-18T09:52:48.841Z",
-    "topic": "Open記念の初回限定まつげパーマ・パリジェンヌ特別価格の紹介",
-    "text": "初回価格ってどこまで攻めていいと思う\n\nまつげパーマが結局破格になってた",
-    "postId": "17934845661324401",
-    "features": {
-      "hook": "意見募集",
-      "length": "S",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 18,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-07-18T10:01:02.773Z",
-    "topic": "眉毛の毛周期から逆算する来店タイミング",
-    "text": "眉毛にも毛周期あるって知らずに毎週抜いてた時期ある\n\n久が原に住んでた頃はそれで整えたつもりになってたけど\n実は生え変わりのサイクル無視してただけなんだよね",
-    "postId": "18612051472045777",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 18,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-07-18T10:49:37.101Z",
     "topic": "初回カウンセリングで骨格を見てメニューを決める提案",
     "text": "顔見て10分でメニュー決まるって最初は疑ってた\n\n久が原から来た人も西口で同じこと言ってた\n\n迷って決められない派\nお任せしたい派\nどっち？",
@@ -5996,6 +5966,36 @@
       "kamata": true,
       "newsRiding": true,
       "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-24T09:10:13.825Z",
+    "topic": "マスカラ前に根元を立てるひと手間",
+    "text": "綿棒で根元くっと立てる派、地味に減った気がする\n\n蒲田西口で自転車漕いでても下がらない人、大体これやってるんだよね",
+    "postId": "17929476771394988",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 18,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-24T09:18:38.714Z",
+    "topic": "まつげパーマと枕の高さの関係",
+    "text": "高い枕でまつげパーマの持ち落ちるの、地味にショックだった\n\n蒲田西口でも久が原でも関係なく、寝てる間の摩擦が地味に効いてくるんだよね",
+    "postId": "18160453084472757",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 18,
       "weekend": false
     }
   }
