@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-18T11:47:56.247Z",
-    "topic": "まつげパーマ後の時短メイク",
-    "text": "下地塗る手が止まった 施術後1回目のマスカラで\n\n色付きだけで十分だった 大森まで歩く用事あったのに準備5分で済んだ",
-    "postId": "18112540382316067",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 20,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-07-18T11:56:09.380Z",
     "topic": "ノーファンデ美肌トレンドと眉毛WAXの相性",
     "text": "ノーファンデ肌の主役は眉って気づいた\n\n肌薄づきにするほど眉の形が丸見えになるんだよね\n\n整ってるだけで肌もきれいに見えがち",
@@ -5996,6 +5981,21 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 21,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-24T13:06:45.741Z",
+    "topic": "田園調布 駅を出た瞬間だけ姿勢が良くなる説",
+    "text": "1駅、田園調布に着いた瞬間だけ猫背が直る人多すぎ\n\n蒲田じゃ肩落として歩いてたのに、あの並木道の前だと勝手に胸張っちゃうんだよね",
+    "postId": "18035184461656324",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 22,
       "weekend": false
     }
   }
