@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-07-18T08:36:13.663Z",
-    "topic": "WAX脱毛が肌に優しい理由",
-    "text": "毛穴の数はカミソリ1回で減らない\nでも埋没毛は増える\n\n大森あたりの薬局でカミソリ買うより\n毛根からとるWAXの方が結果的に肌荒れしないんだよね",
-    "postId": "17938311702335847",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 17,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-07-18T09:44:29.366Z",
-    "topic": "韓国風束感まつげとまつげパーマの親和性",
-    "text": "束感まつげって結局根元の立ち上がりが9割なんだよね\n\n束感自体はマスカラで作れても\nそもそも根元が寝てると束にならない\n\nパーマでベースを立たせておくと\n束感メイクが一気にサマになる\n\n下地って地味に大事なんだよなあ",
-    "postId": "18427469611135271",
-    "features": {
-      "hook": "数字",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 18,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-07-18T09:52:48.841Z",
     "topic": "Open記念の初回限定まつげパーマ・パリジェンヌ特別価格の紹介",
     "text": "初回価格ってどこまで攻めていいと思う\n\nまつげパーマが結局破格になってた",
@@ -5996,6 +5966,36 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 12,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-24T04:21:49.123Z",
+    "topic": "羽田の空港と町工場が同居する景色のギャップ",
+    "text": "飛行機の真下で工場のプレス音鳴ってる街、羽田くらいじゃない人いる\n\n滑走路と煙突が同じ視界に入る瞬間、毎回ちょっと笑っちゃうんだよね",
+    "postId": "18088652615436455",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-24T04:30:04.048Z",
+    "topic": "湿気の日にビューラーの効果が持たない理由",
+    "text": "2時間、湿気の日のビューラーが持つのはそこまでなんだよね\n\n蒲田西口みたいな川近くの街ほど湿度高くて、まつげがすぐ重力に負けがち",
+    "postId": "18176674876426969",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 13,
       "weekend": false
     }
   }
