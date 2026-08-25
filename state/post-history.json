@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-07-18T22:42:08.141Z",
-    "topic": "WAX脱毛が肌に優しい理由",
-    "text": "毛抜き3年でポツポツ毛穴\n大森の常連さんの眉がそれだった🥺\n\n毛抜きもカミソリも毛穴と埋没毛のリスク上げがちなんだよね",
-    "postId": "18087892850393137",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 7,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-07-18T22:50:20.845Z",
-    "topic": "涙袋メイクとまつげ・眉の関係",
-    "text": "涙袋盛る前に目元死んでたら3割損してる\n\n大森でも池上でも涙袋シート売り切れらしいけど\nまつげと眉が寝てたら涙袋だけ浮くんだよね",
-    "postId": "17905670790284648",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 7,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-07-18T23:36:06.443Z",
     "topic": "夏の紫外線対策と眉メイクの付き合い方",
     "text": "日焼け止め塗るとき眉だけ避けてる人いがち\n\n実は眉も皮膚だから紫外線ダメージ受けてるし\n眉ティントだけで満足してると色ムラの原因にもなる\n\n汗と日焼け止めでティント浮きやすい夏は\n色より前に土台整えておくと楽なんだよね",
@@ -5996,6 +5966,36 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-25T12:15:17.565Z",
+    "topic": "洗足池でぼーっとする贅沢",
+    "text": "洗足池、ベンチ座って10分経つの早すぎる\n\n何もしてないだけなのに妙に満たされるんだよね",
+    "postId": "17904767259499761",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 21,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-25T12:23:32.040Z",
+    "topic": "眉WAXの痛みについてよくある質問",
+    "text": "眉WAX痛いですか、この質問、蒲田でも大森でも必ず聞かれる\n\n痛みより一瞬のスースー感の方が印象に残るやつなんだよね",
+    "postId": "18112369240790750",
+    "features": {
+      "hook": "問題提起",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 21,
       "weekend": false
     }
   }
