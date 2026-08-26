@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-07-19T07:16:22.562Z",
-    "topic": "七夕にちなんだ自己開示から新しい自分への提案",
-    "text": "短冊に垢抜けたいって書いた去年の自分がちょっと笑える\n\n願うより先に眉整えとけばよかったんだよね",
-    "postId": "18129842665627639",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": true,
-      "slotHour": 16,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-07-19T07:24:37.604Z",
-    "topic": "梅雨明け後のにわか雨とメイク崩れ対策",
-    "text": "夕立で睫毛下がるの気にしすぎて池上まで小走りしたことある\n\nパーマかけてたら小雨くらいなら気にならないんだけどね\n\nみんなはにわか雨の日どこまで気にする?",
-    "postId": "18069380189446572",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "開いた質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 16,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-07-19T09:15:14.502Z",
     "topic": "餃子デート前の眉毛WAX",
     "text": "餃子デート前に眉だけWAXしてきたら正解だった\n\n匂いは気にしても眉のうぶ毛は気にしてない人多くない?\n\nこれ私だけ?",
@@ -5996,6 +5966,36 @@
       "kamata": true,
       "newsRiding": true,
       "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-26T13:11:48.721Z",
+    "topic": "眉山の位置は骨格で決まるから他人の真似が危険という話",
+    "text": "2mm、眉山の位置が骨格でズレる幅らしい\n\n蒲田でも田園調布でも、同じ眉山コピーすると顔だけ違和感出がち",
+    "postId": "18131700595630034",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 22,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-26T13:20:00.145Z",
+    "topic": "久が原の駅前、ベビーカーとすれ違う頻度が体感で一番高い気がする",
+    "text": "久が原駅前、5分に1台ベビーカーとすれ違う説\n\n改札出てすぐこの密度は久が原だけな気がしてる",
+    "postId": "18126633463707223",
+    "features": {
+      "hook": "リスト",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 22,
       "weekend": false
     }
   }
