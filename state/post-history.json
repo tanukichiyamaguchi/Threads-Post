@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-19T05:21:24.828Z",
-    "topic": "蒲田行進曲と新しい自分への一歩",
-    "text": "蒲田行進曲鳴る度に今日はどっちの自分で帰るか決めてる\n\n地味な日で終わるか\n寄り道して何か変えて帰るか\n\n大森や池上から通ってる人もこの曲聞くと同じ気持ちになるのかな?",
-    "postId": "17971143734914453",
-    "features": {
-      "hook": "あるある",
-      "length": "L",
-      "ending": "開いた質問",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 13,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-07-19T05:29:37.547Z",
     "topic": "共働き子育て世帯でも隙間時間に眉毛WAXだけ通える気軽さ",
     "text": "15分あれば眉毛WAXだけで整う\n大森や下丸子からのついでも多い\n\nみんなは隙間時間どこで使ってる?",
@@ -5996,6 +5981,21 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 19,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-26T11:12:14.636Z",
+    "topic": "眉のうぶ毛と肌トーン",
+    "text": "1mm、眉のうぶ毛が肌のトーン下げてる犯人らしい\n\n蒲田も大森も乾燥する季節はここが濃くなりがち\n\n剃るだけで顔全体パッと明るくなるんだよね",
+    "postId": "18147290242470463",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 20,
       "weekend": false
     }
   }
