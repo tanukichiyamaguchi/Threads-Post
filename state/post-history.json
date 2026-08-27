@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-19T12:45:46.581Z",
-    "topic": "韓国風束感まつげトレンドと当店デザインの親和性",
-    "text": "韓国風の束感まつげ気になってる人いる？\n\nあれ実はパーマのカーブ調整だけで結構近づけるんだよね\n大森でも西口でも聞かれること増えた気がする",
-    "postId": "17943633966254248",
-    "features": {
-      "hook": "意見募集",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 21,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-07-19T12:54:05.988Z",
     "topic": "お盆帰省前の目元仕込み",
     "text": "帰省の新幹線予約より先にまつげの予約したことある\n\n蒲田西口出る前にちょっと整えとくだけで\n久しぶりに会う人の前でも自信持てるんだよね",
@@ -5996,6 +5981,21 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 22,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-27T22:56:23.594Z",
+    "topic": "蒲田駅の待ち合わせ迷子あるある",
+    "text": "10回中3回、JR西口のつもりで京急改札に着地しがち\n\n同じ蒲田って言葉なのに全然違う場所なんだよな",
+    "postId": "18081961397330146",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 7,
       "weekend": false
     }
   }
