@@ -1,95 +1,5 @@
 [
   {
-    "date": "2026-07-19T12:54:05.988Z",
-    "topic": "お盆帰省前の目元仕込み",
-    "text": "帰省の新幹線予約より先にまつげの予約したことある\n\n蒲田西口出る前にちょっと整えとくだけで\n久しぶりに会う人の前でも自信持てるんだよね",
-    "postId": "18113617112480841",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 21,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-07-19T13:02:21.037Z",
-    "topic": "眉毛WAXは男性客も多い身だしなみメニュー",
-    "text": "3人に1人は男性客って眉毛WAXのお店で聞いた\n\n蒲田西口だと営業や外回りの人が身だしなみで来るらしい\n\n眉って性別関係なく印象変えるもんね\n\nまわりの男性で眉整えてる人いる？",
-    "postId": "17899315050537348",
-    "features": {
-      "hook": "数字",
-      "length": "L",
-      "ending": "開いた質問",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 21,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-07-19T14:09:30.734Z",
-    "topic": "口コミ4.74の裏側にある信頼の中身",
-    "text": "星の数より効くのは中身\n西蒲田で検索して来る人ほど読み込んでる\n\n4.74って数字自体よりコメントのリアルな一文で決めてる人が多い気がする",
-    "postId": "18135043081608470",
-    "features": {
-      "hook": "逆説",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 23,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-07-19T14:17:56.624Z",
-    "topic": "少人数体制だからこその丁寧な接客",
-    "text": "スタッフ2人だけの西蒲田のお店\n待たされたことが一度もない",
-    "postId": "18001881386775917",
-    "features": {
-      "hook": "あるある",
-      "length": "S",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 23,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-07-19T14:26:11.295Z",
-    "topic": "WAX脱毛が肌に優しい理由",
-    "text": "3日で埋没毛になるって知ってた\nカミソリで整えた眉の話\n\n毛根ごと抜くWAXは毛穴に負担かけずに整うから 大森でも西蒲田でも肌が強い人ほどWAX選んでるんだよね",
-    "postId": "18050547488592136",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 23,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-07-19T14:34:25.662Z",
-    "topic": "涙袋メイクと眉まつげの関係",
-    "text": "涙袋盛っても眉とまつげスカスカだと意味ないの気づくの遅かった\n\n大森のドラコスで涙袋ペン買った日に限って眉がボサボサだった\n\nこれ地味にやってる人多くない？🥲✨",
-    "postId": "18122338591759310",
-    "features": {
-      "hook": "自己開示",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 23,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-07-19T14:42:40.747Z",
     "topic": "夏の紫外線対策と眉メイクの関係",
     "text": "日焼け止め塗った後に眉ティントの色が浮くやつ地味に地獄\n\n池上通りとか日差し強い道歩くと汗で余計崩れがち\n\n眉は先にティントで色作って日焼け止めは眉尻から重ねるだけで持ちが変わるんだよね",
@@ -5996,6 +5906,96 @@
       "kamata": true,
       "newsRiding": true,
       "slotHour": 7,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-28T06:28:34.925Z",
+    "topic": "自眉を活かすメイクは垢抜けにも直結する",
+    "text": "眉、盛るより活かす方が垢抜けるって最近わかった\n\n時短のためだけじゃなかったんだな、あれ\n\n蒲田駅前の鏡で見るとよくわかるけど、描き込みすぎな眉ってすぐバレがち",
+    "postId": "18141537046584043",
+    "features": {
+      "hook": "逆説",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-28T06:36:47.101Z",
+    "topic": "久が原の駅前とベビーカー率",
+    "text": "久が原の駅前、3組に1組はベビーカーな気がする\n\n閑静な住宅街ってこういうことなんだなと毎回思う",
+    "postId": "18142587739491202",
+    "features": {
+      "hook": "逆説",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-28T06:44:59.741Z",
+    "topic": "洗足池でぼーっとする時間の贅沢さ",
+    "text": "洗足池、ベンチに座って5分で満足してしまう自分に驚く\n\n何もしてないのにこんな贅沢な気持ちになるの、池のおかげなんだろうな",
+    "postId": "18147146368554601",
+    "features": {
+      "hook": "問題提起",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-28T06:53:12.333Z",
+    "topic": "夏マスク卒業と眉の印象",
+    "text": "3年ぶりにマスク外した夏、眉だけで印象作れる自分に驚く\n\n蒲田駅前も口元より先に眉で目が合う季節、戻ってきたんだよな",
+    "postId": "18127150207771567",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-28T07:01:24.538Z",
+    "topic": "まつげパーマの持ちと枕の高さ",
+    "text": "3cm、枕の高さでまつげパーマの持ちが変わるらしい\n\n蒲田でも大森でも、うつ伏せ寝の人は絶望的に持ちが悪いんだよな",
+    "postId": "18146567695559435",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-28T07:09:38.561Z",
+    "topic": "年末帰省前に鏡と向き合う時間が増える",
+    "text": "帰省前の12月、蒲田の鏡の前で急に真剣になる\n久しぶりに会う人の目、眉から見てる気がしてくる",
+    "postId": "18239871601314598",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 15,
       "weekend": false
     }
   }
