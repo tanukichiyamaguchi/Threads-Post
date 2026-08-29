@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-07-20T04:53:20.634Z",
-    "topic": "梅雨明け後のにわか雨とまつげパーマの安心感",
-    "text": "にわか雨の予報見た瞬間先にまつげのこと心配するようになった\n\nサンロード商店街のアーケードまで走れば濡れずに済むけど\nまつげはもう溶けてる\n\nラッシュリフトしてからは傘忘れても目元だけは平気って思えるようになった",
-    "postId": "18114639313907521",
-    "features": {
-      "hook": "自己開示",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-20T05:01:38.316Z",
-    "topic": "指名予約とリピートの安心感",
-    "text": "西蒲田くらいの規模感だから同じ人に見てもらえる安心感がある",
-    "postId": "18083327687206364",
-    "features": {
-      "hook": "共感",
-      "length": "S",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-20T05:09:52.868Z",
     "topic": "男性にも人気の眉毛WAX・HBLメニュー",
     "text": "男性のお客さん多くて最初驚いた眉WAX\n大森や糀谷からくる人もいるんだけど身だしなみ意識してる男性増えてる気がする\nみんなの周りはどう?",
@@ -5996,6 +5966,36 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 19,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-08-29T23:49:01.215Z",
+    "topic": "千鳥町・大森町の静かな住宅街に着くと呼吸が変わる",
+    "text": "1本、電車を乗り過ごすと千鳥町の空気になる\n\n蒲田の喧騒からたった数分なのに、住宅街に入った瞬間に肩の力が抜けてる自分がいる",
+    "postId": "18364874767211195",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 8,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-08-29T23:57:17.097Z",
+    "topic": "まつげパーマ後の洗顔ゴシゴシNG",
+    "text": "3秒、ゴシゴシ洗顔でまつげパーマの持ちが縮むらしい\n\n蒲田西口の朝、時間ないと目元だけつい急いで擦っちゃうよね\nこれ私だけ?",
+    "postId": "17931660849385663",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 8,
       "weekend": true
     }
   }
