@@ -1,65 +1,5 @@
 [
   {
-    "date": "2026-07-19T23:57:49.245Z",
-    "topic": "七夕にちなんだ新しい自分への切り口",
-    "text": "七夕に願い事するより先に眉毛整えた方が変わる説ある\n\n一年に一度願うより毎朝の顔の方が現実じゃない？\nみんなは今年どんな自分になりたい？",
-    "postId": "17957549946177582",
-    "features": {
-      "hook": "逆説",
-      "length": "M",
-      "ending": "共感確認",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 8,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-20T01:13:37.806Z",
-    "topic": "プール前の目元崩れ対策",
-    "text": "去年プール上がりに眉毛消えてて写真全部消した\n\n今年はまつげパーマだけ先に済ませておいたから安心して潜れる",
-    "postId": "18168167707459015",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 10,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-20T01:21:49.728Z",
-    "topic": "眉毛の毛周期と次回来店タイミング",
-    "text": "3〜4ヶ月周期で眉が生え変わるって最近知った\n\n整えたベスト状態を維持したいなら次はその頃が狙い目なんだよね",
-    "postId": "17892131973585270",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 10,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-20T01:30:03.849Z",
-    "topic": "お盆帰省前の垢抜け目元仕込み",
-    "text": "改札出た瞬間親戚に眉薄いね言われた経験ある\n\n蒲田駅で待ち合わせて実家帰るまでの数十分が地味に勝負な気がしてる\n\nみんな帰省前って何仕込む派？",
-    "postId": "17979204630020710",
-    "features": {
-      "hook": "あるある",
-      "length": "M",
-      "ending": "二択質問",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 10,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-20T04:53:20.634Z",
     "topic": "梅雨明け後のにわか雨とまつげパーマの安心感",
     "text": "にわか雨の予報見た瞬間先にまつげのこと心配するようになった\n\nサンロード商店街のアーケードまで走れば濡れずに済むけど\nまつげはもう溶けてる\n\nラッシュリフトしてからは傘忘れても目元だけは平気って思えるようになった",
@@ -5996,6 +5936,66 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 12,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-08-29T10:18:51.707Z",
+    "topic": "眉のうぶ毛が肌のトーンを暗く見せる説",
+    "text": "眉のうぶ毛だけで肌1トーン暗く見える人いる?\n\n産毛の影で眉下がくすんで見えてるだけなのに\nファンデ濃くしがちなの私だけ?",
+    "postId": "18099547961276513",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 19,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-08-29T10:27:13.413Z",
+    "topic": "枕の高さとまつげパーマの持ちの関係",
+    "text": "枕1個変えるだけでまつげパーマの持ち、地味に変わったりする\n\n高い枕で顔が沈む人ほど摩擦でカール取れやすいんだよね\n\n蒲田で寝不足気味の人、地味にここ見直すだけで持ち変わりがち",
+    "postId": "18131488213638114",
+    "features": {
+      "hook": "数字",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 19,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-08-29T10:35:27.138Z",
+    "topic": "夏マスク卒業と眉だけ印象作り",
+    "text": "3年ぶり、マスクなしで眉だけ勝負の夏が来た\n\n口元隠す前提で盛ってたメイク、もう通用しないんだよね",
+    "postId": "18109294409127445",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 19,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-08-29T10:43:40.039Z",
+    "topic": "JR蒲田の発車メロディが蒲田行進曲だと知った瞬間",
+    "text": "蒲田行進曲、発車メロディだったの最近知って地味に感動した\n\n松竹の映画の街だったって知ると、大森や池上とはちょっと違う歴史の重みを感じるんだよね。",
+    "postId": "18105084940919784",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 19,
       "weekend": true
     }
   }
