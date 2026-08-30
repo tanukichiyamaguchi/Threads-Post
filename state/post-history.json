@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-20T05:18:09.185Z",
-    "topic": "Open記念まつげパーマ初回限定価格の体験訴求",
-    "text": "open記念って文字見た瞬間指が止まった\n\n西蒲田にまつげパーマと眉WAXの店できたの気になってた人多いはず\n\n初回だけの価格であるうちに一回試しておくのが正解な気がする",
-    "postId": "18130042873712206",
-    "features": {
-      "hook": "あるある",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-20T05:26:29.859Z",
     "topic": "涙袋メイクと眉・まつげの関係",
     "text": "涙袋パンパンでも眉とまつげスカスカだと台無しって気づいた人増えてる\n\n西蒲田でもこの話でざわついてる人多い",
@@ -5996,6 +5981,21 @@
       "kamata": true,
       "newsRiding": true,
       "slotHour": 10,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-08-30T07:29:15.412Z",
+    "topic": "眉にかける時間と支度の速さの矛盾",
+    "text": "眉に一番時間かけてる人ほど、実は支度が早く終わるという矛盾\n\n眉さえ決まれば残り全部が雑でも様になるから、結果一番手が早いんだよね",
+    "postId": "18114162476077650",
+    "features": {
+      "hook": "逆説",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 16,
       "weekend": true
     }
   }
