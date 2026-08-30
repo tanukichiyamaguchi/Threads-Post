@@ -1,65 +1,5 @@
 [
   {
-    "date": "2026-07-20T05:26:29.859Z",
-    "topic": "涙袋メイクと眉・まつげの関係",
-    "text": "涙袋パンパンでも眉とまつげスカスカだと台無しって気づいた人増えてる\n\n西蒲田でもこの話でざわついてる人多い",
-    "postId": "18098283605222553",
-    "features": {
-      "hook": "共感",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-20T05:34:48.681Z",
-    "topic": "少人数体制だからこその丁寧な接客",
-    "text": "2人体制だから覚えてもらえる速さが違う\n\n前回の毛流れも眉の癖も次に会うまで覚えてる\n\n人数増やさない理由がそこにある気がしてる",
-    "postId": "17977209609067430",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-20T05:43:01.465Z",
-    "topic": "量産型メイクと眉デザインの個性",
-    "text": "量産型眉に飽きた人へ\n眉こそ最後の個性\n\n大森でも池上でも同じ平行眉ばっかり見ると\n眉だけは自分の顔に合わせていいんだよなって思う",
-    "postId": "17896460034552818",
-    "features": {
-      "hook": "問題提起",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-20T05:51:14.658Z",
-    "topic": "韓国風束感まつげトレンド",
-    "text": "束感まつげ 韓国風の主流が根元3mmだけ立たせる感じになってきた\n\n西蒲田でもこの微調整の相談増えてる\n\nパーマの角度でこの束感風は作れるから道具増やさなくていいの地味に楽なんだよね",
-    "postId": "17994436409808718",
-    "features": {
-      "hook": "数字",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-20T07:49:59.415Z",
     "topic": "花火大会シーズンの汗・人混みに負けない眉まつげ",
     "text": "8月の花火大会シーズン\n汗と人混みでも眉とまつげだけは崩したくない\n\n大森や池上から見に行く人も多いけど\n屋台の熱気と待ち時間で一番先に負けるのって眉とまつげな気がする\n\nこれ気にしてる人多い?",
@@ -5996,6 +5936,66 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 16,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-08-30T13:10:56.983Z",
+    "topic": "蒲田東口の餃子と羽根つき餃子発祥の地",
+    "text": "羽根つき餃子発祥の地って知った日から東口の匂いが特別になった\n\nただの油の匂いだったのに、急に歴史の匂いに変わる現象、わかる人いる?",
+    "postId": "18147230647546736",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 22,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-08-30T13:19:18.562Z",
+    "topic": "夏マスク卒業と眉だけ勝負の季節",
+    "text": "マスクなしで外出する朝、眉の位置を二度見しちゃう\n\n口元じゃなくて眉ばっかり気にしてる自分に気づいて笑った",
+    "postId": "18190861102393235",
+    "features": {
+      "hook": "問題提起",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 22,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-08-30T13:27:36.918Z",
+    "topic": "まつげが下がる原因はクセづけ",
+    "text": "8割、下がりまつげの原因は毛質じゃなくて寝癖なんだよね\n\n蒲田西口で朝バタバタしてる人ほど枕に顔埋めて寝てがち",
+    "postId": "18112793551967216",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 22,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-08-30T13:35:55.069Z",
+    "topic": "美容院と眉の担当をあえて分ける理由",
+    "text": "美容院と眉の担当、あえて分ける人増えてるの地味に納得\n\n蒲田で髪切って、眉だけ別の場所って人、周りにも普通にいがち",
+    "postId": "18004387772973540",
+    "features": {
+      "hook": "共感",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 22,
       "weekend": true
     }
   }
