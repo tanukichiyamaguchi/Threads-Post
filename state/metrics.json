@@ -3838,6 +3838,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-08-30T05:35:20.787Z"
+    },
+    "s72": {
+      "views": 212,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-08-31T22:56:24.257Z"
     }
   },
   "17989624659010619": {
@@ -3850,6 +3859,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-08-30T05:35:20.787Z"
+    },
+    "s72": {
+      "views": 285,
+      "likes": 2,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-08-31T22:56:24.257Z"
     }
   },
   "17942953200335309": {
@@ -3862,6 +3880,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-08-30T05:35:20.787Z"
+    },
+    "s72": {
+      "views": 2760,
+      "likes": 48,
+      "replies": 10,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-08-31T22:56:24.257Z"
     }
   },
   "17941116738299506": {
@@ -3874,6 +3901,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-08-30T05:35:20.787Z"
+    },
+    "s72": {
+      "views": 338,
+      "likes": 2,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-08-31T22:56:24.257Z"
     }
   },
   "18125354519506895": {
@@ -3886,6 +3922,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-08-30T05:35:20.787Z"
+    },
+    "s72": {
+      "views": 228,
+      "likes": 2,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-08-31T22:56:24.257Z"
     }
   },
   "18099547961276513": {
@@ -4030,6 +4075,18 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-08-31T17:39:14.846Z"
+    }
+  },
+  "18083650124281960": {
+    "postedAt": "2026-08-31T00:07:37.203Z",
+    "s24": {
+      "views": 402,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-08-31T22:56:24.257Z"
     }
   }
 }
