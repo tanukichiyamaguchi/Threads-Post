@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-07-20T07:58:16.732Z",
-    "topic": "口コミ4.74の中身",
-    "text": "口コミに変わりましたが伸びましたって書かれてるの何回も見た\n\n西蒲田でマンツーマンだから小さい変化にも気づいてもらえるんだよね\n\nその積み重ねが4.74なんだと思う🌿",
-    "postId": "18097678064259914",
-    "features": {
-      "hook": "あるある",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 16,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-20T08:06:30.451Z",
-    "topic": "平日限定眉毛WAX×まつげパーマセットの垢抜け提案",
-    "text": "平日の眉WAXとまつげパーマ 一気にやると時間得した気になる\n\n西蒲田で働いてる人ほど平日の空き時間にまとめてやりがち\n\n目元と眉一気に整うだけで顔の印象変わるんだよね",
-    "postId": "18057148679780647",
-    "features": {
-      "hook": "共感",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 16,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-20T08:14:46.769Z",
     "topic": "自宅でできる眉ブラッシング習慣",
     "text": "朝起きたら眉の毛流れバグってる人いる?\n\n伸びかけの時期ほど癖強くなるから\n乾いた綿棒で下から上に流すだけで整う\n\n大森とか下丸子から西蒲田まで出てくる前に\nこれやってる人地味に多いんだよね\n\nこれ地味に効くって知ってる人いる?",
@@ -5996,6 +5966,36 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 9,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-31T05:26:03.002Z",
+    "topic": "眉WAXの痛み",
+    "text": "9割、眉WAXの痛みは3秒だけって知ってた?\n蒲田で聞かれる質問トップクラスなんだけど、実際どう思う?",
+    "postId": "18072763439448733",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "開いた質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 14,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-08-31T05:34:16.502Z",
+    "topic": "梅雨入り前の目元対策",
+    "text": "梅雨前に目元対策こっそり始めてる人いる?\n\n矢口渡とか下丸子から蒲田まで歩く距離で汗と湿気ダブルで来るんだよね\n\nみんな何で対策してる?",
+    "postId": "18164110177467718",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "開いた質問",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 14,
       "weekend": false
     }
   }
