@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-07-20T11:08:15.760Z",
-    "topic": "施術後NG行動リスト",
-    "text": "施術後にやりがちなNGその1 オイルクレンジングでゴシゴシ\n\nその2 うつぶせ寝で寝落ち\n\nその3 洗顔後タオルでこすって乾かす\n\n西蒲田から大森方面に帰る電車でつい目こすっちゃう人多いんだよね",
-    "postId": "18402720346087109",
-    "features": {
-      "hook": "リスト",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 19,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-20T11:16:30.988Z",
-    "topic": "ヒト幹細胞成分配合まつげパーマの人気理由",
-    "text": "ヒト幹細胞配合の液剤って聞いた時ちょっと身構えた\n\n実はカール定着させながら毛根に栄養届けてくれるだけなんだけど\n\n西蒲田でも指名増えてる理由がやっとわかった気がする",
-    "postId": "17998947647993351",
-    "features": {
-      "hook": "自己開示",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 19,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-20T12:36:19.439Z",
     "topic": "梅雨明け前の崩れない目元仕込み",
     "text": "去年の梅雨明け前アイプチ荒れさせて後悔した\n\n今年は仕込む派\nそれとも今年も様子見派\nどっちにする？",
@@ -5996,6 +5966,36 @@
       "kamata": true,
       "newsRiding": true,
       "slotHour": 9,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-01T05:58:50.486Z",
+    "topic": "JR蒲田の発車メロディと蒲田行進曲",
+    "text": "1曲、蒲田行進曲だと知った日から発車音が特別になった\n\n大森や池上に用事あっても蒲田で乗り換えるたび、ちょっと誇らしくなっちゃう",
+    "postId": "18191522539386099",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 14,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-01T06:07:02.949Z",
+    "topic": "眉尻が薄い原因は毛流れの向きかも",
+    "text": "眉尻の薄さ、量じゃなくて毛流れの向きだったって最近知った\n\nみんな眉尻どっち向きに流れてる？",
+    "postId": "18628978540033026",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "二択質問",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 14,
       "weekend": false
     }
   }
