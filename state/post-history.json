@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-20T15:09:38.155Z",
-    "topic": "共働き子育て世帯向けに眉毛WAXの隙間時間通いやすさを提案",
-    "text": "お迎えまでの空き15分眉毛WAXでちょうど良い\n\n矢口や下丸子から蒲田出るついでに寄れる距離感が地味に助かる\n\n眉だけなら本当にサクッと終わるから予定パツパツでも組み込めちゃう",
-    "postId": "18029618423823980",
-    "features": {
-      "hook": "共感",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 23,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-20T15:17:56.326Z",
     "topic": "蒲田行進曲と新しい自分への一歩",
     "text": "蒲田行進曲聞くたび今日こそ眉WAX行こうって思う\n\n大森でも池上でも聞かない音だから蒲田でしか感じない気持ち\n\nこれ私だけ?",
@@ -5996,6 +5981,21 @@
       "kamata": true,
       "newsRiding": true,
       "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-02T23:45:17.158Z",
+    "topic": "シルバーウィーク前の旅行準備と眉",
+    "text": "旅行準備リストの最後に眉って書いてる人、増えてる気がする\n\n羽田使う人が多い蒲田だからこそ、な気がしてる",
+    "postId": "17959437186206269",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 8,
       "weekend": false
     }
   }
