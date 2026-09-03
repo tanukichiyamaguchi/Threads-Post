@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-07-20T15:17:56.326Z",
-    "topic": "蒲田行進曲と新しい自分への一歩",
-    "text": "蒲田行進曲聞くたび今日こそ眉WAX行こうって思う\n\n大森でも池上でも聞かない音だから蒲田でしか感じない気持ち\n\nこれ私だけ?",
-    "postId": "17904490404462516",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "共感確認",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 23,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-20T15:26:12.150Z",
-    "topic": "夏の紫外線対策と眉ティント・日焼け止めの付き合い方",
-    "text": "眉ティント塗ってサウナ行ったら汗と一緒に色まで抜けてた\n\n日焼け止め塗り直すたび眉の色も薄くなるの盲点だった\n\n黒湯めぐりの帰りに池上あたりで鏡見て地眉に戻ってて焦った\n\n夏はティントより眉WAXの方が付き合い楽なんだよね",
-    "postId": "18069248690433621",
-    "features": {
-      "hook": "自己開示",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 23,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-20T15:34:28.020Z",
     "topic": "WAX脱毛が肌に優しい理由",
     "text": "毛抜きで抜いてた頃埋没毛だらけだったの今なら分かる\n\n蒲田西口の帰りにWAXに変えてから毛穴の負担減った気がする\n\n引っこ抜くより表面だけ整える方が肌には優しいんだよね",
@@ -5996,6 +5966,36 @@
       "kamata": true,
       "newsRiding": true,
       "slotHour": 8,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-03T06:21:25.641Z",
+    "topic": "涙袋メイクより眉を整える方が印象は変わるという説",
+    "text": "3秒、涙袋より先に見られてるのは眉の角度\n\n蒲田駅の反射ガラスで確認するの、大体眉が先なんだよね",
+    "postId": "18104446640602365",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-03T06:29:38.207Z",
+    "topic": "台風シーズンの前髪と眉の心配",
+    "text": "台風前、傘より先に前髪と眉を心配してる人へ\n\n蒲田駅の風、西口側だけ妙に強くて崩れるの早い気がする\n\nこれ私だけ？",
+    "postId": "18013957241743260",
+    "features": {
+      "hook": "問題提起",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 15,
       "weekend": false
     }
   }
