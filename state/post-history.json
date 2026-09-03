@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-20T23:01:17.030Z",
-    "topic": "共働き子育て世帯でも眉毛WAXだけなら隙間時間で通える気軽さ",
-    "text": "15分あれば眉毛WAXだけ通える\n\n仕事とお迎えの間とか\n買い物のついでとか\n\n隙間時間で整えられるの地味に助かるんだよね",
-    "postId": "18092812427455104",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": true,
-      "slotHour": 7,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-20T23:44:29.847Z",
     "topic": "男性の眉毛WAX・HBL需要",
     "text": "眉毛WAXの予約欄見ると意外と男性名多いんだよね\n\n就活前に整える人\n面接前に清潔感出したい人\n単純に眉が伸び放題で限界だった人\n\n身だしなみは性別関係ないよなって毎回思う",
@@ -5996,6 +5981,21 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-03T23:45:39.879Z",
+    "topic": "眉の手入れ頻度と若見え",
+    "text": "月2で眉整えてる人、実年齢より若く見られがちな気がする\n\n久が原に住んでる友人がまさにそれで、会うたびあれ？って思う\n\nこれ私だけ？",
+    "postId": "18618944374034849",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 8,
       "weekend": false
     }
   }
