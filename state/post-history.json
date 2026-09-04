@@ -1,50 +1,5 @@
 [
   {
-    "date": "2026-07-21T04:31:05.889Z",
-    "topic": "平日限定眉WAX×まつげパーマセットの黄金比提案",
-    "text": "平日限定眉WAX×まつげパーマセット10%offの黄金比になってた\n\n蒲田西口でこの組み合わせ考えた時ちょっと自分で天才かもって思った\n\n目元と眉一気に整うと大森や池上歩く時の顔つきまで変わるんだよね",
-    "postId": "18131894077538387",
-    "features": {
-      "hook": "リスト",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-21T04:39:18.757Z",
-    "topic": "口コミ評価4.74の裏側",
-    "text": "4.74の内訳が結局痛くない仕上がり自然の三行になってる",
-    "postId": "17888756109420898",
-    "features": {
-      "hook": "数字",
-      "length": "S",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-21T04:47:34.297Z",
-    "topic": "ノーファンデ美肌と眉毛WAXの相性",
-    "text": "ノーファンデ美肌流行ってるのに眉だけ放置してる人へ\n\n肌見せる分眉の輪郭が全部映る\n\n大森でも池上でもすっぴん風の子が増えたけど眉WAXしてる子は一目で分かる",
-    "postId": "17900369604470978",
-    "features": {
-      "hook": "問題提起",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-21T04:55:48.565Z",
     "topic": "東口の商店街と西口の駅ビルの違いと西口のついで美容の便利さ",
     "text": "東口で買い物して西口で眉整えてる人いる?\n\n東口は商店街でご飯や買い物\n西口は駅ビルでついでに用事終わらせる派\n\n大森でも池上でも結局蒲田西口で全部完結しちゃうんだよね",
@@ -5996,6 +5951,51 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-04T14:56:12.256Z",
+    "topic": "出張前夜に眉だけ整える現象",
+    "text": "7割、出張前夜は眉だけ整えて満足しがち\n\n荷物は前日に適当でも眉だけは整えとく、その謎の安心感で乗り切ってる気がする",
+    "postId": "17957539245211486",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-04T15:04:25.235Z",
+    "topic": "羽田の空港と町工場が同居する日常音",
+    "text": "10分おきの音、羽田住民はもう天気予報として使ってる\n\n風向きで音の大きさ変わるの、住んでるとなんとなく分かるようになってがち",
+    "postId": "17959561689216926",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-04T15:12:37.460Z",
+    "topic": "口コミは数より中身を見る派",
+    "text": "口コミの数より中身派、大森にも久が原にも地味にいる\n\n星4.8より、具体的な一文の方をみんな信じてるんだよね",
+    "postId": "17919752688216741",
+    "features": {
+      "hook": "共感",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 23,
       "weekend": false
     }
   }
