@@ -1,41 +1,4 @@
 {
-  "18609933067038572": {
-    "postedAt": "2026-08-15T09:11:27.522Z",
-    "s24": {
-      "views": 3641,
-      "likes": 33,
-      "replies": 17,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-08-16T08:51:51.371Z"
-    },
-    "dead": {
-      "reason": "Threads APIエラー: Unsupported get request. Object with ID '18609933067038572' does not exist, cannot be loaded due to missing permissions, or does not support thi",
-      "at": "2026-08-18T03:13:05.755Z"
-    }
-  },
-  "17869844001587703": {
-    "postedAt": "2026-08-15T10:19:09.640Z",
-    "s24": {
-      "views": 253,
-      "likes": 2,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-08-16T08:51:51.371Z"
-    },
-    "s72": {
-      "views": 283,
-      "likes": 2,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-08-18T04:57:19.723Z"
-    }
-  },
   "18075865955351702": {
     "postedAt": "2026-08-15T11:24:08.332Z",
     "s24": {
@@ -3733,6 +3696,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-09-03T11:27:10.711Z"
+    },
+    "s72": {
+      "views": 128,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-09-05T10:46:03.562Z"
     }
   },
   "18379252678227529": {
@@ -3745,6 +3717,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-09-03T11:27:10.711Z"
+    },
+    "s72": {
+      "views": 814,
+      "likes": 4,
+      "replies": 3,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-09-05T10:46:03.562Z"
     }
   },
   "18091882058141247": {
@@ -3757,6 +3738,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-09-03T11:27:10.711Z"
+    },
+    "s72": {
+      "views": 44,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-09-05T10:46:03.562Z"
     }
   },
   "17959437186206269": {
@@ -3865,6 +3855,42 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-09-05T04:41:16.513Z"
+    }
+  },
+  "18443000125193689": {
+    "postedAt": "2026-09-04T11:17:04.230Z",
+    "s24": {
+      "views": 128,
+      "likes": 1,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-09-05T10:46:03.562Z"
+    }
+  },
+  "18201816856374389": {
+    "postedAt": "2026-09-04T11:25:21.807Z",
+    "s24": {
+      "views": 53,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-09-05T10:46:03.562Z"
+    }
+  },
+  "18084571001279805": {
+    "postedAt": "2026-09-04T11:33:35.174Z",
+    "s24": {
+      "views": 67,
+      "likes": 1,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-09-05T10:46:03.562Z"
     }
   }
 }
