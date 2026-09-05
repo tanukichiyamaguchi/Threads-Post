@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-21T05:12:16.512Z",
-    "topic": "WAX脱毛が肌に優しい理由",
-    "text": "0.3mmの毛穴詰まりがカミソリだと防げないの知ってた\n根元から抜くWAXは表面を削らないから埋没毛のリスクも段違いなんだよね",
-    "postId": "18110402509777259",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-21T05:20:31.222Z",
     "topic": "パリジェンヌラッシュリフトの根元立ち上げ",
     "text": "根元1mmの角度だけで目力変わるの地味にすごい\n\nビューラーで作る角度は表面だけ\n根元からだと開く方向そのものが変わる\n\nすっぴんでも黒目にちゃんと光入るんだよね",
@@ -5996,6 +5981,21 @@
       "kamata": true,
       "newsRiding": true,
       "slotHour": 8,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-09-05T01:22:09.831Z",
+    "topic": "池上本門寺の参道階段で運動した気になれる説",
+    "text": "96段、本門寺の階段だけで運動した気になれる説\n\n息切れした時点でジム行った気分になってる",
+    "postId": "17906631969498072",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 10,
       "weekend": true
     }
   }
