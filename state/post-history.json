@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-07-21T09:40:50.887Z",
-    "topic": "施術後のNG行動",
-    "text": "施術後にオイルクレンジングでゴシゴシしてませんか\n\nうつぶせ寝も熱いお風呂も眉やまつげには地味に負担\n\n大森や池上帰りでもその日だけは優しく扱ってあげてほしい🙌",
-    "postId": "18070516817437954",
-    "features": {
-      "hook": "問題提起",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 18,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-21T09:49:04.921Z",
-    "topic": "プール解禁と崩れない目元づくり",
-    "text": "7月中旬から大森も蒲田もプール開き続く\n\n水しぶきより先に眉とまつげが崩れる季節がち",
-    "postId": "18421177240180628",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 18,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-21T09:57:19.255Z",
     "topic": "ヒト幹細胞成分配合のまつげパーマがなぜ人気なのか",
     "text": "実はカールって毛を固めるだけじゃないんだよね\n\nヒト幹細胞成分が地肌にも効いてて\n上向きにしながら生えかわる環境まで整えてる感じ\n\n攻めながら守るケアってなんか贅沢だなと思う",
@@ -5996,6 +5966,36 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 21,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-09-05T23:29:11.930Z",
+    "topic": "蒲田で長く続くお店と口コミ文化",
+    "text": "実は看板デカい店ほど蒲田では長続きしない気がする\n\n久が原の定食屋も糀谷の美容室も\n派手さより紹介と口コミで回ってる\n\nこれ蒲田だけじゃなく大田区あるあるだったりする？",
+    "postId": "18008246948973988",
+    "features": {
+      "hook": "逆説",
+      "length": "L",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 8,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-09-05T23:37:26.060Z",
+    "topic": "蒲田の美容は広告より紹介で回る",
+    "text": "1件の紹介が広告100件より効く街、この感覚たぶん合ってる\n\n看板より人づての方が信用されがち",
+    "postId": "18090096560446970",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 8,
       "weekend": true
     }
   }
