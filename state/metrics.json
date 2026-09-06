@@ -1,46 +1,4 @@
 {
-  "18157072789493202": {
-    "postedAt": "2026-08-16T00:25:21.140Z",
-    "s24": {
-      "views": 2291,
-      "likes": 33,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-08-16T22:42:41.364Z"
-    },
-    "s72": {
-      "views": 2359,
-      "likes": 33,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-08-18T19:03:17.974Z"
-    }
-  },
-  "18110547286823909": {
-    "postedAt": "2026-08-16T03:56:33.669Z",
-    "s24": {
-      "views": 343,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-08-17T01:58:37.442Z"
-    },
-    "s72": {
-      "views": 382,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-08-18T22:45:36.435Z"
-    }
-  },
   "17975793999087506": {
     "postedAt": "2026-08-16T09:58:17.790Z",
     "s24": {
@@ -3675,6 +3633,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-09-04T04:49:13.422Z"
+    },
+    "s72": {
+      "views": 46,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-09-06T04:50:42.154Z"
     }
   },
   "18013957241743260": {
@@ -3687,6 +3654,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-09-04T04:49:13.422Z"
+    },
+    "s72": {
+      "views": 68,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-09-06T04:50:42.154Z"
     }
   },
   "17963675649188421": {
@@ -3867,6 +3843,18 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-09-06T00:01:10.502Z"
+    }
+  },
+  "18635911138009555": {
+    "postedAt": "2026-09-05T05:52:54.118Z",
+    "s24": {
+      "views": 162,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-09-06T04:50:42.154Z"
     }
   }
 }
