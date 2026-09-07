@@ -1,65 +1,5 @@
 [
   {
-    "date": "2026-07-21T23:43:49.193Z",
-    "topic": "梅雨明け後のにわか雨とメイク崩れ対策",
-    "text": "夕方の空が急に暗くなると、まつげより先に眉のこと考えちゃう\n\n蒲田も大森も夕立ひどいから、パーマとWAXにしてから崩れる心配減った気がする",
-    "postId": "18127472128733548",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 8,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-22T04:31:16.488Z",
-    "topic": "眉毛の毛周期から逆算する来店タイミング",
-    "text": "眉は毎回全部整える必要ないの、実は伸びる順番があるんだよね\n\n1ヶ月半サイクルで生え変わるから、蒲田も大森も久が原もみんな同じ間隔で来ると綺麗が続く\n\n短すぎる間隔はむしろ無駄なんだよなあ",
-    "postId": "17900114481494525",
-    "features": {
-      "hook": "逆説",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-22T04:39:31.007Z",
-    "topic": "まつげパーマで朝メイクの時短ができる話",
-    "text": "朝マスカラだけで15分溶けてる人へ\n\nパーマかけると眉毛整えるだけで5分で家出れるようになるんだよね\n\n大森も西蒲田も朝の電車一本勝負だから、この10分がでかい\n\n時間に余裕ある朝はもうそれだけで勝ち",
-    "postId": "18106441829021201",
-    "features": {
-      "hook": "問題提起",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-22T09:40:26.732Z",
-    "topic": "Open記念の初回限定まつげパーマ・パリジェンヌ特別価格",
-    "text": "初めて試すハードルって値段より不安なんだよねって気づいた\n\nだからOpen記念で初回だけ特別価格にしてみた\n\n一回試せば違い分かってもらえる気がしてる",
-    "postId": "18021548390894684",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 18,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-22T09:48:48.456Z",
     "topic": "レジャープール開幕とまつげパーマの相性",
     "text": "25分プールにいると、まつげパーマの子だけ余裕な顔してる\n\n大森も蒲田もレジャープール開くこの時期、まつげが崩れるかで一日の気分変わるんだよね",
@@ -5996,6 +5936,66 @@
       "kamata": true,
       "newsRiding": true,
       "slotHour": 10,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-07T06:03:40.946Z",
+    "topic": "夏の日焼けで眉やまつげの色が地味に変わる気づき",
+    "text": "日焼けした夏、眉尻だけ色薄くなるの気づいてから毎年焼き方変えてる\n\n洗足池のベンチで油断した年、地味に眉頭との色差がすごかった",
+    "postId": "17893383753420813",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-07T06:11:57.906Z",
+    "topic": "蒲田駅西口と東口で服の系統が違う感覚",
+    "text": "蒲田駅、西口出るか東口出るかで急に服の系統変わる人いる\n\n西口はグランデュオ側で綺麗めモード、東口は商店街のTHE普段着、改札またぐだけでスイッチ入る感じ",
+    "postId": "18105362912580804",
+    "features": {
+      "hook": "問題提起",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-07T06:20:08.754Z",
+    "topic": "まつげの向きで目元の疲れ見えが変わる",
+    "text": "1ミリ、まつげの向き変わるだけで目つき変わる\n\nメイクじゃなく向きだった、これわかる人いる?",
+    "postId": "18015749897946709",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-07T06:28:21.053Z",
+    "topic": "湿気の日のまつげ下がりと洗顔のお湯温度",
+    "text": "40度の洗顔がまつげ下げてるって、蒲田の湿気日に気づいた\n熱すぎるお湯、地味に負けてるらしい",
+    "postId": "18461717692139998",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 15,
       "weekend": false
     }
   }
