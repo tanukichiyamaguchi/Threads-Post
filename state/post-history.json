@@ -1,95 +1,5 @@
 [
   {
-    "date": "2026-07-22T09:48:48.456Z",
-    "topic": "レジャープール開幕とまつげパーマの相性",
-    "text": "25分プールにいると、まつげパーマの子だけ余裕な顔してる\n\n大森も蒲田もレジャープール開くこの時期、まつげが崩れるかで一日の気分変わるんだよね",
-    "postId": "17970380418107843",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 18,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-22T11:29:48.612Z",
-    "topic": "黒湯銭湯帰りでもすっぴん眉が崩れない安心感",
-    "text": "黒湯上がり、湯気で眉が消えても輪郭だけ残ってる安心感すごい\n\nすっぴんで湯船入っても迷子にならないの地味に助かる",
-    "postId": "17886946104669160",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": true,
-      "slotHour": 20,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-22T11:38:02.472Z",
-    "topic": "ノーファンデ美肌と眉毛WAXの相性",
-    "text": "肌見せメイクにハマってから眉の輪郭ばかり気になってない?\n\n蒲田も大森あたりも今そういう子増えてる気がする\n\nみんな眉どうしてる?",
-    "postId": "18096885602002592",
-    "features": {
-      "hook": "問題提起",
-      "length": "M",
-      "ending": "開いた質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 20,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-22T13:01:48.438Z",
-    "topic": "蒲田行進曲と新しい自分への一歩",
-    "text": "蒲田行進曲流れるたび、今日でキャラ変しようって気になる\n\n大森や池上に住んでても、あの音だけは蒲田って分かるんだよね\n\n新しい自分になるきっかけって案外そのくらい軽くていい",
-    "postId": "17997690086793020",
-    "features": {
-      "hook": "自己開示",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 22,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-22T23:59:03.673Z",
-    "topic": "サンライズ・サンロード商店街の通勤動線とついで寄り",
-    "text": "サンロード抜けて帰るだけなのに美容院の看板ばっかり目に入る日ある\n\n疲れてる時ほど目元だけでも整えたくなるんだよね🌙\n\n西口のあの通り、地味に誘惑多い",
-    "postId": "17980402641025556",
-    "features": {
-      "hook": "共感",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 8,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-23T03:15:15.034Z",
-    "topic": "蒲田の交通アクセスの良さと仕事帰りの使い方",
-    "text": "平日夜だけ品川も横浜も一本で出れる人いる\n気づいたら残業終わりにどこでも行けちゃうんだよね",
-    "postId": "18116204797708636",
-    "features": {
-      "hook": "意見募集",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 12,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-23T06:11:30.566Z",
     "topic": "量産型眉との対比で自分だけの眉デザインの魅力",
     "text": "1mmの角度差で量産型から抜け出せるの眉だけなんだよね\n\n蒲田も大森も同じメイクの子多いけど眉だけは真似できない気がする🌱",
@@ -5996,6 +5906,96 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-07T12:19:29.220Z",
+    "topic": "蒲田の商店街の昼、自分らしさ優先の女性たち",
+    "text": "平日昼のサンロード、流行より自分軸で歩いてる人ばっかりじゃない?\n\n他人の視線より自分の気分優先って感じの人が多い気がする\n\nこれ大森とか大田区全体でも同じ空気ある気がするけど、どう?",
+    "postId": "18177207265377245",
+    "features": {
+      "hook": "問題提起",
+      "length": "L",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 21,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-07T12:27:45.235Z",
+    "topic": "糀谷・萩中の飛行機音が生活音になってる地元感覚",
+    "text": "糀谷、萩中あたりは頭上を飛行機が通るの完全に生活音になってる\n\n最初は気になってたのに、いつの間にか無音の夜のほうがそわそわするようになるんだよね\n\n羽田が近いって多分こういうことなんだと思う",
+    "postId": "18407181772082853",
+    "features": {
+      "hook": "あるある",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 21,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-07T12:36:00.534Z",
+    "topic": "口コミの数より中身を見る",
+    "text": "口コミ100件より、久が原の美容室3件のレビューを熟読する派\n\n件数より温度感なんだよね\n星4.8でも中身が薄いと不安になりがち",
+    "postId": "18090798647445631",
+    "features": {
+      "hook": "逆説",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 21,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-07T12:44:14.619Z",
+    "topic": "涙袋メイクより眉",
+    "text": "涙袋盛るより眉整える方が久が原の美容師も推してた\n\n涙袋は足し算、眉は土台\n土台が歪んでると足し算全部ズレるだけなんだよね",
+    "postId": "18027377789683780",
+    "features": {
+      "hook": "リスト",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 21,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-07T12:52:29.743Z",
+    "topic": "寝る前のまつげケアと枕カバーの素材",
+    "text": "綿の枕カバー、寝てる間にまつげ下向きに擦ってるらしい\n\nシルクやサテンに変えたら摩擦減って、朝の下がり具合がマシになる気がしてる\n\n枕なんて関係ないと思ってたのに、地味に負けてた",
+    "postId": "17955516831212731",
+    "features": {
+      "hook": "逆説",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 21,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-07T13:00:44.420Z",
+    "topic": "加工アプリより自眉を整える方が盛れる",
+    "text": "加工アプリより先に眉尻1cm整えた方が盛れるの、地味に真実\n輪郭より先に眉が歪んでたんだよね",
+    "postId": "18075696224394842",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 21,
       "weekend": false
     }
   }
