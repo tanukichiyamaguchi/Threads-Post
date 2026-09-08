@@ -1,65 +1,5 @@
 [
   {
-    "date": "2026-07-23T11:09:10.227Z",
-    "topic": "少人数体制だからこその丁寧さ",
-    "text": "2人だけだから、待ち時間ゼロで話しすぎちゃう\n\n他のお客さんと会わないくらいの人数感、地味に落ち着くよね\n\nそういう安心感で選んでるお店、他にもある?",
-    "postId": "17977442958118911",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "開いた質問",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 19,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-23T12:16:19.765Z",
-    "topic": "Open記念の初回限定まつげパーマ特別価格で気軽に体験を促す",
-    "text": "初回だけ値段のこと気にせず試せるの地味に嬉しい\n\nOpen記念でパリジェンヌも特別価格やってるから、まず1回試してみてほしい🌿",
-    "postId": "18016152845712637",
-    "features": {
-      "hook": "あるある",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 21,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-23T14:35:55.174Z",
-    "topic": "韓国風の束感まつげトレンドとパーマデザインの親和性",
-    "text": "韓国アイドルのまつげ、束感の正体って実は隙間なんだよね\n\n西口でも真似する子増えたけど、あれエクステじゃなくて角度と密度の設計だけで作れるやつ",
-    "postId": "17958861486165540",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": true,
-      "slotHour": 23,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-23T14:44:09.546Z",
-    "topic": "夏の紫外線対策と眉メイクの付き合い方",
-    "text": "日焼け止め塗るたび眉ティント落ちるの、地味にストレスだった\n\n順番変えたら普通に解決するんだよね、蒲田も大森も夏はここで差が出がち",
-    "postId": "17998697177977766",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 23,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-23T23:44:09.533Z",
     "topic": "眉が伸びる過程のブラッシング習慣",
     "text": "10秒のブラッシングで眉の伸ばしかけ期を乗り切れる\n\n寝る前にスクリューブラシで下から上に流すだけ\n\n毛流れが整うと伸びかけの産毛も迷子にならないんだよね。",
@@ -5996,6 +5936,66 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 10,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-08T06:31:40.485Z",
+    "topic": "涙袋メイクより眉を整える方が印象変わる説",
+    "text": "涙袋を頑張ってた時間、眉に使えば良かったって最近気づいた\n\n土台が歪んでると涙袋だけ浮くんだよね\n\nこれ気づくの遅すぎない?",
+    "postId": "17984322357073414",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-08T06:39:53.101Z",
+    "topic": "夏の日焼けで眉やまつげの色が変わる気づき",
+    "text": "洗足池で日焼けした帰り、眉だけ茶色くなってて焦った\n\n肌より先に色素が抜けるの、眉毛って地味に正直者だなって思う",
+    "postId": "18341996911284890",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-08T06:48:04.392Z",
+    "topic": "眉尻メイクは角度のズレが原因説",
+    "text": "眉尻だけ描き足してる人、生えグセよりただ角度がズレてる説\n\n黒目の外側から小鼻に一直線、それだけで足す量が減るんだよね",
+    "postId": "18366407380244033",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-08T06:56:19.365Z",
+    "topic": "残暑と秋メイクの気分のズレ",
+    "text": "まだ半袖なのに、鏡の中の眉だけ秋色を主張してる\n\n池上あたりの坂道、汗だくで登ってるのにメイクは完全に秋顔なんだよね\n\n体は夏、顔だけ先に秋してる",
+    "postId": "18089813066439742",
+    "features": {
+      "hook": "問題提起",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 15,
       "weekend": false
     }
   }
