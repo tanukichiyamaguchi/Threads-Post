@@ -1,80 +1,5 @@
 [
   {
-    "date": "2026-07-25T05:58:58.081Z",
-    "topic": "WAX脱毛が肌に優しい理由",
-    "text": "毛抜きで抜いた翌週、同じ場所からまた生えてくるのわかる\n\n毛穴に負担かけて埋没毛作ってただけなんだよね\n\n池上や久が原にお住まいの方にも言いたい、根元ごと整えるって発想は大事",
-    "postId": "17866929594638237",
-    "features": {
-      "hook": "共感",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 14,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-07-25T09:59:08.000Z",
-    "topic": "眉ブラッシング習慣",
-    "text": "伸ばしかけの眉、朝起きたら寝癖みたいに散ってがち\n\n洗顔後の濡れたまま指でなでるだけで毛流れ戻る\n\n久が原とか雪谷の静かな道歩きながらでもできる10秒習慣なんだよね",
-    "postId": "18446061088142362",
-    "features": {
-      "hook": "あるある",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 18,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-07-25T13:24:13.155Z",
-    "topic": "忙しい朝のビフォーアフター時短",
-    "text": "ビューラー探す10秒すら惜しい朝、あるよね\n\nまつげパーマしてると、その工程ごと消える\n\n大森行きの電車、1本早いのに乗れるようになった",
-    "postId": "18143000629534270",
-    "features": {
-      "hook": "共感",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 22,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-07-25T13:32:25.518Z",
-    "topic": "男性の眉毛WAX需要",
-    "text": "蒲田で働く男性、意外と眉整えてるの知ってた?\n\n大森あたりの営業さんとか、眉毛WAXで清潔感つくってる人結構いる\n\nこれ女性だけの話だと思ってない?",
-    "postId": "18109495270792473",
-    "features": {
-      "hook": "問題提起",
-      "length": "M",
-      "ending": "共感確認",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 22,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-07-25T13:40:38.476Z",
-    "topic": "施術後のNG行動リスト",
-    "text": "3つだけ守れば持ちが変わる、施術後NG行動\n\nオイルクレンジング\nうつぶせ寝\n濡れたまま放置\n\n池上あたりから帰ってすぐお風呂入る人ほどやりがち",
-    "postId": "18061253480737944",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 22,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-07-25T13:59:58.725Z",
     "topic": "梅雨明け後のにわか雨とメイク崩れ",
     "text": "急な雷雨でマスカラ滲むの、大森あたりの通勤女子は特に困ってる\n\nまつげパーマなら濡れても崩れないから、傘忘れた日でも目元だけは無敵でいられる",
@@ -5996,6 +5921,81 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-09T11:49:43.623Z",
+    "topic": "施術中の寝落ちは信頼の証",
+    "text": "施術中に寝落ちする常連さん、実は信頼の証だと思ってる人いる?\n\n喋らなくなった距離感が心地いいって、これ私だけじゃない気がする?",
+    "postId": "18048737969811217",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-09T11:57:59.027Z",
+    "topic": "蒲田駅西口と東口で服の系統が切り替わる感覚",
+    "text": "蒲田、改札またぐだけで私服のジャンルが変わる人いる\n\n西口はグランデュオ側でつい綺麗めに寄せて、東口出た瞬間に商店街仕様のラフさに戻ってる自分がいる",
+    "postId": "18157532953499964",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-09T12:06:13.250Z",
+    "topic": "9月後半の4連休と顔問題",
+    "text": "4連休、鏡と2時間向き合って眉だけ整えて終わる説\n\n蒲田でも大森でも糀谷でも、休み明けにみんな眉だけ地味に整ってる気がする\n\n服も髪も変えてないのに眉尻1cmで印象変わるの、地元の美容師さんに聞いてから信じてる",
+    "postId": "18164215399483324",
+    "features": {
+      "hook": "数字",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-09T12:14:26.348Z",
+    "topic": "池上線と多摩川線の分岐で毎回迷う地元あるある",
+    "text": "2路線とも蒲田発なのに、毎回どっちが多摩川方面か忘れがち\n地元民でも一瞬固まるやつ",
+    "postId": "18162449254485586",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-09T12:22:40.416Z",
+    "topic": "口コミの数より中身を見る派",
+    "text": "口コミ、件数より内容を先に読んじゃう派、地味に多い\n\n蒲田も大森も糀谷も、結局残ってる店は星の数より一文の説得力で選ばれてる気がする🌱\n\n数字より言葉、信じちゃうんだよね",
+    "postId": "17975869070915659",
+    "features": {
+      "hook": "自己開示",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 20,
       "weekend": false
     }
   }
