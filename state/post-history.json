@@ -1,65 +1,5 @@
 [
   {
-    "date": "2026-07-24T14:28:32.878Z",
-    "topic": "施術後NG行動リスト",
-    "text": "施術後NGなの3つだけ\n\nオイルクレンジング\nうつぶせ寝\n熱いシャワー\n\n24時間だけ守れば持ちが変わる\n他に気をつけてること何かある?",
-    "postId": "18125793712679915",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "開いた質問",
-      "kamata": false,
-      "newsRiding": true,
-      "slotHour": 23,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-24T22:56:37.149Z",
-    "topic": "ヒト幹細胞成分配合まつげパーマの人気の理由",
-    "text": "ケアと施術を分けなくていいの、こんなに楽だったんだ\n\nカールつけながら同時に補修できるから、繰り返すほど地毛が育つ感覚あるんだよね\n\nみんなは今どんな成分入り使ってる?",
-    "postId": "18402648937083119",
-    "features": {
-      "hook": "共感",
-      "length": "L",
-      "ending": "開いた質問",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 7,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-07-24T23:59:56.689Z",
-    "topic": "蒲田行進曲になぞらえた新しい自分への一歩",
-    "text": "1曲だけ、乗り換えなしで背中を押してくれる発車メロディがある\n\n蒲田行進曲が鳴るたび何か変えたくなるのって私だけ?\n\nみんなは新しいことのスイッチどこで入る?",
-    "postId": "18081354374667482",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "共感確認",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 8,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-07-25T03:19:00.651Z",
-    "topic": "蒲田の交通利便性と平日夜の使い方",
-    "text": "3駅、乗り換えなしで着く距離感が平日夜を軽くする\n\n品川も横浜も東京も一本\n仕事終わりでも気軽に動ける\n\n大森で一杯だけ飲んで帰るのもあり",
-    "postId": "17926224270381414",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 12,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-07-25T05:58:58.081Z",
     "topic": "WAX脱毛が肌に優しい理由",
     "text": "毛抜きで抜いた翌週、同じ場所からまた生えてくるのわかる\n\n毛穴に負担かけて埋没毛作ってただけなんだよね\n\n池上や久が原にお住まいの方にも言いたい、根元ごと整えるって発想は大事",
@@ -5996,6 +5936,66 @@
       "kamata": true,
       "newsRiding": true,
       "slotHour": 10,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-09T06:38:50.739Z",
+    "topic": "羽田",
+    "text": "羽田育ちは離陸音より町工場の機械音の方が馴染んでる人いる?\n\n糀谷や六郷まで来るとその音も遠のいて、逆に静かすぎて落ち着かない",
+    "postId": "18072035192476087",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-09T06:47:02.470Z",
+    "topic": "枕カバーの素材とまつげの下がり具合",
+    "text": "シルクの枕カバー、まつげが下向きに擦れないの地味に助かる\n蒲田でも久が原でも、朝の下がり方で寝相バレるやつ",
+    "postId": "18209683108362944",
+    "features": {
+      "hook": "あるある",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-09T06:55:22.060Z",
+    "topic": "残暑と秋メイクの気分のズレ",
+    "text": "汗だくなのにチークだけ秋の色選んでる自分に笑った\n\n肌はまだ夏、気分だけ先に秋になってる",
+    "postId": "18119368567898785",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-09T07:03:35.128Z",
+    "topic": "蒲田の口コミ文化",
+    "text": "蒲田の看板より、大森や糀谷の口コミの方が信用してる自分に気づいた\n\n派手さゼロでも何年も続いてる店、これ大田区あるあるじゃない?",
+    "postId": "18074401487482491",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 15,
       "weekend": false
     }
   }
