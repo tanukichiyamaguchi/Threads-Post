@@ -1,65 +1,5 @@
 [
   {
-    "date": "2026-07-26T13:55:21.371Z",
-    "topic": "チェア2席・完全予約制の落ち着いた空間の安心感",
-    "text": "隣の椅子が空いてるだけでこんなに安心するとは思わなかった\n\n蒲田西口、待合で誰かと目が合わないってだけで肩の力抜けるよね\n\nわかる人いる?",
-    "postId": "18103780790150060",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "共感確認",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 22,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-07-27T05:00:43.185Z",
-    "topic": "梅雨明け後のにわか雨とメイク崩れ",
-    "text": "3秒のにわか雨で今日のアイメイク終わる、この時期の大森駅\n\nまつげパーマなら濡れても崩れないから、その3秒を気にしなくていい",
-    "postId": "18612445732013402",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 14,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-27T11:56:50.209Z",
-    "topic": "ヒト幹細胞成分配合まつげパーマの仕組み",
-    "text": "カールしながら傷んでいく、その前提を疑ってなかった\n\nヒト幹細胞成分配合の薬剤は毛髪のダメージ補修をしながらカールを定着させる仕組みだから、施術=傷むが古い認識になってきてる\n\n西蒲田あたりでも扱う店増えてきたよね",
-    "postId": "18101190125119552",
-    "features": {
-      "hook": "問題提起",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 20,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-07-27T14:27:14.196Z",
-    "topic": "眉毛の毛周期と来店タイミング",
-    "text": "眉毛にも毛周期があるって知ったとき、地味に衝撃だった\n\n生え変わりに約2〜3ヶ月かかるから、整えるベストタイミングも実はそこから逆算できるんだよね",
-    "postId": "17882014812477105",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": true,
-      "slotHour": 23,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-28T05:32:46.968Z",
     "topic": "WAX脱毛が肌に優しい理由",
     "text": "カミソリ後のポツポツ、あれ毛穴の炎症だったんだよね\n\nWAXは毛を根元からオフするから毛穴詰まりも埋没毛も起きにくい\n\n蒲田西口で働く人、肌荒れの原因がケア方法そのものだったってこと結構ある",
@@ -5996,6 +5936,66 @@
       "kamata": true,
       "newsRiding": true,
       "slotHour": 10,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-10T06:31:09.801Z",
+    "topic": "羽田の空港と町工場が同居する街の音",
+    "text": "1つの街に空港と町工場、両方現役なとこ他にある?\n\n離陸音と機械の音、いつの間にか両方BGMになってる人いる?",
+    "postId": "18147571060551517",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "開いた質問",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-10T06:39:24.149Z",
+    "topic": "眉の生やす派と整える派",
+    "text": "2種類の眉、生やすのと整えるの両方やる人が一番早い説\n\n蒲田でも大森でも眉サロン迷う人多いけど\n\n生やして育てる派\nそれとも整えて即形にする派\nあなたはどっち？",
+    "postId": "17946124731314940",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "二択質問",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-10T06:47:37.629Z",
+    "topic": "眉の1mmでメイク全体の印象が変わる不思議さ",
+    "text": "1mm、眉が整うだけでメイク薄くても様になるから不思議\n蒲田でも大森でも、結局眉で決まってる人多い気がする",
+    "postId": "18152596660514592",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-10T06:55:50.649Z",
+    "topic": "シルバーウィーク前の旅行準備リストに眉が入ってる説",
+    "text": "旅行準備リストに眉って書いてる人いる?\n\n服とパスポートの次くらいに大事になってきた説、わかる人いる?",
+    "postId": "18104536265259378",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 15,
       "weekend": false
     }
   }
