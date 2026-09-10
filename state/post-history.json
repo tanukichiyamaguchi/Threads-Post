@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-26T12:11:49.689Z",
-    "topic": "蒲田行進曲と新しい自分への一歩",
-    "text": "1日1回、JRのあの発車メロディで背中押されてる人いない?\n\n蒲田行進曲、聞くたび今日は眉整えようとか小さい決意する\n\nみんなは何で自分にスイッチ入れてる?",
-    "postId": "18117293312314102",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "開いた質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 21,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-07-26T13:55:21.371Z",
     "topic": "チェア2席・完全予約制の落ち着いた空間の安心感",
     "text": "隣の椅子が空いてるだけでこんなに安心するとは思わなかった\n\n蒲田西口、待合で誰かと目が合わないってだけで肩の力抜けるよね\n\nわかる人いる?",
@@ -5996,6 +5981,21 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 8,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-10T01:29:47.493Z",
+    "topic": "洗足池の紅葉前デート現象",
+    "text": "紅葉まだ1割なのに、洗足池のベンチはもう埋まりがち\n\n池のほとりだけ先に秋モードなんだよね",
+    "postId": "18188609083396794",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 10,
       "weekend": false
     }
   }
