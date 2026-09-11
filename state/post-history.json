@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-07-30T05:16:17.445Z",
-    "topic": "蒲田行進曲と一歩踏み出す気持ち",
-    "text": "あの発車メロディ聞くと、なぜか背筋伸びる日ある\n蒲田行進曲、地味に背中押されてる人多い気がする",
-    "postId": "17949055575215703",
-    "features": {
-      "hook": "共感",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 14,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-07-30T12:00:29.306Z",
     "topic": "共働き子育て世帯の隙間時間眉毛WAX",
     "text": "お迎え前の15分、眉毛WAXだけ済ませてくる人増えた\n\n蒲田でも大森でも、フルメイクする時間ないけど眉だけは整えたい人多い気がする\nこれ共感する人いる?",
@@ -5996,6 +5981,21 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 8,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-11T01:26:10.957Z",
+    "topic": "目元の疲れ見えとまつげの向き",
+    "text": "疲れて見える目元、メイクじゃなくてまつげの向きだったりする\n\n蒲田の帰り道、電車の窓に映る自分の顔でふと気づいた",
+    "postId": "18100535930345142",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 10,
       "weekend": false
     }
   }
