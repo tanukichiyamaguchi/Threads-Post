@@ -13,7 +13,7 @@ export interface Coupon {
 }
 
 export interface AngleItem {
-  category: string; // menu / tips / trust / season など
+  category: string; // 美容サブジャンル: eyes / skin / makeup / hair / habit / season / mindset
   angle: string; // 投稿の切り口（1〜2文）
   coupon?: boolean; // クーポン紹介に向くアングルなら true
 }

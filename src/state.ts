@@ -62,7 +62,7 @@ export interface PostHistoryItem {
 export interface ViralPlaybook {
   updated: string;
   playbook: string[]; // バズる投稿の型・原則（一度の詳細調査で作る）
-  viralAngles: string[]; // 蒲田×美容で使える普遍的なバズ切り口
+  viralAngles: string[]; // 美容で使える普遍的なバズ切り口（まつげ・眉に限らず肌・髪・メイク等まで）
   environmentTrends?: string[]; // 今の環境で伸びている型（週次の環境センシングで更新）
 }
 

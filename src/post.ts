@@ -116,7 +116,7 @@ async function main(): Promise<void> {
     (process.env.FORCE_POST || "").trim().toLowerCase(),
   );
 
-  // 認知モード（awareness）では店舗誘導・予約CTA・クーポンを出さず、バズ×蒲田×美容に徹する
+  // 認知モード（awareness）では店舗誘導・予約CTA・クーポンを出さず、バズる美容の投稿に徹する
   const awareness = (brand.postMode ?? "conversion") === "awareness";
 
   env.anthropicApiKey();
