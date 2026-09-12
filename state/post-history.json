@@ -1,65 +1,5 @@
 [
   {
-    "date": "2026-08-03T04:58:53.657Z",
-    "topic": "眉尻の描き足りない問題は角度を変えると発見がある",
-    "text": "眉尻だけ描き足りてない人、正面鏡だと一生気づけない説\n\n斜め45度で見ると急に薄いのバレる\n\n大森行く前に鏡ちら見してる派\n\nそれとも家出るまで気づかない派?",
-    "postId": "18376233772228911",
-    "features": {
-      "hook": "問題提起",
-      "length": "M",
-      "ending": "二択質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-03T08:16:21.836Z",
-    "topic": "田園調布の放射状の道で迷うあるある",
-    "text": "田園調布、駅出た瞬間に方角の概念を失うんだよね\n\n放射状の道が全部同じ角度に見えてきて、結局スマホの矢印だけ信じて歩くことになるがち",
-    "postId": "18199704433370946",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 17,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-03T11:47:15.396Z",
-    "topic": "毛抜きで眉を抜くと生えてこなくなる説の真偽",
-    "text": "眉毛抜くと生えてこなくなる説、実は根拠あいまいらしい\n毛根自体は生きてるから毛周期通りにまた生えてくるがち\n大森でも田園調布でも、みんな同じ噂信じてるんだよね",
-    "postId": "18481952500098206",
-    "features": {
-      "hook": "問題提起",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 20,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-03T11:55:28.431Z",
-    "topic": "海やプールでメイク崩れてもまつげが整ってれば印象が保てる気づき",
-    "text": "メイク全部溶けても、まつげだけ上がってれば別人にならずに済む\n\n羽田行く前に大森でひと泳ぎした日、それ実感した",
-    "postId": "18012725978944450",
-    "features": {
-      "hook": "共感",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 20,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-03T12:03:43.029Z",
     "topic": "洗足池の夏の緑道の涼しさ",
     "text": "洗足池、桜より夏の緑道の涼しさの方が正直好き\n\n木陰続きで風の通りが違うの、地元民しか気づいてない気がする",
@@ -5996,6 +5936,66 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 20,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-09-12T14:04:01.101Z",
+    "topic": "すっぴんと眉の印象",
+    "text": "ノーメイクで人と話す時、口元より先に眉で判断されてる気がする\n\nこれ私だけ?",
+    "postId": "18063655238771189",
+    "features": {
+      "hook": "自己開示",
+      "length": "S",
+      "ending": "共感確認",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 23,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-09-12T14:12:14.648Z",
+    "topic": "朝の洗顔とテカり方の関係",
+    "text": "2週間、洗顔料やめてぬるま湯だけにしたら夕方の崩れ方が変わった\n\n蒲田駅まで歩く朝でもベタつかない日が増えた気がする",
+    "postId": "18111358733155038",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 23,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-09-12T14:20:48.462Z",
+    "topic": "夕方の肌のくすみと朝のベースの厚み",
+    "text": "夕方くすんでるの疲れじゃなくて朝のファンデが厚いだけな気がする\n\n大森行く電車の窓で見た自分の顔、疲れより厚塗りが崩れてただけだった",
+    "postId": "18168875734459913",
+    "features": {
+      "hook": "あるある",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 23,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-09-12T14:29:01.360Z",
+    "topic": "朝の時間と自分の顔への向き合い方",
+    "text": "朝5分早起きした日だけ鏡ちゃんと見れる人いる?\n\n洗足池を散歩する朝みたいに、時間ある日だけ眉の左右差とか肌の調子とかちゃんと確認できる気がする\n\nこれ私だけ?",
+    "postId": "18093081017418441",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 23,
       "weekend": true
     }
   }
