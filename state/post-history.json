@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-08-03T12:03:43.029Z",
-    "topic": "洗足池の夏の緑道の涼しさ",
-    "text": "洗足池、桜より夏の緑道の涼しさの方が正直好き\n\n木陰続きで風の通りが違うの、地元民しか気づいてない気がする",
-    "postId": "18149359750520153",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 20,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-03T14:04:25.020Z",
-    "topic": "馬込文士村の史跡が住宅街に埋もれてる件",
-    "text": "馬込、普通の一軒家の隣に文士の旧居跡がしれっと立ってるの好き\n\n案内板も控えめだから地元民でも素通りしがち",
-    "postId": "18100503482191569",
-    "features": {
-      "hook": "共感",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 23,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-03T14:12:55.874Z",
     "topic": "蒲田西口ナイトマーケットの夏の風物詩あるある",
     "text": "3日連続で西口寄ってる自分に気づく夜がある\n\n用もないのに屋台の灯りだけ確認しに行っちゃうんだよね\n\nもう夏の習性なんだと思う",
@@ -5996,6 +5966,36 @@
       "kamata": true,
       "newsRiding": true,
       "slotHour": 23,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-09-12T23:39:00.878Z",
+    "topic": "肌荒れ時は足すより減らす",
+    "text": "肌荒れた週、増やすんじゃなくて減らしたら治った\n\n糀谷まで歩く朝、シンプルケアの日だけ調子いいんだよね",
+    "postId": "18333115711277800",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 8,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-09-12T23:47:13.003Z",
+    "topic": "残暑と気分だけ秋メイクのギャップ",
+    "text": "残暑34度なのに、まぶただけ先に秋の色気になってる\n\n蒲田駅まで歩くだけで汗ばむのに、鏡の中は完全にブラウン系の目元\n\n季節、肌より先にメイクの気分から変わりがち",
+    "postId": "18088457522287504",
+    "features": {
+      "hook": "数字",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 8,
       "weekend": true
     }
   }
