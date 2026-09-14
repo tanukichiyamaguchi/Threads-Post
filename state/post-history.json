@@ -1,95 +1,5 @@
 [
   {
-    "date": "2026-08-04T13:17:42.210Z",
-    "topic": "マスクが外れても眉の存在感が薄いまま放置されがち",
-    "text": "マスク取れて口元は盛れてるのに、眉が去年のまま止まってる人がち\n\n大森あたりのカフェでも口元メイクは進化してるのに眉だけ薄いままの人、地味に多い",
-    "postId": "18074816972362459",
-    "features": {
-      "hook": "あるある",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 22,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-04T23:59:23.004Z",
-    "topic": "汗に負けない目力はアイライナーよりまつげの角度",
-    "text": "夏フェスでアイライナー溶けても、まつげ上向きなら涙目風で誤魔化せるがち\n\n蒲田西口の炎天下でも同じ現象起きてた",
-    "postId": "18177925714423358",
-    "features": {
-      "hook": "あるある",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 8,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-05T05:33:58.111Z",
-    "topic": "サンライズ商店街のアーケードと雨の日のありがたみ",
-    "text": "急な夕立、サンライズのアーケードまで小走りしてるがち\n\n西口から池上通り側まで屋根続きだから、傘なしでも意外と平気なんだよね\n\n六郷や矢口から出てきた日ほど、そのありがたみ染みるがち",
-    "postId": "18124395409691818",
-    "features": {
-      "hook": "自己開示",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 14,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-05T05:42:10.703Z",
-    "topic": "涙袋メイクよりまつげの角度",
-    "text": "涙袋より先にまつげの角度盛った方が目デカくなるがち\n\n大森のカフェで隣の子見て確信した",
-    "postId": "18348056026172070",
-    "features": {
-      "hook": "共感",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 14,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-05T10:44:54.535Z",
-    "topic": "蒲田の黒湯銭湯",
-    "text": "県外の友達に黒湯の話すると、え蒲田すごくないってなる\n\n銭湯料金で温泉入れるの、住んでると当たり前すぎて忘れがち",
-    "postId": "18068562452723675",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 19,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-05T10:53:11.918Z",
-    "topic": "自眉を活かすメイクと時短の関係",
-    "text": "自眉活かすだけでメイク工程1個減る事実、意外と知らないがち\n\n蒲田西口から大森まで歩く朝、眉だけ整ってれば他適当でも様になる\n\n毎朝ばっちり眉を描く派\nそれとも自眉育てて時短する派\nあなたはどっち？",
-    "postId": "18010918817939773",
-    "features": {
-      "hook": "あるある",
-      "length": "L",
-      "ending": "二択質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 19,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-05T11:01:25.664Z",
     "topic": "眉マスカラの色選び",
     "text": "黒髪だからって黒の眉マスカラ選ぶと野暮ったくなるがち\n\n髪色よりワントーン明るめにするだけで抜け感出る\n\n大森のカフェで見かけた子の眉、たぶんこれやってた",
@@ -5996,6 +5906,96 @@
       "kamata": true,
       "newsRiding": true,
       "slotHour": 16,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-14T13:59:00.867Z",
+    "topic": "毛穴を気にして触ってしまうジレンマ",
+    "text": "3秒触っただけの毛穴、鏡から離れたらもう見えないらしい\n\n矢口の朝、洗面台の前でだけ顔面ドアップ\n\nこれ私だけ？",
+    "postId": "18393603850162015",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 22,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-14T14:07:12.904Z",
+    "topic": "すっぴんで最初に見られる部位は眉",
+    "text": "すっぴんの日、口元よりまず眉見られてる説ある\n左右差とか毛流れとか、意外とそこで印象決まってる気がする",
+    "postId": "17960549088204948",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 22,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-14T14:15:24.900Z",
+    "topic": "スキンケアの頑張り不足でも続いていればえらい",
+    "text": "フルケアの日と化粧水だけの日、交互にある人はたぶん正解\n\n毎日全力だと絶対どこかで折れる\n続けられてる時点でもう勝ってる",
+    "postId": "17954901477252475",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 22,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-14T14:23:37.607Z",
+    "topic": "トリートメントと乾かすまでの放置時間",
+    "text": "毎日トリートメントしてるのに変わらない人いる\n\n原因たぶん成分より放置時間\n\n矢口の駅まで走った日、髪半乾きで蒸れて逆に傷んでた気がする\n\n塗った後の数分が一番仕事してる",
+    "postId": "17944776240069543",
+    "features": {
+      "hook": "意見募集",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 22,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-14T14:31:55.287Z",
+    "topic": "メイク直しはおさえてから足す",
+    "text": "パウダー崩れた時、重ねる派とおさえてから足す派いる?\n\n皮脂ごと粉で蓋する派\nティッシュで一回おさえてから足す派\nあなたはどっち?",
+    "postId": "18119087105315359",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "二択質問",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 22,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-14T14:40:09.257Z",
+    "topic": "鏡を見る時間と顔のぼんやり感",
+    "text": "7日鏡見なかった週、顔の輪郭ごと忘れかけてた\n\n洗足池の散歩帰り、久々にちゃんと鏡見たら眉の形も毛流れも自分のじゃないみたいだった\n\n見てないと顔って本当に薄くなる気がする",
+    "postId": "18085408703692318",
+    "features": {
+      "hook": "数字",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 22,
       "weekend": false
     }
   }
