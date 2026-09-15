@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-08-05T12:27:20.917Z",
-    "topic": "池上本門寺の階段は気づけば筋トレ",
-    "text": "96段登ったら本門寺じゃなくて筋肉痛にお参りしてた\n\n途中から御朱印より息切れが気になるがち",
-    "postId": "17955977754191547",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 21,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-05T12:35:32.661Z",
-    "topic": "羽田空港が近すぎる大田区民の性",
-    "text": "旅行先より先に、羽田までの最短ルート決めてるがち",
-    "postId": "17871641262630175",
-    "features": {
-      "hook": "自己開示",
-      "length": "S",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 21,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-05T14:54:46.095Z",
     "topic": "写真映りと眉の左右差",
     "text": "写真映り悪い日、メイクじゃなく眉の左右差のせいだったりするがち\n\n大森の鏡張りカフェで気づいた、片方だけ眉山高いだけで顔の印象ズレるんだよね",
@@ -5996,6 +5966,36 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 9,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-15T04:48:48.154Z",
+    "topic": "メイク落としを手の届く場所に置く習慣",
+    "text": "枕元にクレンジングシート置いてから、化粧落とさず寝る日が減った\n\n洗面所まで行く数歩がその日一番の壁だったんだよね\n\n蒲田から帰る電車で寝落ちした日も、これのおかげで肌だけは守れてる気がする",
+    "postId": "18110542265337244",
+    "features": {
+      "hook": "自己開示",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-15T04:57:01.598Z",
+    "topic": "眉が整っていると薄メイクでもちゃんとして見える現象",
+    "text": "眉が整ってる日だけ、すっぴん風メイクが本当にすっぴんに見えない\n\n他が薄くても顔の印象が眉で決まっちゃう気がする\n\n結局一番サボれないのは眉なんだよね",
+    "postId": "18070560902567304",
+    "features": {
+      "hook": "問題提起",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 13,
       "weekend": false
     }
   }
