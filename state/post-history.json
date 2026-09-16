@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-06T14:30:54.256Z",
-    "topic": "朝メイクで実は眉に一番時間かかってる説",
-    "text": "朝メイク、気付いたら眉だけで10分溶けてるがち\n蒲田西口から出勤前でも眉だけは妥協できない民多め",
-    "postId": "18210067120351488",
-    "features": {
-      "hook": "共感",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 23,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-06T14:39:14.393Z",
     "topic": "すっぴんで見られてるのは口元より眉",
     "text": "すっぴんで一番最初に見られてるの、口元じゃなく眉だった説\n\n視線データ見て納得した、目の下より眉の形を先に見てるがち",
@@ -5996,6 +5981,21 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 10,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-16T07:16:46.845Z",
+    "topic": "垢抜けは引き算から",
+    "text": "垢抜けって、足す前にまず何かやめることだった\n\n盛るのやめたら垢抜けた、が真実な気がしてる",
+    "postId": "17985991473067499",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 16,
       "weekend": false
     }
   }
