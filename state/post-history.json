@@ -1,80 +1,5 @@
 [
   {
-    "date": "2026-08-06T14:39:14.393Z",
-    "topic": "すっぴんで見られてるのは口元より眉",
-    "text": "すっぴんで一番最初に見られてるの、口元じゃなく眉だった説\n\n視線データ見て納得した、目の下より眉の形を先に見てるがち",
-    "postId": "18148930927464587",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 23,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-07T01:28:46.681Z",
-    "topic": "すっぴんで最初に見られるのは眉",
-    "text": "すっぴんチェックで真っ先に見るとこ、口元じゃなく眉だったりする人いる？\n\n蒲田西口の朝の電車内でも観察対象は口元より眉のことが多いがち",
-    "postId": "17876870973624273",
-    "features": {
-      "hook": "意見募集",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 10,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-07T04:11:42.368Z",
-    "topic": "夏休み子どもの水遊びに付き添う日のメイク崩れ前提あるある",
-    "text": "洗足池の水遊び場、今日はもう眉だけ死守で挑んだ\n\n子どもの水遊び連れて行く日は、崩れるの前提で家出る派の人いる？",
-    "postId": "18209544778354959",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "開いた質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-07T05:49:51.257Z",
-    "topic": "千鳥町・大森町の自転車移動の快適さ",
-    "text": "千鳥町、電車より自転車の方が早い距離感がち\n信号少なめの裏道つないで大森町まで一気に抜けられる",
-    "postId": "18477900007111029",
-    "features": {
-      "hook": "共感",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 14,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-07T09:13:53.823Z",
-    "topic": "眉やまつげは指名し続けたくなる心理",
-    "text": "美容院は3軒渡り歩けても、眉毛は同じ人じゃないと落ち着かないがち\n\n蒲田西口も美容院多いのに、眉だけ浮気できない人多め🌱",
-    "postId": "18125928178742174",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 18,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-07T09:22:06.764Z",
     "topic": "蒲田西口ナイトマーケットの夏の風物詩あるある",
     "text": "蒲田西口の屋台、目的なくても吸い込まれるがち\n\n何も買わずに帰る派\nそれとも気づいたら両手いっぱい派\nどっち？",
@@ -5996,6 +5921,81 @@
       "kamata": false,
       "newsRiding": true,
       "slotHour": 16,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-16T12:38:30.798Z",
+    "topic": "日焼け止めの塗り直しと崩れにくさ",
+    "text": "日焼け止め塗り直す回数より、顔を触る回数減らす方が崩れない説\n\n蒲田駅までの道、風でベタつくたび触ってた頃の方が結局崩れてた気がする\n\n量足すよりまず手を止める方が早い",
+    "postId": "18191799946402537",
+    "features": {
+      "hook": "自己開示",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 21,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-16T12:46:44.994Z",
+    "topic": "眉頭の位置と顔全体のバランス",
+    "text": "3ミリ、眉頭ずらしただけで顔の重心が変わった気がする\n\n眉山より先に眉頭見直す方が垢抜け早い説、地味に信じてる",
+    "postId": "18220533913337660",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 21,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-16T12:55:05.385Z",
+    "topic": "スキンケアの手抜き日と長続きの関係",
+    "text": "毎日フルコースの人より、サボり日を混ぜてる人の方が肌続いてる説どう思う\n\n頑張りすぎると疲れて全部やめちゃう人、蒲田でもよく聞くんだよね\n\n手抜き日があるから続く、が案外正解だったりする",
+    "postId": "18137658196626660",
+    "features": {
+      "hook": "意見募集",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 21,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-16T13:03:21.309Z",
+    "topic": "まつげの向きで笑顔の印象が変わる錯覚",
+    "text": "1ミリ下がってるだけで、笑顔なのに目が笑ってない人になる\n\nまつげの向き、口角より先に見られてる説",
+    "postId": "18113571419270651",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 21,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-16T13:11:36.411Z",
+    "topic": "湿度とドライヤーの乾かす順番",
+    "text": "湿気の日にうねる原因、乾かす順番って人いる?\n\n蒲田駅まで歩くだけで前髪から崩れる日、内側から乾かしてなかった説濃厚なんだよね",
+    "postId": "18110499716155875",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 21,
       "weekend": false
     }
   }
