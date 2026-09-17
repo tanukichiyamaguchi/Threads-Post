@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-08-07T11:06:14.508Z",
-    "topic": "サンライズ商店街のアーケードと雨の日のありがたみ",
-    "text": "雨の日、サンライズ商店街だけ傘要らずで異常にありがたい\n\n蒲田西口の民、無意識にこのルート選んでるがち",
-    "postId": "17950817766236037",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 20,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-07T11:53:47.448Z",
-    "topic": "池上本門寺の階段は実質筋トレ",
-    "text": "池上本門寺、観光のつもりが階段でふくらはぎ筋トレになってるがち\n\n御朱印もらう頃には脚が完全に別の目的化してる",
-    "postId": "18116918323720763",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 20,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-07T12:37:49.095Z",
     "topic": "多摩川を渡ればもう神奈川という大田区民の県境感覚",
     "text": "橋1本、それだけで大田区民は神奈川に着くの忘れがち？\n矢口渡や下丸子の民、散歩感覚で県境またいでる説\nこれ地元民だけがバグってる？",
@@ -5996,6 +5966,36 @@
       "kamata": false,
       "newsRiding": true,
       "slotHour": 8,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-17T04:30:06.407Z",
+    "topic": "左右の眉の高さ差と書き癖の個人差",
+    "text": "2mm、左右の眉の高さ差って書き癖くらい人によって違うらしい\n\n矯正しすぎるとむしろ不自然になりがち",
+    "postId": "18465936289139816",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-17T04:38:17.992Z",
+    "topic": "汗ばむ季節のメイク崩れは摩擦が原因",
+    "text": "汗の日、皮脂より先にメイク崩してるのって実は摩擦なんだよね\n\nマスクや前髪、頬杖で擦れる回数の方が皮脂量より効いてる気がする",
+    "postId": "18477759856128676",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 13,
       "weekend": false
     }
   }
