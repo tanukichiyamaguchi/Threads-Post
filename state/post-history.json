@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-08T09:58:42.349Z",
-    "topic": "毛抜きで抜くと生えなくなる説の真偽",
-    "text": "抜くと生えなくなる説、実は根拠あいまいらしい\n\n毛周期が乱れて薄く見えるだけで、毛根自体は生きてることが多いんだよね",
-    "postId": "17887576611436976",
-    "features": {
-      "hook": "逆説",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": true,
-      "slotHour": 18,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-08-08T10:36:01.229Z",
     "topic": "眉頭の位置と今っぽさ",
     "text": "眉頭、小鼻の真上より気持ち目頭側でいい説\n蒲田西口歩いてても最近その子多いなって思う",
@@ -5996,6 +5981,21 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-17T23:50:34.007Z",
+    "topic": "ファンデ厚塗りの逆効果",
+    "text": "隠す気満々でファンデ重ねるほどシワに溜まって逆効果な人いる\n\n粉浮きより先に乾燥ジワが目立って余計老けて見えがち",
+    "postId": "18141949969580050",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 8,
       "weekend": false
     }
   }
