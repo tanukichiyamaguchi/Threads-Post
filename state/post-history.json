@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-08T10:36:01.229Z",
-    "topic": "眉頭の位置と今っぽさ",
-    "text": "眉頭、小鼻の真上より気持ち目頭側でいい説\n蒲田西口歩いてても最近その子多いなって思う",
-    "postId": "17912608356441830",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 19,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-08-08T11:37:21.828Z",
     "topic": "眉マスカラの色は髪色よりワントーン明るめが抜け感の境界線",
     "text": "1トーン、それだけで眉マスカラの正解不正解が決まるがち\n\n髪と同じ色だと重く見えて、明るすぎると浮くんだよね",
@@ -5996,6 +5981,21 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 8,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-18T01:37:34.599Z",
+    "topic": "まつげの向きと目力の盲点",
+    "text": "寝不足に見えるって言われた原因\nまつげが下向きなだけだった\n\nアイシャドウより先にそこ疑ってる人いる?",
+    "postId": "18104213396613832",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 10,
       "weekend": false
     }
   }
