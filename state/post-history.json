@@ -1,65 +1,5 @@
 [
   {
-    "date": "2026-08-08T12:55:52.111Z",
-    "topic": "大森駅前カフェ激増説",
-    "text": "3年、大森の池上通り沿いだけおしゃれカフェ増殖速度が異常\n\n気づいたら浦島太郎になってる人いない?\n\nみんな最近見つけたお気に入りどこ?",
-    "postId": "18067994018738130",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "開いた質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 21,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-08-08T14:16:56.777Z",
-    "topic": "自眉が濃い人ほど整えるだけで時短になる逆説",
-    "text": "自眉濃い人ほど描かなくていいの、実は最強なんだよね\n\n形さえ整ってれば眉マスカラ1本で終わるから、むしろ薄い人より時短なの隠れ得してるがち",
-    "postId": "18187812406394824",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": true,
-      "slotHour": 23,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-08-08T22:21:16.654Z",
-    "topic": "眉毛WAXの誤解",
-    "text": "毛全部無くなるって誤解、眉毛WAXで一番多い勘違いなんだよね\n\n実際は形からはみ出た部分だけ取る感じで、蒲田西口歩いてる子の眉もだいたい元の形活かしてるだけ",
-    "postId": "18091693979400230",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 7,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-08-08T23:14:05.718Z",
-    "topic": "映え眉より実物の印象を気にする人が増えてる説",
-    "text": "盛れる角度より真顔の眉、そっちを結局見ちゃうんだよね\n\n写真は誤魔化せても、目の前で見る眉は誤魔化せないから正直に出るんだよなあ",
-    "postId": "18204896878364061",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 8,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-08-09T00:34:36.891Z",
     "topic": "多摩川花火大会の穴場スポット",
     "text": "矢口渡から歩ける穴場花火スポット、地元民だけ静かに知ってるがち\n\n人混みゼロで打ち上げ全部見えるの、下丸子の河川敷が最強なんだよね",
@@ -5996,6 +5936,66 @@
       "kamata": true,
       "newsRiding": true,
       "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-18T11:46:22.484Z",
+    "topic": "汗ばむ季節のメイク崩れは摩擦が原因",
+    "text": "汗の日の崩れ、原因の8割が皮脂じゃなく摩擦だった\n\n蒲田西口を早歩きする朝、汗拭くたびメイクも一緒に拭ってる人多そうだなと",
+    "postId": "18105982919237805",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-18T11:54:35.886Z",
+    "topic": "眉マスカラを塗る順番と崩れ方",
+    "text": "眉マスカラ最初派と最後派、崩れ方全然違うらしい\n\n先に塗ると皮脂で色落ちしやすくて、最後に塗ると密着して夕方まで持つんだよね",
+    "postId": "18022275968939880",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-18T12:02:50.885Z",
+    "topic": "美容液を使う順番は薄い濃いより効かせたい部分から",
+    "text": "美容液、薄い→濃いの順番より効かせたい所から派になった\n\n目元とか頬とか、気になる部分に一番いいやつ先に置くと結局そこが一番潤ってる気がするんだよね",
+    "postId": "18175905433431246",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-18T12:11:02.858Z",
+    "topic": "前髪1mmの軽さで目の見え方が変わる",
+    "text": "前髪、1mmすくだけで目の縦幅変わるの美容師しか知らない\n\n洗足池まで散歩する朝、前髪重いだけで眠そうに見えて損してた",
+    "postId": "17916513327448525",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 20,
       "weekend": false
     }
   }
