@@ -1,50 +1,5 @@
 [
   {
-    "date": "2026-08-09T11:41:07.433Z",
-    "topic": "海やプールでメイクが崩れてもまつげが整ってれば印象は保てるという気づき",
-    "text": "日焼け止め溶けて全部落ちても、まつげだけ上向いてると顔崩壊せずに済むがち\n\n羽田や大森あたりのプール帰り、鏡見て絶望するけど目元だけ無事だと意外とやっていける",
-    "postId": "18083542013662730",
-    "features": {
-      "hook": "あるある",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 20,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-08-09T13:09:09.876Z",
-    "topic": "夏祭りの浴衣メイクで眉だけ放置されがちな話",
-    "text": "3時間、浴衣の準備で眉に使うのだけ0分な説\n\n髪型もメイクも気合い入るのに、眉だけ寝起きのままで出陣しがち",
-    "postId": "18179808211415509",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 22,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-08-09T13:56:45.248Z",
-    "topic": "眉を整えてもらうと自分で描くときの迷いが減る体験談",
-    "text": "一度プロに整えてもらうと、迷いだけ消えるって本当なんだよね\n\n蒲田でも大森でも眉サロン増えてるの、たぶんそういうことなんだよね",
-    "postId": "18090961100640256",
-    "features": {
-      "hook": "逆説",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 22,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-08-09T23:54:01.869Z",
     "topic": "SNS映え眉より実物の印象を気にする人が増えてる説",
     "text": "盛れた眉の画面より、目の前の素眉を見る人が増えてる気がする\n\n結局信頼されるのは実物の印象なんだよね",
@@ -5996,6 +5951,51 @@
       "kamata": false,
       "newsRiding": true,
       "slotHour": 15,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-09-19T11:30:25.555Z",
+    "topic": "左右の眉の高さ差の個人差",
+    "text": "左右の眉の高さ差、2mmまでは骨格差で普通にあるらしい\n\n書き癖に右上がりと左上がりがあるみたいに、眉も利き目とか筋肉の使い方で差が出るだけなんだよね",
+    "postId": "17898094749656328",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 20,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-09-19T11:38:38.135Z",
+    "topic": "肌がゆらぐ時期はタオルの摩擦を疑う",
+    "text": "肌荒れた時期、犯人は美容液じゃなくタオルの摩擦だった\n\n押し当てるだけで十分なんだよね",
+    "postId": "18138121378626716",
+    "features": {
+      "hook": "共感",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 20,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-09-19T11:46:50.136Z",
+    "topic": "コンシーラーとファンデの順番で崩れやすさが変わる検証",
+    "text": "2択、コンシーラー先に置くと崩れにくいらしい\n\n蒲田駅まで小走りした日に試したら頬の崩れ方全然違った\n\nこれ実感ある人いる?",
+    "postId": "18129732769837791",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 20,
       "weekend": true
     }
   }
