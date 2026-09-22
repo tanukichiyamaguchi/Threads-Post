@@ -1,80 +1,5 @@
 [
   {
-    "date": "2026-08-13T10:46:35.379Z",
-    "topic": "浴衣メイクと眉の放置あるある",
-    "text": "下丸子の花火、浴衣と髪型は3時間かけたのに眉は放置してた\n\n写真見返して気づくの、いつも眉だけなんだよね",
-    "postId": "17901618432484879",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 19,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-13T11:33:37.257Z",
-    "topic": "眉やまつげは同じ人に頼みたくなる心理",
-    "text": "美容院は浮気しても、眉だけ同じ人に頼みたくなるのなぜ？\n\nこれ何て呼ぶんだろう？",
-    "postId": "18039182642817775",
-    "features": {
-      "hook": "問題提起",
-      "length": "M",
-      "ending": "開いた質問",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 20,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-13T12:28:12.769Z",
-    "topic": "眉毛の左右差に自分では気づけない",
-    "text": "右眉と左眉、癖が違うの自分では一生気づけないやつ\n\n蒲田でも大森でも久が原でも、写真で初めて気づく人が多いがち",
-    "postId": "18138765052595832",
-    "features": {
-      "hook": "問題提起",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 21,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-13T13:57:43.510Z",
-    "topic": "汗の季節のまつげ根元ケア優先論",
-    "text": "蒲田も大森も、汗の日に見落としがちなのはコレ\n\n直すのはアイメイクより先に\n\nまつげの根元、なんだよね",
-    "postId": "18111552209097959",
-    "features": {
-      "hook": "リスト",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 22,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-14T00:02:34.985Z",
-    "topic": "お盆帰省・同窓会前に眉だけ整えたくなる心理",
-    "text": "新幹線の予約より先に眉サロン探し始めるの、お盆の恒例行事すぎる\n\n蒲田でも大森でも、久しぶりに会う人の前だと服より先に眉が気になるやつ",
-    "postId": "18097425698626941",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 9,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-14T04:25:43.281Z",
     "topic": "マスクが外せる季節の眉の存在感不足",
     "text": "3秒、マスク外した瞬間に見られてるのは口元より眉\n\n蒲田でも大森でも久が原でも、口紅は新調したのに眉だけマスク時代のまま放置してる人多いがち",
@@ -5996,6 +5921,81 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 9,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-22T05:16:29.162Z",
+    "topic": "写真で眉が薄く見える原因は毛流れ",
+    "text": "1mm、眉が薄く写る原因は照明じゃなく毛流れの向きらしい\n\n下向きの毛は影を作らないから写真だと存在感が消えがち",
+    "postId": "18021203138919936",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 14,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-22T05:24:47.165Z",
+    "topic": "分け目を変えるだけで印象が変わる",
+    "text": "蒲田駅の窓ガラスに映った自分、分け目変えただけで別人に見えた朝がある\n\n輪郭の見え方まで変わるから侮れない\n\nずっと同じ位置の人ほど一回試す価値ありがち",
+    "postId": "18407868613083712",
+    "features": {
+      "hook": "共感",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 14,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-22T05:33:03.334Z",
+    "topic": "ファンデ厚塗りの罠",
+    "text": "隠したい日ほどファンデ重ねて、逆にシミより厚塗り感が目立つ朝ってあるよね\n\n厚みが増すほど毛穴や小ジワに影が入って粉浮きしやすくなるから、隠すつもりが逆に老けて見えるんだよね\n\n気になる部分だけ重ね塗りする派\nそれとも全体を薄く均一に伸ばす派\nあなたはどっち?",
+    "postId": "18048392075606482",
+    "features": {
+      "hook": "あるある",
+      "length": "L",
+      "ending": "二択質問",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 14,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-22T05:41:17.629Z",
+    "topic": "まつげの向きと眠そうな印象の関係",
+    "text": "寝てないのに眠そうって言われる人、まつげが下向きなだけかもしれない\n\n上向きだと開いて見えるだけで、目力って実は角度の話なんだよね",
+    "postId": "18086719691271272",
+    "features": {
+      "hook": "共感",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 14,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-22T05:49:30.544Z",
+    "topic": "化粧水コットン派とハンドプレス派",
+    "text": "肌の温度で化粧水の入り方変わるって本当かな\n\nコットンで一気に馴染ませる派\nそれとも手のひらで温めて押し込む派\nあなたはどっち?",
+    "postId": "18116971855974580",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "二択質問",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 14,
       "weekend": false
     }
   }
