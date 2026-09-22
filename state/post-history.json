@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-08-13T08:49:09.718Z",
-    "topic": "田園調布の放射状の道は初見だと100%迷う",
-    "text": "8方向、田園調布の放射状の道は方角の感覚を全部奪ってくがち\n\n洗足池から流れて散歩のつもりが気づけば同じ坂を二周してる",
-    "postId": "18135684013592423",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 17,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-13T09:49:58.082Z",
-    "topic": "蒲田出身×羽根つき餃子あるある",
-    "text": "蒲田出身って言うと100%餃子ランキング聞かれるがち\n\n大森でも六郷でも自己紹介した瞬間、餃子の話にすり替わる現象わかる人いる?",
-    "postId": "18136580083719752",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "共感確認",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 18,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-13T10:46:35.379Z",
     "topic": "浴衣メイクと眉の放置あるある",
     "text": "下丸子の花火、浴衣と髪型は3時間かけたのに眉は放置してた\n\n写真見返して気づくの、いつも眉だけなんだよね",
@@ -5996,6 +5966,36 @@
       "kamata": false,
       "newsRiding": true,
       "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-22T00:28:58.068Z",
+    "topic": "まつげの角度と表情の見え方",
+    "text": "写真で笑ってるのに目が笑ってない人、まつげが下向きなだけなんだよね\n\n口角上げても目元だけ真顔に見えて損してる人多い気がする",
+    "postId": "18445708279132232",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 9,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-22T00:37:10.478Z",
+    "topic": "毛穴と摩擦の関係",
+    "text": "毛穴目立つの、乳液の量より頬杖の摩擦かもって最近思う\n\n保湿してもしても消えないの、量じゃなくて無意識に触る癖のせいだったら悲しくない?",
+    "postId": "17895711570405882",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "開いた質問",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 9,
       "weekend": false
     }
   }
