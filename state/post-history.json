@@ -1,95 +1,5 @@
 [
   {
-    "date": "2026-08-17T12:21:55.819Z",
-    "topic": "眉山の位置は骨格で変わるから他人の真似は危険",
-    "text": "眉山の位置、友達の真似すると事故る骨格差ある\n\n骨の高さで正解の場所が変わるから、他人の眉そのままコピーすると急に老けたり強面になったりするんだよね",
-    "postId": "18135831496718256",
-    "features": {
-      "hook": "問題提起",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 21,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-17T13:52:33.126Z",
-    "topic": "眉を整えるだけでメイク時短になる説",
-    "text": "メイクの時短、眉から先に整えるだけでいけるって知ってた?\n\n蒲田でも大森でも久が原でも、朝バタバタしてる人ほど眉を後回しにしがちなんだけど\n\n順番変えるだけで全体のバランス決まるの早い\n\nみんなの時短ルーティン気になる、どこから手をつけてる?",
-    "postId": "17867957742601800",
-    "features": {
-      "hook": "問題提起",
-      "length": "L",
-      "ending": "開いた質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 22,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-18T00:02:04.049Z",
-    "topic": "京急蒲田から羽田まで乗り換えなしの安心感",
-    "text": "0回、京急蒲田から羽田までの乗り換え回数\n\n出張前夜だけ神様扱いする",
-    "postId": "17971790165929563",
-    "features": {
-      "hook": "数字",
-      "length": "S",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 9,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-18T04:07:24.330Z",
-    "topic": "眉の角度で印象が変わる不思議",
-    "text": "目、変えてないのに眉の角度だけで顔つき変わるの詐欺レベル\n\n蒲田でも久が原でも、すれ違う人の第一印象って実は眉の傾きで決まってる説ある",
-    "postId": "18139129648603750",
-    "features": {
-      "hook": "問題提起",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-18T04:48:10.400Z",
-    "topic": "すっぴん自信は眉で決まる説",
-    "text": "すっぴんの自信、肌より眉で決まってる説\n地味に核心ついてると思う",
-    "postId": "18130753702727646",
-    "features": {
-      "hook": "問題提起",
-      "length": "S",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-18T08:56:32.781Z",
-    "topic": "眉のうぶ毛と肌トーンの関係",
-    "text": "ファンデ濃くしても暗い人、犯人は眉のうぶ毛かもしれない\n\n眉下だけ影みたいに沈んで見えるの、実は毛の密度のせいだったりする",
-    "postId": "18171495811435032",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 17,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-18T09:28:21.114Z",
     "topic": "蒲田駅の待ち合わせ場所間違えあるある",
     "text": "1回はある、JR西口で待って京急にいた説\n\n蒲田民ならほぼ全員通る道だと思う",
@@ -5996,6 +5906,96 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 18,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-24T14:23:08.944Z",
+    "topic": "涙袋メイクよりまつげの角度が目の印象を左右する",
+    "text": "涙袋より先に、まつげの角度で目の大きさ変わるって知らなかった\n\n下がり気味の角度だと涙袋盛っても目が眠そうに見えがち",
+    "postId": "18016908884945634",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-24T14:31:22.786Z",
+    "topic": "美容液を塗る順番",
+    "text": "美容液、薄い→濃いの順番で塗ってる人いる? 実は効かせたい部分から乗せる方が浸透いいらしい\n\n質感で順番決めると一番届けたい成分が最後で薄まって届く\n\n蒲田の朝、時間ない日ほど順番より場所で選んだ方が結果早い気がしてる",
+    "postId": "18125659450847481",
+    "features": {
+      "hook": "意見募集",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-24T14:39:35.621Z",
+    "topic": "汗ばむ季節のメイク崩れは皮脂より摩擦が原因",
+    "text": "汗ばむ日のメイク崩れ、皮脂より先に犯人がいた\n\n正体は摩擦、汗拭くたびコットンで擦ってヨレてただけなんだよね",
+    "postId": "17947009398341216",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-24T14:47:49.387Z",
+    "topic": "眉尻描き忘れ検証あるある",
+    "text": "眉尻だけ描き忘れて出社したことある人へ、実は誰も気づいてないらしいよ?\n\n蒲田の改札前で自分でチェックして初めて気づいたレベル\n\n人は眉頭と目元しか見てないってことなのかな、これ私だけ?",
+    "postId": "17969384679154197",
+    "features": {
+      "hook": "問題提起",
+      "length": "L",
+      "ending": "共感確認",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-24T14:56:03.706Z",
+    "topic": "リップより輪郭の描きすぎ問題",
+    "text": "リップだけ変えても垢抜けない人いる? 実は輪郭の描きすぎが犯人らしい\n\n輪郭くっきり派ほど唇だけ主張して顔から浮くんだよね\n蒲田の朝の電車、ガラスに映ったリップだけ濃い人結構いがち",
+    "postId": "18474884242117484",
+    "features": {
+      "hook": "意見募集",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-24T15:04:20.983Z",
+    "topic": "まつげの角度と眠そうな印象の関係",
+    "text": "寝不足に見える人へ、疲れてるんじゃなくてまつげが下向いてるだけ\n\n下向きまつげは影が落ちて瞼が重く見えがちなんだよね\n\n角度変えるだけで目力戻る人多い気がする",
+    "postId": "18089280998657289",
+    "features": {
+      "hook": "問題提起",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 23,
       "weekend": false
     }
   }
