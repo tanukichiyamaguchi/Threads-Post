@@ -1,25 +1,4 @@
 {
-  "17959437186206269": {
-    "postedAt": "2026-09-02T23:45:17.158Z",
-    "s24": {
-      "views": 161,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-09-04T00:15:15.383Z"
-    },
-    "s72": {
-      "views": 163,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-09-05T18:25:42.064Z"
-    }
-  },
   "18104446640602365": {
     "postedAt": "2026-09-03T06:21:25.641Z",
     "s24": {
@@ -4227,6 +4206,30 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-09-23T13:43:36.083Z"
+    }
+  },
+  "18139923430592848": {
+    "postedAt": "2026-09-22T23:56:45.994Z",
+    "s24": {
+      "views": 252,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-09-24T00:36:39.180Z"
+    }
+  },
+  "18484522393104346": {
+    "postedAt": "2026-09-23T00:04:57.593Z",
+    "s24": {
+      "views": 197,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-09-24T00:36:39.180Z"
     }
   }
 }
