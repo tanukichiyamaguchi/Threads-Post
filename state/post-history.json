@@ -1,80 +1,5 @@
 [
   {
-    "date": "2026-08-17T00:00:46.639Z",
-    "topic": "蒲田駅JR西口と京急蒲田の待ち合わせ問題",
-    "text": "800m、JRと京急蒲田の距離を甘く見て毎回遅刻する\n\n西口で待ってるのに相手は京急改札、なんてことが大森や糀谷から来る友達とはほぼ毎回起きるやつ",
-    "postId": "18408128665087666",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 9,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-17T04:22:37.928Z",
-    "topic": "梅雨入り前の目元対策",
-    "text": "湿気でまつげ下がる人へ、梅雨入り前の今が仕込み時なんだよね\n\n蒲田も大森も6月入ると空気が急に重くなって、まつげも眉もクセ戻りやすくなるがち",
-    "postId": "18111556709005066",
-    "features": {
-      "hook": "問題提起",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-17T05:03:41.296Z",
-    "topic": "大森駅前と山王の坂道の変化",
-    "text": "山王の坂道、数年ぶりに登ったら別の街だった\n古い喫茶店の代わりにパン屋、知らない看板ばかりで一瞬迷子になったがち",
-    "postId": "18129968185645176",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 14,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-17T08:52:14.768Z",
-    "topic": "産毛処理は剃るより残す方が肌に優しい",
-    "text": "1本も剃らない方が肌荒れしにくいって知ってた?\n\n蒲田も久が原も乾燥する時期は特に、剃った直後の肌って無防備なんだよね\n\nみんな産毛どうしてる?",
-    "postId": "18015563033923319",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "開いた質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 17,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-17T10:04:04.754Z",
-    "topic": "汗の季節はまつげの下がりが眉より先に崩れる",
-    "text": "3時間、眉が持つ時間よりまつげが下がる方が早いの地味にショック\n\n汗対策は眉ばっかり気にしてまつげは放置しがち",
-    "postId": "18092438900533986",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 19,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-17T11:02:54.856Z",
     "topic": "黒湯銭湯",
     "text": "500円で温泉気分、黒湯銭湯って蒲田民しか知らない気がする\n\n大森にも久が原にも普通にあって、銭湯料金なのに温泉って大田区だと当たり前すぎて誰も驚かないやつ",
@@ -5996,6 +5921,81 @@
       "kamata": false,
       "newsRiding": true,
       "slotHour": 9,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-24T04:45:22.763Z",
+    "topic": "クレンジングシートの置き場所を変える小さな習慣",
+    "text": "1個置くだけで、化粧落とさず寝る日が減った\n\n枕元にクレンジングシート置いてから、面倒より先に手が動くようになったんだよね\n\n意志力じゃなくて導線を変えるだけで良かった",
+    "postId": "18072808256770350",
+    "features": {
+      "hook": "数字",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-24T04:53:37.678Z",
+    "topic": "マスク内の肌ふやけと乾燥の順番",
+    "text": "2時間マスクしてた肌、ふやけてから乾燥するって知ってた\n\nふやけた分バリア機能下がって、外した瞬間に水分だけ蒸発してくの",
+    "postId": "18104719253207709",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-24T05:01:52.527Z",
+    "topic": "乾燥した風の日、肌より先に唇が荒れる法則",
+    "text": "風強い日に肌荒れる人いる? 実は先に唇からサインくるらしい\n\n唇は皮脂膜がほぼないから乾燥を一番早く拾うんだよね\n\n六郷あたりの土手道、風強い日は先にリップ塗っとくと肌の乾燥にも気づきやすい",
+    "postId": "18112785116086213",
+    "features": {
+      "hook": "意見募集",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-24T05:10:04.331Z",
+    "topic": "日焼け止めの塗り直しは量より触れる回数",
+    "text": "3回塗り直すより、触る回数1回減らす方が崩れない\n\n量足しても指の摩擦でヨレる方が早いんだよね",
+    "postId": "18132807313658498",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-24T05:18:18.656Z",
+    "topic": "ドライヤーの仕上げを冷風にすると翌朝の髪がまとまる",
+    "text": "ドライヤー最後だけ冷風にしたら、翌朝の広がりが別人レベルで落ち着いた\n\nキューティクル閉じる一手間、湿気強い日でも効いてる気がする",
+    "postId": "18021068033876314",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 13,
       "weekend": false
     }
   }
