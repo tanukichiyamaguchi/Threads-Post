@@ -1,15 +1,15 @@
 // 1日の投稿スケジュールを生成する。
-// - 1日の件数はボリューム実験モデル（state/volume-model.json・週次で学習）から決まる（既定 9・範囲 3〜15）
+// - 1日の件数は運用者指定で5件に固定（state/volume-model.json の値も5件にクランプされる）
 // - 朝・昼・夜に分散しつつ、視聴率の高い時間帯に多く配分
 //   （時間帯の重みは実測から学習した state/hour-weights.json を優先、無ければ静的な既定値）
 // - 具体的な時刻は日付シードで決まるため、毎日少しずつ変動する
 
 import { loadHourWeights, loadVolumeModel } from "./state";
 
-// 運用者指定: 1日の投稿数は3〜15回に制限する。
-export const MIN_POSTS_PER_DAY = 3;
-export const MAX_POSTS_PER_DAY = 15;
-export const DEFAULT_POSTS_PER_DAY = 9;
+// 運用者指定: 1日の投稿数は5回に固定する。
+export const MIN_POSTS_PER_DAY = 5;
+export const MAX_POSTS_PER_DAY = 5;
+export const DEFAULT_POSTS_PER_DAY = 5;
 
 // スロット間の最低間隔（分）。当初の予定時刻の間引きだけでなく、
 // 起動が遅れて複数件をまとめて投稿する際の「実際の投稿間隔」にも使う（連投防止）。
@@ -48,7 +48,7 @@ export function mulberry32(seed: number): () => number {
   };
 }
 
-/** その日の設定投稿数（ボリューム実験モデルから。3〜15にクランプ。範囲外・無効なら既定値） */
+/** その日の設定投稿数（運用者指定で5件固定。モデル値が範囲外・無効なら既定値） */
 export function currentPostsPerDay(_now?: JstNow): number {
   const v = loadVolumeModel();
   const n = v?.postsPerDay;
@@ -155,5 +155,5 @@ export function slotSeed(seed: number, slotIndex: number): number {
  * 1日1回だけCTAを入れるための番号（conversionモードのみ使用）。
  */
 export function ctaOrdinal(seed: number): number {
-  return 3 + (seed % 4); // 3〜6件目（1日3〜15投稿の範囲内に収める）
+  return 1 + (seed % 4); // 通算2〜5件目（1日5投稿の範囲内に収める）
 }

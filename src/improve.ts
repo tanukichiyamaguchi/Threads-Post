@@ -44,9 +44,9 @@ import { log, warn, error } from "./logger";
 //    曜日には依存しない）。state/hour-weights.json が無い、または古ければ即座に走る
 //    ため、デプロイ直後の初回 improve 実行から投稿数の実験もブートストラップされる。
 
-// 運用者指定: 1日の投稿数は3〜15回に制限。実験アームもこの範囲内に収める
-// （下限3=スパム降格検知時の最小ボリューム、上限15=1日の最大投稿数）。
-const VOLUME_ARMS = [3, 9, 15];
+// 運用者指定: 1日の投稿数は5回に固定。アームを1つにすることで週次のボリューム実験は
+// 常に5件を選び、日次viewsの記録（history）だけが続く。
+const VOLUME_ARMS = [5];
 const WEEKLY_INTERVAL_DAYS = 7;
 
 function daysAgoStr(dateStr: string, days: number): string {
