@@ -1,65 +1,5 @@
 [
   {
-    "date": "2026-08-18T11:46:31.185Z",
-    "topic": "眉尻の左右差は描き方より毛の生え方が原因かも",
-    "text": "眉尻だけ消える人、描き方より生え方疑ってる?\n\n左右で毛流れが違うだけのこと結構あるよ\n\nこれ気づいてる人いる?",
-    "postId": "18119185756906421",
-    "features": {
-      "hook": "問題提起",
-      "length": "M",
-      "ending": "共感確認",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 20,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-18T13:02:40.527Z",
-    "topic": "蒲田西口グランデュオのついで便利さ",
-    "text": "1building、蒲田西口で用事が全部終わる説を信じてる\n\n服買って化粧品補充して晩ごはんの惣菜まで買って改札、大森や田園調布まで出なくていいのが地味に強い\n\n雨の日ほどありがたみ増すやつ",
-    "postId": "18113288401975636",
-    "features": {
-      "hook": "自己開示",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 22,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-18T14:18:44.635Z",
-    "topic": "涙袋メイクより眉が先という気づき",
-    "text": "涙袋盛る前に眉整えろって大森の友達に言われて刺さった\n\n目元パーツより先に見られてるの眉だったんだよね",
-    "postId": "18087777251249543",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 23,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-18T23:29:20.175Z",
-    "topic": "眉に時間をかける日ほど仕上がりが早い矛盾",
-    "text": "眉に一番時間かけた日ほど、家出るの早いのなんで?\n眉が決まると他が適当でも様になるからだと思う\nこれ私だけ?",
-    "postId": "18078171140701280",
-    "features": {
-      "hook": "あるある",
-      "length": "M",
-      "ending": "共感確認",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 8,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-19T03:30:51.554Z",
     "topic": "汗で先に崩れるのはアイライナーよりまつげの根元",
     "text": "汗で崩れるの、アイライナーより先にまつげの根元説\n大森で自転車漕いでる時点でもう終わってるやつ",
@@ -5996,6 +5936,66 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 9,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-25T04:56:53.856Z",
+    "topic": "枕カバーの交換頻度と肌荒れ",
+    "text": "枕カバー、2週間替えなくても平気な人いる?\n\n皮脂と寝汗と髪の油、毎晩顔擦り付けてるのに\n\n化粧品変える前に疑うべきなのそこな気がしてきた\n\nこれ私だけ?",
+    "postId": "18093101309246942",
+    "features": {
+      "hook": "あるある",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-25T05:05:08.390Z",
+    "topic": "まつげの向きで変わる目力",
+    "text": "2mm、まつげの根元がその角度で上向くだけで二重整形級に変わるらしい\n\n幅より角度が目力の正体なんだよね",
+    "postId": "18115888187047047",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-25T05:13:26.956Z",
+    "topic": "汗ばむ季節のメイク崩れは摩擦が原因",
+    "text": "汗の季節、皮脂対策してるのに崩れる人へ気づいたことがある\n\n犯人、頬杖と前髪触る回数だった\n\n皮脂より先に摩擦で土台が動くらしい",
+    "postId": "18093237359648377",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-25T05:21:39.356Z",
+    "topic": "写真で眉が薄く見える現象は毛流れが原因",
+    "text": "自撮りで眉だけ薄くなる人、犯人は照明じゃなくて毛流れなんだよね\n\n斜め下に流れてると影が拾えなくて色が飛ぶらしい",
+    "postId": "17952837861257008",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 13,
       "weekend": false
     }
   }
