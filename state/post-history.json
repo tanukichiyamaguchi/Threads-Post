@@ -1,50 +1,5 @@
 [
   {
-    "date": "2026-08-19T03:30:51.554Z",
-    "topic": "汗で先に崩れるのはアイライナーよりまつげの根元",
-    "text": "汗で崩れるの、アイライナーより先にまつげの根元説\n大森で自転車漕いでる時点でもう終わってるやつ",
-    "postId": "18137143213614364",
-    "features": {
-      "hook": "問題提起",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 12,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-19T05:16:28.827Z",
-    "topic": "六郷・矢口の多摩川夕方散歩",
-    "text": "17時半、六郷土手の空がピンクになる時間知ってる?\n\n矢口渡から下丸子まで歩くだけなのに観光地みたいになる\n\nこれ知ってる人いる?",
-    "postId": "17984953545100590",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "共感確認",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 14,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-19T08:58:57.941Z",
-    "topic": "眉のうぶ毛と肌のトーン",
-    "text": "ファンデ変えても暗い、その正体眉のうぶ毛な気がしてきた\n\n産毛の影で一段暗く見えてただけなんだよね",
-    "postId": "18111180722045020",
-    "features": {
-      "hook": "共感",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 17,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-19T10:02:09.783Z",
     "topic": "まつげパーマ後の洗顔でゴシゴシこするのは持ちを縮める",
     "text": "洗顔でまつげゴシゴシ、パーマ落とす犯人は自分説\n\n蒲田西口の帰り道で気づいたけど摩擦が一番の敵なんだよね",
@@ -5996,6 +5951,51 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-25T09:59:17.537Z",
+    "topic": "湿度が高い日に髪がうねる原因は乾かす順番説",
+    "text": "湿気の日に髪うねる人いる? 実は乾かす順番が9割らしい\n\n毛先から乾かすと根元の水分だけ残ってうねる\n先に根元、最後に毛先が正解なんだよね\n\n蒲田の湿気多い日、これだけで広がり方が全然違う",
+    "postId": "17993364582018676",
+    "features": {
+      "hook": "意見募集",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 18,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-25T10:07:28.881Z",
+    "topic": "コンシーラーとファンデの順番",
+    "text": "8割の崩れ、コンシーラー先塗りが原因らしい\n\nファンデ後に置く方が皮脂に負けにくいんだよね",
+    "postId": "17872898832637599",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 18,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-25T10:15:41.901Z",
+    "topic": "分け目を変えるだけで印象が変わる",
+    "text": "分け目、一度も変えたことない人いる?\n\n顔の余白の見え方が変わるだけなんだよね\n\n知らずにいたの勿体なかった",
+    "postId": "18389696194160886",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 18,
       "weekend": false
     }
   }
