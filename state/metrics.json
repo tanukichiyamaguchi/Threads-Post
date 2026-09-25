@@ -1,67 +1,4 @@
 {
-  "17957539245211486": {
-    "postedAt": "2026-09-04T14:56:12.256Z",
-    "s24": {
-      "views": 60,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-09-05T15:21:34.062Z"
-    },
-    "s72": {
-      "views": 64,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-09-07T12:47:40.439Z"
-    }
-  },
-  "17959561689216926": {
-    "postedAt": "2026-09-04T15:04:25.235Z",
-    "s24": {
-      "views": 232,
-      "likes": 1,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-09-05T15:21:34.062Z"
-    },
-    "s72": {
-      "views": 238,
-      "likes": 1,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-09-07T12:47:40.439Z"
-    }
-  },
-  "17919752688216741": {
-    "postedAt": "2026-09-04T15:12:37.460Z",
-    "s24": {
-      "views": 112,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-09-05T15:21:34.062Z"
-    },
-    "s72": {
-      "views": 118,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-09-07T12:47:40.439Z"
-    }
-  },
   "18206964331368324": {
     "postedAt": "2026-09-04T23:37:07.653Z",
     "s24": {
@@ -4230,6 +4167,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-09-24T00:36:39.180Z"
+    },
+    "s72": {
+      "views": 253,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-09-25T18:44:31.064Z"
     }
   },
   "18484522393104346": {
@@ -4242,6 +4188,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-09-24T00:36:39.180Z"
+    },
+    "s72": {
+      "views": 197,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-09-25T18:44:31.064Z"
     }
   },
   "18083812004315436": {
