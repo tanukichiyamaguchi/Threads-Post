@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-08-18T09:28:21.114Z",
-    "topic": "蒲田駅の待ち合わせ場所間違えあるある",
-    "text": "1回はある、JR西口で待って京急にいた説\n\n蒲田民ならほぼ全員通る道だと思う",
-    "postId": "18005311184771554",
-    "features": {
-      "hook": "数字",
-      "length": "S",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 18,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-18T11:22:29.292Z",
-    "topic": "美容情報より毎月の鏡チェックの方が信頼できる説",
-    "text": "1ヶ月に1回、鏡でガチ見する人が一番詳しいまである\n\nSNSの最新情報より自分の変化に気づける人の方が結局強いんだよね",
-    "postId": "18106774991598355",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": true,
-      "slotHour": 20,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-18T11:46:31.185Z",
     "topic": "眉尻の左右差は描き方より毛の生え方が原因かも",
     "text": "眉尻だけ消える人、描き方より生え方疑ってる?\n\n左右で毛流れが違うだけのこと結構あるよ\n\nこれ気づいてる人いる?",
@@ -5996,6 +5966,36 @@
       "kamata": false,
       "newsRiding": true,
       "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-25T00:12:08.781Z",
+    "topic": "リップと輪郭の描きすぎ",
+    "text": "新しいリップ試すたび垢抜けない人、実は輪郭描きすぎてるだけなんだよね\n\n色より輪郭のはみ出し1mmが老け見えの原因になりがち",
+    "postId": "17966355699180379",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 9,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-25T00:20:21.205Z",
+    "topic": "チークの位置",
+    "text": "チーク、頬骨の一番高い所に置いてる人へ\n\nそこ今っぽくないらしい\n\n笑った時に膨らむ場所に置く方が血色良く見えるんだよね",
+    "postId": "18077514098538745",
+    "features": {
+      "hook": "問題提起",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 9,
       "weekend": false
     }
   }
