@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-20T10:51:35.282Z",
-    "topic": "蒲田東口の餃子と羽根つき餃子発祥の地",
-    "text": "東口の餃子の匂い、羽根つき発祥の地だと知って見る目変わった\n\nただの油の匂いだと思ってたのに、あれ歴史の匂いだったんだよね",
-    "postId": "18131312704634763",
-    "features": {
-      "hook": "問題提起",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 19,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-20T11:13:31.939Z",
     "topic": "涙袋メイクより眉が先という気づき",
     "text": "1mm整った眉、涙袋メイクより先に効くの知らなかった\n\n池上の友達に指摘されて初めて気づいたやつ🫢",
@@ -5996,6 +5981,21 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 14,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-28T11:51:50.565Z",
+    "topic": "7割ケア継続",
+    "text": "毎日フルコースでケアしてる人いる?\n実は7割継続の方が肌安定するらしい\n\n気合い入れた日ほど翌朝崩れて、手抜きした日の方が調子いいの謎じゃないんだよね",
+    "postId": "18354689977173152",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 20,
       "weekend": false
     }
   }
