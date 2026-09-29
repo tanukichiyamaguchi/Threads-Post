@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-20T11:13:31.939Z",
-    "topic": "涙袋メイクより眉が先という気づき",
-    "text": "1mm整った眉、涙袋メイクより先に効くの知らなかった\n\n池上の友達に指摘されて初めて気づいたやつ🫢",
-    "postId": "17896787532657909",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 20,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-20T13:04:46.724Z",
     "topic": "六郷矢口の多摩川夕方散歩",
     "text": "夕方の矢口渡、あの光目当てで散歩してる人いる?\n六郷から下丸子まで続く土手道が一番きれいなのは17時台なんだよね",
@@ -5996,6 +5981,21 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 20,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-09-29T01:23:13.737Z",
+    "topic": "分け目チェンジ",
+    "text": "7:3の分け目、変えただけで小顔に見えた人多いらしい\n\n骨格の影が出る位置がずれて輪郭の印象変わるんだよね\n\nいつもの分け目キープ派\nそれとも気分で変える派\n\nあなたはどっち?",
+    "postId": "18072941978725786",
+    "features": {
+      "hook": "数字",
+      "length": "L",
+      "ending": "二択質問",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 10,
       "weekend": false
     }
   }
