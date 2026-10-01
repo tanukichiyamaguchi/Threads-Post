@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-21T09:11:01.497Z",
-    "topic": "湿気とビューラー持続力の関係",
-    "text": "湿気の日のビューラー、3時間しか持たないの体感で分かってた\n\n毛は水分含むと元の形に戻ろうとするだけなんだよね\n\n蒲田も大森も今日は湿気やばくて、駅着く頃には下がってる",
-    "postId": "17904856014520886",
-    "features": {
-      "hook": "自己開示",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 18,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-21T10:48:20.291Z",
     "topic": "眉毛を整えるだけの時短効果",
     "text": "3分の眉整えで、朝の身支度が10分縮んだ\n\n蒲田西口から大森に向かう電車の中でメイク直す人、眉さえ整ってれば手抜き感出ないの知ってた",
@@ -5996,6 +5981,21 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 21,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-01T00:59:38.146Z",
+    "topic": "乾燥はこめかみから",
+    "text": "乾燥、頬から来ると思ってる人いる\nあれ実はこめかみが先なんだよね",
+    "postId": "18109679567153103",
+    "features": {
+      "hook": "意見募集",
+      "length": "S",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 9,
       "weekend": false
     }
   }
