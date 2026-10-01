@@ -1,50 +1,5 @@
 [
   {
-    "date": "2026-08-21T11:40:55.471Z",
-    "topic": "羽田の空港と町工場のギャップ",
-    "text": "羽田の着陸音の真下で、旋盤の音が鳴ってる町がある\n\n世界と繋がる滑走路のすぐ隣に、昔ながらの町工場が並んでる景色、毎回ハッとする\n\nこれ知ってる人いる?",
-    "postId": "17966834088138942",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "共感確認",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 20,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-21T13:03:02.353Z",
-    "topic": "眉尻の左右差は描き方より毛流れが原因という気づき",
-    "text": "9割が描き方で悩むけど眉尻消えは生え方のクセが原因かも\n\n蒲田も久が原も乾燥風で毛が寝やすい季節、左右差感じる人いない?",
-    "postId": "18067374731723890",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "開いた質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 22,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-21T14:21:02.914Z",
-    "topic": "汗でまつげの下がりが眉より先に崩れる",
-    "text": "3時間、汗ばむ日にまつげが下がるまでの体感タイム\n\n眉はメイクで持つのに、まつげは自前の力に頼るしかないんだよね\n\n地味にショックだけど毎年思い出す🥲",
-    "postId": "18440852671125978",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 23,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-21T22:44:44.324Z",
     "topic": "まつげパーマ後に触りたくなる衝動",
     "text": "パーマ直後のまつげ、指で触りたくなる衝動と戦ってる人いる\n触るとカールが崩れるの分かってるのに手が伸びちゃうんだよね",
@@ -5996,6 +5951,51 @@
       "kamata": false,
       "newsRiding": true,
       "slotHour": 16,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-01T14:23:57.035Z",
+    "topic": "眉マスカラの順番",
+    "text": "眉マスカラ最初派と最後派、崩れる速さ全然違うらしい\n\n先に塗ると上からパウダーが乗って色落ちしにくくて\n最後だと毛だけ固まって崩れやすいんだよね\n\n蒲田西口の朝の人混み、眉が先にヨレてる人多い気がしてる",
+    "postId": "17989049625068170",
+    "features": {
+      "hook": "意見募集",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-01T14:32:09.893Z",
+    "topic": "リップメイク",
+    "text": "1mm、輪郭を薄く描くだけでリップの色より垢抜ける\n\n蒲田の駅ビルで新色試す前に輪郭見直した方が早いんだよね",
+    "postId": "18128854057879128",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-01T14:40:21.304Z",
+    "topic": "眉毛メイク",
+    "text": "写真だと眉薄く見える、照明じゃなくて毛流れだった\n\n上向きに流れてると光拾って色飛びしやすいんだよね",
+    "postId": "17885547732622359",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 23,
       "weekend": false
     }
   }
