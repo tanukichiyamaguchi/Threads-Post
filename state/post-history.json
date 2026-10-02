@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-21T22:44:44.324Z",
-    "topic": "まつげパーマ後に触りたくなる衝動",
-    "text": "パーマ直後のまつげ、指で触りたくなる衝動と戦ってる人いる\n触るとカールが崩れるの分かってるのに手が伸びちゃうんだよね",
-    "postId": "18440175610126101",
-    "features": {
-      "hook": "意見募集",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 7,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-08-21T23:51:58.910Z",
     "topic": "秋の乾燥で眉の産毛がパサつく季節あるある",
     "text": "10月の洗足池、風が眉尻だけ狙って乾かしにくる\n\n蒲田も久が原も同じ、この時期だけ眉尻が寝がち",
@@ -5996,6 +5981,21 @@
       "kamata": false,
       "newsRiding": true,
       "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-02T01:13:57.226Z",
+    "topic": "似合う色と血色感",
+    "text": "流行りのコーラルより、自分の血色に寄せたら垢抜けた\n\n肌の赤み拾う色選ぶだけで顔馴染みが全然違うんだよね",
+    "postId": "17983643739093368",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 10,
       "weekend": false
     }
   }
