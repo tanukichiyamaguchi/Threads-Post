@@ -1,50 +1,5 @@
 [
   {
-    "date": "2026-08-22T00:24:27.158Z",
-    "topic": "JR蒲田西口と京急蒲田の待ち合わせあるある",
-    "text": "JR西口で待ってたら京急蒲田にいたこと、人生で一回はある\n\n800mしか離れてないのに、電話で場所説明しだすと大森や糀谷から来た人ほど詳しくて驚くやつ",
-    "postId": "17938346610094892",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 9,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-08-22T04:06:27.053Z",
-    "topic": "眉尻の左右差は描き方より毛流れが原因",
-    "text": "2mm、眉尻の毛が寝る向きだけで消えて見える\n\n蒲田も池上も乾燥する季節、片方だけ毛が寝てるだけなのに描き方のせいにされがち",
-    "postId": "18174874717427695",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-08-22T09:58:46.772Z",
-    "topic": "眉山の位置は骨格差で真似すると危険という話",
-    "text": "田園調布の子が眉山高めなの、骨格のせいで真似すると事故る\n\n蒲田も久が原も同じ、輪郭違えば正解の眉山も違うんだよね\n\n真似するのは形じゃなくて考え方だけでいい",
-    "postId": "17904731160535555",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 18,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-08-22T10:48:21.919Z",
     "topic": "六郷・矢口の多摩川夕方散歩",
     "text": "矢口の土手を地味な散歩コースだと思ってる人へ\n\n17時過ぎの六郷から下丸子、空の色が一番きれいなの知ってた?\n\nみんなどの時間帯が好き?",
@@ -5996,6 +5951,51 @@
       "kamata": false,
       "newsRiding": true,
       "slotHour": 16,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-02T13:46:56.540Z",
+    "topic": "タオルドライ 枝毛",
+    "text": "枝毛、実はトリートメントよりタオルの擦り方が原因なんだよね\n\nゴシゴシ擦るとキューティクル同士がこすれて逆立つから\n押さえるように水分吸わせるだけで全然違う\n\n池上の美容院で聞いて以来タオルの素材まで見直した",
+    "postId": "17905752642575053",
+    "features": {
+      "hook": "逆説",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 22,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-02T13:55:07.888Z",
+    "topic": "ハイライトの位置",
+    "text": "立体感出ないって悩んでる人、ハイライトの位置が低すぎるだけ\n\nCゾーンより頬骨の上に小さく点で入れると、光がそこだけ集まって自然に高さが出るんだよね",
+    "postId": "17997035402826118",
+    "features": {
+      "hook": "問題提起",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 22,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-02T14:03:21.237Z",
+    "topic": "チークの色選び",
+    "text": "毎朝チーク選びで止まる人、肌の黄み赤み見てないだけなんだよね\n\n血色感で選ぶと似合う色が毎回ブレがち",
+    "postId": "18125989111837611",
+    "features": {
+      "hook": "問題提起",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 22,
       "weekend": false
     }
   }
