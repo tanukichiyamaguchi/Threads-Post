@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-22T12:53:44.552Z",
-    "topic": "田園調布 駅を出た瞬間だけ姿勢が良くなる説",
-    "text": "田園調布に悩んでる人へ、駅を出た瞬間だけ勝手に姿勢が良くなる説\n\n街の空気にビビって背筋が伸びるやつ、絶対みんな経験ある",
-    "postId": "18213309214345058",
-    "features": {
-      "hook": "問題提起",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 21,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-08-22T13:49:08.618Z",
     "topic": "眉WAXの痛みについて",
     "text": "眉毛WAXって痛いの、蒲田で一番聞かれる質問だと思う\n\n答えはチクッと数秒だけで終わるやつ\n\n毛抜きでずっとやる方がよっぽど痛いんだよね",
@@ -5996,6 +5981,21 @@
       "kamata": true,
       "newsRiding": true,
       "slotHour": 14,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-10-03T10:40:47.989Z",
+    "topic": "ノーズシャドウ",
+    "text": "2mm、鼻筋じゃなくて小鼻の脇に影入れると立体感出るんだよね\n\n鼻筋まで描くと不自然に浮くけど 脇だけなら陰影として馴染む",
+    "postId": "18344275144269640",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 19,
       "weekend": true
     }
   }
