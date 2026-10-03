@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-22T10:48:21.919Z",
-    "topic": "六郷・矢口の多摩川夕方散歩",
-    "text": "矢口の土手を地味な散歩コースだと思ってる人へ\n\n17時過ぎの六郷から下丸子、空の色が一番きれいなの知ってた?\n\nみんなどの時間帯が好き?",
-    "postId": "18093472148647245",
-    "features": {
-      "hook": "問題提起",
-      "length": "M",
-      "ending": "開いた質問",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 19,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-08-22T12:01:01.863Z",
     "topic": "蒲田西口グランデュオのワンストップ利便性",
     "text": "1building、蒲田西口の用事が全部そこで終わる\n\n大森や池上まで出なくても、雨の日でも、ここだけで完結しちゃう楽さ知ってる人いる?",
@@ -5997,6 +5982,21 @@
       "newsRiding": true,
       "slotHour": 22,
       "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-03T00:52:18.978Z",
+    "topic": "血色に合う色選び",
+    "text": "流行色より肌の血色に寄せて垢抜けた人いる\n\n田園調布帰りの友達が試したらハマってた",
+    "postId": "17934700881394879",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 9,
+      "weekend": true
     }
   }
 ]
