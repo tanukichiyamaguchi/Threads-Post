@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-08-22T13:49:08.618Z",
-    "topic": "眉WAXの痛みについて",
-    "text": "眉毛WAXって痛いの、蒲田で一番聞かれる質問だと思う\n\n答えはチクッと数秒だけで終わるやつ\n\n毛抜きでずっとやる方がよっぽど痛いんだよね",
-    "postId": "18128256538668512",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 22,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-08-22T22:40:36.131Z",
-    "topic": "眉尻が消える原因は描き方じゃなく毛の生え方",
-    "text": "眉尻だけ描いても消える人、実は毛が寝てるだけなんだよね\n\n蒲田も久が原も、乾燥する時期は特に毛流れが乱れがち\n描き足すより先に毛を起こすと変わる",
-    "postId": "18075195365404988",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 7,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-08-22T23:19:48.291Z",
     "topic": "まつげパーマ後の洗顔で持ちが縮む話",
     "text": "24時間、まつげパーマ直後の洗顔ゴシゴシが持ちを削る時間\nこすらず優しく流すだけでカール変わるんだよね",
@@ -5996,6 +5966,36 @@
       "kamata": false,
       "newsRiding": true,
       "slotHour": 19,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-10-03T14:55:15.901Z",
+    "topic": "タオルドライと枝毛の関係",
+    "text": "8割の枝毛、実は濡れ髪をタオルでこすった摩擦が原因なんだよね\n\n濡れてる時のキューティクルは開いてて摩擦に弱いだけなのに\n\n大森の美容師さんも同じこと言ってた",
+    "postId": "17974910631139340",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 23,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-10-03T15:03:26.559Z",
+    "topic": "まつげパーマの持ち",
+    "text": "まつげパーマ、持ち悪くなる原因が生え際の乾燥って知ってる人いる?\n\n液が密着しにくくなってるだけらしいんだけど\n\nこれ私だけ知らなかった?",
+    "postId": "18129585211767814",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 23,
       "weekend": true
     }
   }
