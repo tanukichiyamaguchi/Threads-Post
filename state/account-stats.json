@@ -547,12 +547,17 @@
     "date": "2026-10-03",
     "followers": 1050,
     "postsPerDay": 5,
-    "accountViews": 1599
+    "accountViews": 1600
   },
   {
     "date": "2026-10-04",
     "followers": 1050,
     "postsPerDay": 5,
-    "accountViews": 45
+    "accountViews": 740
+  },
+  {
+    "date": "2026-10-05",
+    "followers": 1048,
+    "postsPerDay": 5
   }
 ]
