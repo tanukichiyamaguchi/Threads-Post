@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-23T04:49:31.483Z",
-    "topic": "蒲田西口グランデュオの便利さ",
-    "text": "雨の日、蒲田西口だけ傘いらずで買い物終わる\n\n大森や池上まで足のばす気力ない日ほど、結局グランデュオで全部済ませて帰っちゃうんだよね",
-    "postId": "18486270208096708",
-    "features": {
-      "hook": "共感",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 13,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-08-23T08:40:17.058Z",
     "topic": "梅雨入り前の湿気と目元対策",
     "text": "梅雨前、まつげのカール気になり始めてる人いる?\n\n六郷や矢口の土手歩くだけで前髪より先にまつげが負ける季節\n\nこれ私だけ?",
@@ -5996,6 +5981,21 @@
       "kamata": true,
       "newsRiding": true,
       "slotHour": 9,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-05T05:56:22.793Z",
+    "topic": "マスカラのダマと下地の量",
+    "text": "マスカラだまる人、重ね塗りより下地の量が多すぎるだけなんだよね\n\n乾く前に重ねるから毛束がくっついて固まるだけ",
+    "postId": "18025185824705607",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 14,
       "weekend": false
     }
   }
