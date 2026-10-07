@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-23T11:46:18.856Z",
-    "topic": "すっぴん自信は眉で決まる説",
-    "text": "すっぴんの自信、口紅より眉で決まる説どう思う\n\n久が原のスーパーに眉だけ整えて行ける日は無敵なんだよね",
-    "postId": "18141128740571412",
-    "features": {
-      "hook": "意見募集",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 20,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-08-23T12:54:21.009Z",
     "topic": "秋の乾燥で眉の産毛がパサつくあるある",
     "text": "最近、眉の産毛だけ妙にパサつくの私だけ?\n\n久が原あたりの乾いた風に当たった日ほど眉尻がチリついて描きにくいんだけど、わかる人いる?",
@@ -5996,6 +5981,21 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 17,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-07T01:10:24.448Z",
+    "topic": "日焼け止めの塗り直し忘れやすい部位",
+    "text": "7割、日焼け止め塗り直す時に顔しか触らないんだよね\n\n首と耳の後ろは紫外線当たり続けてるのに手が伸びないだけらしい",
+    "postId": "18408895870089569",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 10,
       "weekend": false
     }
   }
