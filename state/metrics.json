@@ -1,67 +1,4 @@
 {
-  "18048843404604051": {
-    "postedAt": "2026-09-17T00:00:09.433Z",
-    "s24": {
-      "views": 191,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-09-18T00:29:29.846Z"
-    },
-    "s72": {
-      "views": 191,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-09-19T18:39:37.944Z"
-    }
-  },
-  "18465936289139816": {
-    "postedAt": "2026-09-17T04:30:06.407Z",
-    "s24": {
-      "views": 65,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-09-18T04:59:23.683Z"
-    },
-    "s72": {
-      "views": 65,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-09-20T00:11:18.859Z"
-    }
-  },
-  "18477759856128676": {
-    "postedAt": "2026-09-17T04:38:17.992Z",
-    "s24": {
-      "views": 253,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-09-18T04:59:23.683Z"
-    },
-    "s72": {
-      "views": 253,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-09-20T00:11:18.859Z"
-    }
-  },
   "17910313332494851": {
     "postedAt": "2026-09-17T09:36:45.266Z",
     "s24": {
@@ -3054,6 +2991,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-10-06T06:34:18.710Z"
+    },
+    "s72": {
+      "views": 239,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-10-08T06:20:35.125Z"
     }
   },
   "18410434009084479": {
@@ -3114,6 +3060,18 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-10-07T23:12:18.868Z"
+    }
+  },
+  "18122348359799084": {
+    "postedAt": "2026-10-07T07:12:06.120Z",
+    "s24": {
+      "views": 195,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-10-08T06:20:35.125Z"
     }
   }
 }
