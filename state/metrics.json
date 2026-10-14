@@ -1878,6 +1878,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-10-12T23:05:17.246Z"
+    },
+    "s72": {
+      "views": 152,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-10-14T23:18:52.144Z"
     }
   },
   "17871910896641337": {
@@ -1914,6 +1923,18 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-10-14T07:48:33.820Z"
+    }
+  },
+  "17877456885566654": {
+    "postedAt": "2026-10-14T00:48:09.440Z",
+    "s24": {
+      "views": 173,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-10-14T23:18:52.144Z"
     }
   }
 }
