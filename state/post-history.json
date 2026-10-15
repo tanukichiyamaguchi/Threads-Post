@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-25T10:15:45.661Z",
-    "topic": "久が原の駅前とベビーカー率のあるある",
-    "text": "10分に1回はベビーカーとすれ違う、久が原の駅前率高すぎる\n\n子育て世帯の多さが街の空気にそのまま出てる感じで、なんか和む",
-    "postId": "18123793978880018",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 19,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-25T11:14:06.327Z",
     "topic": "汗の季節はまつげの下がりが先に崩れる",
     "text": "汗だくの日、眉より先にまつげが下がってる事件\n\n鏡見て初めて気づくやつ、地味にショックなんだよね",
@@ -5996,6 +5981,21 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 14,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-15T00:14:05.705Z",
+    "topic": "涙袋メイクの位置",
+    "text": "涙袋メイク濃くした日に限って老けて見えるの、位置が下すぎるだけなんだよね\n\n黒目の下から1〜2mmの範囲で止めずに頬側まで伸ばすとたるみに見えがち",
+    "postId": "18646888912040136",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 9,
       "weekend": false
     }
   }
