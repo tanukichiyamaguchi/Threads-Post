@@ -1,50 +1,5 @@
 [
   {
-    "date": "2026-08-25T12:15:17.565Z",
-    "topic": "洗足池でぼーっとする贅沢",
-    "text": "洗足池、ベンチ座って10分経つの早すぎる\n\n何もしてないだけなのに妙に満たされるんだよね",
-    "postId": "17904767259499761",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 21,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-25T12:23:32.040Z",
-    "topic": "眉WAXの痛みについてよくある質問",
-    "text": "眉WAX痛いですか、この質問、蒲田でも大森でも必ず聞かれる\n\n痛みより一瞬のスースー感の方が印象に残るやつなんだよね",
-    "postId": "18112369240790750",
-    "features": {
-      "hook": "問題提起",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 21,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-25T13:13:21.349Z",
-    "topic": "蒲田駅JR西口と京急蒲田の待ち合わせ間違えあるある",
-    "text": "800m、JRと京急の蒲田を勘違いして走った人絶対いる説\n\n同じ蒲田なのに徒歩10分かかるの、初見殺しすぎるんだよね",
-    "postId": "18066010898495911",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 22,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-25T13:21:36.979Z",
     "topic": "蒲田西口グランデュオの利便性",
     "text": "1building、蒲田西口のグランデュオで用事が全部終わる説\n\n大森や池上まで出なくてもここで完結するの、地味にありがたくない?",
@@ -5996,6 +5951,51 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-15T14:17:48.188Z",
+    "topic": "洗顔の泡立て不足と肌荒れ",
+    "text": "30秒、泡立てずに洗顔してる人ほど肌荒れ治らないんだよね\n\n摩擦で角質削れてバリア機能が落ちてるだけ、蒲田西口の朝も結局そこなんだよね",
+    "postId": "18466655395187661",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-15T14:26:05.692Z",
+    "topic": "マスカラのダマの原因",
+    "text": "マスカラのダマ、塗る回数より下地量が多すぎるだけなんだよね\n\n薄く均一に伸ばすほどダマにならない、これ私だけ？",
+    "postId": "18211754743368273",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "共感確認",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-15T14:34:19.891Z",
+    "topic": "マスカラのセパレートとティッシュオフ",
+    "text": "マスカラ上手く塗れない人いる、コームの前に一手間抜けてるだけなんだよね\n\n塗った直後に軽くティッシュオフ、余分な液だけ抜けて繊維が均一になる\n\n蒲田西口、通勤前の数秒でセパレート激変するやつ",
+    "postId": "18146872102549503",
+    "features": {
+      "hook": "意見募集",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 23,
       "weekend": false
     }
   }
