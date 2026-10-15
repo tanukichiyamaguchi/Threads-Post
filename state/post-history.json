@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-25T11:14:06.327Z",
-    "topic": "汗の季節はまつげの下がりが先に崩れる",
-    "text": "汗だくの日、眉より先にまつげが下がってる事件\n\n鏡見て初めて気づくやつ、地味にショックなんだよね",
-    "postId": "18113229434514271",
-    "features": {
-      "hook": "共感",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 20,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-25T12:15:17.565Z",
     "topic": "洗足池でぼーっとする贅沢",
     "text": "洗足池、ベンチ座って10分経つの早すぎる\n\n何もしてないだけなのに妙に満たされるんだよね",
@@ -5996,6 +5981,21 @@
       "kamata": false,
       "newsRiding": true,
       "slotHour": 9,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-15T04:42:02.722Z",
+    "topic": "枝毛とタオルドライの摩擦問題",
+    "text": "枝毛の原因トップ、実はタオルでゴシゴシ拭く摩擦なんだよね\n\nキューティクル削れて広がるだけ、押さえ拭きが正解",
+    "postId": "18088193567700669",
+    "features": {
+      "hook": "リスト",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 13,
       "weekend": false
     }
   }
