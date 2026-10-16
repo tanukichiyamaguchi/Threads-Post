@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-25T13:21:36.979Z",
-    "topic": "蒲田西口グランデュオの利便性",
-    "text": "1building、蒲田西口のグランデュオで用事が全部終わる説\n\n大森や池上まで出なくてもここで完結するの、地味にありがたくない?",
-    "postId": "18016136903731978",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "開いた質問",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 22,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-25T22:49:22.920Z",
     "topic": "眉尻が消える原因は描き方でなく生え方",
     "text": "眉尻だけ薄い人、実は描く前に毛流れ見た方が早いんだよね\n左右で生え方の癖が違うだけなの、描き方のせいにされがち",
@@ -5996,6 +5981,21 @@
       "kamata": true,
       "newsRiding": true,
       "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-16T00:00:11.378Z",
+    "topic": "シャワー温度と肌バリア",
+    "text": "42度のシャワー、肌のバリア機能削ってるだけなんだよね\n\n必要な皮脂まで流れて乾燥悪化しがち",
+    "postId": "18108825031914899",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 8,
       "weekend": false
     }
   }
