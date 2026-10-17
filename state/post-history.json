@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-26T11:12:14.636Z",
-    "topic": "眉のうぶ毛と肌トーン",
-    "text": "1mm、眉のうぶ毛が肌のトーン下げてる犯人らしい\n\n蒲田も大森も乾燥する季節はここが濃くなりがち\n\n剃るだけで顔全体パッと明るくなるんだよね",
-    "postId": "18147290242470463",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 20,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-26T11:44:34.842Z",
     "topic": "すっぴん自信と眉の関係",
     "text": "すっぴんの日、眉だけ整えてると自信の量が変わる気がする\n\n蒲田でも大森でも、すっぴんマスクで歩ける日と隠れたい日の差って眉なんだよね",
@@ -5996,6 +5981,21 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 21,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-10-17T23:41:58.739Z",
+    "topic": "奥二重とアイシャドウの誤解",
+    "text": "奥二重の人がアイシャドウ薄めにしがちな理由、濃い＝腫れぼったい思い込みなんだよね\n\n境目ぼかせば濃くても締まって見えるだけ",
+    "postId": "17937512160125083",
+    "features": {
+      "hook": "リスト",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 8,
       "weekend": true
     }
   }
