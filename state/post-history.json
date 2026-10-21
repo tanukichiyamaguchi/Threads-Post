@@ -1,65 +1,5 @@
 [
   {
-    "date": "2026-08-27T13:32:02.578Z",
-    "topic": "美容院と眉を分ける理由",
-    "text": "美容院と眉サロン分けてる人、蒲田にも増えてきた気がする\n\n骨格見て眉の形決める技術と、髪切る技術って全然別物なんだよね\n\n分けるの、地味に正解だと思う",
-    "postId": "17909099181285199",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 22,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-27T13:40:17.269Z",
-    "topic": "眉WAXの痛みについて",
-    "text": "蒲田で一番聞かれる質問、眉WAXって痛いの？なんだよね\n\n答えは一瞬でスッと終わる系\n痛みより解放感の方が勝つ人が多いがち",
-    "postId": "18109674167326263",
-    "features": {
-      "hook": "問題提起",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 22,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-27T13:48:32.285Z",
-    "topic": "眉尻が消えやすいのは描き方より毛の生え方の問題という話",
-    "text": "ずっと描き足してた眉尻、生え方の癖だったと知って脱力した\n\n眉尻の毛って下向きに生えやすくて、それで影が薄く見えるだけなんだよね\n\n描き方より毛流れ見た方が早かった",
-    "postId": "18100326722006813",
-    "features": {
-      "hook": "自己開示",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 22,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-27T13:56:45.754Z",
-    "topic": "蒲田西口グランデュオの便利さ",
-    "text": "外に出ない方がいい日、グランデュオだけで解決しがち\n\n日焼け止めも買えるし塗り直しもできるし、暑さから逃げながら用事終わる",
-    "postId": "18005354999968082",
-    "features": {
-      "hook": "逆説",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": true,
-      "slotHour": 22,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-27T14:04:57.959Z",
     "topic": "眉の角度だけで印象が変わる不思議",
     "text": "同じメイクなのに今日垢抜けてない?\nって言われた日、眉の角度いじっただけなんだよね",
@@ -5996,6 +5936,66 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 13,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-21T14:48:52.628Z",
+    "topic": "下向きまつげとビューラーの温め時間",
+    "text": "5秒、ビューラー前にまつ毛の根元に当てるだけで下向きまつ毛が変わる\n\n角度変えても上がらないのは角度のせいじゃなく根元が冷えたまま挟んでるだけ\n\n温めてから挟むと毛根が素直に持ち上がるんだよね",
+    "postId": "18136311484739063",
+    "features": {
+      "hook": "数字",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-21T14:57:05.526Z",
+    "topic": "眉とシェーディングの色の関係",
+    "text": "1色、眉と同じシェーディングはのっぺり事故の原因\n\n影って本来眉より暗いから生まれるもので\n同じ色だと顔に馴染みすぎて立体感消えるだけなんだよね",
+    "postId": "18221165659351007",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-21T15:05:18.225Z",
+    "topic": "照明による肌の見え方の違い",
+    "text": "洗面所の鏡で完璧だったのに会社の鏡で地雷メイクになってる人いる\n\n家は暖色で血色良く見えて\n外は白色光でくすみも粗も全部映す\n\n鏡より照明を疑うべきなんだよね",
+    "postId": "18105953687254720",
+    "features": {
+      "hook": "あるある",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-21T15:13:30.842Z",
+    "topic": "コンシーラーのヨレと叩き込みの強さ",
+    "text": "コンシーラーすぐヨレる人いる、量より叩き込む強さが足りてないだけなんだよね\n\n乗せただけだと表面に浮いて皺に溜まるだけ\n\n叩いて密着させた分だけ肌に馴染んでくれる",
+    "postId": "18428402452150979",
+    "features": {
+      "hook": "意見募集",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 23,
       "weekend": false
     }
   }
