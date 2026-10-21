@@ -1,46 +1,4 @@
 {
-  "18198983899384436": {
-    "postedAt": "2026-09-30T00:57:09.101Z",
-    "s24": {
-      "views": 112,
-      "likes": 1,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-10-01T01:20:43.565Z"
-    },
-    "s72": {
-      "views": 112,
-      "likes": 1,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-10-02T19:24:33.867Z"
-    }
-  },
-  "18196715254344318": {
-    "postedAt": "2026-09-30T06:17:29.702Z",
-    "s24": {
-      "views": 226,
-      "likes": 1,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-10-01T09:07:19.016Z"
-    },
-    "s72": {
-      "views": 226,
-      "likes": 1,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-10-03T05:29:19.425Z"
-    }
-  },
   "18167118364413465": {
     "postedAt": "2026-09-30T12:44:49.830Z",
     "s24": {
@@ -1542,6 +1500,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-10-19T13:41:37.188Z"
+    },
+    "s72": {
+      "views": 315,
+      "likes": 2,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-10-21T07:49:47.326Z"
     }
   },
   "17900934516602862": {
@@ -1554,6 +1521,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-10-19T13:41:37.188Z"
+    },
+    "s72": {
+      "views": 349,
+      "likes": 1,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-10-21T07:49:47.326Z"
     }
   },
   "17937615135127285": {
@@ -1626,6 +1602,18 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-10-20T17:21:44.242Z"
+    }
+  },
+  "17910792924309737": {
+    "postedAt": "2026-10-20T05:26:31.274Z",
+    "s24": {
+      "views": 328,
+      "likes": 2,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-10-21T07:49:47.326Z"
     }
   }
 }
