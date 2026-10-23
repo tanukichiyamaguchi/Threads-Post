@@ -1,65 +1,5 @@
 [
   {
-    "date": "2026-08-28T06:28:34.925Z",
-    "topic": "自眉を活かすメイクは垢抜けにも直結する",
-    "text": "眉、盛るより活かす方が垢抜けるって最近わかった\n\n時短のためだけじゃなかったんだな、あれ\n\n蒲田駅前の鏡で見るとよくわかるけど、描き込みすぎな眉ってすぐバレがち",
-    "postId": "18141537046584043",
-    "features": {
-      "hook": "逆説",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 15,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-28T06:36:47.101Z",
-    "topic": "久が原の駅前とベビーカー率",
-    "text": "久が原の駅前、3組に1組はベビーカーな気がする\n\n閑静な住宅街ってこういうことなんだなと毎回思う",
-    "postId": "18142587739491202",
-    "features": {
-      "hook": "逆説",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 15,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-28T06:44:59.741Z",
-    "topic": "洗足池でぼーっとする時間の贅沢さ",
-    "text": "洗足池、ベンチに座って5分で満足してしまう自分に驚く\n\n何もしてないのにこんな贅沢な気持ちになるの、池のおかげなんだろうな",
-    "postId": "18147146368554601",
-    "features": {
-      "hook": "問題提起",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 15,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-28T06:53:12.333Z",
-    "topic": "夏マスク卒業と眉の印象",
-    "text": "3年ぶりにマスク外した夏、眉だけで印象作れる自分に驚く\n\n蒲田駅前も口元より先に眉で目が合う季節、戻ってきたんだよな",
-    "postId": "18127150207771567",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 15,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-28T07:01:24.538Z",
     "topic": "まつげパーマの持ちと枕の高さ",
     "text": "3cm、枕の高さでまつげパーマの持ちが変わるらしい\n\n蒲田でも大森でも、うつ伏せ寝の人は絶望的に持ちが悪いんだよな",
@@ -5996,6 +5936,66 @@
       "kamata": false,
       "newsRiding": true,
       "slotHour": 14,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-23T14:36:55.256Z",
+    "topic": "涙袋コンシーラーの皮脂崩れ",
+    "text": "涙袋のコンシーラーだけ昼には消えてる人いる、それ皮脂に負けてるだけなんだよね\n\n下まぶたは皮脂腺多めで崩れやすい場所\n油分軽いものを薄く重ねるだけで持ちが変わる",
+    "postId": "17896842492416558",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-23T14:45:07.488Z",
+    "topic": "寝る前スマホと目元のむくみ",
+    "text": "寝る前のスマホ、肌より先に目元のむくみに出てる人いる\n\nうつむき姿勢で血流が目の周りに滞りやすくなるだけなんだよね\n\n蒲田行きの最終電車でスマホ見ながらうとうとしてる人、翌朝まぶた重いのそれが原因だよ",
+    "postId": "18150550204566620",
+    "features": {
+      "hook": "意見募集",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-23T14:53:19.875Z",
+    "topic": "湿度と髪の広がりの原因",
+    "text": "湿気の日に髪広がる人いる、乾かし終わりの温度高すぎるだけなんだよね\n\n仕上げは冷風で引き締めないとキューティクル開いたまま固まる\n\nこれ私だけ？🌀\n大森あたりの坂道歩くと余計気になる",
+    "postId": "18113525594270904",
+    "features": {
+      "hook": "自己開示",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-23T15:01:41.112Z",
+    "topic": "継続期間の見積もりが短すぎる",
+    "text": "肌もまつ毛も生まれ変わるのに約1ヶ月、1週間で諦めるの早すぎる\n\n効果測定は最低でも1サイクル分待ってからで十分なんだよね",
+    "postId": "17974611603175550",
+    "features": {
+      "hook": "リスト",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 23,
       "weekend": false
     }
   }
