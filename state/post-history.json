@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-28T07:09:38.561Z",
-    "topic": "年末帰省前に鏡と向き合う時間が増える",
-    "text": "帰省前の12月、蒲田の鏡の前で急に真剣になる\n久しぶりに会う人の目、眉から見てる気がしてくる",
-    "postId": "18239871601314598",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 15,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-29T03:26:59.822Z",
     "topic": "久が原の駅前とベビーカーの多さ",
     "text": "久が原って歩くだけでベビーカーとすれ違う回数、体感5回はある\n閑静な住宅街ってこの光景のことだったんだな",
@@ -5996,6 +5981,21 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 9,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-10-24T04:31:44.666Z",
+    "topic": "下向きまつ毛と根元の温め不足",
+    "text": "下向きまつ毛、ビューラーの角度よりただ根元が冷えてるだけなんだよね\n\n根元を少し温めるだけで繊維が柔らかくなって立ち上がりやすくなる",
+    "postId": "18102686852639600",
+    "features": {
+      "hook": "逆説",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 13,
       "weekend": true
     }
   }
