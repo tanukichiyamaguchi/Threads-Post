@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-29T03:59:55.908Z",
-    "topic": "眉尻の左右差は描き方より毛流れが原因という話",
-    "text": "眉尻が消える人、描き方より生え方の癖を疑ってほしい\n\n左右差の9割、実は毛流れの向きが片方だけ寝てるだけなんだよね",
-    "postId": "18125354519506895",
-    "features": {
-      "hook": "問題提起",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 12,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-08-29T10:18:51.707Z",
     "topic": "眉のうぶ毛が肌のトーンを暗く見せる説",
     "text": "眉のうぶ毛だけで肌1トーン暗く見える人いる?\n\n産毛の影で眉下がくすんで見えてるだけなのに\nファンデ濃くしがちなの私だけ?",
@@ -5996,6 +5981,21 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 8,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-10-25T07:48:39.312Z",
+    "topic": "マスカラのダマと下地の乾燥時間",
+    "text": "10秒待てない人がマスカラダマらせがち\n下地が半乾きのうちに重ねると繊維同士が絡んで束になるだけなんだよね",
+    "postId": "18122561255023642",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 16,
       "weekend": true
     }
   }
