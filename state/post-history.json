@@ -1,65 +1,5 @@
 [
   {
-    "date": "2026-08-29T23:49:01.215Z",
-    "topic": "千鳥町・大森町の静かな住宅街に着くと呼吸が変わる",
-    "text": "1本、電車を乗り過ごすと千鳥町の空気になる\n\n蒲田の喧騒からたった数分なのに、住宅街に入った瞬間に肩の力が抜けてる自分がいる",
-    "postId": "18364874767211195",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 8,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-08-29T23:57:17.097Z",
-    "topic": "まつげパーマ後の洗顔ゴシゴシNG",
-    "text": "3秒、ゴシゴシ洗顔でまつげパーマの持ちが縮むらしい\n\n蒲田西口の朝、時間ないと目元だけつい急いで擦っちゃうよね\nこれ私だけ?",
-    "postId": "17931660849385663",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "共感確認",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 8,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-08-30T01:46:35.750Z",
-    "topic": "久が原の駅前でベビーカーとよく遭遇する",
-    "text": "久が原の改札前、いつもベビーカーの車列ができてる\n\n蒲田の喧騒からひと駅なのに、街の空気が完全に子育てモードなんだよね🍀\n静かで歩きやすいの、地味に納得しちゃう",
-    "postId": "18072017792449655",
-    "features": {
-      "hook": "自己開示",
-      "length": "L",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 10,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-08-30T07:29:15.412Z",
-    "topic": "眉にかける時間と支度の速さの矛盾",
-    "text": "眉に一番時間かけてる人ほど、実は支度が早く終わるという矛盾\n\n眉さえ決まれば残り全部が雑でも様になるから、結果一番手が早いんだよね",
-    "postId": "18114162476077650",
-    "features": {
-      "hook": "逆説",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 16,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-08-30T13:10:56.983Z",
     "topic": "蒲田東口の餃子と羽根つき餃子発祥の地",
     "text": "羽根つき餃子発祥の地って知った日から東口の匂いが特別になった\n\nただの油の匂いだったのに、急に歴史の匂いに変わる現象、わかる人いる?",
@@ -5996,6 +5936,66 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 16,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-26T14:06:16.340Z",
+    "topic": "空っ風の日のメイク崩れは乾燥によるヨレが原因",
+    "text": "蒲田の空っ風でメイク崩れる原因、皮脂じゃなく乾燥のヨレだった\n\n皮脂取りすぎて余計カサついてたんだよね",
+    "postId": "18103292147047572",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-26T14:14:43.063Z",
+    "topic": "コンシーラーのヨレの原因",
+    "text": "午後ヨレるコンシーラー、原因は量より置き方なんだよね\n\n軽く乗せただけだと表面に浮いて小皺に溜まっていく\n\n指の腹でポンポン密着させると崩れにくくなる",
+    "postId": "18081261806410887",
+    "features": {
+      "hook": "リスト",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-26T14:22:55.617Z",
+    "topic": "マスカラのダマの原因",
+    "text": "マスカラ塗るたび下地がダマる人、乾く前に重ねてるだけなんだよね\n\n下地は表面が乾いても中はまだ柔らかい\n10秒待たずに重ねるから絡んでダマになるだけ",
+    "postId": "17954694408278818",
+    "features": {
+      "hook": "あるある",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-26T14:31:07.709Z",
+    "topic": "化粧水の与え方は肌質で向き不向きが分かれる",
+    "text": "化粧水、叩き込むか染み込ませるだけか毎回迷う\n\n乾燥肌はパッティングで摩擦増えてヒリつくし\n皮脂多めはしみこませるだけだと浸透浅い気がする\n\nみんな自分の肌でどっちに落ち着いた？",
+    "postId": "17960079912322057",
+    "features": {
+      "hook": "共感",
+      "length": "L",
+      "ending": "二択質問",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 23,
       "weekend": false
     }
   }
