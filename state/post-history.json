@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-08-30T13:19:18.562Z",
-    "topic": "夏マスク卒業と眉だけ勝負の季節",
-    "text": "マスクなしで外出する朝、眉の位置を二度見しちゃう\n\n口元じゃなくて眉ばっかり気にしてる自分に気づいて笑った",
-    "postId": "18190861102393235",
-    "features": {
-      "hook": "問題提起",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": true,
-      "slotHour": 22,
-      "weekend": true
-    }
-  },
-  {
-    "date": "2026-08-30T13:27:36.918Z",
-    "topic": "まつげが下がる原因はクセづけ",
-    "text": "8割、下がりまつげの原因は毛質じゃなくて寝癖なんだよね\n\n蒲田西口で朝バタバタしてる人ほど枕に顔埋めて寝てがち",
-    "postId": "18112793551967216",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 22,
-      "weekend": true
-    }
-  },
-  {
     "date": "2026-08-30T13:35:55.069Z",
     "topic": "美容院と眉の担当をあえて分ける理由",
     "text": "美容院と眉の担当、あえて分ける人増えてるの地味に納得\n\n蒲田で髪切って、眉だけ別の場所って人、周りにも普通にいがち",
@@ -5996,6 +5966,36 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-27T12:06:03.207Z",
+    "topic": "ファンデのマスク付着と皮脂崩れ",
+    "text": "ファンデがマスクに付く人、実は粉より皮脂崩れ疑った方がいいやつ\n\n皮脂で浮いた油分がマスクに擦れて一緒に剥がれ落ちてるだけなんだよね",
+    "postId": "18145462144564422",
+    "features": {
+      "hook": "逆説",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 21,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-27T12:14:15.708Z",
+    "topic": "乳液の塗り忘れゾーン",
+    "text": "乾燥見逃し多発地帯、あご下とフェイスラインなんだよね\n\n乳液は顔の中心からしか伸ばさない人が多くて\n生え際とエラまで届いてないことがち",
+    "postId": "18152998618531292",
+    "features": {
+      "hook": "リスト",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 21,
       "weekend": false
     }
   }
