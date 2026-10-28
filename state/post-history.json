@@ -1,65 +1,5 @@
 [
   {
-    "date": "2026-08-31T00:07:37.203Z",
-    "topic": "湿気の日にビューラーの効果が持続しない理由",
-    "text": "数時間、湿気の日はビューラーの効果がそれしか持たないらしい\n\n水分吸って毛が重くなるだけなんだよね",
-    "postId": "18083650124281960",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": false,
-      "slotHour": 9,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-31T05:26:03.002Z",
-    "topic": "眉WAXの痛み",
-    "text": "9割、眉WAXの痛みは3秒だけって知ってた?\n蒲田で聞かれる質問トップクラスなんだけど、実際どう思う?",
-    "postId": "18072763439448733",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "開いた質問",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 14,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-31T05:34:16.502Z",
-    "topic": "梅雨入り前の目元対策",
-    "text": "梅雨前に目元対策こっそり始めてる人いる?\n\n矢口渡とか下丸子から蒲田まで歩く距離で汗と湿気ダブルで来るんだよね\n\nみんな何で対策してる?",
-    "postId": "18164110177467718",
-    "features": {
-      "hook": "意見募集",
-      "length": "M",
-      "ending": "開いた質問",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 14,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-31T11:43:47.935Z",
-    "topic": "似合うは骨格で決まると気づいた話",
-    "text": "似合うって流行りじゃなくて骨格だったんだ、と気づいたの田園調布ですれ違った人見て\n\n同じ眉の形でも顔で全然違う理由、ずっと言葉にできなかった",
-    "postId": "18037692305823099",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 20,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-31T11:52:00.843Z",
     "topic": "まつげパーマ直後に触りたくなる衝動",
     "text": "パーマかけた日ほど、まつげ触りたくなる罠\n蒲田西口歩きながらも無意識に指伸びてる自分いる",
@@ -5996,6 +5936,66 @@
       "kamata": false,
       "newsRiding": true,
       "slotHour": 15,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-28T13:15:48.708Z",
+    "topic": "ファンデがマスクに付く原因は皮脂崩れ",
+    "text": "マスクにファンデべったり付く人、わかる気持ち\n\n粉より皮脂が浮いてるだけなんだよね\n\n油分がマスクに擦れて持ってかれてるだけ",
+    "postId": "18118548068087462",
+    "features": {
+      "hook": "共感",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 22,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-28T13:23:59.771Z",
+    "topic": "眉頭の描き足りなさと眉山の左右差",
+    "text": "眉頭だけ描き足りない気がする人、原因は眉山の左右差なんだよね\n\n眉山が低い方は全体がのっぺりして眉頭まで薄く見えがち\n\n眉頭じゃなく眉山の高さ揃えるだけで解決することが多い",
+    "postId": "18105894359372381",
+    "features": {
+      "hook": "問題提起",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 22,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-28T13:32:12.739Z",
+    "topic": "高い化粧品より順番とタイミングが垢抜けを左右する",
+    "text": "1万円の美容液より化粧水後30秒待つ方が垢抜けるやつ\n\n浸透前に重ねると上の層だけで止まるんだよね\n蒲田の乾燥した朝イチでやりがち",
+    "postId": "18112954433595460",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 22,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-28T13:40:32.453Z",
+    "topic": "ハイライトの入れる位置で老け見えする原因",
+    "text": "老け見えハイライトの原因、位置より範囲の広さなんだよね\n\n高めの位置に広く塗ると骨格より浮いて見えて、頬の下に影ができて逆に重力感が出る\n\n蒲田の鏡前で試すなら、黒目の外側の縦ラインより外にはみ出さないのが目安\n\nハイライトどの位置に入れてる?",
+    "postId": "18083577326374964",
+    "features": {
+      "hook": "リスト",
+      "length": "L",
+      "ending": "開いた質問",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 22,
       "weekend": false
     }
   }
