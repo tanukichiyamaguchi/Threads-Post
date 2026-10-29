@@ -1,65 +1,5 @@
 [
   {
-    "date": "2026-08-31T12:00:17.478Z",
-    "topic": "洗足池でぼーっとする贅沢",
-    "text": "洗足池、木陰のベンチ争奪戦が地味に激しい\n\n何もしてないのに贅沢な気持ちになるの、これ私だけ？",
-    "postId": "18154564405502987",
-    "features": {
-      "hook": "あるある",
-      "length": "M",
-      "ending": "共感確認",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 20,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-08-31T12:08:30.012Z",
-    "topic": "黒湯銭湯",
-    "text": "銭湯料金なのに温泉入った気になれる、これ知ってるの多分地元民だけ\n\n大森や池上あたりにも黒湯の銭湯あって、旅行気分だけ味わってる自分がいる",
-    "postId": "17871826476585022",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 20,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-09-01T00:56:10.827Z",
-    "topic": "田園調布、駅を出た瞬間だけ姿勢が良くなる説",
-    "text": "田園調布、駅を出た瞬間だけ姿勢が良くなる説\n\n改札出るまで普通に歩いてたのに\n駅前立った瞬間だけ勝手に胸を張っちゃう\n\n街の空気にそういう力ある気がする",
-    "postId": "18459911908187139",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 9,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-09-01T05:58:50.486Z",
-    "topic": "JR蒲田の発車メロディと蒲田行進曲",
-    "text": "1曲、蒲田行進曲だと知った日から発車音が特別になった\n\n大森や池上に用事あっても蒲田で乗り換えるたび、ちょっと誇らしくなっちゃう",
-    "postId": "18191522539386099",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 14,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-09-01T06:07:02.949Z",
     "topic": "眉尻が薄い原因は毛流れの向きかも",
     "text": "眉尻の薄さ、量じゃなくて毛流れの向きだったって最近知った\n\nみんな眉尻どっち向きに流れてる？",
@@ -5996,6 +5936,66 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 16,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-29T14:36:56.253Z",
+    "topic": "ヘアオイルの塗る範囲",
+    "text": "5センチ、オイルは根元からじゃなく毛先から5センチが正解\n\n根元から塗る派\nそれとも毛先だけに絞る派\nあなたは普段どっち？",
+    "postId": "18113622416593987",
+    "features": {
+      "hook": "数字",
+      "length": "M",
+      "ending": "二択質問",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-29T14:45:08.801Z",
+    "topic": "紅葉シーズンの写真は眉の立体感で変わる",
+    "text": "0.3mm、眉山を上げるだけで紅葉写真の盛れ方が変わるんだよね\n\n光が弱い逆光でも眉に影ができると顔の彫りが出て垢抜けて見えるがち\n\n洗足池とか木陰多い場所で撮るなら尚更眉マスカラで立体感足した方が盛れる",
+    "postId": "18098600213386234",
+    "features": {
+      "hook": "数字",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-29T14:53:22.541Z",
+    "topic": "前髪のベタつきと触りすぎの関係",
+    "text": "前髪べたつくの、実は皮脂より無意識に触る回数のせいだったりする\n\n手の油分が移って余計テカるだけなんだよね\n\n西口まで歩く間に何回触ったか数えると気づくやつ",
+    "postId": "18132061291834063",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 23,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-29T15:01:33.646Z",
+    "topic": "眉下のくすみ",
+    "text": "二重幅より先に見られてるの、実は眉下のくすみだったりする\n\n眉下が影みたいに暗いと二重の線より先に目がいくんだよね\n洗足池の散歩帰り鏡見て気づいたやつ",
+    "postId": "18109537766358575",
+    "features": {
+      "hook": "自己開示",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 23,
       "weekend": false
     }
   }
