@@ -1,25 +1,4 @@
 {
-  "18137412652628108": {
-    "postedAt": "2026-10-08T07:51:51.474Z",
-    "s24": {
-      "views": 132,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-10-09T06:28:04.892Z"
-    },
-    "s72": {
-      "views": 133,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-10-11T06:01:52.476Z"
-    }
-  },
   "18090804062234940": {
     "postedAt": "2026-10-08T14:58:12.192Z",
     "s24": {
@@ -1500,6 +1479,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-10-27T12:28:39.764Z"
+    },
+    "s72": {
+      "views": 123,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-10-29T13:22:14.059Z"
     }
   },
   "18081261806410887": {
@@ -1512,6 +1500,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-10-27T12:28:39.764Z"
+    },
+    "s72": {
+      "views": 159,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-10-29T13:22:14.059Z"
     }
   },
   "17954694408278818": {
@@ -1524,6 +1521,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-10-27T12:28:39.764Z"
+    },
+    "s72": {
+      "views": 165,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-10-29T13:22:14.059Z"
     }
   },
   "17960079912322057": {
@@ -1536,6 +1542,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-10-27T18:08:29.505Z"
+    },
+    "s72": {
+      "views": 320,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-10-29T13:22:14.059Z"
     }
   },
   "18043894748830337": {
@@ -1584,6 +1599,54 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-10-29T06:03:19.255Z"
+    }
+  },
+  "18118548068087462": {
+    "postedAt": "2026-10-28T13:15:48.708Z",
+    "s24": {
+      "views": 268,
+      "likes": 1,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-10-29T13:22:14.059Z"
+    }
+  },
+  "18105894359372381": {
+    "postedAt": "2026-10-28T13:23:59.771Z",
+    "s24": {
+      "views": 107,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-10-29T13:22:14.059Z"
+    }
+  },
+  "18112954433595460": {
+    "postedAt": "2026-10-28T13:32:12.739Z",
+    "s24": {
+      "views": 209,
+      "likes": 1,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-10-29T13:22:14.059Z"
+    }
+  },
+  "18083577326374964": {
+    "postedAt": "2026-10-28T13:40:32.453Z",
+    "s24": {
+      "views": 129,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-10-29T13:22:14.059Z"
     }
   }
 }
