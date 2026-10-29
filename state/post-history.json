@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-08-31T11:52:00.843Z",
-    "topic": "まつげパーマ直後に触りたくなる衝動",
-    "text": "パーマかけた日ほど、まつげ触りたくなる罠\n蒲田西口歩きながらも無意識に指伸びてる自分いる",
-    "postId": "18136949869613345",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 20,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-08-31T12:00:17.478Z",
     "topic": "洗足池でぼーっとする贅沢",
     "text": "洗足池、木陰のベンチ争奪戦が地味に激しい\n\n何もしてないのに贅沢な気持ちになるの、これ私だけ？",
@@ -5996,6 +5981,21 @@
       "kamata": true,
       "newsRiding": false,
       "slotHour": 22,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-10-29T07:31:57.455Z",
+    "topic": "空っ風の日のメイク崩れは乾燥ヨレが原因",
+    "text": "空っ風でメイク崩れるの、実は皮脂じゃなく乾燥なんだよね\n\n乾いた肌の上に粉がのると皮溝に沿ってヨレるだけ\n\n崩れやすい日の対処法ってみんなどうしてる?",
+    "postId": "17913944193544219",
+    "features": {
+      "hook": "逆説",
+      "length": "M",
+      "ending": "開いた質問",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 16,
       "weekend": false
     }
   }
