@@ -1,50 +1,5 @@
 [
   {
-    "date": "2026-09-02T06:16:04.025Z",
-    "topic": "まつげの向きと目元の疲れ",
-    "text": "1mm、まつげの向きが変わるだけで目元の疲れ方が変わる\n\n蒲田駅の反射ガラスで見るたび、下向いてるだけで老けて見えがち",
-    "postId": "17898553734375649",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 15,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-09-02T11:12:15.629Z",
-    "topic": "眉の生やす派と整える派",
-    "text": "わかる、眉を生やすか整えるかで永遠に迷う気持ち\n\n結局その日の気分で両方やる人が一番仕上がり早いんだよね",
-    "postId": "18127760089775585",
-    "features": {
-      "hook": "共感",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": false,
-      "newsRiding": true,
-      "slotHour": 20,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-09-02T11:20:28.606Z",
-    "topic": "蒲田の口コミ文化",
-    "text": "蒲田で10年続いてる店、看板より前を通る人の会話で覚えた\n\nああここ評判いいんだって知るの大体人づて\nこれ地元あるあるじゃない？🌱",
-    "postId": "18379252678227529",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 20,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-09-02T11:28:49.199Z",
     "topic": "眉が決まってる日はメイクが薄めでもちゃんとしてる感が出る不思議",
     "text": "眉さえ整ってれば手抜きメイクもバレない説、地味に信じてる\n\n蒲田駅前ですれ違う人でもなんとなくわかるよね\n\nこれ私だけ？",
@@ -5996,6 +5951,51 @@
       "kamata": false,
       "newsRiding": true,
       "slotHour": 16,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-10-31T13:35:24.807Z",
+    "topic": "朝のアイメイク崩れとアイクリームの量",
+    "text": "朝アイメイク崩れる人、実は前夜のアイクリーム盛りすぎなだけなんだよね\n\n目元の皮膚は薄いから油分吸収しきれなくて翌朝も表面に浮いてる\nそこにアイシャドウ重ねるから昼前には皮脂と混ざってヨレる\n\n蒲田から大森まで歩く朝、鏡見るたび気になってた",
+    "postId": "17937346605406912",
+    "features": {
+      "hook": "逆説",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 22,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-10-31T13:43:37.273Z",
+    "topic": "眉山の位置で印象が変わる眉尻の描き方",
+    "text": "眉尻描き足すとき、眉山1mm外側にずらすと一気に垢抜けるやつ\n\n角度より位置がブレてるだけなんだよね\n\n蒲田西口の鏡苦手な照明でも意外とバレる差",
+    "postId": "18129589463493164",
+    "features": {
+      "hook": "共感",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": false,
+      "slotHour": 22,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-10-31T13:51:49.578Z",
+    "topic": "まつげパーマ後のビューラー使用",
+    "text": "まつげパーマしてるのにビューラー使っちゃう人いる?\n根元のカール、それで潰れてるだけなんだよね\nみんなはパーマ後どう仕上げてる?",
+    "postId": "18078963647443838",
+    "features": {
+      "hook": "意見募集",
+      "length": "M",
+      "ending": "開いた質問",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 22,
       "weekend": true
     }
   }
