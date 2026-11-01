@@ -1,50 +1,5 @@
 [
   {
-    "date": "2026-09-03T06:21:25.641Z",
-    "topic": "涙袋メイクより眉を整える方が印象は変わるという説",
-    "text": "3秒、涙袋より先に見られてるのは眉の角度\n\n蒲田駅の反射ガラスで確認するの、大体眉が先なんだよね",
-    "postId": "18104446640602365",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 15,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-09-03T06:29:38.207Z",
-    "topic": "台風シーズンの前髪と眉の心配",
-    "text": "台風前、傘より先に前髪と眉を心配してる人へ\n\n蒲田駅の風、西口側だけ妙に強くて崩れるの早い気がする\n\nこれ私だけ？",
-    "postId": "18013957241743260",
-    "features": {
-      "hook": "問題提起",
-      "length": "M",
-      "ending": "共感確認",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 15,
-      "weekend": false
-    }
-  },
-  {
-    "date": "2026-09-03T11:26:39.094Z",
-    "topic": "残暑なのに気分だけ秋メイクになる矛盾",
-    "text": "31℃なのに鏡の中の私だけ秋色メイクしてる矛盾、これ何\n蒲田駅出た瞬間の熱気とチークの色が全然合ってない\nこれ私だけ？",
-    "postId": "17963675649188421",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "共感確認",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 20,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-09-03T11:34:51.213Z",
     "topic": "JR蒲田と京急蒲田、待ち合わせのたびに確認するあるある",
     "text": "待ち合わせで必ず聞くやつ、JR？京急？って蒲田民の合言葉だと思う\n\n800m離れてるだけで結構迷う距離なんだよね",
@@ -5996,6 +5951,51 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 15,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-11-01T13:50:30.839Z",
+    "topic": "寝ぐせとドライヤーの乾かす順番",
+    "text": "寝ぐせ直らない人、温度より乾かす順番でほぼ決まってるやつ\n\n根元から乾かさず毛先から始めると癖が固定されたまま仕上がるだけなんだよね",
+    "postId": "17906548833605778",
+    "features": {
+      "hook": "共感",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 22,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-11-01T13:58:47.467Z",
+    "topic": "涙袋コンシーラーの目尻崩れ",
+    "text": "夕方、目尻だけ涙袋コンシーラー消えてる人いる?\n皮脂より表情ジワで擦れてるだけなんだよね\n目尻って笑うたび動く分、下地が薄いと一瞬で持ってかれる\nみんなどうやって防いでる?",
+    "postId": "18160334593544762",
+    "features": {
+      "hook": "あるある",
+      "length": "L",
+      "ending": "開いた質問",
+      "kamata": false,
+      "newsRiding": false,
+      "slotHour": 22,
+      "weekend": true
+    }
+  },
+  {
+    "date": "2026-11-01T14:07:00.649Z",
+    "topic": "眉下のくすみと目元印象",
+    "text": "3割増し、眉下のくすみ飛ばすだけで目元の抜け感変わるやつ\n\n二重幅より先に見られてるの眉下の影だったりする\n\n乾燥し出すこの時期、皮膚薄い部分からくすみ出がち\n蒲田の朝の冷え込みでまぶた周りカサつく人も増えてきた",
+    "postId": "18101261537338499",
+    "features": {
+      "hook": "数字",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": true,
+      "newsRiding": true,
+      "slotHour": 22,
       "weekend": true
     }
   }
