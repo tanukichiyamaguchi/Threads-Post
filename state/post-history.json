@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-09-04T06:15:32.188Z",
-    "topic": "涙袋メイクより眉",
-    "text": "涙袋盛るのに10分かけて眉は放置、これ矛盾じゃない?\n\n田園調布の友人に指摘されて気づいた、顔の印象8割は眉だった\n\nこれ私だけ？",
-    "postId": "18354015949247454",
-    "features": {
-      "hook": "自己開示",
-      "length": "M",
-      "ending": "共感確認",
-      "kamata": true,
-      "newsRiding": true,
-      "slotHour": 15,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-09-04T11:17:04.230Z",
     "topic": "馬込の坂道とGoogleマップの距離感",
     "text": "馬込の坂、地図アプリの距離だけ信じて歩き出す人いる\n\n300mって出てても実際は坂道で体感600mなんだよな",
@@ -5996,6 +5981,21 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 19,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-11-04T01:48:24.486Z",
+    "topic": "寝ぐせが取れない原因は温度設定",
+    "text": "根元だけ寝ぐせ残る人、風量より温度高すぎるだけなんだよね\n\n高温は表面だけ乾いてキューティクル閉じちゃうから中の癖はそのまま固まるの\n\nみんな何度で乾かしてる?",
+    "postId": "18068103029790884",
+    "features": {
+      "hook": "あるある",
+      "length": "M",
+      "ending": "開いた質問",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 10,
       "weekend": false
     }
   }
