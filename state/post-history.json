@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-09-04T15:04:25.235Z",
-    "topic": "羽田の空港と町工場が同居する日常音",
-    "text": "10分おきの音、羽田住民はもう天気予報として使ってる\n\n風向きで音の大きさ変わるの、住んでるとなんとなく分かるようになってがち",
-    "postId": "17959561689216926",
-    "features": {
-      "hook": "数字",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 23,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-09-04T15:12:37.460Z",
     "topic": "口コミは数より中身を見る派",
     "text": "口コミの数より中身派、大森にも久が原にも地味にいる\n\n星4.8より、具体的な一文の方をみんな信じてるんだよね",
@@ -5996,6 +5981,21 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 10,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-11-06T08:55:05.197Z",
+    "topic": "前髪のうねりは乾かす方向が原因",
+    "text": "前髪だけ浮く人、乾かす時に下から風当ててるだけなんだよね\n\n根元は上から下に風を送って流れを作るのが正解\n温度じゃなくて向きで決まるやつ",
+    "postId": "17994731766101318",
+    "features": {
+      "hook": "共感",
+      "length": "M",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 17,
       "weekend": false
     }
   }
