@@ -1,88 +1,4 @@
 {
-  "18117426635061225": {
-    "postedAt": "2026-10-19T14:28:01.255Z",
-    "s24": {
-      "views": 71,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-10-20T17:21:44.242Z"
-    },
-    "s72": {
-      "views": 76,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-10-22T12:07:37.056Z"
-    }
-  },
-  "18193897321392238": {
-    "postedAt": "2026-10-19T14:36:14.514Z",
-    "s24": {
-      "views": 273,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-10-20T17:21:44.242Z"
-    },
-    "s72": {
-      "views": 275,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-10-22T12:07:37.056Z"
-    }
-  },
-  "18129728524878192": {
-    "postedAt": "2026-10-19T14:44:27.556Z",
-    "s24": {
-      "views": 160,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-10-20T17:21:44.242Z"
-    },
-    "s72": {
-      "views": 163,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-10-22T12:07:37.056Z"
-    }
-  },
-  "18118167076803565": {
-    "postedAt": "2026-10-19T14:52:41.350Z",
-    "s24": {
-      "views": 151,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-10-20T17:21:44.242Z"
-    },
-    "s72": {
-      "views": 157,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-10-22T12:07:37.056Z"
-    }
-  },
   "17910792924309737": {
     "postedAt": "2026-10-20T05:26:31.274Z",
     "s24": {
@@ -1479,6 +1395,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-11-08T01:33:27.878Z"
+    },
+    "s72": {
+      "views": 180,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-11-09T20:52:10.521Z"
     }
   },
   "18119128036798118": {
