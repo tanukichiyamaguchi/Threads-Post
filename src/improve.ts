@@ -1,3 +1,4 @@
+import { clip } from "./text";
 import { env } from "./config";
 import {
   researchTrendingTopics,
@@ -147,7 +148,7 @@ async function main(): Promise<void> {
   const week = daysAgoStr(now.dateStr, 7);
   const recentScored: Array<ScoredPost & { hook?: string }> = [];
   for (const h of history) {
-    if (!h.postId || h.date.slice(0, 10) < week) continue;
+    if (!h.postId || h.purpose === "appeal" || h.date.slice(0, 10) < week) continue;
     const snap = store[h.postId]?.s24;
     if (!snap) continue;
     recentScored.push({ text: h.text, score: snap.views, hook: h.features?.hook });
@@ -156,7 +157,7 @@ async function main(): Promise<void> {
   const top = recentScored.slice(0, 6);
   const weak = recentScored.slice(-6).reverse();
   if (top.length) {
-    log(`直近7日トップ投稿 (views24h=${top[0].score}): ${top[0].text.replace(/\n/g, " ").slice(0, 40)}`);
+    log(`直近7日トップ投稿 (views24h=${top[0].score}): ${clip(top[0].text.replace(/\n/g, " "), 40)}`);
   } else {
     log("※ まだ24時間齢スナップショットがありません（metricsジョブの蓄積待ち）。");
   }
@@ -181,7 +182,7 @@ async function main(): Promise<void> {
     if (t.score <= 0 || topExamples.length >= 4) break;
     const hook = t.hook ?? "unknown";
     if (usedHooks.has(hook)) continue;
-    const opener = t.text.split("\n")[0].slice(0, 10);
+    const opener = clip(t.text.split("\n")[0], 10);
     if (usedOpeners.some((o) => o === opener)) continue;
     usedHooks.add(hook);
     usedOpeners.push(opener);

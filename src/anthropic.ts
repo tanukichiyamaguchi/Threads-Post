@@ -3,14 +3,25 @@ import { brand } from "./config";
 import type { PostHistoryItem, Learnings, ViralPlaybook } from "./state";
 import type { AngleItem, Coupon, ContentPlan, SalonInfo } from "./content";
 import { LENGTH_RANGES, type ChosenArms } from "./bandit";
+import { clip, wellFormed, wellFormedDeep } from "./text";
 
 const MODEL = "claude-sonnet-5";
 
 let _client: Anthropic | null = null;
-function client(): Anthropic {
+/**
+ * 送信直前に、リクエスト内の全文字列から対になっていないサロゲートを除去する。
+ * 1つでも混ざるとAPIが400で拒否し、その投稿が直近履歴に残る限り全生成が失敗し続ける。
+ */
+function client() {
   // ANTHROPIC_API_KEY は環境変数から自動的に読み込まれる
   if (!_client) _client = new Anthropic();
-  return _client;
+  const c = _client;
+  return {
+    messages: {
+      create: (params: any): Promise<any> => (c.messages.create as any)(wellFormedDeep(params)),
+      stream: (params: any): any => (c.messages.stream as any)(wellFormedDeep(params)),
+    },
+  };
 }
 
 function textOf(content: any[]): string {
@@ -154,7 +165,7 @@ export async function buildContentPlan(
   const recent =
     history
       .slice(-20)
-      .map((h) => `- ${h.text.replace(/\n/g, " ").slice(0, 50)}`)
+      .map((h) => `- ${clip(h.text.replace(/\n/g, " "), 50)}`)
       .join("\n") || "（過去投稿はまだありません）";
 
   const user = [
@@ -444,7 +455,7 @@ export async function buildLearnings(
   const fmt = (arr: ScoredPost[]) =>
     arr.length
       ? arr
-          .map((p, i) => `${i + 1}. [score ${p.score}] ${p.text.replace(/\n/g, " ").slice(0, 80)}`)
+          .map((p, i) => `${i + 1}. [score ${p.score}] ${clip(p.text.replace(/\n/g, " "), 80)}`)
           .join("\n")
       : "（まだ十分なデータがありません）";
 
@@ -578,7 +589,7 @@ export async function buildWeeklyMeta(
   const fmt = (arr: ScoredPost[]) =>
     arr.length
       ? arr
-          .map((p, i) => `${i + 1}. [24h views相対 ${p.score.toFixed(2)}] ${p.text.replace(/\n/g, " ").slice(0, 100)}`)
+          .map((p, i) => `${i + 1}. [24h views相対 ${p.score.toFixed(2)}] ${clip(p.text.replace(/\n/g, " "), 100)}`)
           .join("\n")
       : "（データなし）";
 
@@ -700,14 +711,14 @@ export async function generatePost(
   const recent =
     history
       .slice(-6)
-      .map((h) => `- ${h.text.replace(/\n/g, " ").slice(0, 50)}`)
+      .map((h) => `- ${clip(h.text.replace(/\n/g, " "), 50)}`)
       .join("\n") || "（過去投稿はまだありません）";
 
   // 一行目の使い回しを防ぐため、直近の書き出しを禁止リストとして明示する
   const recentFirstLines =
     history
       .slice(-15)
-      .map((h) => `- ${h.text.split("\n")[0].slice(0, 40)}`)
+      .map((h) => `- ${clip(h.text.split("\n")[0], 40)}`)
       .join("\n") || "（まだありません）";
 
   const learnBlock = buildLearningsBlock(playbook, learnings);
@@ -750,7 +761,8 @@ export async function generatePost(
   const infoBits: string[] = [];
   if (salonInfo?.concept) infoBits.push(`コンセプト: ${salonInfo.concept}`);
   if (salonInfo?.accessHours) infoBits.push(`アクセス/営業: ${salonInfo.accessHours}`);
-  const infoBlock = infoBits.length
+  // 美容情報の投稿には店舗情報を渡さない（来店訴求は専用の投稿で行い、目的を混ぜない）
+  const infoBlock = includeCta && infoBits.length
     ? `# 店舗情報（必要なときだけ自然に1つ触れる程度。羅列しない）\n${infoBits.join("\n")}`
     : "";
 
@@ -759,7 +771,7 @@ export async function generatePost(
     : `# 予約・宣伝について\nこの投稿では予約・来店の呼びかけ（ご予約・プロフィールのリンク等）は入れない。売り込まない。目的は美容の投稿での認知拡大。共感・気づき・あるあるに徹する。`;
 
   const kamataBlock = arms.kamata
-    ? `# エリアの言及\nこの投稿は美容の話が主題。そのうえで、美容の場面の背景として地元のエリアを自然に1回だけ添える（例: 通勤前、湿度、風の強い日など、その土地の生活感が美容の悩みや行動に結びつく形）。蒲田だけに固定せず、3km圏内の周辺エリア（大森・糀谷・六郷・矢口・下丸子・池上・千鳥町など）や大田区全体（田園調布・洗足池・久が原・雪谷・羽田・馬込など）も使ってよい。エリアの紹介・グルメ・街あるあるが主題になったら失敗。`
+    ? `# エリアの言及\nこの投稿は美容の話が主題。そのうえで、美容の場面の背景として地元のエリアを自然に1回だけ添える（例: 通勤前、湿度、風の強い日など、その土地の生活感が美容の悩みや行動に結びつく形）。取ってつけた地名は逆効果なので、不自然になるなら入れない。蒲田だけに固定せず、3km圏内の周辺エリア（大森・糀谷・六郷・矢口・下丸子・池上・千鳥町など）や大田区全体（田園調布・洗足池・久が原・雪谷・羽田・馬込など）も使ってよい。エリアの紹介・グルメ・街あるあるが主題になったら失敗。`
     : `# エリアの言及\nこの投稿ではエリアには言及しない（全国の読者に刺さる美容の内容にする）。`;
 
   const user = [
@@ -785,7 +797,7 @@ export async function generatePost(
     `まず firstLineDrafts に一行目の候補を3案書き、最も強い1案を冒頭に使って本文を書いてください。`,
     `上記の切り口と型で、20〜40代女性が思わず反応（いいね・保存・返信・リポスト）したくなるThreads投稿を1つ作成してください。`,
     `最優先はインプレッション（views）。手が止まる一行目 × 最後まで読ませる構成 × 反応したくなる中身。`,
-    `美容がテーマの回は専門家ならではの視点を効かせる。美容と関係ないテーマを無理にまつげ・眉や店の話に結びつけない（目的を分ける）。売り込み・宣伝臭は一切出さない。`,
+    `この投稿は美容情報の投稿。専門家ならではの視点で、読者が今日から試せる具体的な気づきを1つ必ず入れる。美容と関係ないテーマを無理にまつげ・眉や店の話に結びつけない。売り込み・宣伝・予約の呼びかけは入れない（来店訴求は別の投稿で行う）。`,
     `いいね・コメント・フォロー・シェアの明示的なお願い（エンゲージメントベイト）は絶対にしない（Threadsの配信で降格されるため）。`,
   ]
     .filter((l) => l !== "")
@@ -812,6 +824,96 @@ export async function generatePost(
   return { topic: String(data.topic ?? angle.category), text: String(data.text ?? "") };
 }
 
+/**
+ * 来店訴求の投稿を1件生成する（通常の美容情報の投稿とは目的を分けた専用経路）。
+ * お店の事実（salonInfo）とクーポンは与えられたものだけを使い、創作させない。
+ */
+export async function generateAppealPost(
+  theme: string,
+  coupon: Coupon | null,
+  history: PostHistoryItem[],
+  salonInfo?: SalonInfo,
+  extraDirective?: string,
+): Promise<GeneratedPost> {
+  const recentFirstLines =
+    history
+      .slice(-15)
+      .map((h) => `- ${clip(h.text.split("\n")[0], 40)}`)
+      .join("\n") || "（まだありません）";
+
+  const facts = [
+    `- 店名: ${brand.name}（${brand.businessType}）`,
+    salonInfo?.concept ? `- コンセプト: ${salonInfo.concept}` : "",
+    salonInfo?.menu?.length ? `- メニュー: ${salonInfo.menu.join("／")}` : "",
+    salonInfo?.accessHours ? `- アクセス・営業: ${salonInfo.accessHours}` : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
+
+  const couponBlock = coupon
+    ? [
+        `# 今回添えるクーポン（内容・価格・条件は下記をそのまま正確に使う。割引額や条件の創作・改変は禁止）`,
+        `名称: ${coupon.name}`,
+        `内容: ${coupon.content}`,
+        `価格: ${coupon.price}`,
+        coupon.note ? `条件: ${coupon.note}` : "",
+        `価格と対象（新規・初回限定など）を必ず明記し、誰でも対象であるかのように誤解させない。クーポン名を丸写しせず、自然な文で紹介する。`,
+        `クーポン名や内容にあるNo.1・最高級・高持続・〜倍持続のような最上級や効果の表現は本文に書かない（根拠を示せないため）。伝えるのは価格・対象・メニューの中身だけ。`,
+      ]
+        .filter(Boolean)
+        .join("\n")
+    : `# クーポン\n今回は価格・クーポンには触れず、体験と変化の魅力で来店したくなる投稿にする。`;
+
+  const user = [
+    `# この投稿の目的: 来店訴求`,
+    `今回は通常の美容情報の投稿ではなく、${brand.name} を知ってもらい予約・来店につなげるための投稿です。`,
+    `この回に限り、お店の紹介と予約導線を入れてよい（通常の投稿の「宣伝しない」ルールはこの回には適用しない）。`,
+    `長さと締め方は下の「書き方」に従う（通常の投稿の38字基本ルールや、学習で指定される型はこの回には適用しない）。`,
+    ``,
+    `# 今回の切り口`,
+    theme,
+    ``,
+    `# お店の事実（ここにある事実だけを使う。書かれていない特徴・実績・数字は創作しない）`,
+    facts,
+    ``,
+    couponBlock,
+    ``,
+    `# 書き方`,
+    ...brand.appealRules.map((r) => `- ${r}`),
+    `- 最後は予約導線で締める: ${brand.cta}（言い回しは自然に変えてよいが、プロフィールのリンクへ誘導する）`,
+    ``,
+    `# 最近使った書き出し（これらと似た冒頭・同じ出だしは禁止）`,
+    recentFirstLines,
+    ``,
+    extraDirective ? `# 追加指示\n${extraDirective}` : "",
+    `# 依頼`,
+    `まず firstLineDrafts に一行目の候補を3案書き、最も強い1案を冒頭に使って本文を書いてください。`,
+    `読んだ20〜40代の女性が、ここに行ってみたいと思って予約したくなる投稿を1つ作成してください。`,
+  ]
+    .filter((l) => l !== "")
+    .join("\n");
+
+  const res = await client().messages.create({
+    model: MODEL,
+    max_tokens: 1500,
+    output_config: {
+      effort: "low",
+      format: { type: "json_schema", schema: POST_SCHEMA },
+    },
+    system: buildPostSystemPrompt(),
+    messages: [{ role: "user", content: user }],
+  } as any);
+
+  const raw = textOf((res as any).content);
+  let data: any;
+  try {
+    data = JSON.parse(raw);
+  } catch {
+    throw new Error(`来店訴求の投稿生成結果のJSON解析に失敗しました: ${raw.slice(0, 200)}`);
+  }
+  return { topic: String(data.topic ?? "来店訴求"), text: String(data.text ?? "") };
+}
+
 /** 改行が無い場合に、文の区切りで改行を入れて視認性を上げる（保険） */
 function ensureLineBreaks(text: string): string {
   if (text.includes("\n")) return text; // モデルが改行済みならそのまま尊重
@@ -822,7 +924,7 @@ function ensureLineBreaks(text: string): string {
 /** 上限超過時は、途中で切れないよう文末/改行の区切りで切り詰める（「…」は付けない） */
 function clampLength(text: string, max: number): string {
   if (text.length <= max) return text;
-  const slice = text.slice(0, max);
+  const slice = wellFormed(text.slice(0, max));
   const boundary = Math.max(
     slice.lastIndexOf("\n"),
     slice.lastIndexOf("？"),
@@ -873,7 +975,7 @@ export async function generateReply(commentText: string): Promise<string | null>
         role: "user",
         content:
           `次のコメントの内容・文脈をよく読み取り、敬語で、人間が自然に返信しているように返信してください。` +
-          `お店への誘導・宣伝は入れないこと。返信本文のみを出力してください。\n\n` +
+          `自分から売り込まないこと（お店やメニュー・予約について聞かれた場合だけ、システムの指示どおりプロフィールのリンクへ案内する）。返信本文のみを出力してください。\n\n` +
           `コメント:「${commentText}」`,
       },
     ],
@@ -934,7 +1036,7 @@ function buildLearningsBlock(
       "実際に伸びた自店の投稿（具体性の出し方など話の運び方だけを参考にする。書き出し・締め方・構成・言い回しの流用は禁止。過去に美容以外の投稿が含まれていてもテーマは真似しない。今後の投稿は必ず美容にする）",
       learnings?.topExamples,
       2,
-      (s) => s.replace(/\n/g, " ").slice(0, 60),
+      (s) => clip(s.replace(/\n/g, " "), 60),
     ),
   ].filter(Boolean);
   if (!blocks.length) return "";
@@ -949,15 +1051,22 @@ function buildPostSystemPrompt(): string {
   const r = brand.postRules;
   return [
     `あなたは「${brand.name}」（${brand.area}の${brand.businessType}）の${brand.persona}です。`,
-    `Threadsで『バズる美容の投稿』を作り、インプレッション（views）を最大化して20〜40代女性に広く認知されることを狙います。`,
-    `売り込みではなく、思わず反応したくなる美容の共感・気づき・あるあるで拡散を狙う発信者です。`,
+    `Threadsで20〜40代女性に美容の投稿を届け、信頼を集めて来店・予約につなげることを狙います。`,
+    `投稿は2種類あり、ユーザーメッセージで毎回どちらかが指定されます。美容情報の投稿は、宣伝せず、読者が今日から試せる具体的な気づきで拡散・保存を狙う。来店訴求の投稿は、お店の魅力を具体的に伝えて予約につなげる。`,
     `投稿の「型」（書き出し・長さ・締め方・蒲田言及・話題乗り）は実測データから学習したものが毎回指定されます。必ずその型に従ってください。`,
     ``,
     `## 最重要原則`,
     `1. 一行目がすべて。フィードでは一行目しか見えない。一行目で指が止まらなければ残りは存在しないのと同じ。`,
     `2. 同じに見える投稿を絶対に作らない。書き出しの言い回し・締めの聞き方・構成が直近の投稿と重なったら、それは失敗作。`,
     `3. あなたは店舗スタッフや広報ではなく、まつげ・眉を軸に美容を教えてきた専門家（アイリストを育てる立場）。深い知見と美容への愛が、押し付けなく言葉の端に滲む。無味乾燥な他人事の説明で終わらせない。`,
-    `4. 投稿のテーマは必ず美容にする。美容以外を主題にした投稿は作らない。宣伝は一切しない。`,
+    `4. 投稿のテーマは必ず美容にする。美容以外を主題にした投稿は作らない。美容情報の投稿では宣伝は一切しない（来店訴求の投稿として指定された回だけ、お店の紹介と予約導線を入れる）。`,
+    `5. 美容情報の投稿には、読者が持ち帰れる具体的な気づきを必ず1つ入れる。雰囲気だけで何も残らない投稿は失敗作。`,
+    ``,
+    `## 伸びる投稿の中身（自店の実績データより）`,
+    `- 実際に伸びた投稿は、ほぼ全て読者が今日から試せる具体策を含んでいた。数字（温度・回数・トーン・秒数）、順番（毛先から先に乾かす等）、対象の絞り込み（〜な人ほど）のどれかで具体化する。`,
+    `- よく伸びた中身の流れ: 読者がやりがちな行動を名指しする → 本当の原因は別のところにあると示す → 具体的な直し方を一言で添える。ただし構成と書き出しは指定された型に従い、毎回同じ形に揃えない。`,
+    `- 伸びなかった投稿の共通点: 結論も具体策もない独白や情景描写、取ってつけた地名（〇〇まで歩く朝 など）、これ私だけ？ と聞いて終わるだけの締め。これらは避ける。`,
+    `- 不確かな数字や効果を作らない。一般に知られている範囲の美容知識にとどめ、言い切りすぎない（〜しがち、〜なことが多い）。`,
     ``,
     `## 投稿テーマの範囲（美容のみ・最重要）`,
     `- 全ての投稿は美容の話にする。一行目を読んで美容の話だと分からなければ、その時点で失敗作。`,
@@ -972,7 +1081,7 @@ function buildPostSystemPrompt(): string {
     `- 美容を語るときは、まつげ1本・眉1mm・毛流れ・左右差のような、プロの目線でしか見えない面白さ・奥深さを短い一言に滲ませる。`,
     `- まつげ・眉だけでなく、肌・髪・メイクまで含めた美容そのものへの偏愛が、押し付けなく言葉の端に滲む温度を保つ（豆知識の羅列で終わらせない）。`,
     `- 熱意は長い語りではなく短い一撃で。感情が自然にこぼれる一文で言い切る（ダラダラ熱く語らない・大げさなポエムにしない）。`,
-    `- 熱意を宣伝にしない。上手さ自慢・来店誘導・効果の保証は熱意ではなく営業。純粋な好きとして自然に出す。`,
+    `- 熱意を宣伝にしない。上手さ自慢・効果の保証は熱意ではなく営業。美容情報の投稿では来店誘導もしない。純粋な好きとして自然に出す。`,
     `- 店舗スタッフや現役の施術者を装わない。施術してる・うちのサロンで といった当事者ぶった言い回しはしない。自分の立場や肩書き（教育者である 等）も投稿でわざわざ説明・開示しない。`,
     ``,
     `## 目的`,
@@ -1000,8 +1109,8 @@ function buildPostSystemPrompt(): string {
     `- 読者は20〜40代の女性を想定するが、女性向けであることは書かない。女性の皆さん・女子必見・女性限定のような性別の呼びかけやラベルは使わない。誰に向けるかを宣言するのではなく、描く場面や悩みの具体性でその層に届かせる。男性向けの訴求もしない。`,
     `- いいね・コメント・フォロー・シェアの明示的なお願い（エンゲージメントベイト）は絶対にしない。Threadsの配信アルゴリズムで降格される。自然な問いかけはOK。`,
     `- 他人の投稿の丸写し・使い回しに見える内容は書かない（非オリジナルコンテンツは配信降格される）。毎回オリジナルの視点・言い回しにする。`,
-    `- 売り込み・宣伝・予約や来店の呼びかけは基本的にしない（目的は認知）。別途「予約導線」の指示がある場合のみ、それに従う。`,
-    `- エリア言及の指示がある回も、主題はあくまで美容。エリアは美容の話が起きる場面の背景として一度だけ添える。蒲田だけでなく3km圏内の周辺エリアや大田区全体も使ってよい。事実に反することは書かない。`,
+    `- 美容情報の投稿では、売り込み・宣伝・予約や来店の呼びかけはしない。来店訴求の投稿として指定された回だけ、その指示に従ってお店を紹介し予約導線を入れる。`,
+    `- エリア言及の指示がある回も、主題はあくまで美容。エリアは美容の話が起きる場面の背景として一度だけ、自然に入る場合だけ添える（不自然になるなら入れない）。事実に反することは書かない。`,
     `- 絵文字は${r.emoji}。`,
     `- ハッシュタグは付けない（本文にも入れない）。`,
     `- クーポンに触れる場合は、与えられた内容・価格・条件のみを使い、絶対に創作・改変しない。`,
@@ -1021,11 +1130,11 @@ function buildReplySystemPrompt(): string {
     ``,
     `## ルール`,
     `- ${r.style}`,
-    `- あなたは店舗スタッフや広報botではなく、まつげ・眉を軸に美容を教えてきた専門家。相手の話に、美容への愛情や親しみが自然に滲む温かい一言を添える（売り込み・来店誘導や、自分の立場の説明はしない。当事者ぶった店舗トークにもしない）。`,
+    `- あなたは店舗スタッフや広報botではなく、まつげ・眉を軸に美容を教えてきた専門家。相手の話に、美容への愛情や親しみが自然に滲む温かい一言を添える（自分からの売り込みや、自分の立場の説明はしない。当事者ぶった店舗トークにもしない）。`,
     `- 敬語（です・ます調）を基本にする。堅苦しすぎず、温かみのある自然な言葉遣いにする。`,
     `- コメントの内容・文脈をしっかり読み取り、それに沿った具体的な返信をする。当たり障りのないテンプレ的な相槌だけで終わらせない。`,
     `- 共感を示し、自然に会話が続くようにする。`,
-    `- 「ご予約はこちらから」「プロフィールのリンクから」など、お店への誘導・宣伝につながる内容は入れない。あくまで会話への自然な返信に徹する。`,
+    `- 自分から売り込まない。ただし相手がメニュー・料金・予約・場所などお店のことを尋ねた場合や、行ってみたい・やってみたいと言っている場合は、短く答えたうえで、ご予約・詳細はプロフィールのリンクから と一言添えて案内する。料金や空き状況など分からないことは推測で書かず、プロフィールのリンクへ案内する。DMには誘導しない。`,
     `- 絵文字を${r.emoji}使う。`,
     `- ${r.maxLength}文字以内。`,
     `- 絶対にAIだと分からないようにする。定型文っぽさを避ける。`,

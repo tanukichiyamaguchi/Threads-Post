@@ -27,6 +27,9 @@ export interface Brand {
   services: string[];
   cta: string;
   postMode?: "awareness" | "conversion";
+  appealPostsPerDay: number; // 1日の投稿のうち来店訴求に充てる件数（残りは美容情報の投稿）
+  appealThemes: string[]; // 来店訴求の切り口（日替わりで順に使う）
+  appealRules: string[]; // 来店訴求の書き方
   goal: string;
   contentMix: string;
   prohibitions: string[];
@@ -44,6 +47,9 @@ export interface Brand {
 }
 
 export const brand: Brand = JSON.parse(fs.readFileSync(paths.brand, "utf8"));
+brand.appealPostsPerDay = Math.max(0, Math.floor(Number(brand.appealPostsPerDay) || 0));
+brand.appealThemes = Array.isArray(brand.appealThemes) ? brand.appealThemes : [];
+brand.appealRules = Array.isArray(brand.appealRules) ? brand.appealRules : [];
 
 function req(name: string): string {
   const v = process.env[name];

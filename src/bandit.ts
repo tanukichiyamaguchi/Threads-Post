@@ -179,9 +179,11 @@ const QUOTAS: Record<string, Record<string, { floor: number; cap: number }>> = {
     開いた質問: { floor: 0.05, cap: 0.18 },
     言い切り: { floor: 0.65, cap: 0.82 },
   },
+  // 美容のみ方針後の実績で、地名ありの投稿は中央値148 views・なしは182 views。取ってつけた地名が
+  // 下位に集中したため、エリア言及は1日に最大3割・最低ゼロに抑える。
   kamata: {
-    あり: { floor: 0.3, cap: 0.7 },
-    なし: { floor: 0.3, cap: 0.7 },
+    あり: { floor: 0, cap: 0.3 },
+    なし: { floor: 0.7, cap: 1 },
   },
   newsRiding: {
     乗る: { floor: 0.15, cap: 0.6 },

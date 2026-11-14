@@ -19,7 +19,13 @@ fi
 git commit -m "${MESSAGE}" || { echo "コミットなし"; exit 0; }
 
 for i in 1 2 3; do
-  git pull --rebase --autostash origin "${BRANCH}" || true
+  if ! git pull --rebase --autostash origin "${BRANCH}"; then
+    # 衝突で止まったリベースのままpushすると、何も送らずに成功扱いになってしまう
+    git rebase --abort 2>/dev/null || true
+    echo "リベースが衝突しました。再試行 ${i}/3"
+    sleep $((i * 3))
+    continue
+  fi
   if git push origin "HEAD:${BRANCH}"; then
     echo "状態をプッシュしました。"
     exit 0

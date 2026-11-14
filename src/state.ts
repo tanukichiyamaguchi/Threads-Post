@@ -52,7 +52,8 @@ export interface PostHistoryItem {
   topic: string;
   text: string;
   postId?: string;
-  features?: PostFeatures; // 学習用の型タグ（生成時に記録）
+  features?: PostFeatures; // 学習用の型タグ（生成時に記録）。来店訴求の投稿には付けない
+  purpose?: "appeal"; // 来店訴求の投稿。美容情報の投稿の学習（型・お手本）からは除外する
 }
 
 /**
