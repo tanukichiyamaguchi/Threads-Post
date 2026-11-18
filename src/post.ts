@@ -319,7 +319,9 @@ async function main(): Promise<void> {
 
     // その日の全スロットぶんの型の割り当て表（クォータ制約つき・決定的）。
     // 1日の中で書き出し・締め方などが必ず混ざることを構造的に保証する。
-    const dayPlan = planDailyArms(model, now.seed, slots.length);
+    // 来店訴求の枠は型を使わないので、美容情報の枠だけでクォータを満たすように割り当てる
+    const contentSlots = slots.map((_, i) => i).filter((i) => !appealSlots.includes(i));
+    const dayPlan = planDailyArms(model, now.seed, Math.max(1, contentSlots.length));
 
     for (const slotIndex of batch) {
       // 連投防止の間隔は、待機をはさんだ場合も含めて直前の投稿から数える
@@ -342,7 +344,7 @@ async function main(): Promise<void> {
       tried++;
       try {
         if (appealOrdinal >= 0) await postAppeal(appealOrdinal);
-        else await postForSlot(slotIndex, includeCta, dayPlan[slotIndex]);
+        else await postForSlot(slotIndex, includeCta, dayPlan[contentSlots.indexOf(slotIndex)]);
         done++;
       } catch (e: any) {
         // 1件失敗しても残りは続行（該当スロットは消化済みなので再投稿されない）

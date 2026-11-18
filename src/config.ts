@@ -34,7 +34,7 @@ export interface Brand {
   contentMix: string;
   prohibitions: string[];
   postRules: {
-    maxLength: number; // 生成の安全上限（クランプ）。長さの選択は学習が行い、9割はS（38字以内）に固定
+    maxLength: number; // 生成の安全上限（クランプ）。長さの選択は学習とクォータが行う（src/bandit.ts）
     emoji: string;
     useHashtags: boolean;
   };

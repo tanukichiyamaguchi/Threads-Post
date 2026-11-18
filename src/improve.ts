@@ -30,6 +30,7 @@ import {
   ensureArms,
   applyDecay,
   ingestObservation,
+  measureLengthArm,
   updateArm,
   summarizeModel,
 } from "./bandit";
@@ -108,7 +109,8 @@ async function main(): Promise<void> {
       postId: h.postId,
       dateStr: h.date.slice(0, 10),
       text: h.text,
-      features: h.features,
+      // 長さの定義を変えても過去の記録と食い違わないよう、本文から測り直す
+      features: { ...h.features, length: measureLengthArm(h.text) },
       views24: snap.views,
       reward: 0,
     });

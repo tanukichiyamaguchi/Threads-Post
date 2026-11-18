@@ -28,15 +28,13 @@ export const DIMENSIONS: Record<string, string[]> = {
 };
 
 /**
- * 長さアームの文字数レンジ（プロンプト指示・実測判定の両方で使う）。
- * 実測データで短文がM・Lを大きく上回ったこと、および運用者の指定
- * 「投稿の9割は38文字以内」を反映。S(〜38字)を基本形とし、
- * M/Lは残り約1割の実験枠としてのみ残す（QUOTAS.lengthで9割を強制保証）。
+ * 長さアームの文字数レンジ（改行を除く。プロンプト指示・実測判定の両方で使う）。
+ * 運用者指定「よく伸びる方を優先」により、実績で大きく伸びた40〜70字前後を中心に区切る。
  */
 export const LENGTH_RANGES: Record<string, { min: number; max: number; label: string }> = {
-  S: { min: 12, max: 38, label: "38文字以内の一撃短文（一文〜二文で完結）" },
-  M: { min: 39, max: 80, label: "39〜80文字の短文" },
-  L: { min: 81, max: 160, label: "81〜160文字の中文" },
+  S: { min: 25, max: 50, label: "50文字以内の短文（意外な気づき＋一言の補足）" },
+  M: { min: 51, max: 75, label: "51〜75文字（気づき＋原因か具体策）" },
+  L: { min: 76, max: 110, label: "76〜110文字（気づき＋原因＋具体策）" },
 };
 
 export const EXPLORE_RATE = 0.15; // 基本の探索率（データが十分溜まった後の値）
@@ -166,18 +164,19 @@ const QUOTAS: Record<string, Record<string, { floor: number; cap: number }>> = {
       (a) => [a, { floor: 0.05, cap: 0.25 }],
     ),
   ),
-  // 運用者指定: 投稿の9割は38文字以内（= Sのfloor 0.9で強制保証・cap 0.93で
-  // M/L合計に最低7%程度の実験枠を残し、長さの学習シグナル自体は生かし続ける）。
+  // 運用者指定「よく伸びる方を優先」。美容のみ方針後の329投稿で、300views超えの割合は
+  // 39〜55字 24% / 56〜70字 19% / 71〜85字 16% / 86〜100字 7% / 101字〜 3%。
+  // そこで1日の美容情報の投稿のうち S・M を各1件以上、L（76字〜）は最大1/3に抑える。
   length: {
-    S: { floor: 0.9, cap: 0.93 },
-    M: { floor: 0.03, cap: 0.08 },
-    L: { floor: 0, cap: 0.05 },
+    S: { floor: 0.34, cap: 0.66 },
+    M: { floor: 0.34, cap: 0.66 },
+    L: { floor: 0, cap: 0.33 },
   },
   ending: {
     二択質問: { floor: 0.04, cap: 0.15 },
     共感確認: { floor: 0.03, cap: 0.12 },
     開いた質問: { floor: 0.05, cap: 0.18 },
-    言い切り: { floor: 0.65, cap: 0.82 },
+    言い切り: { floor: 0.67, cap: 0.82 }, // 美容情報の投稿が1日3件でも2件以上を保証
   },
   // 美容のみ方針後の実績で、地名ありの投稿は中央値148 views・なしは182 views。取ってつけた地名が
   // 下位に集中したため、エリア言及は1日に最大3割・最低ゼロに抑える。
@@ -325,7 +324,7 @@ export function chooseArms(model: BanditModel, seed: number): ChosenArms {
 
 /** 実文から長さアームを実測判定する（枠を超えても最上位アームに丸め、学習データを捨てない） */
 export function measureLengthArm(text: string): string {
-  const len = text.length;
+  const len = Array.from(text.replace(/\n/g, "")).length;
   if (len <= LENGTH_RANGES.S.max) return "S";
   if (len <= LENGTH_RANGES.M.max) return "M";
   return "L";
