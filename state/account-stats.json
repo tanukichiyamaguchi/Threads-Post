@@ -823,11 +823,12 @@
     "date": "2026-11-18",
     "followers": 1029,
     "postsPerDay": 5,
-    "accountViews": 657
+    "accountViews": 698
   },
   {
     "date": "2026-11-19",
     "followers": 1029,
-    "postsPerDay": 5
+    "postsPerDay": 5,
+    "accountViews": 86
   }
 ]

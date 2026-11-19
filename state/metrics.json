@@ -1,25 +1,4 @@
 {
-  "17913944193544219": {
-    "postedAt": "2026-10-29T07:31:57.455Z",
-    "s24": {
-      "views": 169,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-10-30T06:04:01.078Z"
-    },
-    "s72": {
-      "views": 170,
-      "likes": 0,
-      "replies": 0,
-      "reposts": 0,
-      "quotes": 0,
-      "shares": 0,
-      "fetchedAt": "2026-11-01T06:27:52.707Z"
-    }
-  },
   "18113622416593987": {
     "postedAt": "2026-10-29T14:36:56.253Z",
     "s24": {
@@ -882,6 +861,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-11-17T13:39:33.610Z"
+    },
+    "s72": {
+      "views": 140,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-11-19T13:35:08.804Z"
     }
   },
   "18124596421946255": {
@@ -894,6 +882,15 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-11-17T13:39:33.610Z"
+    },
+    "s72": {
+      "views": 42,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-11-19T13:35:08.804Z"
     }
   },
   "18202020652385648": {
@@ -1014,6 +1011,42 @@
       "quotes": 0,
       "shares": 0,
       "fetchedAt": "2026-11-19T03:41:59.584Z"
+    }
+  },
+  "18147819493581441": {
+    "postedAt": "2026-11-18T11:50:58.772Z",
+    "s24": {
+      "views": 398,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-11-19T13:35:08.804Z"
+    }
+  },
+  "17997723485845428": {
+    "postedAt": "2026-11-18T12:11:45.931Z",
+    "s24": {
+      "views": 61,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-11-19T13:35:08.804Z"
+    }
+  },
+  "17944424832391328": {
+    "postedAt": "2026-11-18T13:25:32.170Z",
+    "s24": {
+      "views": 35,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0,
+      "shares": 0,
+      "fetchedAt": "2026-11-19T13:35:08.804Z"
     }
   }
 }
