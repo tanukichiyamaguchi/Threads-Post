@@ -1,20 +1,5 @@
 [
   {
-    "date": "2026-09-09T06:38:50.739Z",
-    "topic": "羽田",
-    "text": "羽田育ちは離陸音より町工場の機械音の方が馴染んでる人いる?\n\n糀谷や六郷まで来るとその音も遠のいて、逆に静かすぎて落ち着かない",
-    "postId": "18072035192476087",
-    "features": {
-      "hook": "意見募集",
-      "length": "M",
-      "ending": "言い切り",
-      "kamata": true,
-      "newsRiding": false,
-      "slotHour": 15,
-      "weekend": false
-    }
-  },
-  {
     "date": "2026-09-09T06:47:02.470Z",
     "topic": "枕カバーの素材とまつげの下がり具合",
     "text": "シルクの枕カバー、まつげが下向きに擦れないの地味に助かる\n蒲田でも久が原でも、朝の下がり方で寝相バレるやつ",
@@ -5852,6 +5837,21 @@
       "kamata": false,
       "newsRiding": false,
       "slotHour": 22,
+      "weekend": false
+    }
+  },
+  {
+    "date": "2026-11-23T23:12:07.566Z",
+    "topic": "眉マスカラの色選び",
+    "text": "眉マスカラ、髪色に合わせて選んで浮いてる人いる\n\n基準は髪じゃなくて肌\n\n黄み肌はベージュ系\n赤み肌はグレージュ系が馴染みやすい\n\n髪色より肌色で選ぶと一気に自然になる",
+    "postId": "18120751210800793",
+    "features": {
+      "hook": "あるある",
+      "length": "L",
+      "ending": "言い切り",
+      "kamata": false,
+      "newsRiding": true,
+      "slotHour": 8,
       "weekend": false
     }
   }
