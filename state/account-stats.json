@@ -877,11 +877,12 @@
     "date": "2026-11-27",
     "followers": 1028,
     "postsPerDay": 5,
-    "accountViews": 497
+    "accountViews": 740
   },
   {
     "date": "2026-11-28",
     "followers": 1028,
-    "postsPerDay": 5
+    "postsPerDay": 5,
+    "accountViews": 0
   }
 ]
